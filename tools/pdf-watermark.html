@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags & Advanced Keyword Targeting -->
+    <title>Add Watermark to PDF Online Free - Text & Image PDF Stamper | FileWorks</title>
+    <meta name="description" content="Add text or image watermarks to PDF files online for free. Custom font, opacity, angle, and position controls with 100% private client-side processing in your browser.">
+    <meta name="keywords" content="add watermark to pdf, pdf watermark online free, stamp pdf document, confidential pdf overlay, text watermark pdf, image watermark pdf, batch pdf watermark, client side pdf stamper">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- PDF Lib & PDF.js -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <style>
+        .feature-card { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .tab-btn.active { border-color: #2563eb; color: #2563eb; background-color: #eff6ff; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900">
+                    File<span class="text-brand-600">Works</span>
+                </span>
+            </a>
+
+            <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Tools</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Tool Workspace -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full">
+        
+        <!-- Tool Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold mb-3">
+                <i class="fa-solid fa-stamp"></i> Advanced PDF Watermarker
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                Add Watermark to PDF Online Free
+            </h1>
+            <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+                Protect your documents by adding custom text or logo watermarks. Fine-tune opacity, rotation, and positioning with live real-time preview.
+            </p>
+        </div>
+
+        <!-- Main Workspace Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+            
+            <!-- Left Controls Panel -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-lg shadow-slate-200/50">
+                    <h2 class="font-heading text-lg font-bold text-slate-900 mb-4 border-b border-slate-100 pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-brand-600"></i> Watermark Settings
+                    </h2>
+
+                    <!-- Mode Tabs -->
+                    <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1.5 rounded-xl text-xs font-bold mb-5">
+                        <button onclick="switchMode('text')" id="tab-text" class="tab-btn active py-2 rounded-lg text-center transition-all">
+                            <i class="fa-solid fa-font mr-1"></i> Text Watermark
+                        </button>
+                        <button onclick="switchMode('image')" id="tab-image" class="tab-btn py-2 rounded-lg text-center transition-all">
+                            <i class="fa-solid fa-image mr-1"></i> Image Logo
+                        </button>
+                    </div>
+
+                    <!-- TEXT CONTROLS -->
+                    <div id="textControls" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Watermark Text</label>
+                            <input type="text" id="wmText" value="CONFIDENTIAL" oninput="updatePreview()" 
+                                   class="w-full p-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-xs font-semibold text-slate-800">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Font Color</label>
+                                <input type="color" id="wmColor" value="#dc2626" onchange="updatePreview()" class="w-full h-9 p-1 bg-white border border-slate-200 rounded-xl cursor-pointer">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Font Size (<span id="fontSizeVal">36</span>px)</label>
+                                <input type="range" id="wmFontSize" min="16" max="100" value="36" oninput="document.getElementById('fontSizeVal').textContent=this.value; updatePreview()" class="w-full accent-brand-600">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE CONTROLS -->
+                    <div id="imageControls" class="hidden space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Upload Watermark Image (PNG/JPG)</label>
+                            <input type="file" id="wmImageInput" accept="image/png, image/jpeg" onchange="handleImageWatermark(event)" 
+                                   class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-600 hover:file:bg-brand-100 cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Image Scale (<span id="imgScaleVal">30</span>%)</label>
+                            <input type="range" id="wmImageScale" min="10" max="100" value="30" oninput="document.getElementById('imgScaleVal').textContent=this.value; updatePreview()" class="w-full accent-brand-600">
+                        </div>
+                    </div>
+
+                    <!-- COMMON CONTROLS -->
+                    <div class="space-y-4 border-t border-slate-100 pt-4 mt-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Opacity (<span id="opacityVal">40</span>%)</label>
+                            <input type="range" id="wmOpacity" min="5" max="100" value="40" oninput="document.getElementById('opacityVal').textContent=this.value; updatePreview()" class="w-full accent-brand-600">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Rotation Angle (<span id="angleVal">-45</span>°)</label>
+                            <input type="range" id="wmAngle" min="-180" max="180" value="-45" oninput="document.getElementById('angleVal').textContent=this.value; updatePreview()" class="w-full accent-brand-600">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Viewer & Output Panel -->
+            <div class="lg:col-span-7">
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-lg shadow-slate-200/50 flex flex-col justify-between h-full">
+                    
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
+                            <h2 class="font-heading text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-eye text-brand-600"></i> Document Preview
+                            </h2>
+                            <span id="pageCounter" class="text-xs font-mono text-slate-500 hidden">Page 1</span>
+                        </div>
+
+                        <!-- Dropzone for Upload -->
+                        <div id="pdfDropZone" onclick="document.getElementById('pdfInput').click()" 
+                             class="border-2 border-dashed border-slate-300 hover:border-brand-500 bg-slate-50/50 rounded-2xl p-10 text-center cursor-pointer transition-all">
+                            <input type="file" id="pdfInput" accept="application/pdf" class="hidden" onchange="handlePDFUpload(event)">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto text-2xl mb-3">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <h3 class="font-heading text-base font-bold text-slate-800 mb-1">Click to Upload PDF</h3>
+                            <p class="text-xs text-slate-500">Apply custom text or image watermark instantly</p>
+                        </div>
+
+                        <!-- Interactive Preview Container -->
+                        <div id="previewContainer" class="hidden relative overflow-auto border border-slate-200 rounded-2xl bg-slate-800/5 p-4 flex justify-center max-h-[420px]">
+                            <canvas id="pdfCanvas" class="shadow-md rounded-lg max-w-full"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Download Section -->
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <button onclick="applyAndDownloadWatermark()" id="downloadBtn" disabled class="w-full py-3.5 rounded-2xl bg-slate-200 text-slate-400 font-bold text-xs uppercase tracking-wider transition-all cursor-not-allowed flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download text-base"></i> Apply & Download Watermarked PDF
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Value Proposition Cards -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-heading text-2xl font-bold text-slate-900">Why Choose FileWorks Watermarker?</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1">High-performance client-side security and customization.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card p-6 bg-white border border-slate-200 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-user-shield text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 mb-1">100% Client-Side Privacy</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">No PDF file uploads to external servers. Your confidential business files stay safe on your computer.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white border border-slate-200 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-compass text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 mb-1">Precision Angle & Opacity</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Full control over stamp transparency, placement, scale, and custom rotation angles.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white border border-slate-200 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 border border-purple-100 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-bolt text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 mb-1">High-Speed Processing</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Stamp multi-page PDF files instantly without queue delays or bandwidth limitations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Section -->
+        <article class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8">
+            <div>
+                <h2 class="font-heading text-2xl font-bold text-slate-900 mb-3">Stamp PDF Documents Safely Online</h2>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    Watermarking sensitive PDF files protects your intellectual property, prevents unauthorized redistribution, and clearly labels confidential contracts or draft versions. Our **PDF Watermark Tool** lets you apply text stamps like "CONFIDENTIAL", "DRAFT", or custom corporate logos directly in your web browser.
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Powered by browser WebAssembly engines (`pdf-lib`), your documents remain strictly on your device during the entire process, ensuring complete GDPR and corporate privacy compliance.
+                </p>
+            </div>
+
+            <div class="border-t border-slate-200 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 mb-3">How to Watermark a PDF in 3 Easy Steps</h3>
+                <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm">
+                    <li><strong>Upload Your PDF:</strong> Click or drag your PDF document into the preview box.</li>
+                    <li><strong>Customize Stamp Settings:</strong> Choose text or image logo mode, adjust opacity slider, angle, and size.</li>
+                    <li><strong>Export Watermarked File:</strong> Click "Apply & Download" to save your watermarked PDF instantly.</li>
+                </ol>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-1">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900">FileWorks</span>
+                    </a>
+                    <p class="text-slate-600 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with 100% private execution.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-600 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Client-side processing active & secure
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Image Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="image-compressor.html" class="hover:text-brand-600 transition-colors">Image Compressor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-brand-600 transition-colors">Image Editor</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-brand-600 transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-brand-600 transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">PDF Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="image-to-pdf.html" class="hover:text-brand-600 transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-brand-600 transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-brand-600 transition-colors">PDF Merger</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-brand-600 transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="text-brand-600 font-semibold">PDF Watermark</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="../index.html#about" class="hover:text-brand-600 transition-colors">About FileWorks</a></li>
+                        <li><a href="../index.html#features" class="hover:text-brand-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="../index.html#features" class="hover:text-brand-600 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 FileWorks. All rights reserved. Processed locally in your browser.</p>
+                <div class="flex items-center gap-4 text-slate-400 text-base">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub Repository" class="hover:text-slate-700 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter Profile" class="hover:text-slate-700 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com" target="_blank" aria-label="Discord Server" class="hover:text-slate-700 transition-colors"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Watermark Script Engine -->
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfBytes = null;
+        let pdfDoc = null;
+        let currentMode = 'text';
+        let wmImageBytes = null;
+
+        function switchMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`tab-${mode}`).classList.add('active');
+
+            document.getElementById('textControls').classList.toggle('hidden', mode !== 'text');
+            document.getElementById('imageControls').classList.toggle('hidden', mode !== 'image');
+            updatePreview();
+        }
+
+        async function handlePDFUpload(e) {
+            const file = e.target.files[0];
+            if (!file || file.type !== 'application/pdf') return alert('Please upload a valid PDF file.');
+
+            pdfBytes = await file.arrayBuffer();
+            pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes.slice(0) }).promise;
+
+            document.getElementById('pdfDropZone').classList.add('hidden');
+            document.getElementById('previewContainer').classList.remove('hidden');
+
+            const btn = document.getElementById('downloadBtn');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+            btn.classList.add('bg-brand-600', 'text-white', 'hover:bg-brand-700', 'shadow-md');
+
+            updatePreview();
+        }
+
+        function handleImageWatermark(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    wmImageBytes = evt.target.result;
+                    updatePreview();
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        }
+
+        async function updatePreview() {
+            if (!pdfDoc) return;
+
+            const page = await pdfDoc.getPage(1);
+            const canvas = document.getElementById('pdfCanvas');
+            const ctx = canvas.getContext('2d');
+            const viewport = page.getViewport({ scale: 1.0 });
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+            // Render Real-time Watermark Overlay
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            const angle = parseInt(document.getElementById('wmAngle').value) * Math.PI / 180;
+            ctx.rotate(angle);
+            ctx.globalAlpha = parseInt(document.getElementById('wmOpacity').value) / 100;
+
+            if (currentMode === 'text') {
+                const text = document.getElementById('wmText').value || 'CONFIDENTIAL';
+                const fontSize = parseInt(document.getElementById('wmFontSize').value);
+                const color = document.getElementById('wmColor').value;
+
+                ctx.font = `bold ${fontSize}px Inter, sans-serif`;
+                ctx.fillStyle = color;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(text, 0, 0);
+            } else if (wmImageBytes) {
+                const blob = new Blob([wmImageBytes]);
+                const img = new Image();
+                img.src = URL.createObjectURL(blob);
+                await new Promise(r => img.onload = r);
+
+                const scale = parseInt(document.getElementById('wmImageScale').value) / 100;
+                const w = img.width * scale;
+                const h = img.height * scale;
+                ctx.drawImage(img, -w / 2, -h / 2, w, h);
+            }
+            ctx.restore();
+        }
+
+        async function applyAndDownloadWatermark() {
+            if (!pdfBytes) return;
+
+            const { PDFDocument, rgb, degrees } = PDFLib;
+            const loadedPdf = await PDFDocument.load(pdfBytes);
+            const pages = loadedPdf.getPages();
+
+            const opacity = parseInt(document.getElementById('wmOpacity').value) / 100;
+            const angle = parseInt(document.getElementById('wmAngle').value);
+
+            for (const page of pages) {
+                const { width, height } = page.getSize();
+
+                if (currentMode === 'text') {
+                    const text = document.getElementById('wmText').value || 'CONFIDENTIAL';
+                    const fontSize = parseInt(document.getElementById('wmFontSize').value);
+                    const hexColor = document.getElementById('wmColor').value;
+
+                    // Convert Hex to RGB
+                    const r = parseInt(hexColor.substr(1,2), 16) / 255;
+                    const g = parseInt(hexColor.substr(3,2), 16) / 255;
+                    const b = parseInt(hexColor.substr(5,2), 16) / 255;
+
+                    page.drawText(text, {
+                        x: width / 2 - (text.length * fontSize * 0.25),
+                        y: height / 2,
+                        size: fontSize,
+                        color: rgb(r, g, b),
+                        opacity: opacity,
+                        rotate: degrees(angle)
+                    });
+                } else if (wmImageBytes) {
+                    let embeddedImg;
+                    try {
+                        embeddedImg = await loadedPdf.embedPng(wmImageBytes);
+                    } catch {
+                        embeddedImg = await loadedPdf.embedJpg(wmImageBytes);
+                    }
+
+                    const scale = parseInt(document.getElementById('wmImageScale').value) / 100;
+                    const imgDims = embeddedImg.scale(scale);
+
+                    page.drawImage(embeddedImg, {
+                        x: width / 2 - imgDims.width / 2,
+                        y: height / 2 - imgDims.height / 2,
+                        width: imgDims.width,
+                        height: imgDims.height,
+                        opacity: opacity,
+                        rotate: degrees(angle)
+                    });
+                }
+            }
+
+            const watermarkedPdfBytes = await loadedPdf.save();
+            const blob = new Blob([watermarkedPdfBytes], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'watermarked_document.pdf';
+            link.click();
+        }
+    </script>
+</body>
+</html>

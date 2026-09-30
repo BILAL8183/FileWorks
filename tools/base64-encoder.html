@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Professional Base64 Encoder & Decoder | FileWorks</title>
+    <meta name="description" content="Free online Base64 encoder and decoder with UTF-8 support. Convert text and files to Base64 format or decode securely in real-time.">
+    <meta name="keywords" content="base64 encoder, base64 decoder, utf-8 base64 converter, text to base64, online base64 tool">
+    <link rel="canonical" href="https://fileworks.com/tools/base64-encoder.html">
+
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Base64 Encoder & Decoder - FileWorks",
+      "url": "https://fileworks.com/tools/base64-encoder.html",
+      "applicationCategory": "DeveloperUtility",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Robust Base64 encoder and decoder supporting full UTF-8 character sets and live processing."
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/25">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900">
+                        File<span class="text-violet-600">Works</span>
+                    </span>
+                </a>
+                <a href="../index.html" class="text-sm font-semibold text-slate-600 hover:text-violet-600 flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        
+        <!-- Tool Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-shield-halved"></i> Developer Utility Pro
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                Base64 Encoder & Decoder
+            </h1>
+            <p class="text-slate-600 text-base">
+                Convert plaintext or strings into secure Base64 hashes, or decode Base64 back instantly with full UTF-8 support.
+            </p>
+        </div>
+
+        <!-- Realtime Status Banner -->
+        <div id="statusBanner" class="mb-6 p-4 rounded-2xl border bg-white shadow-sm flex flex-wrap items-center justify-between gap-4 transition-all">
+            <div class="flex items-center gap-3">
+                <div id="statusIcon" class="w-9 h-9 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-base shrink-0">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div>
+                    <span id="statusTitle" class="font-bold text-sm text-slate-800 block">Ready for Input</span>
+                    <p id="statusDesc" class="text-xs text-slate-500">Type or paste content below to encode or decode.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+                <label class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-arrow-up"></i> Upload File
+                    <input type="file" id="fileInput" class="hidden" onchange="handleFileUpload(event)">
+                </label>
+                <button onclick="loadSampleData()" class="px-3 py-1.5 bg-violet-50 hover:bg-violet-100 text-violet-700 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-flask"></i> Sample Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Metric Toolbar -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-weight-hanging"></i></div>
+                <div><span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Input Size</span><span id="metricSize" class="text-xs font-bold text-slate-700">0 B</span></div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center"><i class="fa-solid fa-font"></i></div>
+                <div><span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Character Count</span><span id="metricChars" class="text-xs font-bold text-slate-700">0</span></div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm flex items-center gap-3 col-span-2 sm:col-span-1">
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center"><i class="fa-solid fa-bolt"></i></div>
+                <div><span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Mode Active</span><span id="metricMode" class="text-xs font-bold text-slate-700">Encoding</span></div>
+            </div>
+        </div>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <!-- Left Panel: Input Text -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col h-[550px]">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+                    <!-- Mode Switcher Tabs -->
+                    <div class="flex bg-slate-100 p-0.5 rounded-lg border border-slate-200">
+                        <button id="modeEncodeBtn" onclick="setMode('encode')" class="px-3 py-1 rounded-md text-xs font-semibold text-white bg-violet-600 transition-all shadow-sm">
+                            Encode
+                        </button>
+                        <button id="modeDecodeBtn" onclick="setMode('decode')" class="px-3 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all">
+                            Decode
+                        </button>
+                    </div>
+
+                    <button onclick="clearAll()" class="px-2.5 py-1 text-xs font-semibold bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-trash-can"></i> Clear
+                    </button>
+                </div>
+                <textarea 
+                    id="base64Input" 
+                    placeholder="Type or paste text to encode..."
+                    class="w-full flex-grow p-4 font-mono text-xs text-slate-800 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent leading-relaxed resize-none focus:outline-none"
+                    oninput="processBase64()"
+                ></textarea>
+            </div>
+
+            <!-- Right Panel: Result Output -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col h-[550px]">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                    <span id="outputTitle" class="font-heading font-bold text-slate-200 text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-terminal text-emerald-400"></i> Base64 Output
+                    </span>
+                    <button onclick="copyOutput()" class="px-3 py-1 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors flex items-center gap-1.5 border border-slate-700">
+                        <i class="fa-regular fa-copy"></i> <span id="copyBtnText">Copy Result</span>
+                    </button>
+                </div>
+                <pre id="base64Output" class="w-full flex-grow p-4 font-mono text-xs text-slate-300 bg-slate-950/60 rounded-xl border border-slate-800/80 overflow-auto whitespace-pre-wrap break-all"><code>// Converted result will appear here...</code></pre>
+            </div>
+
+        </div>
+
+        <!-- SEO Content Section -->
+        <section class="mt-16 border-t border-slate-200 pt-12">
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm max-w-4xl mx-auto space-y-8">
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-3">Professional Base64 Utilities</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our Base64 Encoder & Decoder handles full binary-to-text string translations safely inside your browser environment. Featuring full UTF-8 byte parsing support, it ensures zero character corruption across complex strings, configuration settings, and encoded API credentials.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Comprehensive Professional Footer (5-Column Layout) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="../index.html" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25">
+                            <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-2xl tracking-tight text-white">
+                            File<span class="text-brand-500">Works</span>
+                        </span>
+                    </a>
+                    <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                        Free browser-based utility tools for developers, SEO experts, writers, and digital creators. Fast, secure, and client-side processing.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">SEO Tools</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="meta-tag-generator.html" class="hover:text-white transition-colors">Meta Tag Generator</a></li>
+                        <li><a href="word-counter.html" class="hover:text-white transition-colors">Word Counter</a></li>
+                        <li><a href="open-graph-generator.html" class="hover:text-white transition-colors">OG Tag Generator</a></li>
+                        <li><a href="robots-txt-generator.html" class="hover:text-white transition-colors">Robots.txt Generator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Dev Utilities</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="json-formatter.html" class="hover:text-white transition-colors">JSON Formatter</a></li>
+                        <li><a href="base64-encoder.html" class="text-brand-400 font-medium hover:underline">Base64 Encoder</a></li>
+                        <li><a href="html-minifier.html" class="hover:text-white transition-colors">HTML Minifier</a></li>
+                        <li><a href="css-formatter.html" class="hover:text-white transition-colors">CSS Formatter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Pages & Legal</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Home Page</a></li>
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="../contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 FileWorks Inc. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="../privacy-policy.html" class="hover:text-slate-400">Privacy</a>
+                    <a href="../terms-of-service.html" class="hover:text-slate-400">Terms</a>
+                    <a href="../contact.html" class="hover:text-slate-400">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Functional JavaScript Engine -->
+    <script>
+        const base64Input = document.getElementById('base64Input');
+        const base64Output = document.getElementById('base64Output');
+        
+        const statusBanner = document.getElementById('statusBanner');
+        const statusIcon = document.getElementById('statusIcon');
+        const statusTitle = document.getElementById('statusTitle');
+        const statusDesc = document.getElementById('statusDesc');
+
+        let currentMode = 'encode';
+
+        function setMode(mode) {
+            currentMode = mode;
+            const modeEncodeBtn = document.getElementById('modeEncodeBtn');
+            const modeDecodeBtn = document.getElementById('modeDecodeBtn');
+            const outputTitle = document.getElementById('outputTitle');
+
+            if (mode === 'encode') {
+                modeEncodeBtn.className = "px-3 py-1 rounded-md text-xs font-semibold text-white bg-violet-600 transition-all shadow-sm";
+                modeDecodeBtn.className = "px-3 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all";
+                base64Input.placeholder = "Type or paste text to encode...";
+                outputTitle.innerHTML = '<i class="fa-solid fa-terminal text-emerald-400"></i> Base64 Encoded Result';
+                document.getElementById('metricMode').textContent = 'Encoding';
+            } else {
+                modeDecodeBtn.className = "px-3 py-1 rounded-md text-xs font-semibold text-white bg-violet-600 transition-all shadow-sm";
+                modeEncodeBtn.className = "px-3 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all";
+                base64Input.placeholder = "Type or paste Base64 string to decode...";
+                outputTitle.innerHTML = '<i class="fa-solid fa-terminal text-emerald-400"></i> Decoded Plaintext Result';
+                document.getElementById('metricMode').textContent = 'Decoding';
+            }
+            processBase64();
+        }
+
+        // Bulletproof UTF-8 Safe Base64 Encoders/Decoders
+        function utf8ToBase64(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                return String.fromCharCode('0x' + p1);
+            }));
+        }
+
+        function base64ToUtf8(str) {
+            return decodeURIComponent(atob(str.trim()).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
+
+        function processBase64() {
+            const val = base64Input.value;
+            if (!val.trim()) {
+                resetStatus();
+                resetMetrics();
+                base64Output.textContent = '// Converted result will appear here...';
+                return;
+            }
+
+            const bytes = new Blob([val]).size;
+            document.getElementById('metricSize').textContent = bytes > 1024 ? (bytes / 1024).toFixed(2) + ' KB' : bytes + ' B';
+            document.getElementById('metricChars').textContent = val.length;
+
+            try {
+                let result = '';
+                if (currentMode === 'encode') {
+                    result = utf8ToBase64(val);
+                } else {
+                    result = base64ToUtf8(val);
+                }
+                base64Output.textContent = result;
+
+                // Success Status
+                statusBanner.className = "mb-6 p-4 rounded-2xl border border-emerald-200 bg-emerald-50/50 shadow-sm flex flex-wrap items-center justify-between gap-4 transition-all";
+                statusIcon.className = "w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-base shrink-0";
+                statusIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                statusTitle.className = "font-bold text-sm text-emerald-900";
+                statusTitle.textContent = currentMode === 'encode' ? "Successfully Encoded" : "Successfully Decoded";
+                statusDesc.className = "text-xs text-emerald-700";
+                statusDesc.textContent = "Conversion completed successfully without errors.";
+            } catch (err) {
+                base64Output.textContent = `Conversion Error:\n${err.message}`;
+
+                // Error Status
+                statusBanner.className = "mb-6 p-4 rounded-2xl border border-red-200 bg-red-50/50 shadow-sm flex flex-wrap items-center justify-between gap-4 transition-all";
+                statusIcon.className = "w-9 h-9 rounded-xl bg-red-500 text-white flex items-center justify-center text-base shrink-0";
+                statusIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                statusTitle.className = "font-bold text-sm text-red-900";
+                statusTitle.textContent = "Invalid Format Error";
+                statusDesc.className = "text-xs text-red-700";
+                statusDesc.textContent = "Input string is malformed or not valid Base64 format.";
+            }
+        }
+
+        function loadSampleData() {
+            if (currentMode === 'encode') {
+                base64Input.value = "Hello World! Welcome to FileWorks Developer Utilities Suite 🚀";
+            } else {
+                base64Input.value = "SGVsbG8gV29ybGQhIFdlbGNvbWUgdG8gT21uaVRvb2xzIERldmVsb3BlciBVdGlsaXRpZXMgU3VpdGUg8J+agA==";
+            }
+            processBase64();
+        }
+
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                base64Input.value = evt.target.result;
+                processBase64();
+            };
+            reader.readAsText(file);
+        }
+
+        function clearAll() {
+            base64Input.value = '';
+            base64Output.textContent = '// Converted result will appear here...';
+            resetStatus();
+            resetMetrics();
+        }
+
+        function resetMetrics() {
+            document.getElementById('metricSize').textContent = '0 B';
+            document.getElementById('metricChars').textContent = '0';
+        }
+
+        function resetStatus() {
+            statusBanner.className = "mb-6 p-4 rounded-2xl border bg-white shadow-sm flex flex-wrap items-center justify-between gap-4 transition-all";
+            statusIcon.className = "w-9 h-9 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-base shrink-0";
+            statusIcon.innerHTML = '<i class="fa-solid fa-terminal"></i>';
+            statusTitle.className = "font-bold text-sm text-slate-800";
+            statusTitle.textContent = "Ready for Input";
+            statusDesc.className = "text-xs text-slate-500";
+            statusDesc.textContent = "Type or paste content below to encode or decode.";
+        }
+
+        function copyOutput() {
+            const outputText = base64Output.textContent;
+            if (!outputText || outputText.startsWith('// Converted') || outputText.startsWith('Conversion Error')) return;
+
+            navigator.clipboard.writeText(outputText);
+            const copyBtnText = document.getElementById('copyBtnText');
+            copyBtnText.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtnText.textContent = 'Copy Result';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

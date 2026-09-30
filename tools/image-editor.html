@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags -->
+    <title>Free Online Image Editor - Crop, Rotate, Filter & Edit Photos | FileWorks</title>
+    <meta name="title" content="Free Online Image Editor - Crop, Rotate, Filter & Edit Photos | FileWorks">
+    <meta name="description" content="Edit images online for free with professional tools. Crop, rotate, apply filters, adjust brightness & contrast, draw, add text watermarks, and resize images locally in your browser.">
+    <meta name="keywords" content="image editor online, free photo editor, online crop image, photo filter generator, edit jpg png webp, add watermark to image, draw on photo online, browser image editor">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FileWorks">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online Image Editor - Professional Photo Editing Suite">
+    <meta property="og:description" content="All-in-one browser-based image editor. Crop, filter, draw, adjust color values, and watermark photos with zero server uploads.">
+
+    <!-- Structured Data (Schema.org) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FileWorks Online Image Editor",
+      "category": "MultimediaApplication",
+      "operatingSystem": "All",
+      "applicationCategory": "DesignApplication",
+      "description": "Free professional online image editing suite for cropping, filtering, rotating, drawing, and resizing pictures.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Cropper.js CSS & JS for Advanced Crop Engine -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" integrity="sha512-hvA0TuC33CIn1dY2TTh6O0jZf1aA5V2b3jC+333S6h5U/4G03K+e0W1fR12n5/6K7n6pG4nN2hN8Z7q4K7q9qg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" integrity="sha512-9KkSt32wEshm4p2zYwM4H31C13hW6S+R9kE75E43Vp5x5f62e8H1mP227n2B/56p+M1Jm3G0yX+vGf2jY0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .feature-card { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .tab-btn.active { border-color: #2563eb; color: #2563eb; background-color: #eff6ff; }
+        .filter-btn.active { border-color: #2563eb; ring: 2px; }
+        canvas { touch-action: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900">
+                    File<span class="text-brand-600">Works</span>
+                </span>
+            </a>
+
+            <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Tools</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full">
+        
+        <!-- Tool Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold mb-3">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Professional Online Photo Studio
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2">
+                Advanced Online Image Editor
+            </h1>
+            <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+                Crop, transform, color grade, draw, add watermarks, and resize your photos with high-precision client-side tools.
+            </p>
+        </div>
+
+        <!-- Main Editor Grid Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+            
+            <!-- Left Tool Control Tabs Panel -->
+            <div class="lg:col-span-4 bg-white border border-slate-200 rounded-3xl p-5 shadow-lg shadow-slate-200/50 flex flex-col justify-between">
+                <div>
+                    <!-- Tool Categories Navigation -->
+                    <div class="flex items-center gap-1 overflow-x-auto pb-2 border-b border-slate-100 mb-4 no-scrollbar">
+                        <button onclick="switchTab('adjust')" id="tab-adjust" class="tab-btn active px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-transparent transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-sliders"></i> Adjust
+                        </button>
+                        <button onclick="switchTab('crop')" id="tab-crop" class="tab-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-transparent transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-crop-simple"></i> Crop & Flip
+                        </button>
+                        <button onclick="switchTab('filters')" id="tab-filters" class="tab-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-transparent transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-palette"></i> Filters
+                        </button>
+                        <button onclick="switchTab('draw')" id="tab-draw" class="tab-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-transparent transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-pen-nib"></i> Draw
+                        </button>
+                        <button onclick="switchTab('watermark')" id="tab-watermark" class="tab-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-transparent transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-font"></i> Text
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: COLOR ADJUSTMENTS -->
+                    <div id="panel-adjust" class="space-y-3.5">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Brightness</span> <span id="val-brightness">100%</span>
+                            </div>
+                            <input type="range" id="adj-brightness" min="0" max="200" value="100" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Contrast</span> <span id="val-contrast">100%</span>
+                            </div>
+                            <input type="range" id="adj-contrast" min="0" max="200" value="100" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Saturate</span> <span id="val-saturate">100%</span>
+                            </div>
+                            <input type="range" id="adj-saturate" min="0" max="200" value="100" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Grayscale</span> <span id="val-grayscale">0%</span>
+                            </div>
+                            <input type="range" id="adj-grayscale" min="0" max="100" value="0" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Blur</span> <span id="val-blur">0px</span>
+                            </div>
+                            <input type="range" id="adj-blur" min="0" max="20" value="0" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Hue Rotate</span> <span id="val-hue">0deg</span>
+                            </div>
+                            <input type="range" id="adj-hue" min="0" max="360" value="0" class="w-full accent-brand-600" oninput="updateFilters()">
+                        </div>
+
+                        <button onclick="resetAdjustments()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-colors mt-2">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Reset Color Controls
+                        </button>
+                    </div>
+
+                    <!-- TAB 2: CROP & TRANSFORM -->
+                    <div id="panel-crop" class="space-y-4 hidden">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Aspect Ratio Preset</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="setCropRatio(NaN)" class="py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-bold text-xs rounded-xl border border-slate-200">Free</button>
+                                <button onclick="setCropRatio(1)" class="py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-bold text-xs rounded-xl border border-slate-200">1:1 Square</button>
+                                <button onclick="setCropRatio(16/9)" class="py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-bold text-xs rounded-xl border border-slate-200">16:9 HD</button>
+                                <button onclick="setCropRatio(4/3)" class="py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-bold text-xs rounded-xl border border-slate-200">4:3 Photo</button>
+                                <button onclick="setCropRatio(9/16)" class="py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-bold text-xs rounded-xl border border-slate-200">9:16 Story</button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-100">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Rotate & Flip</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="rotateCanvas(-90)" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-rotate-left"></i> -90° Left
+                                </button>
+                                <button onclick="rotateCanvas(90)" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-rotate-right"></i> +90° Right
+                                </button>
+                                <button onclick="flipCanvas('h')" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-arrows-left-right"></i> Flip Horiz.
+                                </button>
+                                <button onclick="flipCanvas('v')" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-arrows-up-down"></i> Flip Vert.
+                                </button>
+                            </div>
+                        </div>
+
+                        <button onclick="applyCrop()" class="w-full py-2.5 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-700 transition-colors shadow">
+                            <i class="fa-solid fa-check mr-1"></i> Apply Crop Region
+                        </button>
+                    </div>
+
+                    <!-- TAB 3: PRESET FILTERS -->
+                    <div id="panel-filters" class="space-y-3 hidden">
+                        <p class="text-xs font-bold text-slate-700">Select Instant Color Style</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="applyFilterPreset('normal')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">Original</button>
+                            <button onclick="applyFilterPreset('vintage')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">Vintage Warm</button>
+                            <button onclick="applyFilterPreset('dramatic')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">Dramatic Contrast</button>
+                            <button onclick="applyFilterPreset('noir')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">Film Noir (B&W)</button>
+                            <button onclick="applyFilterPreset('cool')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">Cool Tone</button>
+                            <button onclick="applyFilterPreset('invert')" class="p-2 bg-slate-100 hover:bg-brand-50 text-slate-800 font-bold text-xs rounded-xl border border-slate-200 text-left">X-Ray Invert</button>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: FREEHAND DRAWING -->
+                    <div id="panel-draw" class="space-y-4 hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-700">Enable Drawing Mode</span>
+                            <input type="checkbox" id="drawToggle" onchange="toggleDrawingMode(this.checked)" class="w-4 h-4 accent-brand-600">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Brush Color</label>
+                            <input type="color" id="brushColor" value="#2563eb" class="w-full h-10 p-1 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Brush Size</span> <span id="val-brush">8px</span>
+                            </div>
+                            <input type="range" id="brushSize" min="1" max="50" value="8" oninput="document.getElementById('val-brush').textContent=this.value+'px'" class="w-full accent-brand-600">
+                        </div>
+                    </div>
+
+                    <!-- TAB 5: WATERMARK & TEXT -->
+                    <div id="panel-watermark" class="space-y-3.5 hidden">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Overlay Text</label>
+                            <input type="text" id="watermarkText" placeholder="e.g. © 2026 FileWorks" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Color</label>
+                                <input type="color" id="wmColor" value="#ffffff" class="w-full h-9 p-1 bg-slate-50 border border-slate-200 rounded-xl">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Position</label>
+                                <select id="wmPos" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                                    <option value="bottom-right">Bottom Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="center">Center</option>
+                                    <option value="top-right">Top Right</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button onclick="applyWatermark()" class="w-full py-2 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-700 transition-colors">
+                            <i class="fa-solid fa-font mr-1"></i> Render Watermark Text
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="pt-4 border-t border-slate-100 mt-6">
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Format</label>
+                            <select id="exportFormat" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-800">
+                                <option value="png">PNG (Lossless)</option>
+                                <option value="jpeg" selected>JPEG (Compressed)</option>
+                                <option value="webp">WEBP (Web standard)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Quality</label>
+                            <select id="exportQuality" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-800">
+                                <option value="1.0">100% Maximum</option>
+                                <option value="0.85" selected>85% High</option>
+                                <option value="0.6">60% Medium</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="downloadImage()" id="downloadBtn" disabled class="w-full py-3.5 rounded-2xl bg-slate-200 text-slate-400 font-bold text-xs uppercase tracking-wider transition-all cursor-not-allowed flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download text-base"></i> Save & Export Image
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Canvas Main Interactive Stage -->
+            <div class="lg:col-span-8 bg-white border border-slate-200 rounded-3xl p-6 shadow-lg shadow-slate-200/50 flex flex-col justify-between min-h-[500px]">
+                
+                <div>
+                    <!-- Drop Zone Header -->
+                    <div id="editorDropZone" onclick="document.getElementById('imageInput').click()" 
+                         class="border-2 border-dashed border-slate-300 hover:border-brand-500 bg-slate-50/50 rounded-2xl p-12 text-center cursor-pointer transition-all">
+                        <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp, image/gif" class="hidden" onchange="loadUploadedImage(event)">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto text-3xl mb-3">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-800 mb-1">Click or Drag Image File Here</h3>
+                        <p class="text-xs text-slate-500">Supports PNG, JPG, WEBP, and GIF formats</p>
+                    </div>
+
+                    <!-- Canvas Stage Wrapper -->
+                    <div id="canvasStage" class="hidden relative w-full flex items-center justify-center min-h-[380px] max-h-[520px] bg-slate-900/5 rounded-2xl overflow-hidden p-2">
+                        <canvas id="mainCanvas" class="max-w-full max-h-[480px] object-contain rounded-lg shadow-md"></canvas>
+                    </div>
+                </div>
+
+                <!-- Image Status Footer -->
+                <div id="editorStatusBar" class="hidden pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+                    <span id="imgDimensions">Dimensions: 0 x 0 px</span>
+                    <button onclick="resetWholeWorkspace()" class="text-rose-600 font-sans font-bold hover:underline flex items-center gap-1">
+                        <i class="fa-solid fa-trash"></i> Reset All
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Comprehensive SEO Content Section -->
+        <article class="prose max-w-none bg-white border border-slate-200 rounded-3xl p-8 shadow-sm mb-16 text-slate-700">
+            <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4">Complete Browser-Based Online Image Editor</h2>
+            <p class="text-xs sm:text-sm leading-relaxed mb-4">
+                Welcome to FileWorks Image Editor, an all-in-one web application designed to handle photo editing directly inside your web browser. Whether you need to crop photos for social media profiles, adjust exposure and saturation, apply vintage color filters, or draw on images, our studio delivers professional-grade canvas manipulation without requiring complex software like Adobe Photoshop.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Key Features & Capabilities:</h3>
+                    <ul class="list-disc list-inside text-xs sm:text-sm space-y-1.5 text-slate-600">
+                        <li><strong>Precision Cropping:</strong> Crop freehand or lock aspect ratios (1:1, 16:9, 4:3, 9:16).</li>
+                        <li><strong>Granular Color Adjustments:</strong> Fine-tune Brightness, Contrast, Saturation, Blur, Hue, and Grayscale.</li>
+                        <li><strong>Instant Filter Styles:</strong> Apply Dramatic, Vintage Warm, Film Noir, and Cool Tone filters.</li>
+                        <li><strong>Freehand Canvas Brush:</strong> Draw sketches, highlight regions, or write manually with adjustable brush colors and stroke widths.</li>
+                        <li><strong>Text Watermarking:</strong> Protect intellectual property by stamping custom text overlays.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 mb-2">100% Private & Secure Execution</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-600">
+                        Unlike traditional cloud tools, all image rendering and canvas transformations take place <strong>locally on your browser device using HTML5 Canvas API and WebGL drivers</strong>. Your images are never uploaded to external cloud servers, guaranteeing absolute confidentiality for personal documents, ID photos, and copyrighted artwork.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-1">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900">FileWorks</span>
+                    </a>
+                    <p class="text-slate-600 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Fast, private, and powerful.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Image Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="image-editor.html" class="text-brand-600 font-semibold">Image Editor</a></li>
+                        <li><a href="image-compressor.html" class="hover:text-brand-600 transition-colors">Image Compressor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-brand-600 transition-colors">Image to PDF</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-brand-600 transition-colors">OCR Text Extractor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">PDF Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="pdf-to-image.html" class="hover:text-brand-600 transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-brand-600 transition-colors">PDF Extractor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600">
+                        <li><a href="../index.html#about" class="hover:text-brand-600 transition-colors">About FileWorks</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 FileWorks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Canvas Photo Editor Engine Script -->
+    <script>
+        let rawImage = null;
+        let canvas = document.getElementById('mainCanvas');
+        let ctx = canvas.getContext('2d');
+        let cropper = null;
+        let isDrawing = false;
+        let drawingEnabled = false;
+
+        // Switching Tabs Control
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${tab}`).classList.add('active');
+
+            document.getElementById('panel-adjust').classList.add('hidden');
+            document.getElementById('panel-crop').classList.add('hidden');
+            document.getElementById('panel-filters').classList.add('hidden');
+            document.getElementById('panel-draw').classList.add('hidden');
+            document.getElementById('panel-watermark').classList.add('hidden');
+
+            document.getElementById(`panel-${tab}`).classList.remove('hidden');
+
+            if (tab === 'crop' && rawImage && !cropper) {
+                initCropper();
+            } else if (tab !== 'crop' && cropper) {
+                destroyCropper();
+            }
+        }
+
+        function loadUploadedImage(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                rawImage = new Image();
+                rawImage.onload = () => {
+                    canvas.width = rawImage.width;
+                    canvas.height = rawImage.height;
+                    ctx.drawImage(rawImage, 0, 0);
+
+                    document.getElementById('editorDropZone').classList.add('hidden');
+                    document.getElementById('canvasStage').classList.remove('hidden');
+                    document.getElementById('editorStatusBar').classList.remove('hidden');
+                    document.getElementById('imgDimensions').textContent = `Dimensions: ${rawImage.width} x ${rawImage.height} px`;
+
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    downloadBtn.disabled = false;
+                    downloadBtn.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+                    downloadBtn.classList.add('bg-brand-600', 'text-white', 'hover:bg-brand-700', 'shadow-md');
+
+                    initCanvasDrawingEvents();
+                };
+                rawImage.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Live Filter Render Engine
+        function updateFilters() {
+            if (!rawImage) return;
+
+            const b = document.getElementById('adj-brightness').value;
+            const c = document.getElementById('adj-contrast').value;
+            const s = document.getElementById('adj-saturate').value;
+            const g = document.getElementById('adj-grayscale').value;
+            const blur = document.getElementById('adj-blur').value;
+            const h = document.getElementById('adj-hue').value;
+
+            document.getElementById('val-brightness').textContent = b + '%';
+            document.getElementById('val-contrast').textContent = c + '%';
+            document.getElementById('val-saturate').textContent = s + '%';
+            document.getElementById('val-grayscale').textContent = g + '%';
+            document.getElementById('val-blur').textContent = blur + 'px';
+            document.getElementById('val-hue').textContent = h + 'deg';
+
+            ctx.filter = `brightness(${b}%) contrast(${c}%) saturate(${s}%) grayscale(${g}%) blur(${blur}px) hue-rotate(${h}deg)`;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(rawImage, 0, 0);
+        }
+
+        function resetAdjustments() {
+            document.getElementById('adj-brightness').value = 100;
+            document.getElementById('adj-contrast').value = 100;
+            document.getElementById('adj-saturate').value = 100;
+            document.getElementById('adj-grayscale').value = 0;
+            document.getElementById('adj-blur').value = 0;
+            document.getElementById('adj-hue').value = 0;
+            updateFilters();
+        }
+
+        // Preset Filters Engine
+        function applyFilterPreset(type) {
+            resetAdjustments();
+            if (type === 'vintage') {
+                document.getElementById('adj-saturate').value = 120;
+                document.getElementById('adj-contrast').value = 110;
+                document.getElementById('adj-hue').value = 20;
+            } else if (type === 'dramatic') {
+                document.getElementById('adj-contrast').value = 160;
+                document.getElementById('adj-saturate').value = 140;
+            } else if (type === 'noir') {
+                document.getElementById('adj-grayscale').value = 100;
+                document.getElementById('adj-contrast').value = 140;
+            } else if (type === 'cool') {
+                document.getElementById('adj-hue').value = 180;
+                document.getElementById('adj-saturate').value = 110;
+            }
+            updateFilters();
+        }
+
+        // Cropper Engine
+        function initCropper() {
+            if (cropper) cropper.destroy();
+            cropper = new Cropper(canvas, {
+                viewMode: 1,
+                autoCropArea: 0.8
+            });
+        }
+
+        function setCropRatio(ratio) {
+            if (cropper) cropper.setAspectRatio(ratio);
+        }
+
+        function applyCrop() {
+            if (!cropper) return;
+            const croppedCanvas = cropper.getCroppedCanvas();
+            rawImage.src = croppedCanvas.toDataURL();
+            destroyCropper();
+            switchTab('adjust');
+        }
+
+        function destroyCropper() {
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+        }
+
+        // Rotate & Flip
+        function rotateCanvas(deg) {
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            if (Math.abs(deg) === 90) {
+                tempCanvas.width = canvas.height;
+                tempCanvas.height = canvas.width;
+            } else {
+                tempCanvas.width = canvas.width;
+                tempCanvas.height = canvas.height;
+            }
+
+            tempCtx.translate(tempCanvas.width / 2, tempCanvas.height / 2);
+            tempCtx.rotate((deg * Math.PI) / 180);
+            tempCtx.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
+
+            rawImage.src = tempCanvas.toDataURL();
+        }
+
+        // Freehand Drawing Canvas
+        function toggleDrawingMode(enabled) {
+            drawingEnabled = enabled;
+        }
+
+        function initCanvasDrawingEvents() {
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDraw);
+        }
+
+        function startDraw(e) {
+            if (!drawingEnabled) return;
+            isDrawing = true;
+            ctx.beginPath();
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            ctx.moveTo((e.clientX - rect.left) * scaleX, (e.clientY - rect.top) * scaleY);
+        }
+
+        function draw(e) {
+            if (!isDrawing || !drawingEnabled) return;
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            ctx.lineWidth = document.getElementById('brushSize').value;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = document.getElementById('brushColor').value;
+
+            ctx.lineTo((e.clientX - rect.left) * scaleX, (e.clientY - rect.top) * scaleY);
+            ctx.stroke();
+        }
+
+        function stopDraw() {
+            if (isDrawing) {
+                isDrawing = false;
+                rawImage.src = canvas.toDataURL();
+            }
+        }
+
+        // Watermark Overlay
+        function applyWatermark() {
+            const text = document.getElementById('watermarkText').value;
+            if (!text) return;
+
+            const color = document.getElementById('wmColor').value;
+            const pos = document.getElementById('wmPos').value;
+
+            ctx.font = 'bold 36px Outfit, sans-serif';
+            ctx.fillStyle = color;
+
+            let x = 30;
+            let y = canvas.height - 30;
+
+            if (pos === 'center') {
+                x = canvas.width / 2 - ctx.measureText(text).width / 2;
+                y = canvas.height / 2;
+            } else if (pos === 'bottom-right') {
+                x = canvas.width - ctx.measureText(text).width - 30;
+            } else if (pos === 'top-right') {
+                x = canvas.width - ctx.measureText(text).width - 30;
+                y = 50;
+            }
+
+            ctx.fillText(text, x, y);
+            rawImage.src = canvas.toDataURL();
+        }
+
+        // Download Image File
+        function downloadImage() {
+            const format = document.getElementById('exportFormat').value;
+            const quality = parseFloat(document.getElementById('exportQuality').value);
+
+            let mimeType = 'image/jpeg';
+            if (format === 'png') mimeType = 'image/png';
+            if (format === 'webp') mimeType = 'image/webp';
+
+            const link = document.createElement('a');
+            link.download = `edited_image.${format}`;
+            link.href = canvas.toDataURL(mimeType, quality);
+            link.click();
+        }
+
+        function resetWholeWorkspace() {
+            rawImage = null;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('editorDropZone').classList.remove('hidden');
+            document.getElementById('canvasStage').classList.add('hidden');
+            document.getElementById('editorStatusBar').classList.add('hidden');
+            
+            const downloadBtn = document.getElementById('downloadBtn');
+            downloadBtn.disabled = true;
+            downloadBtn.classList.add('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+            downloadBtn.classList.remove('bg-brand-600', 'text-white', 'hover:bg-brand-700', 'shadow-md');
+            document.getElementById('imageInput').value = '';
+        }
+    </script>
+</body>
+</html>
