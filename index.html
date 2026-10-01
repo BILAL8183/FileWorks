@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Optimized SEO Meta Tags -->
     <title>FileWorks - Free Online Utility Tools | PDF, SEO & Developer Tools</title>
-    <meta name="description" content="100% Free online utility tools. Compress images, format JSON, generate SEO meta tags, OCR text extraction, and PDF tools — fast, secure, and right in your browser.">
-    <meta name="keywords" content="free online tools, PDF converter, JSON formatter, SEO tools, word counter, image compressor, OCR scanner">
+    <meta name="description" content="100% Free online utility tools. Compress images, format JSON, generate SEO meta tags, OCR text extraction, and PDF tools — fast, secure, and right in your browser."[cite: 1]>
+    <meta name="keywords" content="free online tools, PDF converter, JSON formatter, SEO tools, word counter, image compressor, OCR scanner"[cite: 1]>
+    <link rel="canonical" href="https://fileworks-beta.vercel.app/">
+
+    <!-- Open Graph / Twitter Meta Tags -->
+    <meta property="og:title" content="FileWorks - Free Online Utility Tools">
+    <meta property="og:description" content="Fast, secure, browser-native file converters, developer utilities, and SEO tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fileworks-beta.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- JSON-LD Schema Markup for Google SEO -->
     <script type="application/ld+json">
@@ -16,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "FileWorks",
-      "url": "https://fileworks.com",
+      "url": "https://fileworks-beta.vercel.app/",
       "description": "Fast, secure, browser-native file converters, developer utilities, and SEO tools.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "All"
@@ -29,12 +37,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"[cite: 1] />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -56,47 +65,51 @@
         }
     </script>
 
-    <!-- Custom CSS Animations for Tool Icons & Feature Cards -->
+    <!-- Custom CSS Animations & Theme Tokens -->
     <style>
         .tool-card .tool-icon i {
             display: inline-block;
             transition: transform 0.3s ease;
         }
 
-        /* Hover animations for cards */
         .tool-card:hover .compressor-icon i { animation: pulse-grow 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .editor-icon i { animation: rotate-tilt 0.6s ease-in-out infinite alternate; }
         .tool-card:hover .img-pdf-icon i { animation: bounce-up 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .pdf-img-icon i { animation: slide-right 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .extractor-icon i { animation: wiggle 0.4s ease-in-out infinite; }
-        
         .tool-card:hover .ocr-icon i { animation: pulse-grow 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .enhancer-icon i { animation: rotate-tilt 0.6s ease-in-out infinite alternate; }
         .tool-card:hover .esign-icon i { animation: bounce-up 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .merger-icon i { animation: slide-right 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .watermark-icon i { animation: wiggle 0.4s ease-in-out infinite; }
-
-        /* New Tool Animations */
         .tool-card:hover .dev-icon i { animation: pulse-grow 0.5s ease-in-out infinite alternate; }
         .tool-card:hover .seo-icon i { animation: bounce-up 0.5s ease-in-out infinite alternate; }
 
-        /* Feature Cards Animations */
         .feature-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08); }
-        .feature-card:hover .feature-icon { transform: scale(1.15) rotate(6deg); }
+        .feature-card:hover { transform: translateY(-4px); }
         .feature-icon { transition: transform 0.3s ease; }
+        .feature-card:hover .feature-icon { transform: scale(1.08) rotate(3deg); }
 
         @keyframes pulse-grow { 0% { transform: scale(1); } 100% { transform: scale(1.25); } }
         @keyframes rotate-tilt { 0% { transform: rotate(0deg); } 100% { transform: rotate(30deg); } }
         @keyframes bounce-up { 0% { transform: translateY(0); } 100% { transform: translateY(-7px); } }
         @keyframes slide-right { 0% { transform: translateX(0); } 100% { transform: translateX(6px); } }
         @keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200 shadow-sm transition-all">
+    <header class="sticky top-0 z-45 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo -->
@@ -104,59 +117,148 @@
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
                         <i class="fa-solid font-bold text-xl fa-screwdriver-wrench"></i>
                     </div>
-                    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900">
+                    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
                         File<span class="text-brand-600">Works</span>
                     </span>
                 </a>
 
                 <!-- Desktop Nav Navigation -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                    <a href="#tools" class="hover:text-brand-600 transition-colors">All Tools</a>
-                    <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
-                    <a href="#features" class="hover:text-brand-600 transition-colors">Why Choose Us</a>
+                <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
+                    <!-- Tools Dropdown -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors focus:outline-none">
+                            <span>Tools</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-72 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="space-y-1">
+                                <a href="tools/json-formatter.html" class="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 transition-colors">JSON Formatter</a>
+                                <a href="tools/url-encoder.html" class="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 transition-colors">URL Encoder / Decoder</a>
+                                <a href="tools/password-generator.html" class="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 transition-colors">Password Generator</a>
+                                <a href="tools/pdf-merger.html" class="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 transition-colors">PDF Merger</a>
+                                <a href="tools/image-compressor.html" class="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 transition-colors">Image Compressor</a>
+                            </div>
+                            <div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
+                                <a href="#tools" class="block px-3 py-1.5 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline">View All Tools →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Dropdown -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors focus:outline-none">
+                            <span>Solutions</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-60 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="space-y-1 text-xs font-medium">
+                                <a href="#tools" onclick="filterCategory(null, 'developer')" class="block px-3 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Developers</a>
+                                <a href="#tools" onclick="filterCategory(null, 'pdf')" class="block px-3 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Students</a>
+                                <a href="#tools" onclick="filterCategory(null, 'seo')" class="block px-3 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Marketers</a>
+                                <a href="#tools" onclick="filterCategory(null, 'pdf')" class="block px-3 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Professionals</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
                 </nav>
 
-                <!-- Action Button -->
-                <div class="hidden md:flex items-center gap-4">
-                    <button onclick="focusSearch()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium border border-slate-200 transition-all flex items-center gap-2 group">
+                <!-- Action Buttons: Favorites, Search, Theme -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openFavoritesModal()" aria-label="View Saved Favorites" class="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm border border-slate-200 dark:border-slate-700 transition-all">
+                        <i class="fa-solid fa-star text-amber-500"></i>
+                        <span id="favBadge" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-600 text-white text-[10px] font-bold flex items-center justify-center hidden">0</span>
+                    </button>
+
+                    <button onclick="openCommandPalette()" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-2 group">
                         <i class="fa-solid fa-magnifying-glass text-slate-400 group-hover:text-brand-600 transition-colors"></i>
-                        <span>Search Tools</span>
-                        <kbd class="ml-2 px-1.5 py-0.5 text-xs bg-white text-slate-500 rounded border border-slate-200 shadow-sm">⌘K</kbd>
+                        <span>Search</span>
+                        <kbd class="ml-1.5 px-1.5 py-0.5 text-xs bg-white dark:bg-slate-900 text-slate-500 rounded border border-slate-200 dark:border-slate-700 shadow-sm">⌘K</kbd>
+                    </button>
+
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition-all">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline text-amber-400"></i>
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
-            <a href="#tools" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">All Tools</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">About</a>
-            <a href="#features" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">Why Choose Us</a>
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-3">
+            <button onclick="openCommandPalette(); toggleMobileMenu();" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass"></i> Search Tools (⌘K)
+            </button>
+            <button onclick="openFavoritesModal(); toggleMobileMenu();" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium flex items-center gap-2">
+                <i class="fa-solid fa-star text-amber-500"></i> Saved Favorites
+            </button>
+            <a href="#tools" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 font-medium">All Tools</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 font-medium">About</a>
+            <div class="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">
+                <span class="text-xs text-slate-500">Switch Theme</span>
+                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold">Toggle Mode</button>
+            </div>
         </div>
     </header>
+
+    <!-- Command Palette Modal -->
+    <div id="commandPalette" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden transform transition-all">
+            <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center gap-3">
+                <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                <input type="text" id="paletteInput" placeholder="Type a tool name or keyword..." class="w-full bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none text-base">
+                <button onclick="closeCommandPalette()" class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 font-semibold">ESC</button>
+            </div>
+            <div id="paletteResults" class="max-h-96 overflow-y-auto p-3 space-y-1">
+                <!-- Dynamically populated search results -->
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 flex justify-between items-center">
+                <span>Navigate with search or click tool</span>
+                <span>FileWorks Utility Hub</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div id="favoritesModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center px-4">
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
+            <div class="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-star text-amber-500"></i> Saved Favorites
+                </h3>
+                <button onclick="closeFavoritesModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div id="favoritesList" class="p-5 max-h-80 overflow-y-auto space-y-3">
+                <!-- Dynamically injected favorites -->
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-gradient-to-b from-blue-50/50 via-slate-50 to-slate-50">
+        <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-gradient-to-b from-blue-50/50 dark:from-slate-800/40 via-slate-50 dark:via-slate-900 to-slate-50 dark:to-slate-900">
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
             <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
-                    100% Free & Unlimited
+                    100% Free Browser Toolkit
                 </div>
 
-                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
-                    Free Online <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">Utility, Dev & SEO Tools</span>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
+                    Free Online. <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">Utility, Dev & SEO Tools.</span>
                 </h1>
 
-                <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
                     Fast, secure, browser-based developers utilities, SEO tools, and file converters. Processing happens right in your device — ensuring maximum speed and privacy.
                 </p>
 
@@ -170,9 +272,9 @@
                             type="text" 
                             id="searchInput" 
                             placeholder="Search tools (e.g. json, url encoder, password, word counter)..." 
-                            class="w-full pl-11 pr-12 py-4 rounded-2xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-base sm:text-lg shadow-md shadow-slate-200/50 transition-all"
+                            class="w-full pl-11 pr-12 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-base sm:text-lg shadow-md shadow-slate-200/50 dark:shadow-none transition-all"
                         >
-                        <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 transition-colors">
+                        <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
                             <i class="fa-solid fa-xmark text-lg"></i>
                         </button>
                     </div>
@@ -181,330 +283,454 @@
                 <!-- Category Quick Filters -->
                 <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
                     <button onclick="filterCategory(event, 'all')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-brand-600 text-white shadow-sm transition-all">All Tools</button>
-                    <button onclick="filterCategory(event, 'developer')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all shadow-sm">Developer Tools</button>
-                    <button onclick="filterCategory(event, 'seo')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all shadow-sm">SEO Tools</button>
-                    <button onclick="filterCategory(event, 'pdf')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all shadow-sm">PDF Tools</button>
-                    <button onclick="filterCategory(event, 'image')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all shadow-sm">Images & Media</button>
+                    <button onclick="filterCategory(event, 'developer')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all shadow-sm">Developer</button>
+                    <button onclick="filterCategory(event, 'seo')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all shadow-sm">SEO & Content</button>
+                    <button onclick="filterCategory(event, 'pdf')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all shadow-sm">PDF</button>
+                    <button onclick="filterCategory(event, 'image')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all shadow-sm">Images & Media</button>
+                    <button onclick="filterCategory(event, 'text')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all shadow-sm">Text</button>
                 </div>
             </div>
         </section>
 
+        <!-- Trust Indicators -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                    <span class="text-xs font-semibold text-slate-700 dark:text-slate-200">Privacy-conscious workflows</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bolt text-brand-500"></i>
+                    <span class="text-xs font-semibold text-slate-700 dark:text-slate-200">Fast processing</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-xmark text-rose-500"></i>
+                    <span class="text-xs font-semibold text-slate-700 dark:text-slate-200">No unnecessary sign-up</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check text-cyan-500"></i>
+                    <span class="text-xs font-semibold text-slate-700 dark:text-slate-200">Free utilities</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently Used Section (Conditional) -->
+        <section id="recentSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white">Recently Used Tools</h3>
+                <button onclick="clearRecentTools()" class="text-xs text-slate-500 hover:text-brand-600">Clear History</button>
+            </div>
+            <div id="recentGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <!-- Dynamically injected recent tools -->
+            </div>
+        </section>
+
         <!-- Tools Directory Section -->
-        <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+        <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                 <div>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900">Popular Tools</h2>
-                    <p class="text-slate-600 text-sm mt-1">Select a utility tool below to start processing your files and data.</p>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">All Utility Tools</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Select a tool below to start processing your content securely.</p>
                 </div>
-                <span id="toolCount" class="text-xs font-semibold px-3 py-1 bg-white border border-slate-200 rounded-full text-slate-600 shadow-sm">
-                    Showing 18 Tools
+                <span id="toolCount" class="text-xs font-semibold px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 shadow-sm">
+                    Showing Tools
                 </span>
             </div>
 
             <!-- Grid Container -->
             <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- NEW ADDED TOOL 1: URL Encoder / Decoder -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-amber-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/15 flex flex-col justify-between shadow-sm" data-title="url encoder decoder percent encode decode web developer" data-category="developer text">
+                <!-- TOOL 1: URL Encoder / Decoder -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="url-encoder" data-title="url encoder decoder percent encode decode web developer" data-category="developer text">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-amber-100/80 transition-all">
-                            <i class="fa-solid fa-link"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 text-amber-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                            <button onclick="toggleFavorite('url-encoder', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="url-encoder">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">URL Encoder / Decoder</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">URL Encoder / Decoder</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Safely encode special characters or decode URL strings instantly for web development.
                         </p>
                     </div>
-                    <a href="tools/url-encoder.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/url-encoder.html" onclick="recordToolUsage('URL Encoder / Decoder', 'tools/url-encoder.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- NEW ADDED TOOL 2: Password Generator -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-emerald-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/15 flex flex-col justify-between shadow-sm" data-title="password generator strong secure random passwords developer utility" data-category="developer text">
+                <!-- TOOL 2: Password Generator -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="password-generator" data-title="password generator strong secure random passwords developer utility" data-category="developer text security">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-emerald-100/80 transition-all">
-                            <i class="fa-solid fa-key"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <button onclick="toggleFavorite('password-generator', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="password-generator">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Password Generator</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Password Generator</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Generate strong, cryptographically secure random passwords with custom parameters.
                         </p>
                     </div>
-                    <a href="tools/password-generator.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/password-generator.html" onclick="recordToolUsage('Password Generator', 'tools/password-generator.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- NEW ADDED TOOL 3: Hash Generator -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-purple-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/15 flex flex-col justify-between shadow-sm" data-title="hash generator md5 sha256 sha512 encryption crypto developer" data-category="developer text">
+                <!-- TOOL 3: Hash Generator -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-purple-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="hash-generator" data-title="hash generator md5 sha256 sha512 encryption crypto developer" data-category="developer text">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 text-purple-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-purple-100/80 transition-all">
-                            <i class="fa-solid fa-fingerprint"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-900 text-purple-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <button onclick="toggleFavorite('hash-generator', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="hash-generator">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Hash Generator</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Hash Generator</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Compute MD5, SHA-256, and SHA-512 cryptographic hashes from any text input securely.
                         </p>
                     </div>
-                    <a href="tools/hash-generator.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/hash-generator.html" onclick="recordToolUsage('Hash Generator', 'tools/hash-generator.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- SEO TOOL: Word & Character Counter -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-pink-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-pink-500/15 flex flex-col justify-between shadow-sm" data-title="word counter character counter reading time seo" data-category="seo text">
+                <!-- TOOL 4: Word & Character Counter -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-pink-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="word-counter" data-title="word counter character counter reading time seo" data-category="seo text">
                     <div>
-                        <div class="tool-icon seo-icon w-12 h-12 rounded-xl bg-pink-50 border border-pink-100 text-pink-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-pink-100/80 transition-all">
-                            <i class="fa-solid fa-keyboard"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon seo-icon w-12 h-12 rounded-xl bg-pink-50 dark:bg-pink-950/50 border border-pink-100 dark:border-pink-900 text-pink-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-keyboard"></i>
+                            </div>
+                            <button onclick="toggleFavorite('word-counter', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="word-counter">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Word & Char Counter</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Word & Char Counter</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Instantly count words, characters, and estimate reading time for SEO content writing.
                         </p>
                     </div>
-                    <a href="tools/word-counter.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/word-counter.html" onclick="recordToolUsage('Word Counter', 'tools/word-counter.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- DEV TOOL: JSON Formatter -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-lime-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-lime-500/15 flex flex-col justify-between shadow-sm" data-title="json formatter validator beautify format code developer" data-category="developer text">
+                <!-- TOOL 5: JSON Formatter -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-lime-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="json-formatter" data-title="json formatter validator beautify format code developer" data-category="developer text">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-lime-50 border border-lime-100 text-lime-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-lime-100/80 transition-all">
-                            <i class="fa-solid fa-code"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-lime-50 dark:bg-lime-950/50 border border-lime-100 dark:border-lime-900 text-lime-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <button onclick="toggleFavorite('json-formatter', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="json-formatter">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">JSON Formatter</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">JSON Formatter</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Clean, beautify, and validate raw JSON data into a readable and formatted structure instantly.
                         </p>
                     </div>
-                    <a href="tools/json-formatter.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/json-formatter.html" onclick="recordToolUsage('JSON Formatter', 'tools/json-formatter.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- SEO TOOL: Meta Tag Generator -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-fuchsia-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-fuchsia-500/15 flex flex-col justify-between shadow-sm" data-title="meta tag generator seo open graph twitter cards website" data-category="seo developer">
+                <!-- TOOL 6: Meta Tag Generator -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-fuchsia-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="meta-tag-generator" data-title="meta tag generator seo open graph twitter cards website" data-category="seo developer">
                     <div>
-                        <div class="tool-icon seo-icon w-12 h-12 rounded-xl bg-fuchsia-50 border border-fuchsia-100 text-fuchsia-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-fuchsia-100/80 transition-all">
-                            <i class="fa-solid fa-tags"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon seo-icon w-12 h-12 rounded-xl bg-fuchsia-50 dark:bg-fuchsia-950/50 border border-fuchsia-100 dark:border-fuchsia-900 text-fuchsia-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <button onclick="toggleFavorite('meta-tag-generator', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="meta-tag-generator">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Meta Tag Generator</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Meta Tag Generator</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Generate perfect Google and Social Media (Open Graph) meta tags for your website SEO.
                         </p>
                     </div>
-                    <a href="tools/meta-tag-generator.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/meta-tag-generator.html" onclick="recordToolUsage('Meta Tag Generator', 'tools/meta-tag-generator.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- DEV TOOL: Base64 Encoder/Decoder -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-slate-800 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-500/15 flex flex-col justify-between shadow-sm" data-title="base64 encoder decoder text image encode decode developer" data-category="developer text">
+                <!-- TOOL 7: Base64 Encoder -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-800 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="base64-encoder" data-title="base64 encoder decoder text image encode decode developer" data-category="developer text">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-slate-200/80 transition-all">
-                            <i class="fa-solid fa-shield-halved"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <button onclick="toggleFavorite('base64-encoder', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="base64-encoder">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Base64 Encoder</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Base64 Encoder</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Quickly encode or decode text and strings into Base64 format for safe web transmission.
                         </p>
                     </div>
-                    <a href="tools/base64-encoder.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/base64-encoder.html" onclick="recordToolUsage('Base64 Encoder', 'tools/base64-encoder.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- DEV TOOL: Color Picker & Palette -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-red-400 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/15 flex flex-col justify-between shadow-sm" data-title="color picker palette hex rgb hsl generator css developer design" data-category="developer image">
+                <!-- TOOL 8: Color Picker -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-red-400 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="color-picker" data-title="color picker palette hex rgb hsl generator css developer design" data-category="developer image">
                     <div>
-                        <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-red-50 border border-red-100 text-red-500 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-red-100/80 transition-all">
-                            <i class="fa-solid fa-palette"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon dev-icon w-12 h-12 rounded-xl bg-red-50 dark:bg-red-950/50 border border-red-100 dark:border-red-900 text-red-500 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <button onclick="toggleFavorite('color-picker', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="color-picker">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Color Picker</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Color Picker</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Generate beautiful color palettes and instantly copy HEX, RGB, and HSL codes for UI design.
                         </p>
                     </div>
-                    <a href="tools/color-picker.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/color-picker.html" onclick="recordToolUsage('Color Picker', 'tools/color-picker.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: Image Compressor -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-brand-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-500/15 flex flex-col justify-between shadow-sm" data-title="image compressor compress photo reduce size jpg png webp" data-category="image">
+                <!-- TOOL 9: Image Compressor -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="image-compressor" data-title="image compressor compress photo reduce size jpg png webp" data-category="image">
                     <div>
-                        <div class="tool-icon compressor-icon w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-4 group-hover:scale-105 group-hover:bg-blue-100/80 transition-all">
-                            <i class="fa-solid fa-file-image text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon compressor-icon w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 flex items-center justify-center text-blue-600 group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-file-image text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('image-compressor', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="image-compressor">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Image Compressor</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Image Compressor</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Reduce image file sizes (JPG, PNG, WEBP) dramatically while maintaining visual quality.
                         </p>
                     </div>
-                    <a href="tools/image-compressor.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/image-compressor.html" onclick="recordToolUsage('Image Compressor', 'tools/image-compressor.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: Image Editor -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/15 flex flex-col justify-between shadow-sm" data-title="image editor photo editor crop resize" data-category="image">
+                <!-- TOOL 10: Image Editor -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="image-editor" data-title="image editor photo editor crop resize" data-category="image">
                     <div>
-                        <div class="tool-icon editor-icon w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-indigo-100/80 transition-all">
-                            <i class="fa-solid fa-sliders"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon editor-icon w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-100 dark:border-indigo-900 text-indigo-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <button onclick="toggleFavorite('image-editor', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="image-editor">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Image Editor</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Image Editor</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Crop, rotate, adjust brightness, apply filters, and make quick edits to photos online.
                         </p>
                     </div>
-                    <a href="tools/image-editor.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/image-editor.html" onclick="recordToolUsage('Image Editor', 'tools/image-editor.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: OCR Text Extractor -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-cyan-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/15 flex flex-col justify-between shadow-sm" data-title="ocr text extractor extract text image scanner photo read text" data-category="scanner pdf image">
+                <!-- TOOL 11: OCR Text Extractor -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-cyan-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="cam-ocr" data-title="ocr text extractor extract text image scanner photo read text" data-category="scanner pdf image">
                     <div>
-                        <div class="tool-icon ocr-icon w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 text-cyan-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-cyan-100/80 transition-all">
-                            <i class="fa-solid fa-font text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon ocr-icon w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-100 dark:border-cyan-900 text-cyan-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-font text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('cam-ocr', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="cam-ocr">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">OCR Text Extractor</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">OCR Text Extractor</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Extract text automatically from scanned documents, photos, or forms using AI OCR.
                         </p>
                     </div>
-                    <a href="tools/cam-ocr.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/cam-ocr.html" onclick="recordToolUsage('OCR Text Extractor', 'tools/cam-ocr.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: CamScanner & Document Enhancer -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-teal-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/15 flex flex-col justify-between shadow-sm" data-title="document enhancer scanner magic color black white scan paper photo" data-category="scanner image">
+                <!-- TOOL 12: Doc Enhancer -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-teal-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="cam-enhancer" data-title="document enhancer scanner magic color black white scan paper photo" data-category="scanner image">
                     <div>
-                        <div class="tool-icon enhancer-icon w-12 h-12 rounded-xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-teal-100/80 transition-all">
-                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon enhancer-icon w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/50 border border-teal-100 dark:border-teal-900 text-teal-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('cam-enhancer', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="cam-enhancer">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Doc Enhancer & Filter</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Doc Enhancer & Filter</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Clean up scanned documents with Magic Color, B&W filters, and contrast enhancement.
                         </p>
                     </div>
-                    <a href="tools/cam-enhancer.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/cam-enhancer.html" onclick="recordToolUsage('Doc Enhancer', 'tools/cam-enhancer.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: E-Sign Document Pad -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-violet-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-500/15 flex flex-col justify-between shadow-sm" data-title="electronic signature esign sign document pdf signature draw sign" data-category="scanner pdf">
+                <!-- TOOL 13: E-Sign PDF -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-violet-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="esign-pdf" data-title="electronic signature esign sign document pdf signature draw sign" data-category="scanner pdf security">
                     <div>
-                        <div class="tool-icon esign-icon w-12 h-12 rounded-xl bg-violet-50 border border-violet-100 text-violet-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-violet-100/80 transition-all">
-                            <i class="fa-solid fa-signature text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon esign-icon w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/50 border border-violet-100 dark:border-violet-900 text-violet-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-signature text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('esign-pdf', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="esign-pdf">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">E-Sign PDF Pad</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">E-Sign PDF Pad</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Draw electronic signatures on touchscreens/mouse and overlay onto PDFs or documents.
                         </p>
                     </div>
-                    <a href="tools/esign-pdf.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/esign-pdf.html" onclick="recordToolUsage('E-Sign PDF', 'tools/esign-pdf.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: PDF Merger -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-sky-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-500/15 flex flex-col justify-between shadow-sm" data-title="pdf merger pdf split combine pdf files join pages" data-category="pdf converter">
+                <!-- TOOL 14: PDF Merger -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-sky-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="pdf-merger" data-title="pdf merger pdf split combine pdf files join pages" data-category="pdf converter">
                     <div>
-                        <div class="tool-icon merger-icon w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 text-sky-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-sky-100/80 transition-all">
-                            <i class="fa-solid fa-code-merge text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon merger-icon w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/50 border border-sky-100 dark:border-sky-900 text-sky-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-code-merge text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('pdf-merger', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="pdf-merger">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">PDF Merger</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">PDF Merger</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Combine multiple PDF files into one single organized PDF file instantly in your browser.
                         </p>
                     </div>
-                    <a href="tools/pdf-merger.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/pdf-merger.html" onclick="recordToolUsage('PDF Merger', 'tools/pdf-merger.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: PDF Watermark -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-orange-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/15 flex flex-col justify-between shadow-sm" data-title="pdf watermark stamp confidential watermark add text to pdf" data-category="pdf">
+                <!-- TOOL 15: PDF Watermark -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-orange-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="pdf-watermark" data-title="pdf watermark stamp confidential watermark add text to pdf" data-category="pdf">
                     <div>
-                        <div class="tool-icon watermark-icon w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 text-orange-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-orange-100/80 transition-all">
-                            <i class="fa-solid fa-stamp text-xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon watermark-icon w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/50 border border-orange-100 dark:border-orange-900 text-orange-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-stamp text-xl"></i>
+                            </div>
+                            <button onclick="toggleFavorite('pdf-watermark', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="pdf-watermark">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">PDF Watermark</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">PDF Watermark</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Add custom text watermarks or official status stamps (CONFIDENTIAL/APPROVED) to PDFs.
                         </p>
                     </div>
-                    <a href="tools/pdf-watermark.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/pdf-watermark.html" onclick="recordToolUsage('PDF Watermark', 'tools/pdf-watermark.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: Image to PDF -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-emerald-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/15 flex flex-col justify-between shadow-sm" data-title="image to pdf converter jpg to pdf png to pdf" data-category="converter pdf image">
+                <!-- TOOL 16: Image to PDF -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="image-to-pdf" data-title="image to pdf converter jpg to pdf png to pdf" data-category="converter pdf image">
                     <div>
-                        <div class="tool-icon img-pdf-icon w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-emerald-100/80 transition-all">
-                            <i class="fa-solid fa-file-pdf"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon img-pdf-icon w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <button onclick="toggleFavorite('image-to-pdf', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="image-to-pdf">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Image-to-PDF</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">Image-to-PDF</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Convert multiple images (JPG, PNG, WEBP) into a single, clean PDF document instantly.
                         </p>
                     </div>
-                    <a href="tools/image-to-pdf.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/image-to-pdf.html" onclick="recordToolUsage('Image-to-PDF', 'tools/image-to-pdf.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: PDF to Image -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-amber-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/15 flex flex-col justify-between shadow-sm" data-title="pdf to image pdf to jpg pdf to png converter" data-category="converter pdf image">
+                <!-- TOOL 17: PDF to Image -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="pdf-to-image" data-title="pdf to image pdf to jpg pdf to png converter" data-category="converter pdf image">
                     <div>
-                        <div class="tool-icon pdf-img-icon w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-amber-100/80 transition-all">
-                            <i class="fa-solid fa-file-export"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon pdf-img-icon w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 text-amber-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-file-export"></i>
+                            </div>
+                            <button onclick="toggleFavorite('pdf-to-image', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="pdf-to-image">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">PDF-to-Image</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">PDF-to-Image</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Convert PDF pages into high-resolution JPG or PNG images with a single click.
                         </p>
                     </div>
-                    <a href="tools/pdf-to-image.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/pdf-to-image.html" onclick="recordToolUsage('PDF-to-Image', 'tools/pdf-to-image.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Existing Tool: PDF Extractor -->
-                <div class="tool-card group bg-white border border-slate-200 hover:border-rose-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/15 flex flex-col justify-between shadow-sm" data-title="pdf extractor extract pdf pages text images" data-category="pdf">
+                <!-- TOOL 18: PDF Extractor -->
+                <div class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-rose-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm" data-id="pdf-extractor" data-title="pdf extractor extract pdf pages text images" data-category="pdf">
                     <div>
-                        <div class="tool-icon extractor-icon w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4 group-hover:scale-105 group-hover:bg-rose-100/80 transition-all">
-                            <i class="fa-solid fa-boxes-packing"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="tool-icon extractor-icon w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950/50 border border-rose-100 dark:border-rose-900 text-rose-600 flex items-center justify-center text-xl group-hover:scale-105 transition-all">
+                                <i class="fa-solid fa-boxes-packing"></i>
+                            </div>
+                            <button onclick="toggleFavorite('pdf-extractor', event)" aria-label="Favorite" class="text-slate-300 dark:text-slate-600 hover:text-amber-500 text-lg fav-btn" data-toolid="pdf-extractor">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">PDF Extractor</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 transition-colors">PDF Extractor</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                             Extract specific pages, embedded images, or raw text directly out of any PDF document.
                         </p>
                     </div>
-                    <a href="tools/pdf-extractor.html" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-600 text-slate-700 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
+                    <a href="tools/pdf-extractor.html" onclick="recordToolUsage('PDF Extractor', 'tools/pdf-extractor.html')" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm">
                         <span>Open Tool</span>
                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
@@ -514,110 +740,359 @@
 
             <!-- Empty Search State -->
             <div id="noResults" class="hidden text-center py-16">
-                <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mx-auto text-slate-400 text-2xl mb-4 border border-slate-200">
+                <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto text-slate-400 text-2xl mb-4 border border-slate-200 dark:border-slate-700">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-1">No tools matched your search</h3>
-                <p class="text-slate-500 text-sm mb-6">Try searching for alternative keywords like "JSON", "SEO", "PDF", or "Compress".</p>
-                <button onclick="clearSearchInput()" class="px-4 py-2 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-brand-600 transition-colors shadow-sm">
-                    Reset Search
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">No tools matched your search</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Try searching for alternative keywords like "JSON", "SEO", "PDF", or "Compress", or select a category filter above.</p>
+                <button onclick="clearSearchInput()" class="px-4 py-2 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold text-brand-600 dark:text-brand-400 transition-colors shadow-sm">
+                    Reset Search & Filters
                 </button>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900">Why Use FileWorks?</h2>
-                <p class="text-slate-600 text-sm max-w-xl mx-auto mt-2">Designed with privacy, SEO accessibility, and efficiency in mind.</p>
+        <!-- ========================================================== -->
+        <!-- REDESIGNED, ADVANCED ABOUT US SECTION                       -->
+        <!-- ========================================================== -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">ABOUT FILEWORKS</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+                    Built to make everyday digital work simpler.
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+                    FileWorks is a collection of browser-based utility tools designed for developers, creators, students, marketers, and professionals—focused on making common digital tasks faster and simpler through practical everyday workflows.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="feature-card p-6 bg-white border border-slate-200 hover:border-emerald-300 rounded-2xl shadow-sm">
-                    <div class="feature-icon w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-shield-halved text-lg"></i>
+            <!-- Two-Column About Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+                <!-- Left Side: Interactive Platform Card -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-white dark:from-slate-800 to-slate-50 dark:to-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-lg relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
+                            <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white">FileWorks Platform</h3>
+                            <span class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Digital Utility Platform</span>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2">100% Private & Client-Side</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Your files never leave your browser. All transformations happen locally using WebAssembly and Web APIs.</p>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                        An integrated suite of browser utilities built to eliminate clutter and streamline repetitive online file management and formatting chores.
+                    </p>
+
+                    <!-- Category Chips -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Supported Categories</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-slate-700">Developer</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-slate-700">PDF</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-slate-700">Images</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-slate-700">SEO & Content</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-slate-700">Text</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="feature-card p-6 bg-white border border-slate-200 hover:border-brand-300 rounded-2xl shadow-sm">
-                    <div class="feature-icon w-10 h-10 rounded-lg bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-bolt text-lg"></i>
+                <!-- Right Side: Philosophy & Why FileWorks Exists -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm">
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                            One toolkit. Many everyday workflows.
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                            Many everyday digital tasks are unnecessarily fragmented across dozens of separate, ad-heavy websites and cumbersome standalone software applications. 
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            FileWorks aims to bring useful utilities into one organized, cohesive, and easy-to-use platform experience. By prioritizing clean layouts and straightforward interactions, we help you get your technical or document tasks done without unnecessary hurdles.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2">Lightning Fast</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">No upload delays, queue times, or bandwidth limits. Experience instant processing speeds for developers.</p>
+                </div>
+            </div>
+
+            <!-- Core Principles / Mission (3 or 4 Card Grid) -->
+            <div class="mb-20">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Our Approach & Principles</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">The core standards guiding every utility built into FileWorks.</p>
                 </div>
 
-                <div class="feature-card p-6 bg-white border border-slate-200 hover:border-purple-300 rounded-2xl shadow-sm">
-                    <div class="feature-icon w-10 h-10 rounded-lg bg-purple-50 text-purple-600 border border-purple-100 flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-infinity text-lg"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 01 -->
+                    <div class="feature-card bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-brand-600 flex items-center justify-center font-bold text-sm mb-4 border border-blue-100 dark:border-blue-900">
+                                01
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Simplicity</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Useful tools should be straightforward, focused and easy to understand.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2">Free Without Limits</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">No subscriptions, registration, or hidden file size restrictions. Free utility tools for everyone.</p>
+
+                    <!-- Card 02 -->
+                    <div class="feature-card bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center font-bold text-sm mb-4 border border-emerald-100 dark:border-emerald-900">
+                                02
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Privacy</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Where tools are designed for local browser processing, users can work with their content without unnecessary server-side handling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 03 -->
+                    <div class="feature-card bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 flex items-center justify-center font-bold text-sm mb-4 border border-purple-100 dark:border-purple-900">
+                                03
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Practicality</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Every tool should solve a clear, useful digital task.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 04 -->
+                    <div class="feature-card bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center font-bold text-sm mb-4 border border-amber-100 dark:border-amber-900">
+                                04
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Continuous Improvement</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                FileWorks is designed as an evolving toolkit, with new utilities and improvements added over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Focus On (Category breakdown linked to filtering) -->
+            <div class="mb-20">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">What We Focus On</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Core utility coverage available on the platform.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Developer Tools Category -->
+                    <div onclick="filterCategory(null, 'developer')" class="cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 shadow-sm transition-all group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors">Developer Tools</h4>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                            Includes JSON formatters, URL encoding, cryptographic hashing, Base64 converters, secure password generation, and color pickers.
+                        </p>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">Filter Developer Tools →</span>
+                    </div>
+
+                    <!-- PDF & Documents Category -->
+                    <div onclick="filterCategory(null, 'pdf')" class="cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 shadow-sm transition-all group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors">PDF & Documents</h4>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                            Includes merging multiple PDFs, adding watermarks, extracting pages or images, image-to-PDF converters, PDF-to-image exports, and e-sign pads.
+                        </p>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">Filter PDF Tools →</span>
+                    </div>
+
+                    <!-- Images & Media Category -->
+                    <div onclick="filterCategory(null, 'image')" class="cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 shadow-sm transition-all group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-file-image"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors">Images & Media</h4>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                            Includes image compression, photo cropping/editing, document scanners, and optical character recognition (OCR) text extraction.
+                        </p>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">Filter Image Tools →</span>
+                    </div>
+
+                    <!-- SEO & Content Category -->
+                    <div onclick="filterCategory(null, 'seo')" class="cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 shadow-sm transition-all group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-950/50 text-pink-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors">SEO & Content</h4>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                            Includes word counting, reading time estimation, and meta tag generators for web publishing and content optimization.
+                        </p>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">Filter SEO Tools →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who FileWorks Is For -->
+            <div class="mb-20">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Built for different kinds of work</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Tailored utility workflows designed for diverse professional backgrounds.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">Developers</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">For coding, data formatting, encoding and technical workflows.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">Students</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">For documents, writing, PDFs and everyday academic tasks.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">Creators & Marketers</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">For content, images, SEO and publishing workflows.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">Professionals</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">For documents, PDFs, signatures and productivity tasks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How We Think About Tools Block -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-20 relative overflow-hidden shadow-xl">
+                <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="max-w-3xl relative z-10">
+                    <span class="text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">DESIGN PHILOSOPHY</span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-6">"Good tools should get out of the way."</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        We believe utility software should be frictionless. FileWorks is engineered around clear interfaces, focused workflows, minimal distraction, useful defaults, fully responsive experiences, solid accessibility, and privacy-conscious design.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs">Clear interfaces</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs">Minimal friction</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs">Responsive & Accessible</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs">Privacy-conscious design</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Highlights Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span id="dynamicHighlightCount" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">18+ Tools</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Active Utilities</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">5 Categories</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Organized Workflows</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">Browser-Based</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Client-Side Processing</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">No Sign-Up</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Instant Access</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">How FileWorks Works</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm max-w-xl mx-auto mt-2">Simple, secure, client-side browser workflow.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl mb-3 block">01</span>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Choose a tool</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm">Select any developer utility, converter, or PDF tool instantly.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl mb-3 block">02</span>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Process your content</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm">Data processing occurs directly inside your browser environment.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl mb-3 block">03</span>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Get your result</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm">Download your processed files or copy outputs instantly.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEO Content Section -->
-        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200">
-            <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm">
-                <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4">All-In-One Web Utility, SEO & Developer Platform</h2>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-                    Fileworks provides a seamless suite of web utilities engineered to streamline digital workflows. Whether you need to format JSON code, calculate SEO keyword density, extract text via OCR, or merge PDF documents, our platform delivers high-end tools right in your browser.
-                </p>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Designed for students, software developers, digital marketers, and professionals, our browser-native architecture ensures your confidential data and proprietary code remain 100% private on your computer.
-                </p>
+        <!-- Final CTA -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <div class="bg-gradient-to-r from-brand-600 to-indigo-600 rounded-3xl p-10 sm:p-14 text-white shadow-xl">
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-4">Ready to get more done?</h2>
+                <p class="text-brand-100 text-base sm:text-lg max-w-xl mx-auto mb-8">Explore the FileWorks toolkit and speed up your daily workflows.</p>
+                <button onclick="focusSearch()" class="px-8 py-4 rounded-2xl bg-white text-brand-600 font-bold hover:bg-brand-50 transition-colors shadow-lg">
+                    Explore All Tools
+                </button>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-auto">
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 
                 <div class="md:col-span-2">
                     <a href="index.html" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
                             <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
-                        <span class="font-heading font-bold text-xl text-slate-900">Fileworks</span>
+                        <span class="font-heading font-bold text-xl text-slate-900 dark:text-white">Fileworks</span>
                     </a>
-                    <p class="text-slate-600 text-sm max-w-sm mb-4 leading-relaxed">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm max-w-sm mb-4 leading-relaxed">
                         Fast, secure, browser-native file converters, web development utilities, and SEO tools.
                     </p>
                     <p class="text-xs text-slate-500">© 2026 FileWorks. All rights reserved.</p>
                 </div>
 
                 <div>
-                    <h4 class="font-heading text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Quick Links</h4>
+                    <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Product</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="#tools" class="text-slate-600 hover:text-brand-600 transition-colors">Tools Directory</a></li>
-                        <li><a href="#about" class="text-slate-600 hover:text-brand-600 transition-colors">About Us</a></li>
-                        <li><a href="#features" class="text-slate-600 hover:text-brand-600 transition-colors">Features</a></li>
+                        <li><a href="#tools" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">All Tools</a></li>
+                        <li><a href="tools/json-formatter.html" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">Developer Tools</a></li>
+                        <li><a href="tools/pdf-merger.html" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">PDF Tools</a></li>
+                        <li><a href="tools/image-compressor.html" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">Images & Media</a></li>
+                        <li><a href="tools/word-counter.html" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">SEO & Content</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-heading text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Popular Tools</h4>
+                    <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Company</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="tools/url-encoder.html" class="text-slate-600 hover:text-brand-600 transition-colors">URL Encoder / Decoder</a></li>
-                        <li><a href="tools/password-generator.html" class="text-slate-600 hover:text-brand-600 transition-colors">Password Generator</a></li>
-                        <li><a href="tools/json-formatter.html" class="text-slate-600 hover:text-brand-600 transition-colors">JSON Formatter</a></li>
-                        <li><a href="tools/word-counter.html" class="text-slate-600 hover:text-brand-600 transition-colors">SEO Word Counter</a></li>
-                        <li><a href="tools/image-compressor.html" class="text-slate-600 hover:text-brand-600 transition-colors">Image Compressor</a></li>
+                        <li><a href="#about" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">About</a></li>
+                        <li><a href="mailto:support@fileworks-beta.vercel.app" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">Contact</a></li>
+                        <li><span class="text-slate-400 dark:text-slate-500 text-xs italic">Privacy Policy (Not Implemented)</span></li>
+                        <li><span class="text-slate-400 dark:text-slate-500 text-xs italic">Terms of Service (Not Implemented)</span></li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <p>Designed for speed, accessibility, and user privacy.</p>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-slate-800 transition-colors">Terms of Service</a>
+                    <span class="text-slate-400 dark:text-slate-500 italic">Privacy Policy & Terms of Service are currently unavailable.</span>
                 </div>
             </div>
         </div>
@@ -630,27 +1105,99 @@
         const toolCards = document.querySelectorAll('.tool-card');
         const noResults = document.getElementById('noResults');
         const toolCount = document.getElementById('toolCount');
+        const dynamicHighlightCount = document.getElementById('dynamicHighlightCount');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
+        const commandPalette = document.getElementById('commandPalette');
+        const paletteInput = document.getElementById('paletteInput');
+        const paletteResults = document.getElementById('paletteResults');
+        const favoritesModal = document.getElementById('favoritesModal');
+        const favoritesList = document.getElementById('favoritesList');
+        const favBadge = document.getElementById('favBadge');
+        const recentSection = document.getElementById('recentSection');
+        const recentGrid = document.getElementById('recentGrid');
 
+        let currentActiveCategory = 'all';
+
+        // Theme Setup
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // Mobile Menu Toggle
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('hidden');
         }
 
         function focusSearch() {
             searchInput.focus();
-            window.scrollTo({ top: searchInput.offsetTop - 100, behavior: 'smooth' });
+            window.scrollTo({ top: searchInput.offsetTop - 120, behavior: 'smooth' });
         }
 
+        // Keyboard Shortcuts (Cmd+K / Ctrl+K & Esc)
         document.addEventListener('keydown', (e) => {
             if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
                 e.preventDefault();
-                focusSearch();
+                openCommandPalette();
+            }
+            if (e.key === 'Escape') {
+                closeCommandPalette();
+                closeFavoritesModal();
             }
         });
 
+        // Command Palette
+        function openCommandPalette() {
+            commandPalette.classList.remove('hidden');
+            paletteInput.focus();
+            renderPaletteResults('');
+        }
+
+        function closeCommandPalette() {
+            commandPalette.classList.add('hidden');
+        }
+
+        paletteInput.addEventListener('input', (e) => {
+            renderPaletteResults(e.target.value.toLowerCase().trim());
+        });
+
+        function renderPaletteResults(query) {
+            paletteResults.innerHTML = '';
+            let matches = 0;
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent;
+                const desc = card.querySelector('p').textContent;
+                const link = card.querySelector('a').getAttribute('href');
+                const titleAttr = card.getAttribute('data-title');
+
+                if (!query || title.toLowerCase().includes(query) || titleAttr.includes(query)) {
+                    matches++;
+                    const item = document.createElement('a');
+                    item.href = link;
+                    item.className = 'block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors';
+                    item.innerHTML = `<div class="font-bold text-sm text-slate-900 dark:text-white">${title}</div><div class="text-xs text-slate-500 truncate">${desc}</div>`;
+                    paletteResults.appendChild(item);
+                }
+            });
+            if (matches === 0) {
+                paletteResults.innerHTML = '<div class="p-4 text-center text-sm text-slate-500">No matching tools found.</div>';
+            }
+        }
+
+        // Search & Filter Integration
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
             if (query.length > 0) {
@@ -658,56 +1205,50 @@
             } else {
                 clearBtn.classList.add('hidden');
             }
-            filterTools(query);
+            applyUnifiedFilter();
         });
 
         function clearSearchInput() {
             searchInput.value = '';
             clearBtn.classList.add('hidden');
-            filterTools('');
+            applyUnifiedFilter();
             searchInput.focus();
         }
 
-        function filterTools(query) {
-            let visibleCount = 0;
-            toolCards.forEach(card => {
-                const title = card.getAttribute('data-title').toLowerCase();
-                if (title.includes(query)) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            toolCount.textContent = `Showing ${visibleCount} Tool${visibleCount === 1 ? '' : 's'}`;
-
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-            }
-        }
-
         function filterCategory(evt, category) {
+            currentActiveCategory = category;
             const categoryBtns = document.querySelectorAll('.cat-btn');
             categoryBtns.forEach(btn => {
                 btn.classList.remove('bg-brand-600', 'text-white');
-                btn.classList.add('bg-white', 'text-slate-600');
+                btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
             });
 
             if (evt && evt.currentTarget) {
-                evt.currentTarget.classList.remove('bg-white', 'text-slate-600');
+                evt.currentTarget.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
                 evt.currentTarget.classList.add('bg-brand-600', 'text-white');
+            } else {
+                // If triggered programmatically (e.g. from Solutions or What We Focus On), smoothly scroll to tools section
+                const toolsSection = document.getElementById('tools');
+                if (toolsSection) {
+                    toolsSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
 
-            searchInput.value = '';
-            clearBtn.classList.add('hidden');
+            applyUnifiedFilter();
+        }
 
+        function applyUnifiedFilter() {
+            const query = searchInput.value.toLowerCase().trim();
             let visibleCount = 0;
+
             toolCards.forEach(card => {
+                const titleAttr = card.getAttribute('data-title') || '';
                 const cardCat = card.getAttribute('data-category') || '';
-                if (category === 'all' || cardCat.includes(category)) {
+                
+                const matchesSearch = !query || titleAttr.includes(query);
+                const matchesCategory = currentActiveCategory === 'all' || cardCat.includes(currentActiveCategory);
+
+                if (matchesSearch && matchesCategory) {
                     card.classList.remove('hidden');
                     visibleCount++;
                 } else {
@@ -715,14 +1256,140 @@
                 }
             });
 
-            toolCount.textContent = `Showing ${visibleCount} Tool${visibleCount === 1 ? '' : 's'}`;
-            
+            const totalTools = toolCards.length;
+            toolCount.textContent = `Showing ${visibleCount} of ${totalTools} Tool${totalTools === 1 ? '' : 's'}`;
+            if (dynamicHighlightCount) {
+                dynamicHighlightCount.textContent = `${totalTools}+ Tools`;
+            }
+
             if (visibleCount === 0) {
                 noResults.classList.remove('hidden');
             } else {
                 noResults.classList.add('hidden');
             }
         }
+
+        // Favorites System
+        function getFavorites() {
+            try {
+                return JSON.parse(localStorage.getItem('fileworks_favorites')) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function toggleFavorite(toolId, event) {
+            event.preventDefault();
+            event.stopPropagation();
+            let favs = getFavorites();
+            if (favs.includes(toolId)) {
+                favs = favs.filter(id => id !== toolId);
+            } else {
+                favs.push(toolId);
+            }
+            try {
+                localStorage.setItem('fileworks_favorites', JSON.stringify(favs));
+            } catch {}
+            updateFavoritesUI();
+        }
+
+        function updateFavoritesUI() {
+            const favs = getFavorites();
+            if (favs.length > 0) {
+                favBadge.textContent = favs.length;
+                favBadge.classList.remove('hidden');
+            } else {
+                favBadge.classList.add('hidden');
+            }
+
+            document.querySelectorAll('.fav-btn').forEach(btn => {
+                const id = btn.getAttribute('data-toolid');
+                const icon = btn.querySelector('i');
+                if (favs.includes(id)) {
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid', 'text-amber-500');
+                } else {
+                    icon.classList.remove('text-amber-500');
+                    icon.classList.add('fa-solid');
+                }
+            });
+        }
+
+        function openFavoritesModal() {
+            favoritesModal.classList.remove('hidden');
+            renderFavoritesList();
+        }
+
+        function closeFavoritesModal() {
+            favoritesModal.classList.add('hidden');
+        }
+
+        function renderFavoritesList() {
+            const favs = getFavorites();
+            favoritesList.innerHTML = '';
+            if (favs.length === 0) {
+                favoritesList.innerHTML = `
+                    <div class="text-center py-6 text-slate-500">
+                        <p class="text-sm mb-3">You haven't saved any tools yet.</p>
+                        <button onclick="closeFavoritesModal(); focusSearch();" class="px-4 py-2 bg-brand-600 text-white rounded-xl text-xs font-semibold">Explore Tools</button>
+                    </div>`;
+                return;
+            }
+
+            toolCards.forEach(card => {
+                const id = card.getAttribute('data-id');
+                if (favs.includes(id)) {
+                    const title = card.querySelector('h3').textContent;
+                    const link = card.querySelector('a').getAttribute('href');
+                    const div = document.createElement('div');
+                    div.className = 'flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700';
+                    div.innerHTML = `<span class="font-medium text-sm text-slate-900 dark:text-white">${title}</span><a href="${link}" class="px-3 py-1.5 bg-brand-600 text-white rounded-lg text-xs font-semibold">Open</a>`;
+                    favoritesList.appendChild(div);
+                }
+            });
+        }
+
+        // Recently Used Tools
+        function recordToolUsage(name, url) {
+            try {
+                let recents = JSON.parse(localStorage.getItem('fileworks_recents')) || [];
+                recents = recents.filter(item => item.url !== url);
+                recents.unshift({ name, url, time: Date.now() });
+                if (recents.length > 6) recents.pop();
+                localStorage.setItem('fileworks_recents', JSON.stringify(recents));
+            } catch {}
+        }
+
+        function loadRecentTools() {
+            try {
+                const recents = JSON.parse(localStorage.getItem('fileworks_recents')) || [];
+                if (recents.length === 0) {
+                    recentSection.classList.add('hidden');
+                    return;
+                }
+                recentSection.classList.remove('hidden');
+                recentGrid.innerHTML = '';
+                recents.forEach(r => {
+                    const a = document.createElement('a');
+                    a.href = r.url;
+                    a.className = 'p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 text-center block text-xs font-semibold truncate shadow-sm';
+                    a.textContent = r.name;
+                    recentGrid.appendChild(a);
+                });
+            } catch {
+                recentSection.classList.add('hidden');
+            }
+        }
+
+        function clearRecentTools() {
+            localStorage.removeItem('fileworks_recents');
+            recentSection.classList.add('hidden');
+        }
+
+        // Initialize state on load
+        updateFavoritesUI();
+        loadRecentTools();
+        applyUnifiedFilter();
     </script>
 </body>
 </html>
