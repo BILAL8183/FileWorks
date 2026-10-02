@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Advanced SEO Meta Tags & Keyword Research Integration -->
+    <title>Free Online Image Compressor & Resizer - Reduce Image Size | FileWorks</title>
+    <meta name="title" content="Free Online Image Compressor & Resizer - Reduce Image Size | FileWorks">
+    <meta name="description" content="Compress and resize images online for free without losing quality. Easily resize JPG, PNG, WEBP files, adjust DPI, width, height, and compress image size instantly with 100% browser privacy.">
+    <meta name="keywords" content="image compressor, image resizer, reduce image size, compress jpg online, resize photo online, image dimension changer, webp converter, kb size reducer, change image resolution dpi, photo resizer tool">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FileWorks">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online Image Compressor & Resizer | FileWorks">
+    <meta property="og:description" content="Resize and compress photos in seconds directly in your browser. Fast, private, and precise size controls.">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FileWorks Image Compressor & Resizer",
+      "category": "MultimediaApplication",
+      "operatingSystem": "All",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "Free web-based tool to compress, resize, and convert image dimensions and formats securely.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom bracket connector connecting Width/Height to Unit dropdown */
+        .bracket-connector {
+            position: relative;
+        }
+        .bracket-connector::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            right: -16px;
+            width: 12px;
+            border-top: 2px solid #cbd5e1;
+            border-bottom: 2px solid #cbd5e1;
+            border-right: 2px solid #cbd5e1;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        .bracket-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -32px;
+            width: 16px;
+            height: 2px;
+            background-color: #cbd5e1;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-xl fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900">
+                        File<span class="text-brand-500">Works</span>
+                    </span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="../index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>Back to Tools
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-3xl mx-auto w-full px-4 sm:px-6 py-12">
+        
+        <!-- App Container -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
+            
+            <!-- Upload Area -->
+            <div id="uploadArea" class="border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-2xl p-12 text-center transition-colors cursor-pointer bg-slate-50/50 group relative">
+                <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                <i class="fa-solid fa-cloud-arrow-up text-5xl text-slate-400 group-hover:text-brand-500 mb-4 transition-colors"></i>
+                <h3 class="text-xl font-bold text-slate-900 mb-1">Click or drag image to upload</h3>
+                <p class="text-sm text-slate-500">Supports JPG, PNG, and WEBP</p>
+            </div>
+
+            <!-- Configuration & Options Workspace -->
+            <div id="workspaceArea" class="hidden space-y-8">
+                
+                <!-- Uploaded Image Info Header -->
+                <div class="flex flex-col sm:flex-row gap-6 items-center bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <div class="w-full sm:w-1/2 bg-slate-200/60 rounded-xl p-2 flex items-center justify-center min-h-[140px]">
+                        <img id="previewImage" class="max-h-36 object-contain rounded-lg" src="" alt="Preview">
+                    </div>
+                    <div class="w-full sm:w-1/2 space-y-2">
+                        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold">UPLOADED FILE INFO</p>
+                        <p id="originalFileName" class="text-slate-900 font-medium text-sm truncate">filename.jpg</p>
+                        <p id="originalSpecs" class="text-slate-500 text-sm">0 KB</p>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-bold font-heading text-slate-900">Choose new size and format</h2>
+
+                    <!-- Width / Height / Unit Group -->
+                    <div class="flex items-center gap-12">
+                        
+                        <!-- Inputs Column with Bracket -->
+                        <div class="bracket-connector space-y-4 relative w-48">
+                            <div class="flex items-center justify-between">
+                                <label class="text-slate-700 font-medium text-sm">Width</label>
+                                <input type="number" id="widthInput" value="70" class="w-24 bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-center text-slate-900 focus:outline-none focus:border-brand-500">
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <label class="text-slate-700 font-medium text-sm">Height</label>
+                                <input type="number" id="heightInput" value="70" class="w-24 bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-center text-slate-900 focus:outline-none focus:border-brand-500">
+                            </div>
+
+                            <!-- Lock Icon on Bracket -->
+                            <button id="lockAspectBtn" class="absolute -right-7 top-1/2 -translate-y-1/2 z-10 w-7 h-7 bg-brand-600 rounded-full flex items-center justify-center text-white text-xs shadow-md border border-white" title="Toggle Aspect Ratio Lock">
+                                <i class="fa-solid fa-lock" id="lockIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Unit Select Dropdown -->
+                        <div class="pl-4">
+                            <select id="unitSelect" class="bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-brand-500 cursor-pointer">
+                                <option value="percent">Percent</option>
+                                <option value="pixels">Pixels</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Resolution Row -->
+                    <div class="flex items-center gap-6">
+                        <label class="text-slate-700 font-medium text-sm w-20">Resolution</label>
+                        <div class="relative flex items-center">
+                            <input type="number" id="dpiInput" value="72" class="w-24 bg-white border border-slate-300 rounded-lg pl-3 pr-10 py-1.5 text-center text-slate-900 focus:outline-none focus:border-brand-500">
+                            <span class="absolute right-3 text-xs text-slate-400 font-medium pointer-events-none">DPI</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Options Row (Format, Quality, Background) -->
+                    <div class="flex flex-wrap items-end gap-8 pt-2">
+                        
+                        <!-- Format -->
+                        <div class="space-y-2">
+                            <label class="block text-slate-700 font-medium text-sm">Format</label>
+                            <select id="formatSelect" class="bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-1.5 text-sm focus:outline-none focus:border-brand-500 cursor-pointer">
+                                <option value="image/jpeg">JPG</option>
+                                <option value="image/png">PNG</option>
+                                <option value="image/webp">WEBP</option>
+                            </select>
+                        </div>
+
+                        <!-- Quality -->
+                        <div class="space-y-2">
+                            <label class="block text-slate-700 font-medium text-sm">Quality</label>
+                            <div class="relative flex items-center">
+                                <input type="number" id="qualityInput" min="10" max="100" value="90" class="w-24 bg-white border border-slate-300 rounded-lg pl-3 pr-7 py-1.5 text-center text-slate-900 focus:outline-none focus:border-brand-500">
+                                <span class="absolute right-3 text-xs text-slate-400 font-medium pointer-events-none">%</span>
+                            </div>
+                        </div>
+
+                        <!-- Background Options -->
+                        <div class="space-y-2">
+                            <label class="block text-slate-700 font-medium text-sm">Background</label>
+                            <div class="flex items-center gap-3 py-1">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="bgColor" value="#ffffff" checked class="hidden peer">
+                                    <span class="w-7 h-7 rounded-full border-2 border-slate-300 peer-checked:border-brand-500 peer-checked:ring-2 peer-checked:ring-brand-500/50 bg-white block transition-all shadow-sm"></span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="bgColor" value="#000000" class="hidden peer">
+                                    <span class="w-7 h-7 rounded-full border-2 border-slate-300 peer-checked:border-brand-500 peer-checked:ring-2 peer-checked:ring-brand-500/50 bg-black block transition-all shadow-sm"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Generate Action Button -->
+                    <div class="pt-2 flex gap-4">
+                        <button id="resizeBtn" class="py-3 px-8 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-colors shadow-lg shadow-brand-500/20 text-sm">
+                            Resize Image
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Result Section -->
+                <div id="resultArea" class="hidden text-center pt-8 border-t border-slate-200 space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+                        Your image has been resized!
+                    </h2>
+
+                    <!-- Resized Preview Image -->
+                    <div class="flex justify-center">
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-2xl shadow-md max-w-xs">
+                            <img id="resultImage" src="" alt="Resized Result" class="max-h-64 rounded-xl object-contain mx-auto">
+                        </div>
+                    </div>
+
+                    <!-- Result Metadata -->
+                    <p class="text-slate-500 text-sm font-medium">
+                        <span id="resultFileName" class="text-slate-800">image-resized.jpg</span>
+                        <span class="mx-2 text-slate-300">|</span>
+                        <span id="resultFileSize" class="text-brand-600 font-semibold">0 KB</span>
+                    </p>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+                        <button id="downloadBtn" class="w-full sm:w-auto px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 text-base">
+                            <i class="fa-solid fa-download"></i> Download Image
+                        </button>
+                        <button id="resetBtn" class="w-full sm:w-auto px-6 py-3.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 hover:text-slate-900 font-medium rounded-xl transition-all text-sm">
+                            Upload Another Image
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SEO Article & Detailed Description Section -->
+        <article class="mt-16 bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm text-slate-700 space-y-8">
+            <header>
+                <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 mb-3">
+                    Professional Online Image Compressor & Photo Resizer
+                </h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    FileWorks Image Compressor & Resizer provides an all-in-one solution for web developers, designers, content creators, and everyday users looking to optimize digital images. Effortlessly change image dimensions, lower file size in kilobytes, adjust aspect ratios, and export to modern web formats without compromising visual quality.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm">100% Secure & Private</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">All image compression and scaling happen directly inside your web browser. Your images are never uploaded to any remote server.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm">Precise Dimension Control</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Resize photos by custom pixel dimensions or relative percentage values with locked aspect ratio protection.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-file-export"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm">Next-Gen Format Output</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Convert your photos to lightweight WEBP, standard JPG, or lossless PNG formats with adjustable quality metrics.</p>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-bold font-heading text-slate-900">How to Compress and Resize Images Step-by-Step</h3>
+                <ol class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-600">
+                    <li><strong>Upload Image:</strong> Click the dropzone or drag and drop your JPG, PNG, or WEBP file.</li>
+                    <li><strong>Set Dimensions:</strong> Input custom Width and Height either in Pixels or Percent. Use the lock icon to maintain aspect ratio.</li>
+                    <li><strong>Choose Format & Quality:</strong> Pick your preferred output format and set compression quality level.</li>
+                    <li><strong>Download:</strong> Click 'Resize Image' and save your optimized photo instantly.</li>
+                </ol>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-bold font-heading text-slate-900">Frequently Asked Questions</h3>
+                <div class="space-y-3 text-xs sm:text-sm">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Will my image lose quality during compression?</h4>
+                        <p class="text-slate-600">You can adjust the quality slider to find the optimal balance between file size reduction and image clarity.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Does this tool support batch resizing?</h4>
+                        <p class="text-slate-600">Currently, it processes one high-resolution image at a time to ensure maximum browser performance and accuracy.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </main>
+
+    <!-- Advanced Professional Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto pt-12 pb-8 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white">
+                            <i class="fa-solid font-bold text-sm fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-xl text-slate-900">File<span class="text-brand-500">Works</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with 100% private execution.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs text-emerald-600 font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Client-side processing active & secure
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-bold text-sm mb-3">Image Utilities</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><a href="image-compressor.html" class="hover:text-slate-900 transition-colors font-semibold text-brand-600">Image Compressor & Resizer</a></li>
+                        <li><a href="image-editor.html" class="hover:text-slate-900 transition-colors">Online Photo Editor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-slate-900 transition-colors">PNG to JPG Converter</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-slate-900 transition-colors">WebP Image Converter</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-slate-900 transition-colors">OCR Text Extractor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-bold text-sm mb-3">PDF & Document Tools</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><a href="image-to-pdf.html" class="hover:text-slate-900 transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-slate-900 transition-colors">PDF Text Extractor</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-slate-900 transition-colors">PDF to Image Converter</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-bold text-sm mb-3">Company & Policies</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><a href="../index.html" class="hover:text-slate-900 transition-colors">About FileWorks</a></li>
+                        <li><a href="../index.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="../index.html" class="hover:text-slate-900 transition-colors">Terms of Service</a></li>
+                        <li><a href="../index.html" class="hover:text-slate-900 transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>© 2026 FileWorks. All rights reserved. Processed locally in your browser.</p>
+                <div class="flex items-center gap-4 text-slate-600 text-base">
+                    <a href="#" class="hover:text-slate-900 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-slate-900 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-slate-900 transition-colors"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Script (ORIGINAL CODE UNTOUCHED) -->
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const uploadArea = document.getElementById('uploadArea');
+        const workspaceArea = document.getElementById('workspaceArea');
+        const resultArea = document.getElementById('resultArea');
+        
+        const previewImage = document.getElementById('previewImage');
+        const originalFileName = document.getElementById('originalFileName');
+        const originalSpecsTxt = document.getElementById('originalSpecs');
+        
+        const widthInput = document.getElementById('widthInput');
+        const heightInput = document.getElementById('heightInput');
+        const lockAspectBtn = document.getElementById('lockAspectBtn');
+        const lockIcon = document.getElementById('lockIcon');
+        const unitSelect = document.getElementById('unitSelect');
+        const dpiInput = document.getElementById('dpiInput');
+        const formatSelect = document.getElementById('formatSelect');
+        const qualityInput = document.getElementById('qualityInput');
+        const bgRadios = document.querySelectorAll('input[name="bgColor"]');
+        
+        const resizeBtn = document.getElementById('resizeBtn');
+        const resultImage = document.getElementById('resultImage');
+        const resultFileName = document.getElementById('resultFileName');
+        const resultFileSize = document.getElementById('resultFileSize');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        let originalFile = null;
+        let compressedBlob = null;
+        let originalImgObj = new Image();
+        let isAspectLocked = true;
+        let nativeWidth = 0;
+        let nativeHeight = 0;
+        let finalOutputName = '';
+
+        function formatBytes(bytes, decimals = 2) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        }
+
+        imageInput.addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                processFile(e.target.files[0]);
+            }
+        });
+
+        function processFile(file) {
+            if (!file.type.startsWith('image/')) return alert('Please upload an image file.');
+            
+            originalFile = file;
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                originalImgObj.src = event.target.result;
+                previewImage.src = event.target.result;
+                
+                originalImgObj.onload = () => {
+                    nativeWidth = originalImgObj.width;
+                    nativeHeight = originalImgObj.height;
+                    
+                    originalFileName.textContent = file.name;
+                    originalSpecsTxt.textContent = `${nativeWidth}×${nativeHeight}px | ${formatBytes(file.size)}`;
+                    
+                    unitSelect.value = 'percent';
+                    widthInput.value = 70;
+                    heightInput.value = 70;
+                    
+                    uploadArea.classList.add('hidden');
+                    resultArea.classList.add('hidden');
+                    workspaceArea.classList.remove('hidden');
+                }
+            }
+            reader.readAsDataURL(file);
+        }
+
+        // Toggle Aspect Ratio Lock
+        lockAspectBtn.addEventListener('click', () => {
+            isAspectLocked = !isAspectLocked;
+            if (isAspectLocked) {
+                lockAspectBtn.classList.replace('bg-slate-400', 'bg-brand-600');
+                lockIcon.classList.replace('fa-unlock', 'fa-lock');
+                recalculateHeight();
+            } else {
+                lockAspectBtn.classList.replace('bg-brand-600', 'bg-slate-400');
+                lockIcon.classList.replace('fa-lock', 'fa-unlock');
+            }
+        });
+
+        widthInput.addEventListener('input', () => {
+            if (isAspectLocked) recalculateHeight();
+        });
+
+        heightInput.addEventListener('input', () => {
+            if (isAspectLocked) recalculateWidth();
+        });
+
+        unitSelect.addEventListener('change', () => {
+            if (unitSelect.value === 'percent') {
+                widthInput.value = 70;
+                heightInput.value = 70;
+            } else {
+                widthInput.value = Math.round(nativeWidth * 0.7);
+                heightInput.value = Math.round(nativeHeight * 0.7);
+            }
+        });
+
+        function recalculateHeight() {
+            if (unitSelect.value === 'percent') {
+                heightInput.value = widthInput.value;
+            } else {
+                const ratio = nativeHeight / nativeWidth;
+                heightInput.value = Math.round(widthInput.value * ratio);
+            }
+        }
+
+        function recalculateWidth() {
+            if (unitSelect.value === 'percent') {
+                widthInput.value = heightInput.value;
+            } else {
+                const ratio = nativeWidth / nativeHeight;
+                widthInput.value = Math.round(heightInput.value * ratio);
+            }
+        }
+
+        // Generate / Resize Button Click
+        resizeBtn.addEventListener('click', () => {
+            if (!originalImgObj.src) return;
+
+            let targetWidth, targetHeight;
+            
+            if (unitSelect.value === 'percent') {
+                targetWidth = Math.round(nativeWidth * (parseFloat(widthInput.value) / 100));
+                targetHeight = Math.round(nativeHeight * (parseFloat(heightInput.value) / 100));
+            } else {
+                targetWidth = parseInt(widthInput.value) || nativeWidth;
+                targetHeight = parseInt(heightInput.value) || nativeHeight;
+            }
+
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.max(1, targetWidth);
+            canvas.height = Math.max(1, targetHeight);
+            
+            const ctx = canvas.getContext('2d');
+
+            const selectedBg = document.querySelector('input[name="bgColor"]:checked').value;
+            ctx.fillStyle = selectedBg;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.drawImage(originalImgObj, 0, 0, canvas.width, canvas.height);
+
+            const format = formatSelect.value;
+            const quality = Math.min(Math.max(parseInt(qualityInput.value) || 90, 10), 100) / 100;
+
+            canvas.toBlob((blob) => {
+                if (!blob) return;
+                compressedBlob = blob;
+                
+                // Set result preview
+                const resultUrl = URL.createObjectURL(blob);
+                resultImage.src = resultUrl;
+
+                // Format filename
+                const nameParts = originalFile.name.split('.');
+                nameParts.pop();
+                const formatExt = formatSelect.value.split('/')[1];
+                finalOutputName = `${nameParts.join('.')}-resized.${formatExt}`;
+
+                resultFileName.textContent = finalOutputName;
+                resultFileSize.textContent = formatBytes(blob.size);
+
+                // Reveal Result Section under the details form
+                resultArea.classList.remove('hidden');
+
+                // Smooth scroll down to result area
+                resultArea.scrollIntoView({ behavior: 'smooth' });
+
+            }, format, quality);
+        });
+
+        // Download Action
+        downloadBtn.addEventListener('click', () => {
+            if (!compressedBlob) return;
+            
+            const url = URL.createObjectURL(compressedBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = finalOutputName;
+            
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Reset Action
+        resetBtn.addEventListener('click', () => {
+            originalFile = null;
+            compressedBlob = null;
+            imageInput.value = '';
+            resultArea.classList.add('hidden');
+            workspaceArea.classList.add('hidden');
+            uploadArea.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

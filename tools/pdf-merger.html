@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags & Advanced Keyword Targeting -->
+    <title>Combine PDF Files Online Free - Fast Client-Side PDF Merger | FileWorks</title>
+    <meta name="description" content="Merge multiple PDF files into one document instantly in your browser. Rearrange pages, preview files, and join PDFs online for free with 100% private client-side processing."[cite: 5]>
+    <meta name="keywords" content="pdf merger, combine pdf files online, join pdf documents, merge pdf free, client side pdf combiner, combine pdf pages, fast pdf binder, secure pdf joiner"[cite: 5]>
+    <meta name="robots" content="index, follow"[cite: 5]>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- PDF Lib & PDF.js for Manipulation and Rendering -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <style>
+        .feature-card { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .file-item { transition: all 0.2s ease; cursor: grab; }
+        .file-item:active { cursor: grabbing; opacity: 0.8; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    file<span class="text-brand-600">Works</span>
+                </span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Tool Workspace -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-10 w-full">
+        
+        <!-- Tool Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-600 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-layer-group"></i> Advanced PDF Binder
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Combine PDF Files Online Free
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                Merge multiple PDF documents into a single organized file in seconds. Drag and drop to reorder, preview pages, and download safely.
+            </p>
+        </div>
+
+        <!-- Tool Workspace Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-lg shadow-slate-200/50 dark:shadow-none mb-16">
+            
+            <!-- File Upload Dropzone -->
+            <div id="dropZone" onclick="document.getElementById('fileInput').click()" 
+                 class="border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 bg-slate-50/50 dark:bg-slate-950/50 hover:bg-brand-50/30 dark:hover:bg-brand-950/20 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition-all duration-200 mb-6 group">
+                
+                <input type="file" id="fileInput" accept="application/pdf" multiple class="hidden" onchange="handleFileSelect(event)">
+                
+                <div class="w-16 h-16 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-circle-plus"></i>
+                </div>
+                
+                <h3 class="font-heading text-lg font-bold text-slate-800 dark:text-slate-200 mb-1">Click or Drag & Drop PDF Files Here</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Select multiple PDF files to combine them into one</p>
+            </div>
+
+            <!-- PDF Files Queue & Management Panel -->
+            <div id="queueContainer" class="hidden space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span id="fileCountBadge" class="bg-brand-100 dark:bg-brand-950/50 text-brand-700 dark:text-brand-300 text-xs font-bold px-2.5 py-1 rounded-md">0 Files Selected</span>
+                        <span id="totalPagesBadge" class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold px-2.5 py-1 rounded-md">Total Pages: 0</span>
+                    </div>
+                    <button onclick="clearAllFiles()" class="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-trash-can"></i> Clear List
+                    </button>
+                </div>
+
+                <!-- Sortable File List -->
+                <div id="fileList" class="space-y-3">
+                    <!-- Dynamic File Items Rendered Here -->
+                </div>
+
+                <!-- Add More Files Button -->
+                <div class="flex justify-center pt-2">
+                    <button onclick="document.getElementById('fileInput').click()" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold transition-colors inline-flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Add More PDFs
+                    </button>
+                </div>
+
+                <!-- Action Controls -->
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                        <span>100% Private local browser merge</span>[cite: 5]
+                    </div>
+
+                    <button onclick="mergePDFs()" id="mergeBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-object-group text-sm"></i> Merge & Download PDF
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Value Proposition Cards -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Why Use FileWorks?</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">Designed with privacy, simplicity, and efficiency in mind.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-shield-halved text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">100% Private & Client-Side</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Your files never leave your browser memory. Processing happens offline in WebAssembly.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-bolt text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Instant Processing</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">No upload speed delays or server waiting queues. Fast browser-native combination.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-infinity text-base"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Free Without Limits</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Combine as many PDF documents as you need with zero watermarks or file size caps.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Article & Content Section -->
+        <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8">
+            <div>
+                <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">How to Combine PDF Files Online Safely</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Combining reports, invoices, scanned pages, or e-books into a unified single document has never been easier. Our **PDF Merger Tool** allows you to merge multiple PDF files right inside your web browser without risking sensitive personal information.
+                </p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Most conventional online PDF joiners upload your files to remote web servers, creating data privacy and compliance risks. FileWorks uses modern WebAssembly technology (`pdf-lib`) to read, sequence, and stitch PDF documents in local memory.
+                </p>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Key Features of Our PDF Binder</h3>
+                <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm list-disc list-inside">
+                    <li><strong>Flexible File Ordering:</strong> Move PDF items up or down to ensure pages follow your preferred chronological order.</li>
+                    <li><strong>Page Count Preview:</strong> View individual PDF page counts prior to compilation.</li>
+                    <li><strong>Lossless Merge Quality:</strong> Retains high-resolution vectors, embedded fonts, images, and text formatting.</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Is there a limit on how many PDFs I can merge?</h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">No! Since execution uses your local computer CPU and memory, you can combine as many files as your web browser can handle.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Are my confidential documents secure?</h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Yes, 100%. None of your files are ever uploaded or transmitted to any external server.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-1">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">FileWorks</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with 100% private execution.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Client-side processing active & secure
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="text-brand-400 font-semibold">PDF Merger</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About FileWorks</a></li>
+                        <li><a href="../index.html#features" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../index.html#features" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 FileWorks. All rights reserved. Processed locally in your browser.</p>
+                <div class="flex items-center gap-4 text-slate-400 text-base">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub Repository" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter Profile" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com" target="_blank" aria-label="Discord Server" class="hover:text-white transition-colors"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Merging Interactive Script -->
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfFilesList = [];
+
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const queueContainer = document.getElementById('queueContainer');
+        const fileList = document.getElementById('fileList');
+
+        // Drag and Drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(evt => dropZone.addEventListener(evt, e => e.preventDefault()));
+        dropZone.addEventListener('drop', e => {
+            if (e.dataTransfer.files.length) processSelectedFiles(Array.from(e.dataTransfer.files));
+        });
+
+        function handleFileSelect(e) {
+            if (e.target.files.length) processSelectedFiles(Array.from(e.target.files));
+        }
+
+        async function processSelectedFiles(files) {
+            const validFiles = files.filter(f => f.type === 'application/pdf');
+            if (!validFiles.length) return alert('Please select PDF files.');
+
+            for (const file of validFiles) {
+                const arrayBuffer = await file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer.slice(0) }).promise;
+                
+                pdfFilesList.push({
+                    id: Date.now() + Math.random().toString(36).substr(2, 9),
+                    file: file,
+                    buffer: arrayBuffer,
+                    pages: pdf.numPages,
+                    name: file.name,
+                    size: (file.size / (1024 * 1024)).toFixed(2)
+                });
+            }
+
+            renderFileList();
+        }
+
+        function renderFileList() {
+            if (!pdfFilesList.length) {
+                queueContainer.classList.add('hidden');
+                dropZone.classList.remove('hidden');
+                return;
+            }
+
+            dropZone.classList.add('hidden');
+            queueContainer.classList.remove('hidden');
+
+            const totalPages = pdfFilesList.reduce((acc, curr) => acc + curr.pages, 0);
+            document.getElementById('fileCountBadge').textContent = `${pdfFilesList.length} Files Selected`;
+            document.getElementById('totalPagesBadge').textContent = `Total Pages: ${totalPages}`;
+
+            fileList.innerHTML = '';
+            pdfFilesList.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'file-item bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 rounded-2xl flex items-center justify-between gap-4 hover:border-brand-300 dark:hover:border-brand-700 shadow-sm';
+                div.innerHTML = `
+                    <div class="flex items-center gap-3 min-w-0">
+                        <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 font-bold text-xs flex items-center justify-center border border-brand-100 dark:border-brand-900 flex-shrink-0">
+                            ${index + 1}
+                        </span>
+                        <div class="min-w-0">
+                            <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">${item.name}</h4>
+                            <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">${item.pages} Pages • ${item.size} MB</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-1.5 flex-shrink-0">
+                        <button onclick="moveItem(${index}, -1)" ${index === 0 ? 'disabled class="opacity-30 p-1.5"' : 'class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 text-xs"'}>
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                        <button onclick="moveItem(${index}, 1)" ${index === pdfFilesList.length - 1 ? 'disabled class="opacity-30 p-1.5"' : 'class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 text-xs"'}>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                        <button onclick="removeItem('${item.id}')" class="p-1.5 hover:bg-red-50 dark:hover:bg-red-950/50 text-slate-400 hover:text-red-600 dark:hover:text-red-400 rounded-lg text-xs transition-colors">
+                            <i class="fa-solid fa-xmark text-sm"></i>
+                        </button>
+                    </div>
+                `;
+                fileList.appendChild(div);
+            });
+        }
+
+        function moveItem(index, direction) {
+            const targetIndex = index + direction;
+            if (targetIndex < 0 || targetIndex >= pdfFilesList.length) return;
+            const temp = pdfFilesList[index];
+            pdfFilesList[index] = pdfFilesList[targetIndex];
+            pdfFilesList[targetIndex] = temp;
+            renderFileList();
+        }
+
+        function removeItem(id) {
+            pdfFilesList = pdfFilesList.filter(item => item.id !== id);
+            renderFileList();
+        }
+
+        function clearAllFiles() {
+            pdfFilesList = [];
+            fileInput.value = '';
+            renderFileList();
+        }
+
+        async function mergePDFs() {
+            if (pdfFilesList.length < 1) return alert('Please add PDF files to merge.');
+
+            const mergeBtn = document.getElementById('mergeBtn');
+            mergeBtn.disabled = true;
+            mergeBtn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Merging PDFs...`;
+
+            try {
+                const { PDFDocument } = PDFLib;
+                const mergedPdf = await PDFDocument.create();
+
+                for (const item of pdfFilesList) {
+                    const srcPdf = await PDFDocument.load(item.buffer);
+                    const copiedPages = await mergedPdf.copyPages(srcPdf, srcPdf.getPageIndices());
+                    copiedPages.forEach(page => mergedPdf.addPage(page));
+                }
+
+                const mergedPdfBytes = await mergedPdf.save();
+                const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'merged_document.pdf';
+                link.click();
+
+            } catch (err) {
+                alert('Error merging PDFs: ' + err.message);
+            } finally {
+                mergeBtn.disabled = false;
+                mergeBtn.innerHTML = `<i class="fa-solid fa-object-group text-sm"></i> Merge & Download PDF`;
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.className = "fa-solid fa-sun text-sm text-amber-400";
+            } else {
+                themeIcon.className = "fa-solid fa-moon text-sm text-slate-600";
+            }
+        }
+    </script>
+</body>
+</html>
