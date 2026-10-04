@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="url-encoder.png">
+    
+    <!-- Optimized SEO Meta Tags -->
+    <title>URL Encoder / Decoder - Free Online Developer Tool | FileWorks</title>
+    <meta name="description" content="Free online URL encoder and decoder. Easily convert special characters, query strings, and payloads for safe web transmission. Fast and 100% secure.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-xl fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+                        File<span class="text-brand-600">Works</span>
+                    </span>
+                </a>
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+                    </button>
+                    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600 dark:text-slate-300">
+                        <a href="../index.html#tools" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">All Tools</a>
+                        <a href="../index.html#features" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Why Choose Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Tool Workspace -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <!-- Breadcrumb & Title -->
+        <div class="mb-8">
+            <nav class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-2">
+                <a href="../index.html" class="hover:text-brand-600 transition-colors">Home</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <a href="../index.html#tools" class="hover:text-brand-600 transition-colors">Developer Tools</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <span class="text-slate-800 dark:text-slate-200">URL Encoder / Decoder</span>
+            </nav>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h1 class="font-heading text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-900 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        URL Encoder / Decoder
+                    </h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Safely encode special characters or decode URL-encoded strings in real-time.</p>
+                </div>
+                <!-- Sample Data Loader -->
+                <button type="button" onclick="loadSampleData()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold border border-slate-200 dark:border-slate-700 transition-all shadow-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i>
+                    <span>Load Sample Query</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tool Card Container -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-sm p-6 sm:p-8">
+            
+            <!-- Mode Toggle Tabs -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6 gap-4">
+                <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl w-fit">
+                    <button type="button" id="modeEncode" onclick="setMode('encode')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">
+                        <i class="fa-solid fa-lock mr-1.5 text-brand-600 dark:text-brand-400"></i> Encode Mode
+                    </button>
+                    <button type="button" id="modeDecode" onclick="setMode('decode')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                        <i class="fa-solid fa-lock-open mr-1.5 text-emerald-600 dark:text-emerald-400"></i> Decode Mode
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+                    <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                        <input type="checkbox" id="allCharacters" onchange="processText()" class="rounded border-slate-300 dark:border-slate-700 text-brand-600 focus:ring-brand-500 w-4 h-4">
+                        <span>Encode All Characters (encodeURIComponent)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Editor Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                
+                <!-- Input Box -->
+                <div class="flex flex-col">
+                    <div class="flex items-center justify-between mb-2">
+                        <label id="inputLabel" class="font-heading text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Input Text / URL</label>
+                        <button type="button" onclick="clearInputs()" class="text-xs text-slate-400 hover:text-rose-600 transition-colors flex items-center gap-1">
+                            <i class="fa-solid fa-rotate-right"></i> Clear
+                        </button>
+                    </div>
+                    <div class="relative flex-grow">
+                        <textarea 
+                            id="inputText" 
+                            oninput="processText()" 
+                            placeholder="Type or paste your text here..." 
+                            rows="8"
+                            class="w-full font-mono text-sm p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:bg-slate-950 transition-all resize-none"
+                        ></textarea>
+                    </div>
+                    <div class="flex items-center justify-between mt-2 text-xs text-slate-400">
+                        <span id="inputCharCount">0 characters</span>
+                    </div>
+                </div>
+
+                <!-- Swap Button Center (Desktop Only) -->
+                <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <button type="button" onclick="swapInputs()" title="Swap Input & Output" class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-600 hover:scale-110 transition-all">
+                        <i class="fa-solid fa-right-left"></i>
+                    </button>
+                </div>
+
+                <!-- Output Box -->
+                <div class="flex flex-col">
+                    <div class="flex items-center justify-between mb-2">
+                        <label id="outputLabel" class="font-heading text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Encoded Output</label>
+                        <button type="button" onclick="copyOutput()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-brand-50 dark:bg-brand-950/50 hover:bg-brand-100 dark:hover:bg-brand-900 text-brand-700 dark:text-brand-300 text-xs font-semibold transition-colors">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copyTextBtn">Copy Result</span>
+                        </button>
+                    </div>
+                    <div class="relative flex-grow">
+                        <textarea 
+                            id="outputText" 
+                            readonly 
+                            placeholder="Result will appear here automatically..." 
+                            rows="8"
+                            class="w-full font-mono text-sm p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none transition-all resize-none cursor-default"
+                        ></textarea>
+                    </div>
+                    <div class="flex items-center justify-between mt-2 text-xs text-slate-400">
+                        <span id="outputCharCount">0 characters</span>
+                        <span id="statusMessage" class="text-emerald-600 font-medium hidden">Copied to clipboard!</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SEO Informational Section -->
+        <section class="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm">
+            <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-3">About URL Encoding & Percent-Encoding</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                URL encoding (officially known as percent-encoding) replaces unsafe ASCII characters with a `%` followed by two hexadecimal digits. Because URLs can only be transmitted over the Internet using the restricted ASCII character set, characters like spaces, symbols, and non-ASCII international letters must be converted to avoid breaking HTTP request parameters.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-6">
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 mb-1"><i class="fa-solid fa-code text-brand-600 mr-2"></i>When to Encode</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Use encoding when passing user inputs, query parameters, or file paths through URL query strings (e.g., changing spaces to <code class="bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded">%20</code>).</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 mb-1"><i class="fa-solid fa-shield-halved text-emerald-600 mr-2"></i>100% Client-Side Security</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">All encoding and decoding processes execute directly inside your browser via JavaScript. Your text and query strings are never sent to external servers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Full Featured Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">FileWorks</span>
+                    </a>
+                    <p class="text-slate-400 text-sm max-w-sm mb-4 leading-relaxed">
+                        Fast, secure, browser-native file converters, web development utilities, and SEO tools.
+                    </p>
+                    <p class="text-xs text-slate-500">© 2026 FileWorks. All rights reserved.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="../index.html#tools" class="text-slate-400 hover:text-white transition-colors">Tools Directory</a></li>
+                        <li><a href="../index.html#features" class="text-slate-400 hover:text-white transition-colors">Why Choose Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-4">Developer Tools</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="url-encoder.html" class="text-slate-400 hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>Designed for speed, accessibility, and user privacy.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tool Interactive Logic -->
+    <script>
+        let currentMode = 'encode'; // 'encode' or 'decode'
+
+        function setMode(mode) {
+            currentMode = mode;
+            const btnEncode = document.getElementById('modeEncode');
+            const btnDecode = document.getElementById('modeDecode');
+            const inputLabel = document.getElementById('inputLabel');
+            const outputLabel = document.getElementById('outputLabel');
+            const inputField = document.getElementById('inputText');
+
+            if (mode === 'encode') {
+                btnEncode.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm";
+                btnDecode.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white";
+                inputLabel.textContent = "Input Text / URL";
+                outputLabel.textContent = "Encoded Output";
+                inputField.placeholder = "Type or paste your text here to encode...";
+            } else {
+                btnDecode.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm";
+                btnEncode.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white";
+                inputLabel.textContent = "Encoded URL String";
+                outputLabel.textContent = "Decoded Output";
+                inputField.placeholder = "Paste percent-encoded string here (e.g. Hello%25World)...";
+            }
+            processText();
+        }
+
+        function loadSampleData() {
+            const inputField = document.getElementById('inputText');
+            if (currentMode === 'encode') {
+                inputField.value = "https://example.com/search?q=FileWorks & Developer Utilities #1!@";
+            } else {
+                inputField.value = "https%3A%2F%2Fexample.com%2Fsearch%3Fq%3DFileWorks%20%26%20Developer%20Utilities%20%231%21%40";
+            }
+            processText();
+        }
+
+        function clearInputs() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+            document.getElementById('inputCharCount').textContent = '0 characters';
+            document.getElementById('outputCharCount').textContent = '0 characters';
+        }
+
+        function swapInputs() {
+            const inputField = document.getElementById('inputText');
+            const outputField = document.getElementById('outputText');
+            if (!outputField.value || outputField.classList.contains('text-rose-600')) return;
+
+            // Switch mode automatically
+            if (currentMode === 'encode') {
+                setMode('decode');
+            } else {
+                setMode('encode');
+            }
+
+            inputField.value = outputField.value;
+            processText();
+        }
+
+        function processText() {
+            const input = document.getElementById('inputText').value;
+            const outputField = document.getElementById('outputText');
+            const encodeAll = document.getElementById('allCharacters').checked;
+            
+            document.getElementById('inputCharCount').textContent = `${input.length} character${input.length === 1 ? '' : 's'}`;
+
+            if (!input) {
+                outputField.value = '';
+                outputField.classList.remove('text-rose-600', 'dark:text-rose-400');
+                document.getElementById('outputCharCount').textContent = '0 characters';
+                return;
+            }
+
+            try {
+                let result = '';
+                if (currentMode === 'encode') {
+                    if (encodeAll) {
+                        result = encodeURIComponent(input);
+                    } else {
+                        result = encodeURI(input);
+                    }
+                } else {
+                    result = decodeURIComponent(input);
+                }
+                outputField.value = result;
+                outputField.classList.remove('text-rose-600', 'dark:text-rose-400');
+                document.getElementById('outputCharCount').textContent = `${result.length} character${result.length === 1 ? '' : 's'}`;
+            } catch (error) {
+                outputField.value = "Error: Invalid or malformed percent-encoded string.";
+                outputField.classList.add('text-rose-600', 'dark:text-rose-400');
+                document.getElementById('outputCharCount').textContent = '0 characters';
+            }
+        }
+
+        function copyOutput() {
+            const outputField = document.getElementById('outputText');
+            if (!outputField.value || outputField.classList.contains('text-rose-600')) return;
+
+            navigator.clipboard.writeText(outputField.value).then(() => {
+                const statusMsg = document.getElementById('statusMessage');
+                const btnText = document.getElementById('copyTextBtn');
+                
+                statusMsg.classList.remove('hidden');
+                btnText.textContent = "Copied!";
+                
+                setTimeout(() => {
+                    statusMsg.classList.add('hidden');
+                    btnText.textContent = "Copy Result";
+                }, 2000);
+            });
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.className = "fa-solid fa-sun text-sm text-amber-400";
+            } else {
+                themeIcon.className = "fa-solid fa-moon text-sm text-slate-600";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags -->
+    <title>Free Online OCR Text Extractor - Convert Image & Camera to Text | FileWorks</title>
+    <meta name="title" content="Free Online OCR Text Extractor - Convert Image & Camera to Text | FileWorks">
+    <meta name="description" content="Extract text from images, photos, scanned documents, and live camera feed for free. Advanced client-side OCR engine supporting multiple languages, instant text copy, and TXT export.">
+    <meta name="keywords" content="ocr text extractor, image to text, photo text scanner, online ocr tool, extract text from picture, camera ocr scanner, free image text reader, picture to text converter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FileWorks">
+    <link rel="icon" type="image/png" href="cam-ocr.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online OCR Text Extractor - Image to Text Converter">
+    <meta property="og:description" content="Convert scanned documents, photos, and camera shots into editable text instantly using browser-based OCR.">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FileWorks Online OCR Text Extractor",
+      "category": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "description": "Free online OCR scanner that extracts text from uploaded images, documents, and camera streams instantly.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Tesseract.js Engine for Client-Side OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+    <style>
+        .feature-card { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .mode-tab.active { border-color: #2563eb; color: #2563eb; background-color: #eff6ff; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors">
+
+    <!-- Header Navigation -->
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600">Works</span>
+                </span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-600 transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-600 text-xs font-bold mb-3">
+                <i class="fa-solid fa-eye"></i> Advanced Neural OCR Engine
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">
+                Online OCR Text Extractor
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                Instantly extract text from images, documents, or live camera streams using browser-powered optical character recognition.
+            </p>
+        </div>
+
+        <!-- Toast Notification Box -->
+        <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+            <div id="toastContent" class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-800 text-white shadow-xl text-xs font-semibold border border-slate-700">
+                <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                <span id="toastMessage">Action completed successfully!</span>
+            </div>
+        </div>
+
+        <!-- Main OCR Application Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+            
+            <!-- Left Controls & Input Source Panel -->
+            <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between">
+                <div>
+                    <!-- Input Mode Switcher -->
+                    <div class="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4 mb-4">
+                        <button onclick="switchMode('file')" id="mode-file" class="mode-tab active flex-1 py-2 px-3 rounded-xl text-xs font-bold border border-transparent transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-image"></i> Upload File
+                        </button>
+                        <button onclick="switchMode('cam')" id="mode-cam" class="mode-tab flex-1 py-2 px-3 rounded-xl text-xs font-bold border border-transparent transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-camera"></i> Live Camera
+                        </button>
+                    </div>
+
+                    <!-- Language & Preprocessing Settings -->
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">OCR Language Model</label>
+                            <select id="ocrLang" class="w-full p-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                <option value="eng" selected>English (eng)</option>
+                                <option value="spa">Spanish (spa)</option>
+                                <option value="fra">French (fra)</option>
+                                <option value="deu">German (deu)</option>
+                                <option value="por">Portuguese (por)</option>
+                                <option value="ita">Italian (ita)</option>
+                                <option value="hin">Hindi (hin)</option>
+                                <option value="ara">Arabic (ara)</option>
+                            </select>
+                        </div>
+
+                        <!-- Image Preprocessing Toggles -->
+                        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-2xl space-y-2">
+                            <span class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Image Enhancement Filter</span>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 cursor-pointer">
+                                    <input type="radio" name="prepFilter" value="none" checked onchange="applyPreprocess()" class="accent-brand-600"> None
+                                </label>
+                                <label class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 cursor-pointer">
+                                    <input type="radio" name="prepFilter" value="contrast" onchange="applyPreprocess()" class="accent-brand-600"> High Contrast
+                                </label>
+                                <label class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 cursor-pointer">
+                                    <input type="radio" name="prepFilter" value="binarize" onchange="applyPreprocess()" class="accent-brand-600"> Black & White
+                                </label>
+                                <label class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 cursor-pointer">
+                                    <input type="radio" name="prepFilter" value="invert" onchange="applyPreprocess()" class="accent-brand-600"> Invert Colors
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Image Rotation Tool Bar -->
+                        <div id="imageToolsBar" class="hidden flex items-center justify-between gap-2 pt-1">
+                            <button onclick="rotateImage(90)" class="flex-1 py-1.5 px-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-rotate-right"></i> Rotate 90°
+                            </button>
+                            <button onclick="resetImage()" class="py-1.5 px-3 bg-rose-50 dark:bg-rose-950/30 text-rose-600 hover:bg-rose-100 text-xs font-bold rounded-lg transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-trash-can"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Input Stage 1: File Upload Dropzone -->
+                    <div id="fileContainer">
+                        <div id="dropZone" onclick="document.getElementById('imageInput').click()" 
+                             ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)"
+                             class="border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 bg-slate-50/50 dark:bg-slate-800/30 rounded-2xl p-8 text-center cursor-pointer transition-all">
+                            <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp, image/bmp" class="hidden" onchange="handleImageFile(event)">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950 text-brand-600 flex items-center justify-center mx-auto text-xl mb-3">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+                            <h3 class="font-heading text-sm font-bold text-slate-800 dark:text-slate-200 mb-1">Click or Drag Image Here</h3>
+                            <p class="text-[11px] text-slate-500">PNG, JPG, WEBP, or BMP format</p>
+                        </div>
+                    </div>
+
+                    <!-- Input Stage 2: Live Camera Video Stream -->
+                    <div id="camContainer" class="hidden">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-800 aspect-video flex items-center justify-center">
+                            <video id="webcamVideo" autoplay playsinline class="w-full h-full object-cover"></video>
+                            <button onclick="captureCameraShot()" class="absolute bottom-3 py-2 px-4 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-lg flex items-center gap-1.5 transition-all">
+                                <i class="fa-solid fa-camera"></i> Capture Frame
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Preview Canvas Area -->
+                    <div id="previewWrapper" class="hidden mt-4">
+                        <span class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Processed Source Preview</span>
+                        <div class="bg-slate-900/5 dark:bg-slate-950 rounded-2xl p-2 border border-slate-200 dark:border-slate-800 flex items-center justify-center max-h-[220px] overflow-hidden">
+                            <canvas id="sourceCanvas" class="max-w-full max-h-[200px] object-contain rounded-lg shadow-sm"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Run OCR Action Button -->
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+                    <button onclick="processOCR()" id="ocrStartBtn" disabled class="w-full py-3.5 rounded-2xl bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 font-bold text-xs uppercase tracking-wider transition-all cursor-not-allowed flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt text-base"></i> Run OCR Recognition
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Output Text Stage -->
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between min-h-[480px]">
+                <div>
+                    <!-- OCR Status Bar -->
+                    <div class="flex flex-wrap items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-4 gap-2">
+                        <span class="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-file-lines text-brand-600"></i> Extracted Text Result
+                        </span>
+
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="transformText('upper')" title="Uppercase" class="p-1.5 px-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-600 dark:text-slate-300 text-[11px] font-bold rounded-lg transition-colors">AA</button>
+                            <button onclick="transformText('lower')" title="Lowercase" class="p-1.5 px-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-600 dark:text-slate-300 text-[11px] font-bold rounded-lg transition-colors">aa</button>
+                            <button onclick="openFindReplace()" title="Find & Replace" class="p-1.5 px-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-600 dark:text-slate-300 text-[11px] font-bold rounded-lg transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-magnifying-glass"></i> Find
+                            </button>
+                            <span id="confidenceBadge" class="hidden text-[10px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300">
+                                Accuracy: <span id="confidenceVal">0%</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Find & Replace Drawer -->
+                    <div id="findReplaceBox" class="hidden mb-3 p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2">
+                        <input type="text" id="findInput" placeholder="Find..." class="flex-1 p-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-800 dark:text-slate-200 focus:outline-none">
+                        <input type="text" id="replaceInput" placeholder="Replace..." class="flex-1 p-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-800 dark:text-slate-200 focus:outline-none">
+                        <button onclick="executeFindReplace()" class="py-1.5 px-3 bg-brand-600 text-white font-bold text-xs rounded-lg hover:bg-brand-700">Apply</button>
+                    </div>
+
+                    <!-- Progress Indicator -->
+                    <div id="ocrProgress" class="hidden my-4 p-4 bg-brand-50 dark:bg-brand-950/40 border border-brand-100 dark:border-brand-900 rounded-2xl">
+                        <div class="flex items-center justify-between text-xs font-bold text-brand-700 dark:text-brand-300 mb-2">
+                            <span id="statusLabel">Initializing Engine...</span>
+                            <span id="progressPercent">0%</span>
+                        </div>
+                        <div class="w-full h-2 bg-brand-100 dark:bg-brand-900 rounded-full overflow-hidden">
+                            <div id="progressBar" class="h-full bg-brand-600 transition-all duration-300 w-0"></div>
+                        </div>
+                    </div>
+
+                    <!-- Output Text Area -->
+                    <textarea id="ocrOutput" oninput="updateWordCount(this.value)" placeholder="Extracted text will appear here after recognition..." 
+                              class="w-full h-[300px] p-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-xs font-mono text-slate-800 dark:text-slate-200 leading-relaxed focus:outline-none resize-none"></textarea>
+                </div>
+
+                <!-- Export & Action Controls -->
+                <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-4 flex flex-wrap items-center justify-between gap-3">
+                    <span id="wordCounter" class="text-xs font-semibold text-slate-500 font-mono">Words: 0 | Chars: 0</span>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="clearWorkspace()" class="py-2.5 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-xl transition-colors">Clear</button>
+                        <button onclick="copyExtractedText()" id="copyBtn" disabled class="py-2.5 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold rounded-xl transition-colors disabled:opacity-50 flex items-center gap-1.5">
+                            <i class="fa-solid fa-copy"></i> Copy
+                        </button>
+                        <button onclick="downloadFile('txt')" id="downloadTxtBtn" disabled class="py-2.5 px-3 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-xl transition-colors disabled:opacity-50 flex items-center gap-1.5 shadow">
+                            <i class="fa-solid fa-download"></i> TXT
+                        </button>
+                        <button onclick="downloadFile('json')" id="downloadJsonBtn" disabled class="py-2.5 px-3 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition-colors disabled:opacity-50 flex items-center gap-1.5 shadow">
+                            <i class="fa-solid fa-code"></i> JSON
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEO Informational Article -->
+        <article class="prose max-w-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm mb-16 text-slate-700 dark:text-slate-300">
+            <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-4">High-Precision Browser-Based Optical Character Recognition</h2>
+            <p class="text-xs sm:text-sm leading-relaxed mb-4">
+                FileWorks OCR Text Extractor utilizes advanced neural network WebAssembly builds to convert physical document scans, screen captures, photos, and live camera streams into completely editable digital text. Extract printed text from contracts, receipts, book pages, and images without manual typing.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-2">Key Technical Capabilities:</h3>
+                    <ul class="list-disc list-inside text-xs sm:text-sm space-y-1.5 text-slate-600 dark:text-slate-400">
+                        <li><strong>Live Webcam Reader:</strong> Scan printed materials directly using desktop or smartphone cameras.</li>
+                        <li><strong>Image Preprocessing Engine:</strong> Enhance degraded scans with automated high contrast, black-and-white thresholding, and inverted color filters.</li>
+                        <li><strong>Multi-Language OCR Support:</strong> Recognize text across multiple international alphabets including English, Spanish, German, French, Hindi, and Arabic.</li>
+                        <li><strong>Confidence Score Metric:</strong> View accurate AI confidence ratings for character recognition reliability.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-2">Private Client-Side Processing</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                        Privacy is paramount when handling confidential documents or personal IDs. FileWorks processes all OCR engine models directly inside client browser memory using Web Workers. Your uploaded files and camera feeds are never transmitted to external cloud servers.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-1">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900 dark:text-white">FileWorks</span>
+                    </a>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Fast, private, and reliable.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Image Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
+                        <li><a href="cam-ocr.html" class="text-brand-600 font-semibold">OCR Text Extractor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-brand-600 transition-colors">Image Editor</a></li>
+                        <li><a href="image-compressor.html" class="hover:text-brand-600 transition-colors">Image Compressor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-brand-600 transition-colors">Image to PDF</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">PDF Tools</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
+                        <li><a href="pdf-to-image.html" class="hover:text-brand-600 transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-brand-600 transition-colors">PDF Extractor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
+                        <li><a href="../index.html#about" class="hover:text-brand-600 transition-colors">About FileWorks</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 FileWorks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Engine Script -->
+    <script>
+        let originalImg = new Image();
+        let sourceCanvas = document.getElementById('sourceCanvas');
+        let ctx = sourceCanvas.getContext('2d');
+        let mediaStream = null;
+
+        // Theme Manager
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('themeIcon').className = isDark ? 'fa-solid fa-sun text-sm' : 'fa-solid fa-moon text-sm';
+            localStorage.setItem('fileworks_theme', isDark ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('fileworks_theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('themeIcon').className = 'fa-solid fa-sun text-sm';
+        }
+
+        // Toast Notification System
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+            
+            toastMessage.textContent = message;
+            toastIcon.className = type === 'success' ? 'fa-solid fa-circle-check text-emerald-400 text-base' : 'fa-solid fa-circle-exclamation text-amber-400 text-base';
+            
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Switch Input Source
+        function switchMode(mode) {
+            document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(`mode-${mode}`).classList.add('active');
+
+            if (mode === 'file') {
+                document.getElementById('fileContainer').classList.remove('hidden');
+                document.getElementById('camContainer').classList.add('hidden');
+                stopCameraStream();
+            } else {
+                document.getElementById('fileContainer').classList.add('hidden');
+                document.getElementById('camContainer').classList.remove('hidden');
+                startCameraStream();
+            }
+        }
+
+        // Camera Management
+        async function startCameraStream() {
+            try {
+                mediaStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                document.getElementById('webcamVideo').srcObject = mediaStream;
+            } catch (err) {
+                showToast('Unable to access video camera permissions.', 'error');
+            }
+        }
+
+        function stopCameraStream() {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+                mediaStream = null;
+            }
+        }
+
+        function captureCameraShot() {
+            const video = document.getElementById('webcamVideo');
+            sourceCanvas.width = video.videoWidth;
+            sourceCanvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0);
+
+            originalImg = new Image();
+            originalImg.onload = () => {
+                document.getElementById('previewWrapper').classList.remove('hidden');
+                document.getElementById('imageToolsBar').classList.remove('hidden');
+                enableActionButtons();
+                showToast('Camera frame captured successfully!');
+            };
+            originalImg.src = sourceCanvas.toDataURL();
+        }
+
+        // Drag and Drop Handling
+        function handleDragOver(e) { e.preventDefault(); e.stopPropagation(); }
+        function handleDragLeave(e) { e.preventDefault(); e.stopPropagation(); }
+        function handleDrop(e) {
+            e.preventDefault(); e.stopPropagation();
+            const file = e.dataTransfer.files[0];
+            if (file) processLoadedFile(file);
+        }
+
+        // Upload Handling
+        function handleImageFile(e) {
+            const file = e.target.files[0];
+            if (file) processLoadedFile(file);
+        }
+
+        function processLoadedFile(file) {
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                originalImg = new Image();
+                originalImg.onload = () => {
+                    sourceCanvas.width = originalImg.width;
+                    sourceCanvas.height = originalImg.height;
+                    ctx.drawImage(originalImg, 0, 0);
+                    applyPreprocess();
+
+                    document.getElementById('previewWrapper').classList.remove('hidden');
+                    document.getElementById('imageToolsBar').classList.remove('hidden');
+                    enableActionButtons();
+                    showToast('Image loaded successfully!');
+                };
+                originalImg.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Image Rotation & Reset
+        function rotateImage(degrees) {
+            if (!originalImg.src) return;
+            const tempCanvas = document.createElement('canvas');
+            const tCtx = tempCanvas.getContext('2d');
+            
+            if (degrees === 90 || degrees === 270) {
+                tempCanvas.width = originalImg.height;
+                tempCanvas.height = originalImg.width;
+            } else {
+                tempCanvas.width = originalImg.width;
+                tempCanvas.height = originalImg.height;
+            }
+
+            tCtx.translate(tempCanvas.width / 2, tempCanvas.height / 2);
+            tCtx.rotate((degrees * Math.PI) / 180);
+            tCtx.drawImage(originalImg, -originalImg.width / 2, -originalImg.height / 2);
+
+            const rotatedImg = new Image();
+            rotatedImg.onload = () => {
+                originalImg = rotatedImg;
+                applyPreprocess();
+                showToast('Image rotated successfully!');
+            };
+            rotatedImg.src = tempCanvas.toDataURL();
+        }
+
+        function resetImage() {
+            if (!originalImg.src) return;
+            document.querySelector('input[name="prepFilter"][value="none"]').checked = true;
+            sourceCanvas.width = originalImg.width;
+            sourceCanvas.height = originalImg.height;
+            ctx.drawImage(originalImg, 0, 0);
+            showToast('Reset source image filters.');
+        }
+
+        // Image Preprocessing Filters Engine
+        function applyPreprocess() {
+            if (!originalImg.src) return;
+
+            sourceCanvas.width = originalImg.width;
+            sourceCanvas.height = originalImg.height;
+            ctx.drawImage(originalImg, 0, 0);
+
+            const filter = document.querySelector('input[name="prepFilter"]:checked').value;
+            if (filter === 'none') return;
+
+            const imgData = ctx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
+            const data = imgData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+
+                if (filter === 'contrast') {
+                    const factor = (259 * (128 + 255)) / (255 * (259 - 128));
+                    data[i] = factor * (data[i] - 128) + 128;
+                    data[i + 1] = factor * (data[i + 1] - 128) + 128;
+                    data[i + 2] = factor * (data[i + 2] - 128) + 128;
+                } else if (filter === 'binarize') {
+                    const threshold = 128;
+                    const val = avg >= threshold ? 255 : 0;
+                    data[i] = data[i + 1] = data[i + 2] = val;
+                } else if (filter === 'invert') {
+                    data[i] = 255 - data[i];
+                    data[i + 1] = 255 - data[i + 1];
+                    data[i + 2] = 255 - data[i + 2];
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        function enableActionButtons() {
+            const btn = document.getElementById('ocrStartBtn');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-400', 'dark:text-slate-600', 'cursor-not-allowed');
+            btn.classList.add('bg-brand-600', 'text-white', 'hover:bg-brand-700', 'shadow-md');
+        }
+
+        // Tesseract OCR Processing Engine
+        async function processOCR() {
+            const lang = document.getElementById('ocrLang').value;
+            const statusLabel = document.getElementById('statusLabel');
+            const progressPercent = document.getElementById('progressPercent');
+            const progressBar = document.getElementById('progressBar');
+            const progressContainer = document.getElementById('ocrProgress');
+
+            progressContainer.classList.remove('hidden');
+
+            try {
+                const worker = await Tesseract.createWorker(lang, 1, {
+                    logger: m => {
+                        if (m.status) {
+                            statusLabel.textContent = m.status.toUpperCase();
+                            if (m.progress) {
+                                const p = Math.round(m.progress * 100);
+                                progressPercent.textContent = `${p}%`;
+                                progressBar.style.width = `${p}%`;
+                            }
+                        }
+                    }
+                });
+
+                const ret = await worker.recognize(sourceCanvas);
+                await worker.terminate();
+
+                const text = ret.data.text;
+                document.getElementById('ocrOutput').value = text;
+
+                // Accuracy Badge
+                const confidence = Math.round(ret.data.confidence);
+                document.getElementById('confidenceVal').textContent = `${confidence}%`;
+                document.getElementById('confidenceBadge').classList.remove('hidden');
+
+                // Counters & Buttons
+                updateWordCount(text);
+                document.getElementById('copyBtn').disabled = false;
+                document.getElementById('downloadTxtBtn').disabled = false;
+                document.getElementById('downloadJsonBtn').disabled = false;
+
+                showToast('OCR Text extraction completed successfully!');
+
+            } catch (err) {
+                showToast('OCR extraction failed: ' + err.message, 'error');
+            } finally {
+                progressContainer.classList.add('hidden');
+            }
+        }
+
+        // Text Utilities
+        function updateWordCount(str) {
+            const words = str.trim() ? str.trim().split(/\s+/).length : 0;
+            const chars = str.length;
+            document.getElementById('wordCounter').textContent = `Words: ${words} | Chars: ${chars}`;
+        }
+
+        function transformText(type) {
+            const output = document.getElementById('ocrOutput');
+            if (!output.value) return;
+            if (type === 'upper') output.value = output.value.toUpperCase();
+            if (type === 'lower') output.value = output.value.toLowerCase();
+            updateWordCount(output.value);
+            showToast('Text casing updated.');
+        }
+
+        function openFindReplace() {
+            const box = document.getElementById('findReplaceBox');
+            box.classList.toggle('hidden');
+        }
+
+        function executeFindReplace() {
+            const findVal = document.getElementById('findInput').value;
+            const replaceVal = document.getElementById('replaceInput').value;
+            const output = document.getElementById('ocrOutput');
+            if (!findVal || !output.value) return;
+
+            const regex = new RegExp(findVal, 'g');
+            output.value = output.value.replace(regex, replaceVal);
+            updateWordCount(output.value);
+            showToast('Find & Replace executed.');
+        }
+
+        function clearWorkspace() {
+            document.getElementById('ocrOutput').value = '';
+            updateWordCount('');
+            document.getElementById('confidenceBadge').classList.add('hidden');
+            document.getElementById('copyBtn').disabled = true;
+            document.getElementById('downloadTxtBtn').disabled = true;
+            document.getElementById('downloadJsonBtn').disabled = true;
+            showToast('Workspace cleared.');
+        }
+
+        function copyExtractedText() {
+            const text = document.getElementById('ocrOutput').value;
+            if (!text) return;
+            navigator.clipboard.writeText(text);
+            showToast('Text copied to clipboard!');
+        }
+
+        function downloadFile(type) {
+            const text = document.getElementById('ocrOutput').value;
+            if (!text) return;
+            
+            let blob, filename;
+            if (type === 'json') {
+                const data = JSON.stringify({ extractedText: text, timestamp: new Date().toISOString() }, null, 2);
+                blob = new Blob([data], { type: 'application/json' });
+                filename = 'extracted_text.json';
+            } else {
+                blob = new Blob([text], { type: 'text/plain' });
+                filename = 'extracted_text.txt';
+            }
+
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            showToast(`Downloaded ${filename.toUpperCase()} successfully!`);
+        }
+    </script>
+</body>
+</html>
