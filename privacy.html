@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="tools/privacy.png">
+    
+    <!-- SEO Metadata -->
+    <title>Privacy Policy | FileWorks</title>
+    <meta name="description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
+    <link rel="canonical" href="https://fileworks-beta.vercel.app/privacy.html">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy | FileWorks">
+    <meta property="og:description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
+    <meta property="og:url" content="https://fileworks-beta.vercel.app/privacy.html">
+    <meta property="og:image" content="https://fileworks-beta.vercel.app/og-image.png">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy | FileWorks">
+    <meta name="twitter:description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
+    <meta name="twitter:image" content="https://fileworks-beta.vercel.app/og-image.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .toc-link.active {
+            color: #2563eb;
+            font-weight: 600;
+            border-left-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-brand-600 focus:shadow-md">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center space-x-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md p-1">
+                <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight">File<span class="text-brand-600">Works</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-brand-600 transition-colors">Home</a>
+                <a href="index.html#tools" class="hover:text-brand-600 transition-colors">Tools</a>
+                <a href="privacy.html" class="text-brand-600 font-semibold">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-brand-600 transition-colors">Terms of Service</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-button" type="button" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 shadow-lg">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="index.html#tools" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Tools</a>
+            <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600 bg-brand-50">Privacy Policy</a>
+            <a href="terms.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Terms of Service</a>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Hero Section -->
+    <section class="bg-gradient-to-b from-white to-slate-100 border-b border-slate-200 py-12 md:py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-brand-100">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Legal & Trust</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                Privacy Policy
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+                Your privacy is important to us. This policy outlines how FileWorks handles your information and processes your files and data.
+            </p>
+            <div class="inline-flex items-center text-xs text-slate-500 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                <i class="fa-regular fa-calendar-days mr-1.5 text-brand-600"></i>
+                <span>Last Updated: October 4, 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- Desktop Sticky Table of Contents -->
+            <aside class="hidden lg:block lg:col-span-4 xl:col-span-3">
+                <div class="sticky top-24 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-list-ul mr-2 text-brand-600"></i> On this page
+                    </h2>
+                    <nav class="space-y-1 text-sm max-h-[calc(100vh-220px)] overflow-y-auto pr-2 custom-scrollbar">
+                        <a href="#introduction" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">1. Introduction</a>
+                        <a href="#information-we-collect" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">2. Information We Collect</a>
+                        <a href="#file-content-processing" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">3. File & Content Processing</a>
+                        <a href="#how-we-use-information" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">4. How We Use Information</a>
+                        <a href="#cookies-and-storage" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">5. Cookies & Local Storage</a>
+                        <a href="#third-party-services" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">6. Third-Party Services</a>
+                        <a href="#analytics" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">7. Analytics</a>
+                        <a href="#data-security" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">8. Data Security</a>
+                        <a href="#data-retention" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">9. Data Retention</a>
+                        <a href="#data-sharing" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">10. Data Sharing & Disclosure</a>
+                        <a href="#international-transfers" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">11. International Transfers</a>
+                        <a href="#childrens-privacy" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">12. Children's Privacy</a>
+                        <a href="#user-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">13. User Rights & Choices</a>
+                        <a href="#california-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">14. California Privacy Rights</a>
+                        <a href="#eea-uk-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">15. EEA / UK Privacy Rights</a>
+                        <a href="#do-not-track" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">16. Do Not Track Signals</a>
+                        <a href="#external-links" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">17. External Links</a>
+                        <a href="#policy-changes" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">18. Changes to This Policy</a>
+                        <a href="#contact-us" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">19. Contact Us</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Policy Content Body -->
+            <div class="lg:col-span-8 xl:col-span-9 space-y-12">
+
+                <!-- Mobile Compact Table of Contents -->
+                <div class="block lg:hidden bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <details class="group">
+                        <summary class="flex items-center justify-between font-semibold text-slate-900 cursor-pointer list-none">
+                            <span class="flex items-center">
+                                <i class="fa-solid fa-list-ul mr-2 text-brand-600"></i> Table of Contents
+                            </span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
+                            </span>
+                        </summary>
+                        <nav class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-sm">
+                            <a href="#introduction" class="block py-1 text-slate-600 hover:text-brand-600">1. Introduction</a>
+                            <a href="#information-we-collect" class="block py-1 text-slate-600 hover:text-brand-600">2. Information We Collect</a>
+                            <a href="#file-content-processing" class="block py-1 text-slate-600 hover:text-brand-600">3. File & Content Processing</a>
+                            <a href="#how-we-use-information" class="block py-1 text-slate-600 hover:text-brand-600">4. How We Use Information</a>
+                            <a href="#cookies-and-storage" class="block py-1 text-slate-600 hover:text-brand-600">5. Cookies & Local Storage</a>
+                            <a href="#third-party-services" class="block py-1 text-slate-600 hover:text-brand-600">6. Third-Party Services</a>
+                            <a href="#analytics" class="block py-1 text-slate-600 hover:text-brand-600">7. Analytics</a>
+                            <a href="#data-security" class="block py-1 text-slate-600 hover:text-brand-600">8. Data Security</a>
+                            <a href="#data-retention" class="block py-1 text-slate-600 hover:text-brand-600">9. Data Retention</a>
+                            <a href="#data-sharing" class="block py-1 text-slate-600 hover:text-brand-600">10. Data Sharing & Disclosure</a>
+                            <a href="#international-transfers" class="block py-1 text-slate-600 hover:text-brand-600">11. International Transfers</a>
+                            <a href="#childrens-privacy" class="block py-1 text-slate-600 hover:text-brand-600">12. Children's Privacy</a>
+                            <a href="#user-rights" class="block py-1 text-slate-600 hover:text-brand-600">13. User Rights & Choices</a>
+                            <a href="#california-rights" class="block py-1 text-slate-600 hover:text-brand-600">14. California Privacy Rights</a>
+                            <a href="#eea-uk-rights" class="block py-1 text-slate-600 hover:text-brand-600">15. EEA / UK Privacy Rights</a>
+                            <a href="#do-not-track" class="block py-1 text-slate-600 hover:text-brand-600">16. Do Not Track Signals</a>
+                            <a href="#external-links" class="block py-1 text-slate-600 hover:text-brand-600">17. External Links</a>
+                            <a href="#policy-changes" class="block py-1 text-slate-600 hover:text-brand-600">18. Changes to This Policy</a>
+                            <a href="#contact-us" class="block py-1 text-slate-600 hover:text-brand-600">19. Contact Us</a>
+                        </nav>
+                    </details>
+                </div>
+
+                <!-- Document Card Container -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-10 text-slate-700 leading-relaxed text-base">
+
+                    <!-- Section 1 -->
+                    <section id="introduction" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">1. Introduction</h2>
+                        <p>
+                            Welcome to <strong>FileWorks</strong> (<a href="index.html" class="text-brand-600 hover:underline">https://fileworks-beta.vercel.app/</a>). FileWorks is a web-based collection of utility tools designed to allow users to work with files, documents, and data directly through their web browser. Our available tools include URL Encoder, Word & Character Counter, Color Picker, Image Compressor, Image Editor, OCR Text Extractor, Document Enhancer, E-Sign PDF, PDF Merger, PDF Watermark, Image to PDF, PDF to Image, PDF Extractor, and related utilities.
+                        </p>
+                        <p>
+                            Your privacy is critically important to us. This Privacy Policy explains what information may be collected when you visit our website or use our tools, how that information is used, and your choices regarding your data. By accessing or using FileWorks, you agree to the terms described in this Privacy Policy.
+                        </p>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section id="information-we-collect" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">2. Information We Collect</h2>
+                        <p>
+                            We believe in data minimization. We clearly distinguish between information you may provide voluntarily and standard technical information that may be collected automatically where applicable.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80">
+                                <h3 class="font-semibold text-slate-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-user-pen mr-2 text-brand-600"></i> Voluntarily Provided Information
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-3">Information you choose to submit to us directly:</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
+                                    <li>Contact or support information</li>
+                                    <li>Email address (if provided for inquiries)</li>
+                                    <li>Feedback, messages, or support requests</li>
+                                    <li>Other information you voluntarily submit</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80">
+                                <h3 class="font-semibold text-slate-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-server mr-2 text-brand-600"></i> Automatically Collected Information
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-3">Standard technical logs and metadata processed when accessing the site:</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
+                                    <li>IP address and approximate geographic region</li>
+                                    <li>Browser type and version</li>
+                                    <li>Device type and operating system</li>
+                                    <li>Referring URL and pages visited</li>
+                                    <li>Date/time of access and basic diagnostics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section id="file-content-processing" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">3. File and User Content Processing</h2>
+                        <p>
+                            FileWorks provides a variety of client-side utility tools that process images, PDFs, documents, text, URLs, and other user-provided content.
+                        </p>
+                        <div class="bg-brand-50 border-l-4 border-brand-500 p-4 rounded-r-xl text-slate-700 text-sm my-4">
+                            <p class="font-semibold text-slate-900 mb-1">Client-Side vs. Server-Side Processing:</p>
+                            <p>
+                                Many FileWorks tools are designed to process user content directly within the user's browser. Where a tool performs processing locally, the relevant file or content does not need to be uploaded to a FileWorks server for that processing. If a particular feature relies on a third-party service, external API, or server-side functionality, the relevant data may be transmitted as necessary for that feature to operate.
+                            </p>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            We do not make unsupported claims regarding absolute zero data transmission where network requests are required for infrastructure, security, or feature delivery.
+                        </p>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section id="how-we-use-information" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">4. How We Use Information</h2>
+                        <p>We may use the information we collect for purposes including, but not limited to:</p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li>Providing, maintaining, and improving the FileWorks website and utilities.</li>
+                            <li>Operating tools and features efficiently across various browsers and devices.</li>
+                            <li>Fixing software bugs, optimizing performance, and troubleshooting technical issues.</li>
+                            <li>Preventing abuse, fraud, and maintaining website security.</li>
+                            <li>Responding to user support requests, questions, and feedback.</li>
+                            <li>Understanding aggregate website usage and interaction trends where analytics are enabled.</li>
+                            <li>Complying with applicable legal obligations and enforcing our Terms of Service.</li>
+                        </ul>
+                        <p class="text-sm font-semibold text-slate-900 mt-2">
+                            FileWorks does not sell your personal information as a business practice.
+                        </p>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section id="cookies-and-storage" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">5. Cookies and Local Storage</h2>
+                        <p>
+                            <strong>Cookies:</strong> FileWorks or integrated third-party services may use cookies or similar tracking technologies where applicable to ensure essential functionality, remember user preferences, maintain security, and analyze website performance.
+                        </p>
+                        <p>
+                            <strong>Browser Local Storage:</strong> The website may utilize browser <code>localStorage</code> or <code>sessionStorage</code> for convenience features such as saving favorites, remembering recently used tools, or storing user interface preferences. LocalStorage data is stored directly in your web browser and can generally be cleared at any time through your browser settings. Local storage data is not encrypted unless specific application features implement client-side encryption.
+                        </p>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section id="third-party-services" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">6. Third-Party Services</h2>
+                        <p>
+                            To deliver a fast, secure, and reliable experience, FileWorks may utilize third-party infrastructure and service providers necessary for website hosting (such as Vercel), font delivery, icon libraries (Font Awesome), styling frameworks (Tailwind CSS CDN), analytics, and security.
+                        </p>
+                        <p>
+                            These third-party services operate under their own respective privacy policies. We encourage you to review their policies for information regarding their data practices.
+                        </p>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="analytics" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">7. Analytics</h2>
+                        <p>
+                            FileWorks may use analytics technologies to understand how visitors interact with the website. If analytics are enabled, these technologies may collect information such as pages visited, approximate usage patterns, device and browser information, and other technical telemetry to help us improve user experience. You may opt out of analytics tracking where browser settings or extensions permit.
+                        </p>
+                    </section>
+
+                    <!-- Section 8 -->
+                    <section id="data-security" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">8. Data Security</h2>
+                        <p>
+                            We employ reasonable technical, organizational, and administrative security measures designed to protect information against unauthorized access, alteration, disclosure, or destruction. These measures include HTTPS encryption where supported, regular maintenance, and secure hosting environments.
+                        </p>
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-amber-900 text-sm">
+                            <p>
+                                <strong>Disclaimer:</strong> Although we take reasonable measures to protect information, no method of transmission or electronic storage over the Internet can be guaranteed to be 100% secure.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 9 -->
+                    <section id="data-retention" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">9. Data Retention</h2>
+                        <p>
+                            Information is retained only for as long as reasonably necessary to fulfill the purposes outlined in this Privacy Policy, provide our services, maintain internal records, resolve disputes, maintain security, and comply with legal obligations.
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            For browser-local data (such as local storage), information remains in your browser until manually cleared by you or removed by the application.
+                        </p>
+                    </section>
+
+                    <!-- Section 10 -->
+                    <section id="data-sharing" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">10. Data Sharing and Disclosure</h2>
+                        <p>We do not share or disclose your personal information except where reasonably necessary, including:</p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li>With trusted service providers, hosting partners, and security vendors assisting in website operation.</li>
+                            <li>With analytics providers where enabled to evaluate site performance.</li>
+                            <li>To comply with applicable laws, regulations, legal processes, or enforceable governmental requests.</li>
+                            <li>To protect the rights, property, safety, and security of FileWorks, our users, or the public.</li>
+                            <li>In connection with any potential corporate merger, acquisition, or asset transfer, where applicable.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 11 -->
+                    <section id="international-transfers" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">11. International Data Transfers</h2>
+                        <p>
+                            Because FileWorks utilizes cloud hosting and global third-party infrastructure providers, information collected through the website may be processed, stored, and transferred in countries other than your country of residence, where data protection laws may differ. By using FileWorks, you acknowledge and consent to such potential international transfers where applicable.
+                        </p>
+                    </section>
+
+                    <!-- Section 12 -->
+                    <section id="childrens-privacy" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">12. Children's Privacy</h2>
+                        <p>
+                            FileWorks is a general audience utility website and is not intentionally designed to collect personal information from children under the age of 13 (or higher threshold where required by local law). If you are a parent or guardian and believe that your child has provided personal information to us, please contact us so we can take appropriate action.
+                        </p>
+                    </section>
+
+                    <!-- Section 13 -->
+                    <section id="user-rights" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">13. User Rights and Choices</h2>
+                        <p>
+                            Depending on your geographic location and applicable local data protection laws, you may have certain rights regarding your personal information, which may include:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-1 text-slate-700">
+                            <li><strong>Access:</strong> Requesting confirmation of whether we process your data and obtaining a copy.</li>
+                            <li><strong>Correction:</strong> Requesting correction of inaccurate or incomplete information.</li>
+                            <li><strong>Deletion:</strong> Requesting deletion of your personal information where applicable.</li>
+                            <li><strong>Restriction & Objection:</strong> Requesting restriction of or objecting to certain data processing activities.</li>
+                            <li><strong>Data Portability:</strong> Receiving your data in a structured format where applicable.</li>
+                            <li><strong>Withdrawal of Consent:</strong> Withdrawing consent where processing is based on consent.</li>
+                        </ul>
+                        <p class="text-sm text-slate-600 mt-2">
+                            To exercise these rights where applicable, please reach out to us using the contact details provided below.
+                        </p>
+                    </section>
+
+                    <!-- Section 14 -->
+                    <section id="california-rights" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">14. California Privacy Rights</h2>
+                        <p>
+                            If California privacy laws (such as the CCPA/CPRA) apply to FileWorks and to you as a California resident, you may have specific rights regarding the collection, use, and disclosure of your personal information. FileWorks does not sell personal information for monetary consideration. For inquiries regarding California privacy rights, please contact us.
+                        </p>
+                    </section>
+
+                    <!-- Section 15 -->
+                    <section id="eea-uk-rights" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">15. European Economic Area (EEA) and UK Privacy Rights</h2>
+                        <p>
+                            Where the General Data Protection Regulation (GDPR) or UK GDPR applies to our processing of your personal information, you benefit from specific data protection rights (such as access, rectification, erasure, restriction, objection, and data portability). FileWorks processes such information based on legitimate operational interests, user consent, or contractual necessity as applicable.
+                        </p>
+                    </section>
+
+                    <!-- Section 16 -->
+                    <section id="do-not-track" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">16. Do Not Track Signals</h2>
+                        <p>
+                            Some web browsers feature "Do Not Track" (DNT) settings that signal to websites that you do not want to have your online activity tracked. Because there is no universally accepted standard for interpreting DNT signals, FileWorks may not currently respond to browser DNT signals.
+                        </p>
+                    </section>
+
+                    <!-- Section 17 -->
+                    <section id="external-links" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">17. External Links</h2>
+                        <p>
+                            FileWorks may contain links to external third-party websites or resources. We are not responsible for the privacy practices, security, or content of such external websites. We encourage you to read the privacy policies of any third-party site you visit.
+                        </p>
+                    </section>
+
+                    <!-- Section 18 -->
+                    <section id="policy-changes" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">18. Changes to This Privacy Policy</h2>
+                        <p>
+                            We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or services. When we update the policy, we will revise the "Last Updated" date at the top of this page. Changes become effective immediately upon posting. We encourage you to review this page periodically to stay informed of our privacy practices.
+                        </p>
+                    </section>
+
+                    <!-- Section 19 -->
+                    <section id="contact-us" class="scroll-mt-24 space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">19. Contact Us</h2>
+                        <p>
+                            If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please feel free to reach out to our support team:
+                        </p>
+                        
+                        <!-- Contact Card Box -->
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900">FileWorks Support & Privacy Team</h3>
+                                    <p class="text-sm text-slate-600">For privacy inquiries, data requests, or general support.</p>
+                                </div>
+                            </div>
+                            <!-- Replace this email with your real FileWorks support email before publishing. -->
+                            <a href="mailto:support@YOUR-DOMAIN.com" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                <span>support@YOUR-DOMAIN.com</span>
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-16 text-slate-600 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand & Description -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="index.html" class="flex items-center space-x-2 text-slate-900">
+                        <div class="w-8 h-8 bg-brand-600 text-white rounded-lg flex items-center justify-center font-bold text-base shadow-sm">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                        <span class="font-bold text-lg tracking-tight">File<span class="text-brand-600">Works</span></span>
+                    </a>
+                    <p class="text-slate-500 max-w-sm text-sm">
+                        A modern web-based collection of utility tools designed to help you work with files, images, and data efficiently right inside your browser.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Navigation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-600 transition-colors">Home</a></li>
+                        <li><a href="index.html#tools" class="hover:text-brand-600 transition-colors">Utility Tools</a></li>
+                        <li><a href="privacy.html" class="text-brand-600 font-medium">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-brand-600 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal / Contact -->
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Support</h3>
+                    <ul class="space-y-2 text-sm">
+                        <!-- Replace this email with your real FileWorks support email before publishing. -->
+                        <li><a href="mailto:support@YOUR-DOMAIN.com" class="hover:text-brand-600 transition-colors"><i class="fa-solid fa-envelope mr-1.5"></i> Contact Support</a></li>
+                        <li><span class="text-slate-400 text-xs">Client-Side Processing</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright & Bottom Bar -->
+            <div class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p id="copyright-text">© 2026 FileWorks. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="privacy.html" class="hover:text-brand-600">Privacy</a>
+                    <a href="terms.html" class="hover:text-brand-600">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Dynamic Copyright Year
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.getElementById('copyright-text');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = `&copy; ${currentYear} FileWorks. All rights reserved.`;
+            }
+
+            // Mobile Navigation Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    if (isExpanded) {
+                        menuIcon.className = 'fa-solid fa-bars text-xl';
+                    } else {
+                        menuIcon.className = 'fa-solid fa-xmark text-xl';
+                    }
+                });
+            }
+
+            // Table of Contents Active Link Highlighting on Scroll
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+
+            function highlightTocOnScroll() {
+                const scrollPosition = window.scrollY + 120;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active', 'text-brand-600', 'font-semibold', 'bg-slate-50', 'border-brand-600');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active', 'text-brand-600', 'font-semibold', 'bg-slate-50', 'border-brand-600');
+                            }
+                        });
+                    }
+                });
+            }
+
+            if (tocLinks.length > 0 && sections.length > 0) {
+                window.addEventListener('scroll', highlightTocOnScroll);
+                highlightTocOnScroll(); // Initial check
+            }
+        });
+    </script>
+</body>
+</html>
