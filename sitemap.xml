@@ -9,79 +9,79 @@
 
   <!-- Core Tools -->
   <url>
-    <loc>https://filediter.com/tools/url-encoder.html</loc>
+    <loc>https://filediter.com/tools/url-encoder</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/word-counter.html</loc>
+    <loc>https://filediter.com/tools/word-counter</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/color-picker.html</loc>
+    <loc>https://filediter.com/tools/color-picker</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/image-compressor.html</loc>
+    <loc>https://filediter.com/tools/image-compressor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/image-editor.html</loc>
+    <loc>https://filediter.com/tools/image-editor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/cam-ocr.html</loc>
+    <loc>https://filediter.com/tools/cam-ocr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/cam-enhancer.html</loc>
+    <loc>https://filediter.com/tools/cam-enhancer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/esign-pdf.html</loc>
+    <loc>https://filediter.com/tools/esign-pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/pdf-merger.html</loc>
+    <loc>https://filediter.com/tools/pdf-merger</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/pdf-watermark.html</loc>
+    <loc>https://filediter.com/tools/pdf-watermark</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/image-to-pdf.html</loc>
+    <loc>https://filediter.com/tools/image-to-pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/pdf-to-image.html</loc>
+    <loc>https://filediter.com/tools/pdf-to-image</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filediter.com/tools/pdf-extractor.html</loc>
+    <loc>https://filediter.com/tools/pdf-extractor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Legal/Footer Pages -->
   <url>
-    <loc>https://filediter.com/privacy.html</loc>
+    <loc>https://filediter.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://filediter.com/terms.html</loc>
+    <loc>https://filediter.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
