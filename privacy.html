@@ -1,568 +1,2675 @@
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" href="tools/privacy.png">
-    
-    <!-- SEO Metadata -->
-    <title>Privacy Policy | FileWorks</title>
-    <meta name="description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
-    <link rel="canonical" href="https://fileworks-beta.vercel.app/privacy.html">
 
-    <!-- Open Graph Metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Privacy Policy | FileWorks">
-    <meta property="og:description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
-    <meta property="og:url" content="https://fileworks-beta.vercel.app/privacy.html">
-    <meta property="og:image" content="https://fileworks-beta.vercel.app/og-image.png">
+    <!-- Apply saved/system theme before first paint (prevents a white flash in dark mode) -->
 
-    <!-- Twitter Card Metadata -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Privacy Policy | FileWorks">
-    <meta name="twitter:description" content="Read the FileWorks Privacy Policy to understand how we collect, use, and protect your information when you use our browser-based file utilities and tools.">
-    <meta name="twitter:image" content="https://fileworks-beta.vercel.app/og-image.png">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    }
-                }
+
+        (function () {
+
+            var t = null;
+
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+
+            if (t !== 'dark' && t !== 'light') {
+
+                t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
             }
-        }
+
+            document.documentElement.classList.toggle('dark', t === 'dark');
+
+        })();
+
     </script>
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SEO -->
 
-    <!-- Google Fonts -->
+    <title>Privacy Policy | Filediter</title>
+
+    <meta name="description" content="Read the Filediter Privacy Policy: what information we collect, how our browser-based file tools handle your content, cookies, third parties, and your rights.">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="canonical" href="https://filediter.com/privacy.html">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="icon" type="image/png" href="/tools/logo.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="Filediter">
+
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:title" content="Privacy Policy | Filediter">
+
+    <meta property="og:description" content="What information Filediter collects, how our browser-based file tools handle your content, and your privacy rights.">
+
+    <meta property="og:url" content="https://filediter.com/privacy.html">
+
+    <!-- Ensure /og-image.png exists, ideally 1200x630. -->
+
+    <meta property="og:image" content="https://filediter.com/og-image.png">
+    <meta property="og:image:alt" content="Filediter free browser-based file tools">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Privacy Policy | Filediter">
+
+    <meta name="twitter:description" content="What information Filediter collects, how our browser-based file tools handle your content, and your privacy rights.">
+
+    <meta name="twitter:image" content="https://filediter.com/og-image.png">
+
+    <!-- Structured data -->
+
+    <script type="application/ld+json">
+
+    {
+
+        "@context": "https://schema.org",
+
+        "@graph": [
+
+            {
+
+                "@type": "WebPage",
+
+                "@id": "https://filediter.com/privacy.html#webpage",
+
+                "url": "https://filediter.com/privacy.html",
+
+                "name": "Privacy Policy",
+
+                "description": "How Filediter collects, uses, and protects information when you use its browser-based file utilities.",
+
+                "inLanguage": "en",
+
+                "dateModified": "2026-10-04",
+
+                "isPartOf": { "@type": "WebSite", "name": "Filediter", "url": "https://filediter.com/" }
+
+            },
+
+            {
+
+                "@type": "BreadcrumbList",
+
+                "itemListElement": [
+
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+
+                    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://filediter.com/privacy.html" }
+
+                ]
+
+            }
+
+        ]
+
+    }
+
+    </script>
+
+    <!-- Fonts & icons -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Local, compiled Tailwind CSS: no runtime Tailwind dependency. -->
+    <style id="filediter-privacy-css">
+/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+:root, :host {
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  --color-amber-50: oklch(98.7% 0.022 95.277);
+  --color-amber-200: oklch(92.4% 0.12 95.746);
+  --color-amber-400: oklch(82.8% 0.189 84.429);
+  --color-amber-500: oklch(76.9% 0.188 70.08);
+  --color-amber-900: oklch(41.4% 0.112 45.904);
+  --color-amber-950: oklch(27.9% 0.077 45.635);
+  --color-slate-50: oklch(98.4% 0.003 247.858);
+  --color-slate-100: oklch(96.8% 0.007 247.896);
+  --color-slate-200: oklch(92.9% 0.013 255.508);
+  --color-slate-300: oklch(86.9% 0.022 252.894);
+  --color-slate-400: oklch(70.4% 0.04 256.788);
+  --color-slate-500: oklch(55.4% 0.046 257.417);
+  --color-slate-600: oklch(44.6% 0.043 257.281);
+  --color-slate-700: oklch(37.2% 0.044 257.287);
+  --color-slate-800: oklch(27.9% 0.041 260.031);
+  --color-slate-900: oklch(20.8% 0.042 265.755);
+  --color-white: #fff;
+  --spacing: 0.25rem;
+  --container-sm: 24rem;
+  --container-2xl: 42rem;
+  --container-4xl: 56rem;
+  --container-7xl: 80rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --tracking-tight: -0.025em;
+  --tracking-wider: 0.05em;
+  --leading-relaxed: 1.625;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --blur-md: 12px;
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
+  --color-night-900: #0b1220;
+  --color-night-800: #111a2e;
+  --color-night-700: #172033;
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.sticky {
+  position: sticky;
+}
+.top-0 {
+  top: calc(var(--spacing) * 0);
+}
+.top-24 {
+  top: calc(var(--spacing) * 24);
+}
+.z-40 {
+  z-index: 40;
+}
+.mx-auto {
+  margin-inline: auto;
+}
+.my-4 {
+  margin-block: calc(var(--spacing) * 4);
+}
+.mt-2 {
+  margin-top: calc(var(--spacing) * 2);
+}
+.mt-4 {
+  margin-top: calc(var(--spacing) * 4);
+}
+.mt-16 {
+  margin-top: calc(var(--spacing) * 16);
+}
+.mr-1\.5 {
+  margin-right: calc(var(--spacing) * 1.5);
+}
+.mr-2 {
+  margin-right: calc(var(--spacing) * 2);
+}
+.mb-1 {
+  margin-bottom: calc(var(--spacing) * 1);
+}
+.mb-2 {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+.mb-3 {
+  margin-bottom: calc(var(--spacing) * 3);
+}
+.mb-4 {
+  margin-bottom: calc(var(--spacing) * 4);
+}
+.mb-6 {
+  margin-bottom: calc(var(--spacing) * 6);
+}
+.mb-8 {
+  margin-bottom: calc(var(--spacing) * 8);
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.h-8 {
+  height: calc(var(--spacing) * 8);
+}
+.h-9 {
+  height: calc(var(--spacing) * 9);
+}
+.h-10 {
+  height: calc(var(--spacing) * 10);
+}
+.h-12 {
+  height: calc(var(--spacing) * 12);
+}
+.h-16 {
+  height: calc(var(--spacing) * 16);
+}
+.max-h-\[calc\(100vh-220px\)\] {
+  max-height: calc(100vh - 220px);
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-8 {
+  width: calc(var(--spacing) * 8);
+}
+.w-9 {
+  width: calc(var(--spacing) * 9);
+}
+.w-10 {
+  width: calc(var(--spacing) * 10);
+}
+.w-12 {
+  width: calc(var(--spacing) * 12);
+}
+.w-full {
+  width: 100%;
+}
+.max-w-2xl {
+  max-width: var(--container-2xl);
+}
+.max-w-4xl {
+  max-width: var(--container-4xl);
+}
+.max-w-7xl {
+  max-width: var(--container-7xl);
+}
+.max-w-sm {
+  max-width: var(--container-sm);
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.scroll-mt-24 {
+  scroll-margin-top: calc(var(--spacing) * 24);
+}
+.list-disc {
+  list-style-type: disc;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-2 {
+  gap: calc(var(--spacing) * 2);
+}
+.gap-4 {
+  gap: calc(var(--spacing) * 4);
+}
+.gap-6 {
+  gap: calc(var(--spacing) * 6);
+}
+.gap-8 {
+  gap: calc(var(--spacing) * 8);
+}
+.gap-10 {
+  gap: calc(var(--spacing) * 10);
+}
+.space-y-1 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-2 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-4 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-10 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-12 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-x-2 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-4 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-6 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-8 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+.\!rounded-2xl {
+  border-radius: var(--radius-2xl) !important;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-2xl {
+  border-radius: var(--radius-2xl);
+}
+.rounded-full {
+  border-radius: calc(infinity * 1px);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+.rounded-r-xl {
+  border-top-right-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.border-t {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 1px;
+}
+.border-b {
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 1px;
+}
+.border-l-4 {
+  border-left-style: var(--tw-border-style);
+  border-left-width: 4px;
+}
+.border-amber-500 {
+  border-color: var(--color-amber-500);
+}
+.border-brand-100 {
+  border-color: var(--color-brand-100);
+}
+.border-brand-500 {
+  border-color: var(--color-brand-500);
+}
+.border-slate-100 {
+  border-color: var(--color-slate-100);
+}
+.border-slate-200 {
+  border-color: var(--color-slate-200);
+}
+.bg-amber-50 {
+  background-color: var(--color-amber-50);
+}
+.bg-brand-50 {
+  background-color: var(--color-brand-50);
+}
+.bg-brand-100 {
+  background-color: var(--color-brand-100);
+}
+.bg-brand-600 {
+  background-color: var(--color-brand-600);
+}
+.bg-slate-50 {
+  background-color: var(--color-slate-50);
+}
+.bg-slate-100 {
+  background-color: var(--color-slate-100);
+}
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-white\/90 {
+  background-color: color-mix(in srgb, #fff 90%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+  }
+}
+.bg-gradient-to-b {
+  --tw-gradient-position: to bottom in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+.from-white {
+  --tw-gradient-from: var(--color-white);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+.to-slate-100 {
+  --tw-gradient-to: var(--color-slate-100);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+.\!p-6 {
+  padding: calc(var(--spacing) * 6) !important;
+}
+.p-1 {
+  padding: calc(var(--spacing) * 1);
+}
+.p-4 {
+  padding: calc(var(--spacing) * 4);
+}
+.p-6 {
+  padding: calc(var(--spacing) * 6);
+}
+.px-1 {
+  padding-inline: calc(var(--spacing) * 1);
+}
+.px-3 {
+  padding-inline: calc(var(--spacing) * 3);
+}
+.px-3\.5 {
+  padding-inline: calc(var(--spacing) * 3.5);
+}
+.px-4 {
+  padding-inline: calc(var(--spacing) * 4);
+}
+.px-5 {
+  padding-inline: calc(var(--spacing) * 5);
+}
+.py-0\.5 {
+  padding-block: calc(var(--spacing) * 0.5);
+}
+.py-1 {
+  padding-block: calc(var(--spacing) * 1);
+}
+.py-1\.5 {
+  padding-block: calc(var(--spacing) * 1.5);
+}
+.py-2\.5 {
+  padding-block: calc(var(--spacing) * 2.5);
+}
+.py-10 {
+  padding-block: calc(var(--spacing) * 10);
+}
+.py-12 {
+  padding-block: calc(var(--spacing) * 12);
+}
+.pt-2 {
+  padding-top: calc(var(--spacing) * 2);
+}
+.pt-4 {
+  padding-top: calc(var(--spacing) * 4);
+}
+.pt-8 {
+  padding-top: calc(var(--spacing) * 8);
+}
+.pr-2 {
+  padding-right: calc(var(--spacing) * 2);
+}
+.pb-4 {
+  padding-bottom: calc(var(--spacing) * 4);
+}
+.pl-5 {
+  padding-left: calc(var(--spacing) * 5);
+}
+.pl-6 {
+  padding-left: calc(var(--spacing) * 6);
+}
+.text-center {
+  text-align: center;
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+.text-3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+}
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+}
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+}
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+}
+.leading-relaxed {
+  --tw-leading: var(--leading-relaxed);
+  line-height: var(--leading-relaxed);
+}
+.font-bold {
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.font-extrabold {
+  --tw-font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-extrabold);
+}
+.font-medium {
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.tracking-tight {
+  --tw-tracking: var(--tracking-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.tracking-wider {
+  --tw-tracking: var(--tracking-wider);
+  letter-spacing: var(--tracking-wider);
+}
+.break-all {
+  word-break: break-all;
+}
+.text-amber-400 {
+  color: var(--color-amber-400);
+}
+.text-amber-900 {
+  color: var(--color-amber-900);
+}
+.text-brand-600 {
+  color: var(--color-brand-600);
+}
+.text-brand-700 {
+  color: var(--color-brand-700);
+}
+.text-slate-500 {
+  color: var(--color-slate-500);
+}
+.text-slate-600 {
+  color: var(--color-slate-600);
+}
+.text-slate-700 {
+  color: var(--color-slate-700);
+}
+.text-slate-800 {
+  color: var(--color-slate-800);
+}
+.text-slate-900 {
+  color: var(--color-slate-900);
+}
+.text-white {
+  color: var(--color-white);
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(var(--blur-md));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.transition-transform {
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.group-open\:rotate-180 {
+  &:is(:where(.group):is([open], :popover-open, :open) *) {
+    rotate: 180deg;
+  }
+}
+.selection\:bg-brand-500 {
+  & *::selection {
+    background-color: var(--color-brand-500);
+  }
+  &::selection {
+    background-color: var(--color-brand-500);
+  }
+}
+.selection\:text-white {
+  & *::selection {
+    color: var(--color-white);
+  }
+  &::selection {
+    color: var(--color-white);
+  }
+}
+.hover\:border-brand-500 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--color-brand-500);
+    }
+  }
+}
+.hover\:bg-brand-50 {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--color-brand-50);
+    }
+  }
+}
+.hover\:bg-brand-700 {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--color-brand-700);
+    }
+  }
+}
+.hover\:text-brand-700 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--color-brand-700);
+    }
+  }
+}
+.hover\:text-slate-900 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--color-slate-900);
+    }
+  }
+}
+.hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
+    }
+  }
+}
+.focus\:not-sr-only {
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+.focus\:fixed {
+  &:focus {
+    position: fixed;
+  }
+}
+.focus\:top-3 {
+  &:focus {
+    top: calc(var(--spacing) * 3);
+  }
+}
+.focus\:left-3 {
+  &:focus {
+    left: calc(var(--spacing) * 3);
+  }
+}
+.focus\:z-50 {
+  &:focus {
+    z-index: 50;
+  }
+}
+.focus\:rounded-lg {
+  &:focus {
+    border-radius: var(--radius-lg);
+  }
+}
+.focus\:bg-white {
+  &:focus {
+    background-color: var(--color-white);
+  }
+}
+.focus\:px-4 {
+  &:focus {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+}
+.focus\:py-2 {
+  &:focus {
+    padding-block: calc(var(--spacing) * 2);
+  }
+}
+.focus\:text-brand-700 {
+  &:focus {
+    color: var(--color-brand-700);
+  }
+}
+.focus\:shadow-md {
+  &:focus {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+}
+.focus\:outline-none {
+  &:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+}
+.sm\:mt-0 {
+  @media (width >= 40rem) {
+    margin-top: calc(var(--spacing) * 0);
+  }
+}
+.sm\:flex-row {
+  @media (width >= 40rem) {
+    flex-direction: row;
+  }
+}
+.sm\:items-center {
+  @media (width >= 40rem) {
+    align-items: center;
+  }
+}
+.sm\:p-10 {
+  @media (width >= 40rem) {
+    padding: calc(var(--spacing) * 10);
+  }
+}
+.sm\:px-6 {
+  @media (width >= 40rem) {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+}
+.sm\:text-4xl {
+  @media (width >= 40rem) {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+}
+.sm\:text-lg {
+  @media (width >= 40rem) {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+}
+.md\:col-span-2 {
+  @media (width >= 48rem) {
+    grid-column: span 2 / span 2;
+  }
+}
+.md\:flex {
+  @media (width >= 48rem) {
+    display: flex;
+  }
+}
+.md\:hidden {
+  @media (width >= 48rem) {
+    display: none;
+  }
+}
+.md\:grid-cols-2 {
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.md\:grid-cols-4 {
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.md\:gap-6 {
+  @media (width >= 48rem) {
+    gap: calc(var(--spacing) * 6);
+  }
+}
+.md\:py-16 {
+  @media (width >= 48rem) {
+    padding-block: calc(var(--spacing) * 16);
+  }
+}
+.md\:text-5xl {
+  @media (width >= 48rem) {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+}
+.lg\:col-span-4 {
+  @media (width >= 64rem) {
+    grid-column: span 4 / span 4;
+  }
+}
+.lg\:col-span-8 {
+  @media (width >= 64rem) {
+    grid-column: span 8 / span 8;
+  }
+}
+.lg\:block {
+  @media (width >= 64rem) {
+    display: block;
+  }
+}
+.lg\:hidden {
+  @media (width >= 64rem) {
+    display: none;
+  }
+}
+.lg\:grid-cols-12 {
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+.lg\:px-8 {
+  @media (width >= 64rem) {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+}
+.xl\:col-span-3 {
+  @media (width >= 80rem) {
+    grid-column: span 3 / span 3;
+  }
+}
+.xl\:col-span-9 {
+  @media (width >= 80rem) {
+    grid-column: span 9 / span 9;
+  }
+}
+.dark\:hidden {
+  &:where(.dark, .dark *) {
+    display: none;
+  }
+}
+.dark\:inline-block {
+  &:where(.dark, .dark *) {
+    display: inline-block;
+  }
+}
+.dark\:border-brand-900 {
+  &:where(.dark, .dark *) {
+    border-color: var(--color-brand-900);
+  }
+}
+.dark\:border-slate-800 {
+  &:where(.dark, .dark *) {
+    border-color: var(--color-slate-800);
+  }
+}
+.dark\:bg-amber-950\/40 {
+  &:where(.dark, .dark *) {
+    background-color: color-mix(in srgb, oklch(27.9% 0.077 45.635) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-950) 40%, transparent);
+    }
+  }
+}
+.dark\:bg-brand-900 {
+  &:where(.dark, .dark *) {
+    background-color: var(--color-brand-900);
+  }
+}
+.dark\:bg-brand-950 {
+  &:where(.dark, .dark *) {
+    background-color: var(--color-brand-950);
+  }
+}
+.dark\:bg-night-800 {
+  &:where(.dark, .dark *) {
+    background-color: var(--color-night-800);
+  }
+}
+.dark\:bg-night-800\/90 {
+  &:where(.dark, .dark *) {
+    background-color: color-mix(in srgb, #111a2e 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-night-800) 90%, transparent);
+    }
+  }
+}
+.dark\:bg-night-900 {
+  &:where(.dark, .dark *) {
+    background-color: var(--color-night-900);
+  }
+}
+.dark\:bg-slate-800 {
+  &:where(.dark, .dark *) {
+    background-color: var(--color-slate-800);
+  }
+}
+.dark\:from-night-800 {
+  &:where(.dark, .dark *) {
+    --tw-gradient-from: var(--color-night-800);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+}
+.dark\:to-night-900 {
+  &:where(.dark, .dark *) {
+    --tw-gradient-to: var(--color-night-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+}
+.dark\:text-amber-200 {
+  &:where(.dark, .dark *) {
+    color: var(--color-amber-200);
+  }
+}
+.dark\:text-brand-300 {
+  &:where(.dark, .dark *) {
+    color: var(--color-brand-300);
+  }
+}
+.dark\:text-brand-400 {
+  &:where(.dark, .dark *) {
+    color: var(--color-brand-400);
+  }
+}
+.dark\:text-slate-200 {
+  &:where(.dark, .dark *) {
+    color: var(--color-slate-200);
+  }
+}
+.dark\:text-slate-300 {
+  &:where(.dark, .dark *) {
+    color: var(--color-slate-300);
+  }
+}
+.dark\:text-slate-400 {
+  &:where(.dark, .dark *) {
+    color: var(--color-slate-400);
+  }
+}
+.dark\:text-white {
+  &:where(.dark, .dark *) {
+    color: var(--color-white);
+  }
+}
+.dark\:hover\:bg-brand-950 {
+  &:where(.dark, .dark *) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-brand-950);
+      }
+    }
+  }
+}
+.dark\:hover\:text-brand-300 {
+  &:where(.dark, .dark *) {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-brand-300);
+      }
+    }
+  }
+}
+.dark\:hover\:text-white {
+  &:where(.dark, .dark *) {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+@layer base {
+  html.dark {
+    color-scheme: dark;
+  }
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+  .dark :focus-visible {
+    outline-color: #60a5fa;
+  }
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+@layer components {
+  .policy-h2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+    border-color: var(--color-slate-100);
+    padding-bottom: calc(var(--spacing) * 3);
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-slate-900);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-800);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-100);
+    }
+  }
+  .policy-link {
+    color: var(--color-brand-700);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: none;
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .toc-link {
+    display: block;
+    border-radius: var(--radius-lg);
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
+    border-color: transparent;
+    padding-inline: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 1.5);
+    color: var(--color-slate-600);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-50);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-400);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-night-700);
         }
-        .toc-link.active {
-            color: #2563eb;
-            font-weight: 600;
-            border-left-color: #2563eb;
+      }
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
         }
-    </style>
+      }
+    }
+  }
+  .toc-link[aria-current="location"] {
+    border-color: var(--color-brand-600);
+    background-color: var(--color-slate-50);
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-brand-400);
+    }
+    &:where(.dark, .dark *) {
+      background-color: var(--color-night-700);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .mobile-toc-link {
+    display: block;
+    padding-block: calc(var(--spacing) * 1.5);
+    color: var(--color-slate-600);
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-400);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
+        }
+      }
+    }
+  }
+  .nav-link {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
+        }
+      }
+    }
+  }
+  .nav-link[aria-current="page"] {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .drawer-link {
+    display: block;
+    border-radius: var(--radius-md);
+    padding-inline: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 2);
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-slate-700);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-100);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-300);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-slate-800);
+        }
+      }
+    }
+  }
+  .drawer-link[aria-current="page"] {
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      background-color: var(--color-brand-950);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-300);
+    }
+  }
+  .info-box {
+    border-radius: var(--radius-xl);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-slate-200);
+    background-color: var(--color-slate-50);
+    padding: calc(var(--spacing) * 5);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-800);
+    }
+    &:where(.dark, .dark *) {
+      background-color: var(--color-night-900);
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+    }
+  }
+}
+
+</style>
+
+    <!-- Reusable component classes (processed by Tailwind) -->
+
+    <!-- Tailwind component styles compiled into the CSS above -->
+
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
 
-    <!-- Skip to Content for Accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-brand-600 focus:shadow-md">
+<body class="bg-slate-50 dark:bg-night-900 text-slate-800 dark:text-slate-200 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-brand-700 focus:shadow-md">
+
         Skip to main content
+
     </a>
 
     <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-night-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center space-x-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md p-1">
+
+            <a href="/" class="flex items-center space-x-2 text-slate-900 dark:text-white rounded-md p-1" aria-label="Filediter home">
+
                 <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">
-                    <i class="fa-solid fa-folder-open"></i>
+
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M3 19V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2"/><path d="M2 19l3-8h17l-3 8H2z"/></svg>
+
                 </div>
-                <span class="font-bold text-xl tracking-tight">File<span class="text-brand-600">Works</span></span>
+
+                <span class="font-bold text-xl tracking-tight">File<span class="text-brand-600 dark:text-brand-400">diter</span></span>
+
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                <a href="index.html" class="hover:text-brand-600 transition-colors">Home</a>
-                <a href="index.html#tools" class="hover:text-brand-600 transition-colors">Tools</a>
-                <a href="privacy.html" class="text-brand-600 font-semibold">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-brand-600 transition-colors">Terms of Service</a>
-            </nav>
+            <div class="flex items-center gap-2 md:gap-6">
 
-            <!-- Mobile Menu Button -->
-            <div class="flex items-center md:hidden">
-                <button id="mobile-menu-button" type="button" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg" aria-expanded="false" aria-label="Toggle navigation menu">
-                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400" aria-label="Primary">
+
+                    <a href="/" class="nav-link">Home</a>
+
+                    <a href="/#tools" class="nav-link">Tools</a>
+
+                    <a href="/privacy.html" class="nav-link" aria-current="page">Privacy Policy</a>
+
+                    <a href="/terms.html" class="nav-link">Terms of Service</a>
+
+                </nav>
+
+                <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
+
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-night-800 text-slate-600 dark:text-slate-400 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-500 dark:hover:bg-brand-950 dark:hover:text-brand-300 transition-colors">
+
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block dark:hidden" style="vertical-align:middle"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.6 8.6 0 1 0 20.5 14.5z"/></svg>
+
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:inline-block text-amber-400" style="vertical-align:middle"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+
                 </button>
+
+                <div class="flex items-center md:hidden">
+
+                    <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu"
+
+                            class="w-10 h-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg">
+
+                        <span id="menu-icon" aria-hidden="true" class="text-xl" style="font-size:1.25rem">☰</span>
+
+                    </button>
+
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 shadow-lg">
-            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Home</a>
-            <a href="index.html#tools" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Tools</a>
-            <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600 bg-brand-50">Privacy Policy</a>
-            <a href="terms.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Terms of Service</a>
-        </div>
+        <!-- Mobile drawer -->
+
+        <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-night-800 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-2 shadow-lg" aria-label="Mobile">
+
+            <a href="/" class="drawer-link">Home</a>
+
+            <a href="/#tools" class="drawer-link">Tools</a>
+
+            <a href="/privacy.html" class="drawer-link" aria-current="page">Privacy Policy</a>
+
+            <a href="/terms.html" class="drawer-link">Terms of Service</a>
+
+        </nav>
+
     </header>
 
-    <!-- Privacy Policy Hero Section -->
-    <section class="bg-gradient-to-b from-white to-slate-100 border-b border-slate-200 py-12 md:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center space-x-2 bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-brand-100">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>Legal & Trust</span>
-            </div>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Privacy Policy
-            </h1>
-            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-6">
-                Your privacy is important to us. This policy outlines how FileWorks handles your information and processes your files and data.
-            </p>
-            <div class="inline-flex items-center text-xs text-slate-500 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm">
-                <i class="fa-regular fa-calendar-days mr-1.5 text-brand-600"></i>
-                <span>Last Updated: October 4, 2026</span>
-            </div>
-        </div>
-    </section>
+    <main id="main-content" tabindex="-1" class="flex-grow focus:outline-none">
 
-    <!-- Main Content Layout -->
-    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- Desktop Sticky Table of Contents -->
-            <aside class="hidden lg:block lg:col-span-4 xl:col-span-3">
-                <div class="sticky top-24 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                    <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center">
-                        <i class="fa-solid fa-list-ul mr-2 text-brand-600"></i> On this page
-                    </h2>
-                    <nav class="space-y-1 text-sm max-h-[calc(100vh-220px)] overflow-y-auto pr-2 custom-scrollbar">
-                        <a href="#introduction" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">1. Introduction</a>
-                        <a href="#information-we-collect" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">2. Information We Collect</a>
-                        <a href="#file-content-processing" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">3. File & Content Processing</a>
-                        <a href="#how-we-use-information" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">4. How We Use Information</a>
-                        <a href="#cookies-and-storage" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">5. Cookies & Local Storage</a>
-                        <a href="#third-party-services" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">6. Third-Party Services</a>
-                        <a href="#analytics" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">7. Analytics</a>
-                        <a href="#data-security" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">8. Data Security</a>
-                        <a href="#data-retention" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">9. Data Retention</a>
-                        <a href="#data-sharing" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">10. Data Sharing & Disclosure</a>
-                        <a href="#international-transfers" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">11. International Transfers</a>
-                        <a href="#childrens-privacy" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">12. Children's Privacy</a>
-                        <a href="#user-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">13. User Rights & Choices</a>
-                        <a href="#california-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">14. California Privacy Rights</a>
-                        <a href="#eea-uk-rights" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">15. EEA / UK Privacy Rights</a>
-                        <a href="#do-not-track" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">16. Do Not Track Signals</a>
-                        <a href="#external-links" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">17. External Links</a>
-                        <a href="#policy-changes" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">18. Changes to This Policy</a>
-                        <a href="#contact-us" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-50 border-l-2 border-transparent transition-all">19. Contact Us</a>
-                    </nav>
+        <!-- Hero -->
+
+        <section class="bg-gradient-to-b from-white to-slate-100 dark:from-night-800 dark:to-night-900 border-b border-slate-200 dark:border-slate-800 py-12 md:py-16" aria-labelledby="page-title">
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+                <nav aria-label="Breadcrumb" class="mb-4 text-xs text-slate-600 dark:text-slate-400">
+
+                    <ol class="inline-flex items-center gap-2">
+
+                        <li><a href="/" class="hover:underline">Home</a></li>
+
+                        <li aria-hidden="true">/</li>
+
+                        <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">Privacy Policy</li>
+
+                    </ol>
+
+                </nav>
+
+                <div class="inline-flex items-center space-x-2 bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-brand-100 dark:border-brand-900">
+
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 2v20"/></svg>
+
+                    <span>Legal &amp; Trust</span>
+
                 </div>
-            </aside>
 
-            <!-- Policy Content Body -->
-            <div class="lg:col-span-8 xl:col-span-9 space-y-12">
+                <h1 id="page-title" class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
 
-                <!-- Mobile Compact Table of Contents -->
-                <div class="block lg:hidden bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                    <details class="group">
-                        <summary class="flex items-center justify-between font-semibold text-slate-900 cursor-pointer list-none">
-                            <span class="flex items-center">
-                                <i class="fa-solid fa-list-ul mr-2 text-brand-600"></i> Table of Contents
-                            </span>
-                            <span class="transition group-open:rotate-180">
-                                <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
-                            </span>
-                        </summary>
-                        <nav class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-sm">
-                            <a href="#introduction" class="block py-1 text-slate-600 hover:text-brand-600">1. Introduction</a>
-                            <a href="#information-we-collect" class="block py-1 text-slate-600 hover:text-brand-600">2. Information We Collect</a>
-                            <a href="#file-content-processing" class="block py-1 text-slate-600 hover:text-brand-600">3. File & Content Processing</a>
-                            <a href="#how-we-use-information" class="block py-1 text-slate-600 hover:text-brand-600">4. How We Use Information</a>
-                            <a href="#cookies-and-storage" class="block py-1 text-slate-600 hover:text-brand-600">5. Cookies & Local Storage</a>
-                            <a href="#third-party-services" class="block py-1 text-slate-600 hover:text-brand-600">6. Third-Party Services</a>
-                            <a href="#analytics" class="block py-1 text-slate-600 hover:text-brand-600">7. Analytics</a>
-                            <a href="#data-security" class="block py-1 text-slate-600 hover:text-brand-600">8. Data Security</a>
-                            <a href="#data-retention" class="block py-1 text-slate-600 hover:text-brand-600">9. Data Retention</a>
-                            <a href="#data-sharing" class="block py-1 text-slate-600 hover:text-brand-600">10. Data Sharing & Disclosure</a>
-                            <a href="#international-transfers" class="block py-1 text-slate-600 hover:text-brand-600">11. International Transfers</a>
-                            <a href="#childrens-privacy" class="block py-1 text-slate-600 hover:text-brand-600">12. Children's Privacy</a>
-                            <a href="#user-rights" class="block py-1 text-slate-600 hover:text-brand-600">13. User Rights & Choices</a>
-                            <a href="#california-rights" class="block py-1 text-slate-600 hover:text-brand-600">14. California Privacy Rights</a>
-                            <a href="#eea-uk-rights" class="block py-1 text-slate-600 hover:text-brand-600">15. EEA / UK Privacy Rights</a>
-                            <a href="#do-not-track" class="block py-1 text-slate-600 hover:text-brand-600">16. Do Not Track Signals</a>
-                            <a href="#external-links" class="block py-1 text-slate-600 hover:text-brand-600">17. External Links</a>
-                            <a href="#policy-changes" class="block py-1 text-slate-600 hover:text-brand-600">18. Changes to This Policy</a>
-                            <a href="#contact-us" class="block py-1 text-slate-600 hover:text-brand-600">19. Contact Us</a>
+                    Privacy Policy
+
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
+
+                    Your privacy is important to us. This policy outlines how Filediter handles your information and processes your files and data.
+
+                </p>
+
+                <div class="inline-flex items-center text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-night-800 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
+
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-1.5 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01"/></svg>
+
+                    <span>Last updated: <time datetime="2026-10-04">October 4, 2026</time></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Content layout -->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <!-- Desktop sticky table of contents -->
+
+                <aside class="hidden lg:block lg:col-span-4 xl:col-span-3" aria-label="Table of contents">
+
+                    <div class="sticky top-24 bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4 flex items-center">
+
+                            <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><path d="M9 6h12M9 12h12M9 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg> On this page
+
+                        </h2>
+
+                        <nav class="space-y-1 text-sm max-h-[calc(100vh-220px)] overflow-y-auto pr-2" aria-label="On this page">
+
+                            <a href="#introduction" class="toc-link">1. Introduction</a>
+
+                            <a href="#information-we-collect" class="toc-link">2. Information We Collect</a>
+
+                            <a href="#file-content-processing" class="toc-link">3. File and User Content Processing</a>
+
+                            <a href="#how-we-use-information" class="toc-link">4. How We Use Information</a>
+
+                            <a href="#cookies-and-storage" class="toc-link">5. Cookies and Local Storage</a>
+
+                            <a href="#third-party-services" class="toc-link">6. Third-Party Services</a>
+
+                            <a href="#analytics" class="toc-link">7. Analytics</a>
+
+                            <a href="#data-security" class="toc-link">8. Data Security</a>
+
+                            <a href="#data-retention" class="toc-link">9. Data Retention</a>
+
+                            <a href="#data-sharing" class="toc-link">10. Data Sharing and Disclosure</a>
+
+                            <a href="#international-transfers" class="toc-link">11. International Data Transfers</a>
+
+                            <a href="#childrens-privacy" class="toc-link">12. Children's Privacy</a>
+
+                            <a href="#user-rights" class="toc-link">13. User Rights and Choices</a>
+
+                            <a href="#california-rights" class="toc-link">14. California Privacy Rights</a>
+
+                            <a href="#eea-uk-rights" class="toc-link">15. EEA and UK Privacy Rights</a>
+
+                            <a href="#do-not-track" class="toc-link">16. Do Not Track Signals</a>
+
+                            <a href="#external-links" class="toc-link">17. External Links</a>
+
+                            <a href="#policy-changes" class="toc-link">18. Changes to This Privacy Policy</a>
+
+                            <a href="#contact-us" class="toc-link">19. Contact Us</a>
+
                         </nav>
-                    </details>
+
+                    </div>
+
+                </aside>
+
+                <!-- Policy body -->
+
+                <div class="lg:col-span-8 xl:col-span-9 space-y-12">
+
+                    <!-- Mobile table of contents -->
+
+                    <div class="block lg:hidden bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                        <details id="mobile-toc" class="group">
+
+                            <summary class="flex items-center justify-between font-semibold text-slate-900 dark:text-white cursor-pointer rounded-lg">
+
+                                <span class="flex items-center">
+
+                                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><path d="M9 6h12M9 12h12M9 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg> Table of Contents
+
+                                </span>
+
+                                <span class="transition-transform group-open:rotate-180" aria-hidden="true">
+
+                                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-xs text-slate-500 dark:text-slate-400" style="vertical-align:middle"><path d="m6 9 6 6 6-6"/></svg>
+
+                                </span>
+
+                            </summary>
+
+                            <nav class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-1 text-sm" aria-label="Table of contents">
+
+                                <a href="#introduction" class="mobile-toc-link">1. Introduction</a>
+
+                                <a href="#information-we-collect" class="mobile-toc-link">2. Information We Collect</a>
+
+                                <a href="#file-content-processing" class="mobile-toc-link">3. File and User Content Processing</a>
+
+                                <a href="#how-we-use-information" class="mobile-toc-link">4. How We Use Information</a>
+
+                                <a href="#cookies-and-storage" class="mobile-toc-link">5. Cookies and Local Storage</a>
+
+                                <a href="#third-party-services" class="mobile-toc-link">6. Third-Party Services</a>
+
+                                <a href="#analytics" class="mobile-toc-link">7. Analytics</a>
+
+                                <a href="#data-security" class="mobile-toc-link">8. Data Security</a>
+
+                                <a href="#data-retention" class="mobile-toc-link">9. Data Retention</a>
+
+                                <a href="#data-sharing" class="mobile-toc-link">10. Data Sharing and Disclosure</a>
+
+                                <a href="#international-transfers" class="mobile-toc-link">11. International Data Transfers</a>
+
+                                <a href="#childrens-privacy" class="mobile-toc-link">12. Children's Privacy</a>
+
+                                <a href="#user-rights" class="mobile-toc-link">13. User Rights and Choices</a>
+
+                                <a href="#california-rights" class="mobile-toc-link">14. California Privacy Rights</a>
+
+                                <a href="#eea-uk-rights" class="mobile-toc-link">15. EEA and UK Privacy Rights</a>
+
+                                <a href="#do-not-track" class="mobile-toc-link">16. Do Not Track Signals</a>
+
+                                <a href="#external-links" class="mobile-toc-link">17. External Links</a>
+
+                                <a href="#policy-changes" class="mobile-toc-link">18. Changes to This Privacy Policy</a>
+
+                                <a href="#contact-us" class="mobile-toc-link">19. Contact Us</a>
+
+                            </nav>
+
+                        </details>
+
+                    </div>
+
+                    <!-- Document card -->
+
+                    <article class="bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed text-base">
+
+                        <section id="introduction" class="scroll-mt-24 space-y-4" aria-labelledby="introduction-title">
+
+                            <h2 id="introduction-title" class="policy-h2">1. Introduction</h2>
+
+                            <p>
+
+                                Welcome to <strong>Filediter</strong> (<a href="/" class="policy-link">https://filediter.com/</a>). Filediter is a web-based collection of utility tools designed to allow users to work with files, documents, and data directly through their web browser. Our available tools include URL Encoder, Word &amp; Character Counter, Color Picker, Image Compressor, Image Editor, OCR Text Extractor, Document Enhancer, E-Sign PDF, PDF Merger, PDF Watermark, Image to PDF, PDF to Image, PDF Extractor, and related utilities.
+
+                            </p>
+
+                            <p>
+
+                                Your privacy is critically important to us. This Privacy Policy explains what information may be collected when you visit our website or use our tools, how that information is used, and your choices regarding your data. Please review this Privacy Policy to understand our data practices and your available choices.
+
+                            </p>
+
+                        </section>
+
+                        <section id="information-we-collect" class="scroll-mt-24 space-y-4" aria-labelledby="information-we-collect-title">
+
+                            <h2 id="information-we-collect-title" class="policy-h2">2. Information We Collect</h2>
+
+                            <p>
+
+                                We believe in data minimization. We clearly distinguish between information you may provide voluntarily and standard technical information that may be collected automatically where applicable.
+
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+
+                                <div class="info-box">
+
+                                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center">
+
+                                        <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 11-3"/><path d="m15 20 5-5 2 2-5 5-3 1z"/></svg> Voluntarily Provided Information
+
+                                    </h3>
+
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">Information you choose to submit to us directly:</p>
+
+                                    <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600 dark:text-slate-400">
+
+                                        <li>Contact or support information</li>
+
+                                        <li>Email address (if provided for inquiries)</li>
+
+                                        <li>Feedback, messages, or support requests</li>
+
+                                        <li>Other information you voluntarily submit</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="info-box">
+
+                                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2 flex items-center">
+
+                                        <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg> Automatically Collected Information
+
+                                    </h3>
+
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">Standard technical logs and metadata processed when accessing the site:</p>
+
+                                    <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600 dark:text-slate-400">
+
+                                        <li>IP address and approximate geographic region</li>
+
+                                        <li>Browser type and version</li>
+
+                                        <li>Device type and operating system</li>
+
+                                        <li>Referring URL and pages visited</li>
+
+                                        <li>Date/time of access and basic diagnostics</li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section id="file-content-processing" class="scroll-mt-24 space-y-4" aria-labelledby="file-content-processing-title">
+
+                            <h2 id="file-content-processing-title" class="policy-h2">3. File and User Content Processing</h2>
+
+                            <p>
+
+                                Filediter provides a variety of client-side utility tools that process images, PDFs, documents, text, URLs, and other user-provided content.
+
+                            </p>
+
+                            <div class="bg-brand-50 dark:bg-brand-950 border-l-4 border-brand-500 p-4 rounded-r-xl text-slate-700 dark:text-slate-300 text-sm my-4">
+
+                                <p class="font-semibold text-slate-900 dark:text-white mb-1">Client-Side vs. Server-Side Processing:</p>
+
+                                <p>
+
+                                    Many Filediter tools are designed to process user content directly within the user's browser. Where a tool performs processing locally, the relevant file or content does not need to be uploaded to a Filediter server for that processing. If a particular feature relies on a third-party service, external API, or server-side functionality, the relevant data may be transmitted as necessary for that feature to operate.
+
+                                </p>
+
+                            </div>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
+
+                                We do not make unsupported claims regarding absolute zero data transmission where network requests are required for infrastructure, security, or feature delivery.
+
+                            </p>
+
+                        </section>
+
+                        <section id="how-we-use-information" class="scroll-mt-24 space-y-4" aria-labelledby="how-we-use-information-title">
+
+                            <h2 id="how-we-use-information-title" class="policy-h2">4. How We Use Information</h2>
+
+                            <p>We may use the information we collect for purposes including, but not limited to:</p>
+
+                            <ul class="list-disc pl-6 space-y-2">
+
+                                <li>Providing, maintaining, and improving the Filediter website and utilities.</li>
+
+                                <li>Operating tools and features efficiently across various browsers and devices.</li>
+
+                                <li>Fixing software bugs, optimizing performance, and troubleshooting technical issues.</li>
+
+                                <li>Preventing abuse, fraud, and maintaining website security.</li>
+
+                                <li>Responding to user support requests, questions, and feedback.</li>
+
+                                <li>Understanding aggregate website usage and interaction trends where analytics are enabled.</li>
+
+                                <li>Complying with applicable legal obligations and enforcing our <a href="/terms.html" class="policy-link">Terms of Service</a>.</li>
+
+                            </ul>
+
+                            <p class="text-sm font-semibold text-slate-900 dark:text-white mt-2">
+
+                                Filediter does not sell your personal information as a business practice.
+
+                            </p>
+
+                        </section>
+
+                        <section id="cookies-and-storage" class="scroll-mt-24 space-y-4" aria-labelledby="cookies-and-storage-title">
+
+                            <h2 id="cookies-and-storage-title" class="policy-h2">5. Cookies and Local Storage</h2>
+
+                            <p>
+
+                                <strong>Cookies:</strong> Filediter or integrated third-party services may use cookies or similar tracking technologies where applicable to ensure essential functionality, remember user preferences, maintain security, and analyze website performance.
+
+                            </p>
+
+                            <p>
+
+                                <strong>Browser Local Storage:</strong> The website may utilize browser <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-sm">localStorage</code> or <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-sm">sessionStorage</code> for convenience features such as saving favorites, remembering recently used tools, or storing user interface preferences (for example, your light or dark theme choice). LocalStorage data is stored directly in your web browser and can generally be cleared at any time through your browser settings. Local storage data is not encrypted unless specific application features implement client-side encryption.
+
+                            </p>
+
+                        </section>
+
+                        <section id="third-party-services" class="scroll-mt-24 space-y-4" aria-labelledby="third-party-services-title">
+
+                            <h2 id="third-party-services-title" class="policy-h2">6. Third-Party Services</h2>
+
+                            <p>
+
+                                To deliver a fast, secure, and reliable experience, Filediter may utilize third-party infrastructure and service providers necessary for website hosting (such as Vercel), font delivery (such as Google Fonts), icon libraries (Font Awesome), styling frameworks (Tailwind CSS CDN), content delivery networks for open-source code libraries (such as cdnjs), analytics, and security. When your browser loads resources from these providers, they may receive technical information such as your IP address and browser details.
+
+                            </p>
+
+                            <p>
+
+                                These third-party services operate under their own respective privacy policies. We encourage you to review their policies for information regarding their data practices.
+
+                            </p>
+
+                        </section>
+
+                        <section id="analytics" class="scroll-mt-24 space-y-4" aria-labelledby="analytics-title">
+
+                            <h2 id="analytics-title" class="policy-h2">7. Analytics</h2>
+
+                            <p>
+
+                                Filediter may use analytics technologies to understand how visitors interact with the website. If analytics are enabled, these technologies may collect information such as pages visited, approximate usage patterns, device and browser information, and other technical telemetry to help us improve user experience. You may opt out of analytics tracking where browser settings or extensions permit.
+
+                            </p>
+
+                        </section>
+
+                        <section id="data-security" class="scroll-mt-24 space-y-4" aria-labelledby="data-security-title">
+
+                            <h2 id="data-security-title" class="policy-h2">8. Data Security</h2>
+
+                            <p>
+
+                                We employ reasonable technical, organizational, and administrative security measures designed to protect information against unauthorized access, alteration, disclosure, or destruction. These measures include HTTPS encryption where supported, regular maintenance, and secure hosting environments.
+
+                            </p>
+
+                            <div class="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-500 p-4 rounded-r-xl text-amber-900 dark:text-amber-200 text-sm">
+
+                                <p>
+
+                                    <strong>Disclaimer:</strong> Although we take reasonable measures to protect information, no method of transmission or electronic storage over the Internet can be guaranteed to be 100% secure.
+
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                        <section id="data-retention" class="scroll-mt-24 space-y-4" aria-labelledby="data-retention-title">
+
+                            <h2 id="data-retention-title" class="policy-h2">9. Data Retention</h2>
+
+                            <p>
+
+                                Information is retained only for as long as reasonably necessary to fulfill the purposes outlined in this Privacy Policy, provide our services, maintain internal records, resolve disputes, maintain security, and comply with legal obligations.
+
+                            </p>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
+
+                                For browser-local data (such as local storage), information remains in your browser until manually cleared by you or removed by the application.
+
+                            </p>
+
+                        </section>
+
+                        <section id="data-sharing" class="scroll-mt-24 space-y-4" aria-labelledby="data-sharing-title">
+
+                            <h2 id="data-sharing-title" class="policy-h2">10. Data Sharing and Disclosure</h2>
+
+                            <p>We do not share or disclose your personal information except where reasonably necessary, including:</p>
+
+                            <ul class="list-disc pl-6 space-y-2">
+
+                                <li>With trusted service providers, hosting partners, and security vendors assisting in website operation.</li>
+
+                                <li>With analytics providers where enabled to evaluate site performance.</li>
+
+                                <li>To comply with applicable laws, regulations, legal processes, or enforceable governmental requests.</li>
+
+                                <li>To protect the rights, property, safety, and security of Filediter, our users, or the public.</li>
+
+                                <li>In connection with any potential corporate merger, acquisition, or asset transfer, where applicable.</li>
+
+                            </ul>
+
+                        </section>
+
+                        <section id="international-transfers" class="scroll-mt-24 space-y-4" aria-labelledby="international-transfers-title">
+
+                            <h2 id="international-transfers-title" class="policy-h2">11. International Data Transfers</h2>
+
+                            <p>
+
+                                Because Filediter utilizes cloud hosting and global third-party infrastructure providers, information collected through the website may be processed, stored, and transferred in countries other than your country of residence, where data protection laws may differ. By using Filediter, you acknowledge and consent to such potential international transfers where applicable.
+
+                            </p>
+
+                        </section>
+
+                        <section id="childrens-privacy" class="scroll-mt-24 space-y-4" aria-labelledby="childrens-privacy-title">
+
+                            <h2 id="childrens-privacy-title" class="policy-h2">12. Children's Privacy</h2>
+
+                            <p>
+
+                                Filediter is a general audience utility website and is not intentionally designed to collect personal information from children under the age of 13 (or higher threshold where required by local law). If you are a parent or guardian and believe that your child has provided personal information to us, please contact us so we can take appropriate action.
+
+                            </p>
+
+                        </section>
+
+                        <section id="user-rights" class="scroll-mt-24 space-y-4" aria-labelledby="user-rights-title">
+
+                            <h2 id="user-rights-title" class="policy-h2">13. User Rights and Choices</h2>
+
+                            <p>
+
+                                Depending on your geographic location and applicable local data protection laws, you may have certain rights regarding your personal information, which may include:
+
+                            </p>
+
+                            <ul class="list-disc pl-6 space-y-1">
+
+                                <li><strong>Access:</strong> Requesting confirmation of whether we process your data and obtaining a copy.</li>
+
+                                <li><strong>Correction:</strong> Requesting correction of inaccurate or incomplete information.</li>
+
+                                <li><strong>Deletion:</strong> Requesting deletion of your personal information where applicable.</li>
+
+                                <li><strong>Restriction and Objection:</strong> Requesting restriction of or objecting to certain data processing activities.</li>
+
+                                <li><strong>Data Portability:</strong> Receiving your data in a structured format where applicable.</li>
+
+                                <li><strong>Withdrawal of Consent:</strong> Withdrawing consent where processing is based on consent.</li>
+
+                            </ul>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+
+                                To exercise these rights where applicable, please reach out to us using the contact details provided below.
+
+                            </p>
+
+                        </section>
+
+                        <section id="california-rights" class="scroll-mt-24 space-y-4" aria-labelledby="california-rights-title">
+
+                            <h2 id="california-rights-title" class="policy-h2">14. California Privacy Rights</h2>
+
+                            <p>
+
+                                If California privacy laws (such as the CCPA/CPRA) apply to Filediter and to you as a California resident, you may have specific rights regarding the collection, use, and disclosure of your personal information. Filediter does not sell personal information for monetary consideration. For inquiries regarding California privacy rights, please contact us.
+
+                            </p>
+
+                        </section>
+
+                        <section id="eea-uk-rights" class="scroll-mt-24 space-y-4" aria-labelledby="eea-uk-rights-title">
+
+                            <h2 id="eea-uk-rights-title" class="policy-h2">15. European Economic Area (EEA) and UK Privacy Rights</h2>
+
+                            <p>
+
+                                Where the General Data Protection Regulation (GDPR) or UK GDPR applies to our processing of your personal information, you benefit from specific data protection rights (such as access, rectification, erasure, restriction, objection, and data portability). Filediter processes such information based on legitimate operational interests, user consent, or contractual necessity as applicable.
+
+                            </p>
+
+                        </section>
+
+                        <section id="do-not-track" class="scroll-mt-24 space-y-4" aria-labelledby="do-not-track-title">
+
+                            <h2 id="do-not-track-title" class="policy-h2">16. Do Not Track Signals</h2>
+
+                            <p>
+
+                                Some web browsers feature "Do Not Track" (DNT) settings that signal to websites that you do not want to have your online activity tracked. Because there is no universally accepted standard for interpreting DNT signals, Filediter may not currently respond to browser DNT signals.
+
+                            </p>
+
+                        </section>
+
+                        <section id="external-links" class="scroll-mt-24 space-y-4" aria-labelledby="external-links-title">
+
+                            <h2 id="external-links-title" class="policy-h2">17. External Links</h2>
+
+                            <p>
+
+                                Filediter may contain links to external third-party websites or resources. We are not responsible for the privacy practices, security, or content of such external websites. We encourage you to read the privacy policies of any third-party site you visit.
+
+                            </p>
+
+                        </section>
+
+                        <section id="policy-changes" class="scroll-mt-24 space-y-4" aria-labelledby="policy-changes-title">
+
+                            <h2 id="policy-changes-title" class="policy-h2">18. Changes to This Privacy Policy</h2>
+
+                            <p>
+
+                                We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or services. When we update the policy, we will revise the "Last updated" date at the top of this page. Changes become effective immediately upon posting. We encourage you to review this page periodically to stay informed of our privacy practices.
+
+                            </p>
+
+                        </section>
+
+                        <section id="contact-us" class="scroll-mt-24 space-y-4" aria-labelledby="contact-us-title">
+
+                            <h2 id="contact-us-title" class="policy-h2">19. Contact Us</h2>
+
+                            <p>
+
+                                If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please feel free to reach out to our support team:
+
+                            </p>
+
+                            <div class="info-box !p-6 !rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-4">
+
+                                <div class="flex items-center space-x-4">
+
+                                    <div class="w-12 h-12 shrink-0 bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-300 rounded-xl flex items-center justify-center text-xl">
+
+                                        <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 8 10-8"/></svg>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h3 class="font-bold text-slate-900 dark:text-white">Filediter Support &amp; Privacy Team</h3>
+
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">For privacy inquiries, data requests, or general support.</p>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Confirm this support mailbox is active before publishing. -->
+
+                                <a href="mailto:support@filediter.com" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-sm break-all">
+
+                                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-xs" style="vertical-align:middle"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+
+                                    <span>support@filediter.com</span>
+
+                                </a>
+
+                            </div>
+
+                        </section>
+
+                    </article>
+
                 </div>
 
-                <!-- Document Card Container -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-10 text-slate-700 leading-relaxed text-base">
-
-                    <!-- Section 1 -->
-                    <section id="introduction" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">1. Introduction</h2>
-                        <p>
-                            Welcome to <strong>FileWorks</strong> (<a href="index.html" class="text-brand-600 hover:underline">https://fileworks-beta.vercel.app/</a>). FileWorks is a web-based collection of utility tools designed to allow users to work with files, documents, and data directly through their web browser. Our available tools include URL Encoder, Word & Character Counter, Color Picker, Image Compressor, Image Editor, OCR Text Extractor, Document Enhancer, E-Sign PDF, PDF Merger, PDF Watermark, Image to PDF, PDF to Image, PDF Extractor, and related utilities.
-                        </p>
-                        <p>
-                            Your privacy is critically important to us. This Privacy Policy explains what information may be collected when you visit our website or use our tools, how that information is used, and your choices regarding your data. By accessing or using FileWorks, you agree to the terms described in this Privacy Policy.
-                        </p>
-                    </section>
-
-                    <!-- Section 2 -->
-                    <section id="information-we-collect" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">2. Information We Collect</h2>
-                        <p>
-                            We believe in data minimization. We clearly distinguish between information you may provide voluntarily and standard technical information that may be collected automatically where applicable.
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80">
-                                <h3 class="font-semibold text-slate-900 mb-2 flex items-center">
-                                    <i class="fa-solid fa-user-pen mr-2 text-brand-600"></i> Voluntarily Provided Information
-                                </h3>
-                                <p class="text-sm text-slate-600 mb-3">Information you choose to submit to us directly:</p>
-                                <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
-                                    <li>Contact or support information</li>
-                                    <li>Email address (if provided for inquiries)</li>
-                                    <li>Feedback, messages, or support requests</li>
-                                    <li>Other information you voluntarily submit</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/80">
-                                <h3 class="font-semibold text-slate-900 mb-2 flex items-center">
-                                    <i class="fa-solid fa-server mr-2 text-brand-600"></i> Automatically Collected Information
-                                </h3>
-                                <p class="text-sm text-slate-600 mb-3">Standard technical logs and metadata processed when accessing the site:</p>
-                                <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
-                                    <li>IP address and approximate geographic region</li>
-                                    <li>Browser type and version</li>
-                                    <li>Device type and operating system</li>
-                                    <li>Referring URL and pages visited</li>
-                                    <li>Date/time of access and basic diagnostics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Section 3 -->
-                    <section id="file-content-processing" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">3. File and User Content Processing</h2>
-                        <p>
-                            FileWorks provides a variety of client-side utility tools that process images, PDFs, documents, text, URLs, and other user-provided content.
-                        </p>
-                        <div class="bg-brand-50 border-l-4 border-brand-500 p-4 rounded-r-xl text-slate-700 text-sm my-4">
-                            <p class="font-semibold text-slate-900 mb-1">Client-Side vs. Server-Side Processing:</p>
-                            <p>
-                                Many FileWorks tools are designed to process user content directly within the user's browser. Where a tool performs processing locally, the relevant file or content does not need to be uploaded to a FileWorks server for that processing. If a particular feature relies on a third-party service, external API, or server-side functionality, the relevant data may be transmitted as necessary for that feature to operate.
-                            </p>
-                        </div>
-                        <p class="text-sm text-slate-600">
-                            We do not make unsupported claims regarding absolute zero data transmission where network requests are required for infrastructure, security, or feature delivery.
-                        </p>
-                    </section>
-
-                    <!-- Section 4 -->
-                    <section id="how-we-use-information" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">4. How We Use Information</h2>
-                        <p>We may use the information we collect for purposes including, but not limited to:</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
-                            <li>Providing, maintaining, and improving the FileWorks website and utilities.</li>
-                            <li>Operating tools and features efficiently across various browsers and devices.</li>
-                            <li>Fixing software bugs, optimizing performance, and troubleshooting technical issues.</li>
-                            <li>Preventing abuse, fraud, and maintaining website security.</li>
-                            <li>Responding to user support requests, questions, and feedback.</li>
-                            <li>Understanding aggregate website usage and interaction trends where analytics are enabled.</li>
-                            <li>Complying with applicable legal obligations and enforcing our Terms of Service.</li>
-                        </ul>
-                        <p class="text-sm font-semibold text-slate-900 mt-2">
-                            FileWorks does not sell your personal information as a business practice.
-                        </p>
-                    </section>
-
-                    <!-- Section 5 -->
-                    <section id="cookies-and-storage" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">5. Cookies and Local Storage</h2>
-                        <p>
-                            <strong>Cookies:</strong> FileWorks or integrated third-party services may use cookies or similar tracking technologies where applicable to ensure essential functionality, remember user preferences, maintain security, and analyze website performance.
-                        </p>
-                        <p>
-                            <strong>Browser Local Storage:</strong> The website may utilize browser <code>localStorage</code> or <code>sessionStorage</code> for convenience features such as saving favorites, remembering recently used tools, or storing user interface preferences. LocalStorage data is stored directly in your web browser and can generally be cleared at any time through your browser settings. Local storage data is not encrypted unless specific application features implement client-side encryption.
-                        </p>
-                    </section>
-
-                    <!-- Section 6 -->
-                    <section id="third-party-services" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">6. Third-Party Services</h2>
-                        <p>
-                            To deliver a fast, secure, and reliable experience, FileWorks may utilize third-party infrastructure and service providers necessary for website hosting (such as Vercel), font delivery, icon libraries (Font Awesome), styling frameworks (Tailwind CSS CDN), analytics, and security.
-                        </p>
-                        <p>
-                            These third-party services operate under their own respective privacy policies. We encourage you to review their policies for information regarding their data practices.
-                        </p>
-                    </section>
-
-                    <!-- Section 7 -->
-                    <section id="analytics" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">7. Analytics</h2>
-                        <p>
-                            FileWorks may use analytics technologies to understand how visitors interact with the website. If analytics are enabled, these technologies may collect information such as pages visited, approximate usage patterns, device and browser information, and other technical telemetry to help us improve user experience. You may opt out of analytics tracking where browser settings or extensions permit.
-                        </p>
-                    </section>
-
-                    <!-- Section 8 -->
-                    <section id="data-security" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">8. Data Security</h2>
-                        <p>
-                            We employ reasonable technical, organizational, and administrative security measures designed to protect information against unauthorized access, alteration, disclosure, or destruction. These measures include HTTPS encryption where supported, regular maintenance, and secure hosting environments.
-                        </p>
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-amber-900 text-sm">
-                            <p>
-                                <strong>Disclaimer:</strong> Although we take reasonable measures to protect information, no method of transmission or electronic storage over the Internet can be guaranteed to be 100% secure.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- Section 9 -->
-                    <section id="data-retention" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">9. Data Retention</h2>
-                        <p>
-                            Information is retained only for as long as reasonably necessary to fulfill the purposes outlined in this Privacy Policy, provide our services, maintain internal records, resolve disputes, maintain security, and comply with legal obligations.
-                        </p>
-                        <p class="text-sm text-slate-600">
-                            For browser-local data (such as local storage), information remains in your browser until manually cleared by you or removed by the application.
-                        </p>
-                    </section>
-
-                    <!-- Section 10 -->
-                    <section id="data-sharing" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">10. Data Sharing and Disclosure</h2>
-                        <p>We do not share or disclose your personal information except where reasonably necessary, including:</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
-                            <li>With trusted service providers, hosting partners, and security vendors assisting in website operation.</li>
-                            <li>With analytics providers where enabled to evaluate site performance.</li>
-                            <li>To comply with applicable laws, regulations, legal processes, or enforceable governmental requests.</li>
-                            <li>To protect the rights, property, safety, and security of FileWorks, our users, or the public.</li>
-                            <li>In connection with any potential corporate merger, acquisition, or asset transfer, where applicable.</li>
-                        </ul>
-                    </section>
-
-                    <!-- Section 11 -->
-                    <section id="international-transfers" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">11. International Data Transfers</h2>
-                        <p>
-                            Because FileWorks utilizes cloud hosting and global third-party infrastructure providers, information collected through the website may be processed, stored, and transferred in countries other than your country of residence, where data protection laws may differ. By using FileWorks, you acknowledge and consent to such potential international transfers where applicable.
-                        </p>
-                    </section>
-
-                    <!-- Section 12 -->
-                    <section id="childrens-privacy" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">12. Children's Privacy</h2>
-                        <p>
-                            FileWorks is a general audience utility website and is not intentionally designed to collect personal information from children under the age of 13 (or higher threshold where required by local law). If you are a parent or guardian and believe that your child has provided personal information to us, please contact us so we can take appropriate action.
-                        </p>
-                    </section>
-
-                    <!-- Section 13 -->
-                    <section id="user-rights" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">13. User Rights and Choices</h2>
-                        <p>
-                            Depending on your geographic location and applicable local data protection laws, you may have certain rights regarding your personal information, which may include:
-                        </p>
-                        <ul class="list-disc pl-6 space-y-1 text-slate-700">
-                            <li><strong>Access:</strong> Requesting confirmation of whether we process your data and obtaining a copy.</li>
-                            <li><strong>Correction:</strong> Requesting correction of inaccurate or incomplete information.</li>
-                            <li><strong>Deletion:</strong> Requesting deletion of your personal information where applicable.</li>
-                            <li><strong>Restriction & Objection:</strong> Requesting restriction of or objecting to certain data processing activities.</li>
-                            <li><strong>Data Portability:</strong> Receiving your data in a structured format where applicable.</li>
-                            <li><strong>Withdrawal of Consent:</strong> Withdrawing consent where processing is based on consent.</li>
-                        </ul>
-                        <p class="text-sm text-slate-600 mt-2">
-                            To exercise these rights where applicable, please reach out to us using the contact details provided below.
-                        </p>
-                    </section>
-
-                    <!-- Section 14 -->
-                    <section id="california-rights" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">14. California Privacy Rights</h2>
-                        <p>
-                            If California privacy laws (such as the CCPA/CPRA) apply to FileWorks and to you as a California resident, you may have specific rights regarding the collection, use, and disclosure of your personal information. FileWorks does not sell personal information for monetary consideration. For inquiries regarding California privacy rights, please contact us.
-                        </p>
-                    </section>
-
-                    <!-- Section 15 -->
-                    <section id="eea-uk-rights" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">15. European Economic Area (EEA) and UK Privacy Rights</h2>
-                        <p>
-                            Where the General Data Protection Regulation (GDPR) or UK GDPR applies to our processing of your personal information, you benefit from specific data protection rights (such as access, rectification, erasure, restriction, objection, and data portability). FileWorks processes such information based on legitimate operational interests, user consent, or contractual necessity as applicable.
-                        </p>
-                    </section>
-
-                    <!-- Section 16 -->
-                    <section id="do-not-track" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">16. Do Not Track Signals</h2>
-                        <p>
-                            Some web browsers feature "Do Not Track" (DNT) settings that signal to websites that you do not want to have your online activity tracked. Because there is no universally accepted standard for interpreting DNT signals, FileWorks may not currently respond to browser DNT signals.
-                        </p>
-                    </section>
-
-                    <!-- Section 17 -->
-                    <section id="external-links" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">17. External Links</h2>
-                        <p>
-                            FileWorks may contain links to external third-party websites or resources. We are not responsible for the privacy practices, security, or content of such external websites. We encourage you to read the privacy policies of any third-party site you visit.
-                        </p>
-                    </section>
-
-                    <!-- Section 18 -->
-                    <section id="policy-changes" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">18. Changes to This Privacy Policy</h2>
-                        <p>
-                            We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or services. When we update the policy, we will revise the "Last Updated" date at the top of this page. Changes become effective immediately upon posting. We encourage you to review this page periodically to stay informed of our privacy practices.
-                        </p>
-                    </section>
-
-                    <!-- Section 19 -->
-                    <section id="contact-us" class="scroll-mt-24 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">19. Contact Us</h2>
-                        <p>
-                            If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please feel free to reach out to our support team:
-                        </p>
-                        
-                        <!-- Contact Card Box -->
-                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-xl">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-slate-900">FileWorks Support & Privacy Team</h3>
-                                    <p class="text-sm text-slate-600">For privacy inquiries, data requests, or general support.</p>
-                                </div>
-                            </div>
-                            <!-- Replace this email with your real FileWorks support email before publishing. -->
-                            <a href="mailto:support@YOUR-DOMAIN.com" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-                                <i class="fa-solid fa-paper-plane text-xs"></i>
-                                <span>support@YOUR-DOMAIN.com</span>
-                            </a>
-                        </div>
-                    </section>
-
-                </div>
             </div>
 
         </div>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-16 text-slate-600 text-sm">
+
+    <footer class="bg-white dark:bg-night-800 border-t border-slate-200 dark:border-slate-800 mt-16 text-slate-600 dark:text-slate-400 text-sm">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Brand & Description -->
+
                 <div class="md:col-span-2 space-y-4">
-                    <a href="index.html" class="flex items-center space-x-2 text-slate-900">
+
+                    <a href="/" class="inline-flex items-center space-x-2 text-slate-900 dark:text-white rounded-lg" aria-label="Filediter home">
+
                         <div class="w-8 h-8 bg-brand-600 text-white rounded-lg flex items-center justify-center font-bold text-base shadow-sm">
-                            <i class="fa-solid fa-folder-open"></i>
+
+                            <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M3 19V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2"/><path d="M2 19l3-8h17l-3 8H2z"/></svg>
+
                         </div>
-                        <span class="font-bold text-lg tracking-tight">File<span class="text-brand-600">Works</span></span>
+
+                        <span class="font-bold text-lg tracking-tight">File<span class="text-brand-600 dark:text-brand-400">diter</span></span>
+
                     </a>
-                    <p class="text-slate-500 max-w-sm text-sm">
+
+                    <p class="text-slate-600 dark:text-slate-400 max-w-sm text-sm">
+
                         A modern web-based collection of utility tools designed to help you work with files, images, and data efficiently right inside your browser.
+
                     </p>
+
                 </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Navigation</h3>
+                <nav aria-label="Footer navigation">
+
+                    <h2 class="font-semibold text-slate-900 dark:text-white mb-3 text-xs uppercase tracking-wider">Navigation</h2>
+
                     <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-brand-600 transition-colors">Home</a></li>
-                        <li><a href="index.html#tools" class="hover:text-brand-600 transition-colors">Utility Tools</a></li>
-                        <li><a href="privacy.html" class="text-brand-600 font-medium">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-brand-600 transition-colors">Terms of Service</a></li>
+
+                        <li><a href="/" class="nav-link inline-block py-0.5">Home</a></li>
+
+                        <li><a href="/#tools" class="nav-link inline-block py-0.5">Utility Tools</a></li>
+
+                        <li><a href="/privacy.html" class="nav-link inline-block py-0.5" aria-current="page">Privacy Policy</a></li>
+
+                        <li><a href="/terms.html" class="nav-link inline-block py-0.5">Terms of Service</a></li>
+
                     </ul>
+
+                </nav>
+
+                <div>
+
+                    <h2 class="font-semibold text-slate-900 dark:text-white mb-3 text-xs uppercase tracking-wider">Support</h2>
+
+                    <ul class="space-y-2 text-sm">
+
+                        <!-- Use the same support mailbox as the contact box above. -->
+
+                        <li><a href="mailto:support@filediter.com" class="nav-link inline-block py-0.5"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-1.5" style="vertical-align:middle"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 8 10-8"/></svg> Contact Support</a></li>
+
+                        <li><span class="text-slate-600 dark:text-slate-400 text-xs">Client-side processing</span></li>
+
+                    </ul>
+
                 </div>
 
-                <!-- Legal / Contact -->
-                <div>
-                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Support</h3>
-                    <ul class="space-y-2 text-sm">
-                        <!-- Replace this email with your real FileWorks support email before publishing. -->
-                        <li><a href="mailto:support@YOUR-DOMAIN.com" class="hover:text-brand-600 transition-colors"><i class="fa-solid fa-envelope mr-1.5"></i> Contact Support</a></li>
-                        <li><span class="text-slate-400 text-xs">Client-Side Processing</span></li>
-                    </ul>
-                </div>
             </div>
 
-            <!-- Copyright & Bottom Bar -->
-            <div class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-                <p id="copyright-text">© 2026 FileWorks. All rights reserved.</p>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+
+                <p>&copy; <span id="year">2026</span> Filediter. All rights reserved.</p>
+
                 <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="privacy.html" class="hover:text-brand-600">Privacy</a>
-                    <a href="terms.html" class="hover:text-brand-600">Terms</a>
+
+                    <a href="/privacy.html" class="nav-link" aria-current="page">Privacy</a>
+
+                    <a href="/terms.html" class="nav-link">Terms</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
 
-    <!-- Interactive JavaScript -->
     <script>
-        // Dynamic Copyright Year
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentYear = new Date().getFullYear();
-            const copyrightElement = document.getElementById('copyright-text');
-            if (copyrightElement) {
-                copyrightElement.innerHTML = `&copy; ${currentYear} FileWorks. All rights reserved.`;
-            }
 
-            // Mobile Navigation Toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
+    (function () {
 
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                    mobileMenu.classList.toggle('hidden');
-                    
-                    if (isExpanded) {
-                        menuIcon.className = 'fa-solid fa-bars text-xl';
-                    } else {
-                        menuIcon.className = 'fa-solid fa-xmark text-xl';
-                    }
+        'use strict';
+
+        var root = document.documentElement;
+
+        /* ----- Copyright year ----- */
+
+        var year = document.getElementById('year');
+
+        if (year) year.textContent = new Date().getFullYear();
+
+        /* ----- Mobile navigation ----- */
+
+        var menuBtn = document.getElementById('mobile-menu-button');
+
+        var menu = document.getElementById('mobile-menu');
+
+        var menuIcon = document.getElementById('menu-icon');
+
+        function setMenu(open) {
+
+            menu.classList.toggle('hidden', !open);
+
+            menuBtn.setAttribute('aria-expanded', String(open));
+
+            menuIcon.textContent = open ? '✕' : '☰';
+
+        }
+
+        if (menuBtn && menu) {
+
+            menuBtn.addEventListener('click', function () {
+
+                setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+
+            });
+
+            menu.addEventListener('click', function (e) {
+
+                if (e.target.closest('a')) setMenu(false);
+
+            });
+
+            document.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+
+                    setMenu(false);
+
+                    menuBtn.focus();
+
+                }
+
+            });
+
+            // Close the drawer if the window grows to the desktop layout
+
+            if (window.matchMedia) {
+
+                window.matchMedia('(min-width: 768px)').addEventListener('change', function (e) {
+
+                    if (e.matches) setMenu(false);
+
                 });
+
             }
 
-            // Table of Contents Active Link Highlighting on Scroll
-            const sections = document.querySelectorAll('section[id]');
-            const tocLinks = document.querySelectorAll('.toc-link');
+        }
 
-            function highlightTocOnScroll() {
-                const scrollPosition = window.scrollY + 120;
+        /* ----- Collapse the mobile table of contents after choosing a link ----- */
 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
+        var mobileToc = document.getElementById('mobile-toc');
 
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        tocLinks.forEach(link => {
-                            link.classList.remove('active', 'text-brand-600', 'font-semibold', 'bg-slate-50', 'border-brand-600');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.classList.add('active', 'text-brand-600', 'font-semibold', 'bg-slate-50', 'border-brand-600');
-                            }
-                        });
-                    }
+        if (mobileToc) {
+
+            mobileToc.addEventListener('click', function (e) {
+
+                if (e.target.closest('a')) mobileToc.open = false;
+
+            });
+
+        }
+
+        /* ----- Table of contents: highlight the section being read ----- */
+
+        var tocLinks = Array.prototype.slice.call(document.querySelectorAll('aside .toc-link'));
+
+        var sections = document.querySelectorAll('article section[id]');
+
+        function setActive(id) {
+
+            tocLinks.forEach(function (link) {
+
+                if (link.getAttribute('href') === '#' + id) link.setAttribute('aria-current', 'location');
+
+                else link.removeAttribute('aria-current');
+
+            });
+
+        }
+
+        if (tocLinks.length && sections.length && 'IntersectionObserver' in window) {
+
+            // Active band = just below the sticky header, upper part of the viewport
+
+            var observer = new IntersectionObserver(function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) setActive(entry.target.id);
+
                 });
-            }
 
-            if (tocLinks.length > 0 && sections.length > 0) {
-                window.addEventListener('scroll', highlightTocOnScroll);
-                highlightTocOnScroll(); // Initial check
-            }
-        });
+            }, { rootMargin: '-96px 0px -65% 0px', threshold: 0 });
+
+            sections.forEach(function (s) { observer.observe(s); });
+
+        }
+
+        /* ----- Theme toggle ----- */
+
+        var KEY = 'theme';
+
+        var themeBtn = document.getElementById('theme-toggle');
+
+        function applyTheme(dark) {
+
+            root.classList.toggle('dark', dark);
+
+            if (!themeBtn) return;
+
+            themeBtn.setAttribute('aria-pressed', String(dark));
+
+            themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+
+        }
+
+        function savedTheme() {
+
+            try {
+
+                var t = localStorage.getItem(KEY);
+
+                return t === 'dark' || t === 'light' ? t : null;
+
+            } catch (e) { return null; }
+
+        }
+
+        if (themeBtn) {
+
+            applyTheme(root.classList.contains('dark'));
+
+            themeBtn.addEventListener('click', function () {
+
+                var dark = !root.classList.contains('dark');
+
+                applyTheme(dark);
+
+                try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+
+            });
+
+        }
+
+        // Follow the device setting live, unless the visitor chose a theme manually
+
+        if (window.matchMedia) {
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+
+                if (!savedTheme()) applyTheme(e.matches);
+
+            });
+
+        }
+
+    })();
+
     </script>
+
 </body>
+
 </html>
