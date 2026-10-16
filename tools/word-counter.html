@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Free Online Word Counter &amp; Character Counter Tool | SEO Text Analyzer – Filediter</title>
+    <meta name="description" content="Free online word counter, character counter, readability score calculator, reading time estimator, and 1/2/3-word SEO keyword density analyzer. 100% private in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/word-counter.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="word-counter.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M14 20h36v4H14zm0 10h28v4H14zm0 10h36v4H14zm0 10h20v4H14z' fill='%23fff'/%3E%3Ccircle cx='46' cy='46' r='10' fill='%23ec4899'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Free Online Word Counter &amp; SEO Text Analyzer | Filediter">
+    <meta property="og:description" content="Count words, characters, sentences, reading time, readability grade level, and 1/2/3-word SEO keyword density in real time. 100% client-side.">
+    <meta property="og:url" content="https://filediter.com/tools/word-counter.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Word Counter &amp; SEO Text Analyzer | Filediter">
+    <meta name="twitter:description" content="Real-time word count, character limits, readability scores, and N-gram keyword density right in your browser.">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter Word Counter & SEO Text Analyzer",
+                "url": "https://filediter.com/tools/word-counter.html",
+                "description": "Calculate word count, character count, sentence count, Flesch readability score, reading/speaking time, and 1-word, 2-word, and 3-word SEO keyword density in real time.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "Real-time word, character, sentence, paragraph, and line counting",
+                    "1-word, 2-word (bigram), and 3-word (trigram) SEO keyword density analysis",
+                    "Flesch Reading Ease and Flesch-Kincaid Grade Level scoring",
+                    "Social media and Google SERP character limit progress trackers",
+                    "Case conversion, URL slugifier, HTML tag stripper, and duplicate line remover"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Word Counter", "item": "https://filediter.com/tools/word-counter.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Count Words and Analyze SEO Keyword Density",
+                "description": "Check word counts, readability, and keyword density using Filediter's browser-based text analyzer.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Enter or import your text",
+                        "text": "Type, paste, or upload a .txt or .md file into the editor workspace."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Review live metrics and readability",
+                        "text": "Check the real-time dashboard for words, characters, reading time, Flesch readability score, and social media character limits."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Optimize keyword density and format text",
+                        "text": "Switch between 1-word, 2-word, and 3-word phrases in the Keyword Density panel, apply text case formatting, and copy or export your work."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is my text stored on any server?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. All text analysis is executed 100% locally inside your web browser using JavaScript. Your content is never transmitted to any external server."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How are reading time, speaking time, and readability calculated?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Reading time is based on an average silent reading speed of 200 words per minute (WPM), while speaking time uses 130 WPM. Readability is calculated using the standard Flesch Reading Ease and Flesch-Kincaid Grade Level formulas based on sentence length and syllable count."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is ideal SEO keyword density?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most SEO professionals aim for a primary keyword density between 1% and 2.5%, ensuring natural phrasing without keyword stuffing. Using 2-word and 3-word phrase tabs helps identify overused long-tail phrases."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS (pinned CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header (Identical structure to pdf-watermark.html) -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform motion-reduce:transition-none">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" tabindex="-1" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">Word Counter</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool requires JavaScript to count words and analyze text in your browser. Please enable JavaScript and reload.</p>
+        </noscript>
+
+        <!-- Tool Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 dark:bg-pink-950/50 border border-pink-200 dark:border-pink-900 text-pink-700 dark:text-pink-300 text-xs font-bold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-keyboard" aria-hidden="true"></i> SEO &amp; Writing Utility
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Advanced Word &amp; Character Counter
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                Real-time word and character counting, Flesch readability scoring, reading/speaking time estimation, and 1–3 word SEO keyword density analysis.
+            </p>
+        </div>
+
+        <!-- Realtime Stats Dashboard -->
+        <section aria-label="Real-time text statistics" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-8">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Words</span>
+                <span id="statWords" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Characters</span>
+                <span id="statChars" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">No Spaces</span>
+                <span id="statCharsNoSpace" class="text-2xl font-extrabold text-slate-700 dark:text-slate-300">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Sentences</span>
+                <span id="statSentences" class="text-2xl font-extrabold text-purple-600 dark:text-purple-400">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Paragraphs</span>
+                <span id="statParagraphs" class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1" title="Based on 200 words per minute">Reading</span>
+                <span id="statReadingTime" class="text-xl font-extrabold text-amber-600 dark:text-amber-400">0s</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1" title="Based on 130 words per minute">Speaking</span>
+                <span id="statSpeakingTime" class="text-xl font-extrabold text-rose-600 dark:text-rose-400">0s</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-2xl shadow-sm text-center">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Lines</span>
+                <span id="statLines" class="text-2xl font-extrabold text-teal-600 dark:text-teal-400">0</span>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Main Input Area, Toolbar & Readability -->
+            <div class="lg:col-span-2 space-y-6">
+                <div id="editorCard" class="bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm transition-colors">
+                    <!-- Top Toolbar -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <label for="textInput" class="font-heading font-bold text-slate-900 dark:text-white text-lg">Type or Paste Your Text</label>
+                            <span id="selectionBadge" class="hidden px-2.5 py-0.5 rounded-full bg-brand-50 dark:bg-brand-950/70 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 text-xs font-semibold"></span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2">
+                            <input type="file" id="fileImportInput" accept=".txt,.md,.markdown,.csv,.html,.json,text/plain" class="sr-only">
+                            <button type="button" id="importFileBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors inline-flex items-center gap-1.5" title="Import text from a .txt or .md file">
+                                <i class="fa-solid fa-file-import" aria-hidden="true"></i> Import File
+                            </button>
+                            <button type="button" id="undoBtn" disabled class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors inline-flex items-center gap-1.5" title="Undo last text transformation">
+                                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Undo
+                            </button>
+                            <button type="button" id="copyBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors inline-flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy" aria-hidden="true"></i> <span id="copyBtnLabel">Copy</span>
+                            </button>
+                            <button type="button" id="downloadBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-download" aria-hidden="true"></i> Download .TXT
+                            </button>
+                            <button type="button" id="clearBtn" class="px-3 py-1.5 rounded-lg bg-red-50 dark:bg-red-950/50 hover:bg-red-100 dark:hover:bg-red-900 text-red-600 dark:text-red-400 text-xs font-semibold transition-colors inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Clear
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Textarea -->
+                    <textarea
+                        id="textInput"
+                        rows="13"
+                        placeholder="Start typing, paste your content, or drag and drop a .txt / .md file here to calculate words, readability, and SEO keyword density…"
+                        class="w-full p-4 border border-slate-200 dark:border-slate-700 bg-slate-50/40 dark:bg-slate-950 rounded-2xl text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:border-transparent text-base leading-relaxed resize-y focus:outline-none"
+                    ></textarea>
+
+                    <!-- Status Bar / Word Goal / Auto-save -->
+                    <div class="mt-3 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
+                        <div class="flex flex-wrap items-center gap-4">
+                            <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+                                <input type="checkbox" id="autoSaveToggle" checked class="w-3.5 h-3.5 accent-brand-600 rounded">
+                                <span>Auto-save in browser</span>
+                            </label>
+                            <div class="inline-flex items-center gap-1.5">
+                                <label for="wordGoalInput" class="font-semibold text-slate-600 dark:text-slate-400">Word Goal:</label>
+                                <input type="number" id="wordGoalInput" min="0" max="500000" step="50" placeholder="e.g. 1500"
+                                       class="w-24 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-500">
+                                <span id="wordGoalStatus" class="font-semibold text-brand-600 dark:text-brand-400"></span>
+                            </div>
+                        </div>
+                        <p id="actionStatus" role="status" aria-live="polite" aria-atomic="true" class="font-semibold text-emerald-600 dark:text-emerald-400"></p>
+                    </div>
+
+                    <!-- Text Action Buttons -->
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Text Transformations (applies to selection or full text)</span>
+                        </div>
+                        <div id="transformToolbar" class="flex flex-wrap gap-2">
+                            <button type="button" data-transform="uppercase" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">UPPERCASE</button>
+                            <button type="button" data-transform="lowercase" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">lowercase</button>
+                            <button type="button" data-transform="capitalize" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Title Case</button>
+                            <button type="button" data-transform="sentenceCase" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Sentence case</button>
+                            <button type="button" data-transform="inverseCase" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">iNVERSE cASE</button>
+                            <button type="button" data-transform="slugify" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">URL Slug</button>
+                            <button type="button" data-transform="cleanSpaces" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Remove Extra Spaces</button>
+                            <button type="button" data-transform="removeLineBreaks" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Remove Line Breaks</button>
+                            <button type="button" data-transform="dedupeLines" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Remove Duplicate Lines</button>
+                            <button type="button" data-transform="stripHtml" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:text-brand-600 dark:hover:text-brand-400 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-colors">Strip HTML Tags</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Readability & Writing Quality Panel -->
+                <section aria-labelledby="readability-heading" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <h2 id="readability-heading" class="font-heading font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-book-open-reader text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Readability &amp; Writing Structure
+                        </h2>
+                        <span id="readabilityBadge" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold">Add text to analyze</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-center">
+                        <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                            <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Flesch Score</span>
+                            <span id="statFlesch" class="text-lg font-extrabold text-slate-900 dark:text-white">—</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                            <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Grade Level</span>
+                            <span id="statGrade" class="text-lg font-extrabold text-slate-900 dark:text-white">—</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                            <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Unique Words</span>
+                            <span id="statUniqueWords" class="text-lg font-extrabold text-slate-900 dark:text-white">0 (0%)</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                            <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Avg Sentence</span>
+                            <span id="statAvgSentence" class="text-lg font-extrabold text-slate-900 dark:text-white">0 words</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 col-span-2 sm:col-span-1">
+                            <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Avg Word Length</span>
+                            <span id="statAvgWord" class="text-lg font-extrabold text-slate-900 dark:text-white">0 chars</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: SEO Keyword Density & Social/SERP Limits -->
+            <div class="space-y-6">
+                <!-- Keyword Density Analyzer -->
+                <section aria-labelledby="density-heading" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <h2 id="density-heading" class="font-heading font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-chart-pie text-brand-600 dark:text-brand-400" aria-hidden="true"></i> SEO Keyword Density
+                        </h2>
+                        <button type="button" id="exportCsvBtn" disabled class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline disabled:opacity-40 disabled:no-underline disabled:cursor-not-allowed inline-flex items-center gap-1" title="Export keyword density table as CSV">
+                            <i class="fa-solid fa-file-csv" aria-hidden="true"></i> CSV
+                        </button>
+                    </div>
+
+                    <!-- N-Gram Tabs (1-Word, 2-Word, 3-Word) -->
+                    <div role="tablist" aria-label="Keyword phrase length" class="grid grid-cols-3 gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-bold mb-4">
+                        <button type="button" role="tab" data-ngram="1" aria-selected="true" class="ngram-tab py-1.5 rounded-lg text-center transition-colors text-slate-700 dark:text-slate-300 aria-selected:bg-white aria-selected:text-brand-700 aria-selected:shadow-sm dark:aria-selected:bg-slate-900 dark:aria-selected:text-brand-400">1-Word</button>
+                        <button type="button" role="tab" data-ngram="2" aria-selected="false" tabindex="-1" class="ngram-tab py-1.5 rounded-lg text-center transition-colors text-slate-700 dark:text-slate-300 aria-selected:bg-white aria-selected:text-brand-700 aria-selected:shadow-sm dark:aria-selected:bg-slate-900 dark:aria-selected:text-brand-400">2-Word</button>
+                        <button type="button" role="tab" data-ngram="3" aria-selected="false" tabindex="-1" class="ngram-tab py-1.5 rounded-lg text-center transition-colors text-slate-700 dark:text-slate-300 aria-selected:bg-white aria-selected:text-brand-700 aria-selected:shadow-sm dark:aria-selected:bg-slate-900 dark:aria-selected:text-brand-400">3-Word</button>
+                    </div>
+
+                    <!-- Target Keyword Checker -->
+                    <div class="mb-4">
+                        <label for="targetKeywordInput" class="sr-only">Check specific target keyword</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-400" aria-hidden="true"></i>
+                            <input type="text" id="targetKeywordInput" placeholder="Check specific keyword or phrase…" autocomplete="off"
+                                   class="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <p id="targetKeywordResult" class="text-xs font-semibold text-brand-600 dark:text-brand-400 [&:not(:empty)]:mt-1.5"></p>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mb-3">
+                        <span>Top repeated phrases</span>
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+                            <input type="checkbox" id="excludeStopWords" checked class="w-3.5 h-3.5 accent-brand-600 rounded">
+                            <span>Ignore stop words</span>
+                        </label>
+                    </div>
+
+                    <div id="densityList" class="space-y-3 min-h-[160px]" aria-live="polite">
+                        <p class="text-sm text-slate-400 italic">No text provided yet.</p>
+                    </div>
+                </section>
+
+                <!-- Social Media & SEO Limits Helper -->
+                <section aria-labelledby="limits-heading" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+                    <h2 id="limits-heading" class="font-heading font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-4">Social Media &amp; SEO Limits</h2>
+                    <div class="space-y-3.5 text-xs">
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span class="text-slate-600 dark:text-slate-400">Meta Title Tag (SEO)</span>
+                                <span id="metaTitleCount" class="text-slate-900 dark:text-slate-200">0 / 60 chars</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                                <div id="metaTitleBar" data-color="bg-brand-600" role="progressbar" aria-label="Meta Title Tag length" aria-valuenow="0" aria-valuemin="0" aria-valuemax="60" class="bg-brand-600 h-1.5 rounded-full transition-all" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span class="text-slate-600 dark:text-slate-400">Meta Description (SEO)</span>
+                                <span id="metaDescCount" class="text-slate-900 dark:text-slate-200">0 / 160 chars</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                                <div id="metaDescBar" data-color="bg-indigo-600" role="progressbar" aria-label="Meta Description length" aria-valuenow="0" aria-valuemin="0" aria-valuemax="160" class="bg-indigo-600 h-1.5 rounded-full transition-all" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span class="text-slate-600 dark:text-slate-400">X (Twitter) Post</span>
+                                <span id="twitterCount" class="text-slate-900 dark:text-slate-200">0 / 280 chars</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                                <div id="twitterBar" data-color="bg-cyan-500" role="progressbar" aria-label="X Post length" aria-valuenow="0" aria-valuemin="0" aria-valuemax="280" class="bg-cyan-500 h-1.5 rounded-full transition-all" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span class="text-slate-600 dark:text-slate-400">Instagram Bio</span>
+                                <span id="instaCount" class="text-slate-900 dark:text-slate-200">0 / 150 chars</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                                <div id="instaBar" data-color="bg-pink-500" role="progressbar" aria-label="Instagram Bio length" aria-valuenow="0" aria-valuemin="0" aria-valuemax="150" class="bg-pink-500 h-1.5 rounded-full transition-all" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span class="text-slate-600 dark:text-slate-400">LinkedIn Post</span>
+                                <span id="linkedinCount" class="text-slate-900 dark:text-slate-200">0 / 3,000 chars</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                                <div id="linkedinBar" data-color="bg-blue-600" role="progressbar" aria-label="LinkedIn Post length" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3000" class="bg-blue-600 h-1.5 rounded-full transition-all" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- SEO Content & Documentation Section -->
+        <section class="mt-16 border-t border-slate-200 dark:border-slate-800 pt-12 space-y-12" aria-labelledby="guide-heading">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm max-w-4xl mx-auto space-y-8">
+                <div>
+                    <h2 id="guide-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">Why Use an Online Word &amp; Character Counter?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Whether you are an SEO content strategist, copywriter, software developer, or academic researcher, staying within word and character thresholds is essential. Filediter's <strong>online word counter and SEO text analyzer</strong> processes your writing directly inside your browser—evaluating word frequency, 2-word and 3-word long-tail phrases, Flesch readability scores, and SERP snippet limits in real time.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-slate-100 dark:border-slate-800 pt-6">
+                    <div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Key Features</h3>
+                        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                            <li>Instant word, character, sentence, paragraph, and line counts.</li>
+                            <li>1-word, 2-word (bigram), and 3-word (trigram) SEO keyword density.</li>
+                            <li>Flesch Reading Ease &amp; Grade Level readability scoring.</li>
+                            <li>Selection-aware text case transformations with Undo history.</li>
+                            <li>Local browser auto-save and CSV/TXT report export.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Common Platform Character Limits</h3>
+                        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                            <li><strong>Google Meta Title:</strong> ~60 characters</li>
+                            <li><strong>Google Meta Description:</strong> ~160 characters</li>
+                            <li><strong>X (Twitter) Post:</strong> 280 characters</li>
+                            <li><strong>Instagram Bio:</strong> 150 characters</li>
+                            <li><strong>LinkedIn Post:</strong> 3,000 characters</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Related Tools (Only linking to real existing Filediter tools) -->
+                <div class="border-t border-slate-100 dark:border-slate-800 pt-6">
+                    <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Related Filediter Utilities</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Need to extract text from a scanned image or camera photo first? Use the <a href="cam-ocr.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">OCR Text Extractor</a> or pull text and pages from documents with the <a href="pdf-extractor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Extractor</a>. For web development tasks, try the <a href="url-encoder.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">URL Encoder / Decoder</a> and <a href="color-picker.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">Color Picker</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Collapsible FAQ -->
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-3">
+                    <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                            Is my text stored on any server?
+                            <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                        </summary>
+                        <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. All text counting, readability scoring, and keyword extraction happen locally inside your web browser. If you leave "Auto-save in browser" enabled, your draft is saved only in your own device's <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">localStorage</code>.</p>
+                    </details>
+                    <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                            How are reading time, speaking time, and readability calculated?
+                            <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                        </summary>
+                        <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Reading time is computed using an average adult silent reading speed of 200 words per minute (WPM), and speaking time at 130 WPM. Readability uses the standard Flesch Reading Ease formula comparing average words per sentence and average syllables per word.</p>
+                    </details>
+                    <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                            What is a good SEO keyword density percentage?
+                            <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                        </summary>
+                        <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A natural primary keyword density typically falls between 1% and 2.5%. Checking the 2-Word and 3-Word tabs helps ensure your target topic phrases appear naturally without triggering search engine over-optimization filters.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Standardized Footer (Only verified, real Filediter URLs — zero broken links) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <!-- Image Tools (Real Filediter files) -->
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <!-- PDF Tools (Real Filediter files) -->
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-white transition-colors">PDF Extractor</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Text & Web Utilities (Real Filediter files) -->
+                <nav aria-label="Text and Web tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Web &amp; Text Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="word-counter.html" aria-current="page" class="text-brand-400 font-semibold">Word Counter</a></li>
+                        <li><a href="url-encoder.html" class="hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                        <li><a href="color-picker.html" class="hover:text-white transition-colors">Color Picker</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Company (Real Filediter files) -->
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">All Tools</a></li>
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-6 text-xs text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Script -->
+    <script>
+    (() => {
+        'use strict';
+
+        const STORAGE_KEY = 'filediter_word_counter_draft_v1';
+        const AUTOSAVE_PREF_KEY = 'filediter_word_counter_autosave';
+        const MAX_UNDO = 25;
+
+        // Expanded English stop words
+        const STOP_WORDS = new Set([
+            'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'i', 'it', 'for', 'not', 'on', 'with',
+            'he', 'as', 'you', 'do', 'at', 'this', 'but', 'his', 'by', 'from', 'they', 'we', 'say', 'her',
+            'she', 'or', 'an', 'will', 'my', 'one', 'all', 'would', 'there', 'their', 'what', 'so', 'up',
+            'out', 'if', 'about', 'who', 'get', 'which', 'go', 'me', 'is', 'are', 'was', 'were', 'has', 'had',
+            'been', 'can', 'could', 'should', 'would', 'may', 'might', 'must', 'shall', 'our', 'your', 'its',
+            'into', 'than', 'then', 'them', 'these', 'those', 'some', 'such', 'no', 'nor', 'too', 'very',
+            'just', 'also', 'more', 'most', 'other', 'over', 'only', 'own', 'same', 'how', 'when', 'where',
+            'why', 'while', 'after', 'before', 'because', 'each', 'few', 'both', 'any', 'been', 'being', 'did',
+            'does', 'doing', 'during', 'further', 'having', 'here', 'itself', 'once', 'ourselves', 'under', 'until'
+        ]);
+
+        // Common abbreviations that end with a period but do not end a sentence
+        const ABBREV_REGEX = /\b(Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|etc|e\.g|i\.e|Fig|Inc|Ltd|Co|Corp|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\./gi;
+
+        const $ = (id) => document.getElementById(id);
+
+        const els = {
+            editorCard: $('editorCard'),
+            textInput: $('textInput'),
+            selectionBadge: $('selectionBadge'),
+            fileImportInput: $('fileImportInput'),
+            importFileBtn: $('importFileBtn'),
+            undoBtn: $('undoBtn'),
+            copyBtn: $('copyBtn'),
+            copyBtnLabel: $('copyBtnLabel'),
+            downloadBtn: $('downloadBtn'),
+            clearBtn: $('clearBtn'),
+            autoSaveToggle: $('autoSaveToggle'),
+            wordGoalInput: $('wordGoalInput'),
+            wordGoalStatus: $('wordGoalStatus'),
+            actionStatus: $('actionStatus'),
+            transformToolbar: $('transformToolbar'),
+
+            // Counters
+            statWords: $('statWords'),
+            statChars: $('statChars'),
+            statCharsNoSpace: $('statCharsNoSpace'),
+            statSentences: $('statSentences'),
+            statParagraphs: $('statParagraphs'),
+            statReadingTime: $('statReadingTime'),
+            statSpeakingTime: $('statSpeakingTime'),
+            statLines: $('statLines'),
+
+            // Readability
+            readabilityBadge: $('readabilityBadge'),
+            statFlesch: $('statFlesch'),
+            statGrade: $('statGrade'),
+            statUniqueWords: $('statUniqueWords'),
+            statAvgSentence: $('statAvgSentence'),
+            statAvgWord: $('statAvgWord'),
+
+            // Keyword density
+            densityList: $('densityList'),
+            targetKeywordInput: $('targetKeywordInput'),
+            targetKeywordResult: $('targetKeywordResult'),
+            excludeStopWords: $('excludeStopWords'),
+            exportCsvBtn: $('exportCsvBtn'),
+
+            // Limits
+            metaTitleCount: $('metaTitleCount'),
+            metaTitleBar: $('metaTitleBar'),
+            metaDescCount: $('metaDescCount'),
+            metaDescBar: $('metaDescBar'),
+            twitterCount: $('twitterCount'),
+            twitterBar: $('twitterBar'),
+            instaCount: $('instaCount'),
+            instaBar: $('instaBar'),
+            linkedinCount: $('linkedinCount'),
+            linkedinBar: $('linkedinBar')
+        };
+
+        const state = {
+            ngram: 1,
+            undoStack: [],
+            lastWords: [],
+            lastNgrams: [],
+            rafPending: false,
+            statusTimer: null
+        };
+
+        /* ---------- Utility Functions ---------- */
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function flashStatus(msg) {
+            clearTimeout(state.statusTimer);
+            els.actionStatus.textContent = msg;
+            state.statusTimer = setTimeout(() => {
+                els.actionStatus.textContent = '';
+            }, 3200);
+        }
+
+        function pushUndo(previousValue) {
+            if (state.undoStack.length && state.undoStack[state.undoStack.length - 1] === previousValue) return;
+            state.undoStack.push(previousValue);
+            if (state.undoStack.length > MAX_UNDO) state.undoStack.shift();
+            els.undoBtn.disabled = state.undoStack.length === 0;
+        }
+
+        function countGraphemes(str) {
+            if (!str) return 0;
+            if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+                const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+                let count = 0;
+                for (const _ of seg.segment(str)) count++;
+                return count;
+            }
+            return Array.from(str).length;
+        }
+
+        function extractWords(text) {
+            if (!text || !text.trim()) return [];
+            const matches = text.match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu);
+            return matches || [];
+        }
+
+        function countSentences(text, wordCount) {
+            const trimmed = text.trim();
+            if (!trimmed || wordCount === 0) return 0;
+            const cleaned = trimmed
+                .replace(ABBREV_REGEX, '$1')
+                .replace(/(\d)\.(\d)/g, '$1$2');
+            const segments = cleaned
+                .split(/(?:[.!?…]+(?=\s|$)|(?:\r?\n){2,})/)
+                .map((s) => s.trim())
+                .filter((s) => /[\p{L}\p{N}]/u.test(s));
+            return Math.max(segments.length, 1);
+        }
+
+        function countSyllablesInWord(word) {
+            let w = word.toLowerCase().replace(/[^a-z]/g, '');
+            if (!w) return 1;
+            if (w.length <= 3) return 1;
+            w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+            w = w.replace(/^y/, '');
+            const vowelGroups = w.match(/[aeiouy]{1,2}/g);
+            return vowelGroups ? Math.max(vowelGroups.length, 1) : 1;
+        }
+
+        function formatDuration(seconds) {
+            if (seconds <= 0) return '0s';
+            if (seconds >= 3600) {
+                const h = Math.floor(seconds / 3600);
+                const m = Math.floor((seconds % 3600) / 60);
+                return `${h}h ${m}m`;
+            }
+            if (seconds >= 60) {
+                const m = Math.floor(seconds / 60);
+                const s = seconds % 60;
+                return `${m}m ${s}s`;
+            }
+            return `${seconds}s`;
+        }
+
+        function updateProgress(count, limit, textElem, barElem) {
+            textElem.textContent = `${count.toLocaleString()} / ${limit.toLocaleString()} chars`;
+            const pct = Math.min((count / limit) * 100, 100);
+            barElem.style.width = `${pct}%`;
+            barElem.setAttribute('aria-valuenow', String(count));
+
+            const baseColor = barElem.dataset.color || 'bg-brand-600';
+            if (count > limit) {
+                barElem.className = 'bg-red-500 h-1.5 rounded-full transition-all';
+                textElem.className = 'text-red-600 dark:text-red-400 font-bold';
+            } else if (count >= limit * 0.9) {
+                barElem.className = 'bg-amber-500 h-1.5 rounded-full transition-all';
+                textElem.className = 'text-amber-600 dark:text-amber-400 font-semibold';
+            } else {
+                barElem.className = `${baseColor} h-1.5 rounded-full transition-all`;
+                textElem.className = 'text-slate-900 dark:text-slate-200';
+            }
+        }
+
+        /* ---------- Main Analysis ---------- */
+        function scheduleAnalyze() {
+            if (state.rafPending) return;
+            state.rafPending = true;
+            requestAnimationFrame(() => {
+                state.rafPending = false;
+                analyzeText();
+            });
+        }
+
+        function analyzeText() {
+            const rawText = els.textInput.value;
+
+            if (els.autoSaveToggle.checked) {
+                try { localStorage.setItem(STORAGE_KEY, rawText); } catch (e) {}
+            }
+
+            const charCount = countGraphemes(rawText);
+            const charsNoSpaceCount = countGraphemes(rawText.replace(/\s/g, ''));
+            const words = extractWords(rawText);
+            const wordCount = words.length;
+            state.lastWords = words;
+
+            const sentenceCount = countSentences(rawText, wordCount);
+            const paragraphCount = rawText.trim() === ''
+                ? 0
+                : rawText.split(/\r?\n\s*\r?\n|\r?\n/).filter((p) => p.trim().length > 0).length;
+            const lineCount = rawText.length === 0 ? 0 : rawText.split(/\r?\n/).length;
+
+            // Reading Time (200 WPM) & Speaking Time (130 WPM)
+            const readSeconds = wordCount === 0 ? 0 : Math.ceil((wordCount / 200) * 60);
+            const speakSeconds = wordCount === 0 ? 0 : Math.ceil((wordCount / 130) * 60);
+
+            els.statWords.textContent = wordCount.toLocaleString();
+            els.statChars.textContent = charCount.toLocaleString();
+            els.statCharsNoSpace.textContent = charsNoSpaceCount.toLocaleString();
+            els.statSentences.textContent = sentenceCount.toLocaleString();
+            els.statParagraphs.textContent = paragraphCount.toLocaleString();
+            els.statLines.textContent = lineCount.toLocaleString();
+            els.statReadingTime.textContent = formatDuration(readSeconds);
+            els.statSpeakingTime.textContent = formatDuration(speakSeconds);
+
+            // Word Goal Tracker
+            const goal = Number(els.wordGoalInput.value);
+            if (goal > 0) {
+                const goalPct = Math.min(Math.round((wordCount / goal) * 100), 999);
+                els.wordGoalStatus.textContent = `${goalPct}% (${wordCount.toLocaleString()}/${goal.toLocaleString()})`;
+            } else {
+                els.wordGoalStatus.textContent = '';
+            }
+
+            updateReadability(words, wordCount, sentenceCount);
+
+            updateProgress(charCount, 60, els.metaTitleCount, els.metaTitleBar);
+            updateProgress(charCount, 160, els.metaDescCount, els.metaDescBar);
+            updateProgress(charCount, 280, els.twitterCount, els.twitterBar);
+            updateProgress(charCount, 150, els.instaCount, els.instaBar);
+            updateProgress(charCount, 3000, els.linkedinCount, els.linkedinBar);
+
+            calculateKeywordDensity(words);
+            updateTargetKeyword(rawText, wordCount);
+        }
+
+        function updateReadability(words, wordCount, sentenceCount) {
+            if (wordCount === 0) {
+                els.statFlesch.textContent = '—';
+                els.statGrade.textContent = '—';
+                els.statUniqueWords.textContent = '0 (0%)';
+                els.statAvgSentence.textContent = '0 words';
+                els.statAvgWord.textContent = '0 chars';
+                els.readabilityBadge.textContent = 'Add text to analyze';
+                els.readabilityBadge.className = 'px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold';
+                return;
+            }
+
+            let totalSyllables = 0;
+            let totalWordChars = 0;
+            const uniqueSet = new Set();
+
+            for (const w of words) {
+                const lower = w.toLowerCase();
+                uniqueSet.add(lower);
+                totalWordChars += w.length;
+                totalSyllables += countSyllablesInWord(lower);
+            }
+
+            const asl = wordCount / Math.max(sentenceCount, 1);
+            const asw = totalSyllables / wordCount;
+            const avgWordLen = (totalWordChars / wordCount).toFixed(1);
+            const uniquePct = Math.round((uniqueSet.size / wordCount) * 100);
+
+            const fleschRaw = 206.835 - (1.015 * asl) - (84.6 * asw);
+            const flesch = Math.max(0, Math.min(100, Math.round(fleschRaw)));
+            const fkGrade = Math.max(0, (0.39 * asl + 11.8 * asw - 15.59)).toFixed(1);
+
+            els.statFlesch.textContent = `${flesch} / 100`;
+            els.statGrade.textContent = `Grade ${fkGrade}`;
+            els.statUniqueWords.textContent = `${uniqueSet.size.toLocaleString()} (${uniquePct}%)`;
+            els.statAvgSentence.textContent = `${asl.toFixed(1)} words`;
+            els.statAvgWord.textContent = `${avgWordLen} chars`;
+
+            let label = 'Standard';
+            let badgeClass = 'bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800';
+            if (flesch >= 80) {
+                label = 'Very Easy to Read';
+                badgeClass = 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
+            } else if (flesch >= 60) {
+                label = 'Standard / Conversational';
+            } else if (flesch >= 40) {
+                label = 'Moderately Difficult';
+                badgeClass = 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
+            } else {
+                label = 'Complex / Academic';
+                badgeClass = 'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800';
+            }
+            els.readabilityBadge.textContent = label;
+            els.readabilityBadge.className = `px-3 py-1 rounded-full text-xs font-bold ${badgeClass}`;
+        }
+
+        function calculateKeywordDensity(words) {
+            const totalWords = words.length;
+            const n = state.ngram;
+
+            if (totalWords < n) {
+                state.lastNgrams = [];
+                els.exportCsvBtn.disabled = true;
+                els.densityList.innerHTML = '<p class="text-sm text-slate-400 italic">No text provided yet.</p>';
+                return;
+            }
+
+            const filterStop = els.excludeStopWords.checked;
+            const normalized = words.map((w) => w.toLowerCase().replace(/^['’-]+|['’-]+$/g, ''));
+            const freqMap = new Map();
+
+            for (let i = 0; i <= normalized.length - n; i++) {
+                const slice = normalized.slice(i, i + n);
+                if (slice.some((token) => token.length < 2)) continue;
+                if (filterStop) {
+                    if (n === 1 && STOP_WORDS.has(slice[0])) continue;
+                    if (n > 1 && (STOP_WORDS.has(slice[0]) || STOP_WORDS.has(slice[slice.length - 1]))) continue;
+                }
+                const phrase = slice.join(' ');
+                freqMap.set(phrase, (freqMap.get(phrase) || 0) + 1);
+            }
+
+            const sorted = Array.from(freqMap.entries())
+                .map(([phrase, count]) => ({
+                    phrase,
+                    count,
+                    density: ((count * n) / totalWords) * 100
+                }))
+                .sort((a, b) => b.count - a.count || a.phrase.localeCompare(b.phrase))
+                .slice(0, 8);
+
+            state.lastNgrams = sorted;
+            els.exportCsvBtn.disabled = sorted.length === 0;
+
+            if (sorted.length === 0) {
+                els.densityList.innerHTML = '<p class="text-xs text-slate-400 italic">Enter more descriptive words to see keyword density.</p>';
+                return;
+            }
+
+            els.densityList.innerHTML = sorted.map((item) => {
+                const densityStr = item.density.toFixed(1);
+                const barWidth = Math.min(item.density * 10, 100);
+                return `
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1 gap-2">
+                            <span class="text-slate-700 dark:text-slate-300 truncate">${escapeHtml(item.phrase)}</span>
+                            <span class="text-slate-500 dark:text-slate-400 shrink-0">${item.count}× (${densityStr}%)</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5">
+                            <div class="bg-pink-500 h-1.5 rounded-full transition-all" style="width: ${barWidth}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateTargetKeyword(rawText, totalWords) {
+            const query = els.targetKeywordInput.value.trim().toLowerCase();
+            if (!query || totalWords === 0) {
+                els.targetKeywordResult.textContent = '';
+                return;
+            }
+            const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, 'giu');
+            const matches = rawText.match(regex);
+            const count = matches ? matches.length : 0;
+            const queryWords = extractWords(query).length || 1;
+            const density = (((count * queryWords) / totalWords) * 100).toFixed(2);
+            els.targetKeywordResult.textContent = `Found ${count} time${count === 1 ? '' : 's'} (${density}% density)`;
+        }
+
+        /* ---------- Selection Badge ---------- */
+        function updateSelectionBadge() {
+            const start = els.textInput.selectionStart;
+            const end = els.textInput.selectionEnd;
+            if (start === end) {
+                els.selectionBadge.classList.add('hidden');
+                return;
+            }
+            const sub = els.textInput.value.slice(start, end);
+            const selWords = extractWords(sub).length;
+            const selChars = countGraphemes(sub);
+            els.selectionBadge.textContent = `Selected: ${selWords.toLocaleString()} words, ${selChars.toLocaleString()} chars`;
+            els.selectionBadge.classList.remove('hidden');
+        }
+
+        ['select', 'keyup', 'mouseup'].forEach((evt) => {
+            els.textInput.addEventListener(evt, updateSelectionBadge);
+        });
+
+        /* ---------- Text Transformations ---------- */
+        function applyStringTransform(str, action) {
+            switch (action) {
+                case 'uppercase':
+                    return str.toUpperCase();
+                case 'lowercase':
+                    return str.toLowerCase();
+                case 'capitalize':
+                    return str.toLowerCase().replace(/(?:^|\s|["'([{])\p{L}/gu, (c) => c.toUpperCase());
+                case 'sentenceCase':
+                    return str.toLowerCase().replace(/(^\s*\p{L}|[.!?]\s+\p{L})/gu, (c) => c.toUpperCase());
+                case 'inverseCase':
+                    return Array.from(str).map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('');
+                case 'slugify':
+                    return str
+                        .normalize('NFKD')
+                        .replace(/[\u0300-\u036f]/g, '')
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/^-+|-+$/g, '');
+                case 'cleanSpaces':
+                    return str
+                        .replace(/[ \t\f\v]+/g, ' ')
+                        .replace(/ *\r?\n */g, '\n')
+                        .replace(/\n{3,}/g, '\n\n')
+                        .trim();
+                case 'removeLineBreaks':
+                    return str.replace(/\r?\n+/g, ' ').replace(/[ \t]+/g, ' ').trim();
+                case 'dedupeLines': {
+                    const seen = new Set();
+                    return str
+                        .split(/\r?\n/)
+                        .filter((line) => {
+                            const key = line.trim();
+                            if (!key) return true;
+                            if (seen.has(key)) return false;
+                            seen.add(key);
+                            return true;
+                        })
+                        .join('\n');
+                }
+                case 'stripHtml': {
+                    const doc = new DOMParser().parseFromString(str, 'text/html');
+                    return (doc.body && doc.body.textContent) ? doc.body.textContent : str.replace(/<[^>]*>/g, '');
+                }
+                default:
+                    return str;
+            }
+        }
+
+        els.transformToolbar.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-transform]');
+            if (!btn) return;
+            const fullText = els.textInput.value;
+            if (!fullText) return;
+
+            pushUndo(fullText);
+            const action = btn.dataset.transform;
+            const start = els.textInput.selectionStart;
+            const end = els.textInput.selectionEnd;
+
+            if (start !== end) {
+                const selected = fullText.slice(start, end);
+                const replaced = applyStringTransform(selected, action);
+                els.textInput.value = fullText.slice(0, start) + replaced + fullText.slice(end);
+                els.textInput.setSelectionRange(start, start + replaced.length);
+            } else {
+                els.textInput.value = applyStringTransform(fullText, action);
+            }
+            updateSelectionBadge();
+            analyzeText();
+        });
+
+        els.undoBtn.addEventListener('click', () => {
+            if (!state.undoStack.length) return;
+            els.textInput.value = state.undoStack.pop();
+            els.undoBtn.disabled = state.undoStack.length === 0;
+            analyzeText();
+            flashStatus('Reverted to previous state');
+        });
+
+        /* ---------- Copy, Download, Import & Clear ---------- */
+        els.copyBtn.addEventListener('click', async () => {
+            const text = els.textInput.value;
+            if (!text) return;
+            try {
+                await navigator.clipboard.writeText(text);
+                els.copyBtnLabel.textContent = 'Copied!';
+                flashStatus('Copied to clipboard');
+                setTimeout(() => { els.copyBtnLabel.textContent = 'Copy'; }, 2000);
+            } catch (err) {
+                els.textInput.select();
+                document.execCommand('copy');
+                flashStatus('Copied to clipboard');
+            }
+        });
+
+        els.downloadBtn.addEventListener('click', () => {
+            const text = els.textInput.value;
+            if (!text) return;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'filediter-text-export.txt';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 5000);
+            flashStatus('Downloaded .TXT file');
+        });
+
+        els.exportCsvBtn.addEventListener('click', () => {
+            if (!state.lastNgrams.length) return;
+            const rows = [
+                ['Keyword Phrase', 'Occurrences', 'Density (%)'],
+                ...state.lastNgrams.map((item) => [
+                    `"${item.phrase.replace(/"/g, '""')}"`,
+                    item.count,
+                    item.density.toFixed(2)
+                ])
+            ];
+            const csvContent = rows.map((r) => r.join(',')).join('\r\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `filediter-keywords-${state.ngram}word.csv`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 5000);
+            flashStatus('Exported keyword CSV');
+        });
+
+        els.clearBtn.addEventListener('click', () => {
+            if (!els.textInput.value) return;
+            pushUndo(els.textInput.value);
+            els.textInput.value = '';
+            els.selectionBadge.classList.add('hidden');
+            analyzeText();
+            flashStatus('Cleared text (click Undo to restore)');
+        });
+
+        els.importFileBtn.addEventListener('click', () => els.fileImportInput.click());
+        els.fileImportInput.addEventListener('change', () => {
+            const file = els.fileImportInput.files[0];
+            els.fileImportInput.value = '';
+            if (file) readImportedFile(file);
+        });
+
+        function readImportedFile(file) {
+            if (file.size > 10 * 1024 * 1024) {
+                flashStatus('File is too large (max 10 MB text file)');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = () => {
+                if (typeof reader.result === 'string') {
+                    pushUndo(els.textInput.value);
+                    els.textInput.value = reader.result;
+                    analyzeText();
+                    flashStatus(`Imported ${file.name}`);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        els.editorCard.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            els.editorCard.classList.add('border-brand-500');
+        });
+        els.editorCard.addEventListener('dragleave', (e) => {
+            if (!els.editorCard.contains(e.relatedTarget)) {
+                els.editorCard.classList.remove('border-brand-500');
+            }
+        });
+        els.editorCard.addEventListener('drop', (e) => {
+            e.preventDefault();
+            els.editorCard.classList.remove('border-brand-500');
+            const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+            if (file) readImportedFile(file);
+        });
+
+        /* ---------- N-Gram Tabs & Filters ---------- */
+        const ngramTabs = Array.from(document.querySelectorAll('.ngram-tab'));
+        function setNgram(n, focus = false) {
+            state.ngram = Number(n);
+            ngramTabs.forEach((tab) => {
+                const active = Number(tab.dataset.ngram) === state.ngram;
+                tab.setAttribute('aria-selected', String(active));
+                tab.tabIndex = active ? 0 : -1;
+                if (active && focus) tab.focus();
+            });
+            calculateKeywordDensity(state.lastWords);
+        }
+
+        ngramTabs.forEach((tab, idx) => {
+            tab.addEventListener('click', () => setNgram(tab.dataset.ngram));
+            tab.addEventListener('keydown', (e) => {
+                let next = null;
+                if (e.key === 'ArrowRight') next = (idx + 1) % ngramTabs.length;
+                else if (e.key === 'ArrowLeft') next = (idx - 1 + ngramTabs.length) % ngramTabs.length;
+                if (next !== null) {
+                    e.preventDefault();
+                    setNgram(ngramTabs[next].dataset.ngram, true);
+                }
+            });
+        });
+
+        els.excludeStopWords.addEventListener('change', () => calculateKeywordDensity(state.lastWords));
+        els.targetKeywordInput.addEventListener('input', () => updateTargetKeyword(els.textInput.value, state.lastWords.length));
+        els.wordGoalInput.addEventListener('input', scheduleAnalyze);
+        els.textInput.addEventListener('input', scheduleAnalyze);
+
+        els.autoSaveToggle.addEventListener('change', () => {
+            try {
+                localStorage.setItem(AUTOSAVE_PREF_KEY, els.autoSaveToggle.checked ? '1' : '0');
+                if (!els.autoSaveToggle.checked) localStorage.removeItem(STORAGE_KEY);
+                else localStorage.setItem(STORAGE_KEY, els.textInput.value);
+            } catch (e) {}
+        });
+
+        /* ---------- Theme Toggle ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        /* ---------- Initialization ---------- */
+        try {
+            const savedPref = localStorage.getItem(AUTOSAVE_PREF_KEY);
+            if (savedPref === '0') els.autoSaveToggle.checked = false;
+            if (els.autoSaveToggle.checked) {
+                const savedDraft = localStorage.getItem(STORAGE_KEY);
+                if (savedDraft) els.textInput.value = savedDraft;
+            }
+        } catch (e) {}
+
+        $('year').textContent = new Date().getFullYear();
+        analyzeText();
+    })();
+    </script>
+</body>
+</html>

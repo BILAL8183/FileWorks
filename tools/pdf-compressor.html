@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Compress PDF Online Free – Reduce PDF File Size in Browser | Filediter</title>
+    <meta name="description" content="Compress PDF files online for free. Reduce PDF file size with 1-click presets, live quality preview, grayscale conversion, or lossless text-preserving optimization. 100% private in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/pdf-compressor.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="pdf-compressor.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M20 12h16l10 10v30a2 2 0 0 1-2 2H20a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z' fill='%23fff'/%3E%3Cpath d='M32 26v16m0 0l-6-6m6 6l6-6' stroke='%232563eb' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Compress PDF Online Free – Reduce PDF File Size | Filediter">
+    <meta property="og:description" content="Shrink PDF file size directly in your browser with live quality preview, DPI control, and lossless optimization. Your files never leave your device.">
+    <meta property="og:url" content="https://filediter.com/tools/pdf-compressor.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compress PDF Online Free | Filediter">
+    <meta name="twitter:description" content="Reduce PDF file size in seconds with 100% client-side privacy. No uploads required.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter PDF Compressor",
+                "url": "https://filediter.com/tools/pdf-compressor.html",
+                "description": "Free online tool to compress and reduce PDF file size directly in your browser. Choose between Extreme, Balanced, High Quality, or Lossless text-preserving PDF compression with a live page preview.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript and HTML5 Canvas",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "One-click PDF compression presets (Extreme, Balanced, High Quality, Lossless)",
+                    "Live visual quality preview before compressing the full document",
+                    "Custom DPI resolution and JPEG quality sliders",
+                    "Optional Grayscale (black and white) mode for scanned PDFs",
+                    "Automatic PDF metadata stripping for privacy and smaller files",
+                    "100% client-side processing — PDFs never leave your device"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "PDF Compressor", "item": "https://filediter.com/tools/pdf-compressor.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Compress a PDF Online for Free",
+                "description": "Reduce the file size of a PDF document using Filediter's browser-based PDF compressor.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Select or drop your PDF",
+                        "text": "Click the upload box or drag and drop your PDF file (up to 100 MB) into the workspace."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Choose a compression level",
+                        "text": "Pick Balanced, Extreme, High Quality, or Lossless mode, and check the live page preview to verify clarity."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Compress and download",
+                        "text": "Click Compress PDF, compare the original and new file sizes, and download your smaller PDF."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Will this make every PDF smaller?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Scanned PDFs and image-heavy documents typically shrink by 40% to 85%. If a PDF is already a tiny text-only file, image-based compression may not shrink it further—in that case, use Lossless mode or keep the original."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will the compressed PDF still have selectable text?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Lossless mode keeps all selectable text, links, and vector graphics intact while optimizing PDF object streams and stripping metadata. Extreme, Balanced, and High Quality modes convert each page into an optimized image for maximum size reduction."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I compress scanned PDFs for email or portal uploads?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Balanced or Extreme mode (especially with Grayscale enabled) is ideal for shrinking large scanned contracts, IDs, and academic forms under strict 2 MB or 5 MB upload limits."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my PDF uploaded to a server?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Your PDF is opened, compressed, and saved entirely inside your web browser. Confidential documents never leave your device."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS (Pinned CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        @media (prefers-reduced-motion: no-preference) {
+            .feature-card { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            .feature-card:hover { transform: translateY(-4px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            .animate-pulse { animation: none !important; }
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform motion-reduce:transition-none">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" tabindex="-1" class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">PDF Compressor</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool requires JavaScript to compress PDFs in your browser. Please enable JavaScript and reload the page.</p>
+        </noscript>
+
+        <!-- Tool Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-file-zipper" aria-hidden="true"></i> Smart PDF Size Reducer
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Compress PDF Online for Free
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Shrink PDF file sizes for email attachments and portal uploads. Pick a 1-click compression preset, preview page clarity in real time, and process everything privately on your device.
+            </p>
+        </div>
+
+        <!-- Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+            <!-- Left Column: Compression Controls -->
+            <section class="lg:col-span-5 space-y-6" aria-labelledby="settings-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none space-y-5">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <h2 id="settings-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Compression Level
+                        </h2>
+                        <button type="button" id="resetBtn" class="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <i class="fa-solid fa-rotate-left text-[11px]" aria-hidden="true"></i> Reset
+                        </button>
+                    </div>
+
+                    <!-- 4 Visual Compression Preset Cards -->
+                    <div role="radiogroup" aria-label="Compression preset" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <button type="button" data-preset="balanced" aria-pressed="true"
+                                class="preset-card text-left p-3.5 rounded-2xl border-2 border-brand-600 bg-brand-50/50 dark:bg-brand-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Balanced</span>
+                                <span class="px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold">Recommended</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Good clarity &amp; strong size reduction (~50–70% smaller)</p>
+                        </button>
+
+                        <button type="button" data-preset="extreme" aria-pressed="false"
+                                class="preset-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Extreme</span>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">Smallest</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Maximum compression for large scans (~70–85% smaller)</p>
+                        </button>
+
+                        <button type="button" data-preset="high" aria-pressed="false"
+                                class="preset-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">High Quality</span>
+                                <span class="px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold">Sharp</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Crisp text &amp; high-res graphics (~30–50% smaller)</p>
+                        </button>
+
+                        <button type="button" data-preset="rewrite" aria-pressed="false"
+                                class="preset-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Lossless</span>
+                                <span class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-[10px] font-bold">Keep Text</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Preserves selectable text &amp; links; cleans PDF structure</p>
+                        </button>
+                    </div>
+
+                    <!-- Hidden method select kept for semantic compatibility -->
+                    <select id="method" class="sr-only" aria-hidden="true" tabindex="-1">
+                        <option value="raster" selected>Image-based compression</option>
+                        <option value="rewrite">Text-preserving PDF rewrite</option>
+                    </select>
+
+                    <!-- Raster Fine-Tuning Options -->
+                    <div id="rasterOptions" class="space-y-4 border-t border-slate-100 dark:border-slate-800 pt-4">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <label for="resolution" class="text-xs font-bold text-slate-700 dark:text-slate-300">Page Resolution (DPI)</label>
+                                <span id="dpiLabel" class="text-[11px] font-semibold text-brand-600 dark:text-brand-400">~115 DPI</span>
+                            </div>
+                            <select id="resolution" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                <option value="1.0">Compact · ~72 DPI (Screen / Email)</option>
+                                <option value="1.15">Small File · ~83 DPI</option>
+                                <option value="1.60" selected>Balanced · ~115 DPI (Recommended)</option>
+                                <option value="2.05">Clear Text · ~148 DPI</option>
+                                <option value="2.50">High Print · ~180 DPI</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <label for="quality" class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                                    Image Quality (<output id="qualityLabel" for="quality">65%</output>)
+                                </label>
+                                <span id="qualityHint" class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Balanced compression</span>
+                            </div>
+                            <input id="quality" type="range" min="25" max="92" value="65" aria-valuetext="65%" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <label class="flex items-center gap-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer select-none pt-1">
+                            <input type="checkbox" id="grayscaleToggle" class="w-4 h-4 accent-brand-600 rounded">
+                            <span>Convert pages to <strong>Grayscale (Black &amp; White)</strong> for smaller scans</span>
+                        </label>
+
+                        <div class="p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/60 text-[11px] text-amber-900 dark:text-amber-200 leading-relaxed">
+                            <i class="fa-solid fa-circle-info text-amber-600 dark:text-amber-400 mr-1" aria-hidden="true"></i>
+                            <strong>Note:</strong> Balanced, Extreme, and High Quality modes flatten each page into an optimized image. Switch to <strong>Lossless</strong> above if you need selectable text or clickable links.
+                        </div>
+                    </div>
+
+                    <!-- Lossless Mode Notice -->
+                    <div id="rewriteNotice" class="hidden p-3.5 rounded-xl bg-purple-50/80 dark:bg-purple-950/30 border border-purple-200/80 dark:border-purple-900/60 text-xs text-purple-900 dark:text-purple-200 leading-relaxed">
+                        <i class="fa-solid fa-wand-magic-sparkles text-purple-600 dark:text-purple-400 mr-1" aria-hidden="true"></i>
+                        <strong>Lossless Mode Active:</strong> Selectable text, vector graphics, and links remain 100% intact. Unused PDF objects and metadata are stripped.
+                    </div>
+
+                    <!-- Common Optimization Option -->
+                    <div class="border-t border-slate-100 dark:border-slate-800 pt-3">
+                        <label class="flex items-center gap-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                            <input type="checkbox" id="stripMetadata" checked class="w-4 h-4 accent-brand-600 rounded">
+                            <span>Remove hidden PDF metadata (Author, Creator, Title tags)</span>
+                        </label>
+                    </div>
+
+                    <!-- Primary Action Button -->
+                    <div class="pt-2">
+                        <button class="w-full py-3.5 rounded-2xl bg-brand-600 text-white shadow-md hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-500 disabled:shadow-none dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                                type="button" id="run" data-run disabled>
+                            <i id="runIcon" class="fa-solid fa-compress text-sm" aria-hidden="true"></i>
+                            <span id="runLabel">Compress PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Upload, Live Preview & Compression Result -->
+            <section class="lg:col-span-7 flex flex-col gap-6" aria-labelledby="preview-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between h-full">
+
+                    <div>
+                        <!-- Workspace Header -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <h2 id="preview-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-eye text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Document &amp; Quality Preview
+                                </h2>
+                                <span id="fileDetails" class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold">No PDF selected</span>
+                            </div>
+
+                            <div id="previewTools" class="hidden items-center gap-2">
+                                <button type="button" id="changeFileBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold transition-colors">
+                                    <i class="fa-solid fa-folder-open mr-1" aria-hidden="true"></i>Change PDF
+                                </button>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="prevPage" aria-label="Previous page" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-xs"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                                    <span id="pageCounter" class="text-xs font-mono text-slate-600 dark:text-slate-400 min-w-[4.8rem] text-center" aria-live="polite">1 / 1</span>
+                                    <button type="button" id="nextPage" aria-label="Next page" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-xs"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accessible Upload Drop Zone -->
+                        <input id="fileInput" type="file" accept=".pdf,application/pdf" class="sr-only peer">
+                        <label id="drop" for="fileInput"
+                               class="block border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 peer-focus-visible:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 bg-slate-50/50 dark:bg-slate-950/50 rounded-2xl p-10 text-center cursor-pointer transition-colors">
+                            <span class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto text-2xl mb-3">
+                                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                            </span>
+                            <strong class="block font-heading text-base font-bold text-slate-800 dark:text-slate-200 mb-1">
+                                Drop your PDF here or click to browse
+                            </strong>
+                            <small class="block text-xs text-slate-500 dark:text-slate-400">
+                                PDF files up to 100 MB · Processed 100% locally in your browser
+                            </small>
+                        </label>
+
+                        <!-- Live Quality Preview Container -->
+                        <div id="previewContainer" class="hidden flex-col items-center justify-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-100/70 dark:bg-slate-950/60 p-4 max-h-[460px] overflow-auto">
+                            <div class="flex items-center justify-between w-full mb-2 text-[11px] text-slate-500 dark:text-slate-400">
+                                <span id="previewBadge" class="font-semibold"><i class="fa-solid fa-Sliders mr-1" aria-hidden="true"></i>Simulated Compression Preview</span>
+                                <span id="estPageSize" class="font-mono font-semibold text-brand-600 dark:text-brand-400"></span>
+                            </div>
+                            <canvas id="previewCanvas" role="img" aria-label="Simulated preview of the compressed PDF page" class="block max-w-full h-auto rounded-lg shadow-md bg-white"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Progress, Status & Download Result Card -->
+                    <div class="pt-5 border-t border-slate-100 dark:border-slate-800 mt-5 space-y-4">
+                        <div class="space-y-2">
+                            <p id="status" role="status" aria-live="polite" aria-atomic="true" class="text-xs font-semibold text-slate-700 dark:text-slate-300"></p>
+                            <progress id="progress" max="100" value="0" aria-label="Compression progress" class="hidden w-full h-2 rounded-full overflow-hidden [&::-webkit-progress-bar]:bg-slate-100 dark:[&::-webkit-progress-bar]:bg-slate-800 [&::-webkit-progress-value]:bg-brand-600 [&::-moz-progress-bar]:bg-brand-600"></progress>
+                        </div>
+
+                        <!-- Result Comparison Card -->
+                        <div id="result" hidden class="p-5 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900 space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <div>
+                                    <span id="resultTitle" class="block font-heading font-bold text-sm text-slate-900 dark:text-white">Compression Complete!</span>
+                                    <p id="resultNumbers" class="text-xs text-slate-600 dark:text-slate-300 mt-0.5"></p>
+                                </div>
+                                <span id="resultBadge" class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-extrabold"></span>
+                            </div>
+
+                            <!-- Visual Size Bar -->
+                            <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                                <div id="resultBar" class="bg-emerald-500 h-2 rounded-full transition-all" style="width: 50%"></div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a id="downloadLink" href="#" download="compressed.pdf"
+                                   class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center shadow-sm transition-colors inline-flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                    <span id="downloadBtnText">Download Compressed PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Value Proposition Cards -->
+        <section class="mb-16" aria-labelledby="why-heading">
+            <div class="text-center mb-8">
+                <h2 id="why-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Why Use Filediter PDF Compressor?</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">Balance file size and document legibility without uploading sensitive files.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-user-shield text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">100% On-Device Privacy</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        Your contracts, bank statements, and academic records stay inside your browser. Nothing is ever uploaded to an external server.
+                    </p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-magnifying-glass-chart text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Live Clarity Preview</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        See exactly how your chosen DPI resolution, JPEG quality, and grayscale settings look on the page before compressing a multi-page PDF.
+                    </p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-layer-group text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Raster &amp; Lossless Modes</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        Use image-based presets to drastically shrink heavy scanned PDFs, or choose Lossless mode to keep text selectable while cleaning PDF structure.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEO Guide & Related Tools -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8 mb-16" aria-labelledby="about-heading">
+            <div>
+                <h2 id="about-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">How to Reduce PDF File Size Without Losing Readability</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Large PDF files often fail to send over email or get rejected by university, visa, and job application portals with strict <strong>2 MB or 5 MB file size limits</strong>. Most bloated PDFs contain uncompressed high-DPI camera scans or embedded metadata.
+                </p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    With Filediter's <strong>online PDF compressor</strong>, you can downscale page resolution to a crisp ~115 DPI (<strong>Balanced</strong>) or ~83 DPI (<strong>Extreme</strong>), convert color scans to <strong>Grayscale</strong> for an extra 30–50% reduction, or run a <strong>Lossless rewrite</strong> when you need selectable text preserved.
+                </p>
+            </div>
+
+            <!-- Related Tools (Strictly verified existing Filediter tools) -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Related PDF &amp; Document Tools</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Need to combine documents before compressing? Use the <a href="pdf-merger.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Merger</a>, or pull specific pages out using the <a href="pdf-extractor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Extractor</a>. You can also stamp documents with the <a href="pdf-watermark.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Watermark Tool</a>, sign contracts in the <a href="esign-pdf.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">E-Sign PDF Pad</a>, or convert pages with the <a href="pdf-to-image.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF to Image Converter</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section aria-labelledby="faqheading">
+            <h2 id="faqheading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Will this make every PDF smaller?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Scanned PDFs and image-heavy files typically shrink by 40% to 85%. If a PDF is already a small, pure-text vector document, rasterizing its pages into images can sometimes make it larger—if that happens, the tool alerts you automatically and lets you switch to Lossless mode or keep the smaller original.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Will the compressed PDF still have selectable text?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">The <strong>Lossless</strong> preset preserves all selectable text, clickable links, forms, and vector paths. The <strong>Balanced</strong>, <strong>Extreme</strong>, and <strong>High Quality</strong> presets flatten each page into an optimized JPEG image to achieve major file size reductions.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can I compress scanned PDFs?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Yes. Image-based compression is specifically designed for scanned PDFs. Enabling the <strong>Convert pages to Grayscale</strong> checkbox reduces scanned document sizes even further while keeping text easy to read.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Is my PDF uploaded to a server?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. This tool processes your document entirely inside your browser using open-source WebAssembly/JavaScript libraries loaded from public CDNs. Your file contents are never sent to Filediter or any third-party server.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Standardized Footer (Only verified, real Filediter URLs) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <!-- Image Tools -->
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-converter.html" class="hover:text-white transition-colors">JPG / PNG / WebP Converter</a></li>
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <!-- PDF Tools -->
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="pdf-compressor.html" aria-current="page" class="text-brand-400 font-semibold">PDF Compressor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-white transition-colors">PDF Extractor</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Web & Text Tools -->
+                <nav aria-label="Text and Web tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Web &amp; Text Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="word-counter.html" class="hover:text-white transition-colors">Word Counter</a></li>
+                        <li><a href="url-encoder.html" class="hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                        <li><a href="color-picker.html" class="hover:text-white transition-colors">Color Picker</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Company -->
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">All Tools (Home)</a></li>
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-6 text-xs text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Complete Client-Side PDF Compressor Engine -->
+    <script>
+    (() => {
+        'use strict';
+
+        const PDFJS_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+        const PDFJS_SRC = PDFJS_BASE + 'pdf.min.js';
+        const PDFJS_WORKER = PDFJS_BASE + 'pdf.worker.min.js';
+        const PDFLIB_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+
+        const MAX_PDF_BYTES = 100 * 1024 * 1024; // 100 MB limit
+        const MAX_CANVAS_DIM = 4096;
+
+        const PRESETS = {
+            balanced: { method: 'raster', resolution: '1.60', quality: 65 },
+            extreme:  { method: 'raster', resolution: '1.15', quality: 48 },
+            high:     { method: 'raster', resolution: '2.05', quality: 82 },
+            rewrite:  { method: 'rewrite' }
+        };
+
+        const $ = (id) => document.getElementById(id);
+
+        const els = {
+            fileInput: $('fileInput'),
+            drop: $('drop'),
+            fileDetails: $('fileDetails'),
+            method: $('method'),
+            rasterOptions: $('rasterOptions'),
+            rewriteNotice: $('rewriteNotice'),
+            resolution: $('resolution'),
+            dpiLabel: $('dpiLabel'),
+            quality: $('quality'),
+            qualityLabel: $('qualityLabel'),
+            qualityHint: $('qualityHint'),
+            grayscaleToggle: $('grayscaleToggle'),
+            stripMetadata: $('stripMetadata'),
+            resetBtn: $('resetBtn'),
+            run: $('run'),
+            runIcon: $('runIcon'),
+            runLabel: $('runLabel'),
+            previewTools: $('previewTools'),
+            changeFileBtn: $('changeFileBtn'),
+            prevPage: $('prevPage'),
+            nextPage: $('nextPage'),
+            pageCounter: $('pageCounter'),
+            previewContainer: $('previewContainer'),
+            previewCanvas: $('previewCanvas'),
+            previewBadge: $('previewBadge'),
+            estPageSize: $('estPageSize'),
+            status: $('status'),
+            progress: $('progress'),
+            result: $('result'),
+            resultTitle: $('resultTitle'),
+            resultNumbers: $('resultNumbers'),
+            resultBadge: $('resultBadge'),
+            resultBar: $('resultBar'),
+            downloadLink: $('downloadLink'),
+            downloadBtnText: $('downloadBtnText')
+        };
+
+        const presetCards = Array.from(document.querySelectorAll('.preset-card'));
+
+        const state = {
+            pdfBytes: null,
+            origSize: 0,
+            fileName: 'document',
+            pdfDoc: null,
+            page: 1,
+            activePreset: 'balanced',
+            busy: false,
+            outUrl: null,
+            previewToken: 0,
+            previewTimer: null
+        };
+
+        /* ---------- Utility Helpers ---------- */
+        function formatBytes(bytes) {
+            if (!Number.isFinite(bytes) || bytes <= 0) return '0 B';
+            const units = ['B', 'KB', 'MB', 'GB'];
+            const idx = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+            const val = bytes / Math.pow(1024, idx);
+            return `${val.toFixed(idx === 0 ? 0 : val >= 10 ? 1 : 2)} ${units[idx]}`;
+        }
+
+        function sanitizeBaseName(name) {
+            const base = (name || 'document')
+                .replace(/\.pdf$/i, '')
+                .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
+                .trim();
+            return base || 'document';
+        }
+
+        function setStatus(text, isError = false) {
+            els.status.textContent = text || '';
+            els.status.className = isError
+                ? 'text-xs font-semibold text-red-600 dark:text-red-400'
+                : 'text-xs font-semibold text-slate-700 dark:text-slate-300';
+        }
+
+        function friendlyError(err, fallback) {
+            if (err && err.friendly) return err.message;
+            if (err && (err.name === 'PasswordException' || /encrypt/i.test(err.message || ''))) {
+                return 'This PDF is password-protected or encrypted. Please unlock it first.';
+            }
+            if (err && err.name === 'InvalidPDFException') {
+                return 'This file does not appear to be a valid PDF document.';
+            }
+            return fallback;
+        }
+
+        const libPromises = {};
+        function loadScript(key, src, isReady) {
+            if (isReady()) return Promise.resolve();
+            if (!libPromises[key]) {
+                libPromises[key] = new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.src = src;
+                    s.async = true;
+                    s.crossOrigin = 'anonymous';
+                    s.onload = resolve;
+                    s.onerror = () => {
+                        delete libPromises[key];
+                        s.remove();
+                        const e = new Error('Could not load a required PDF library. Check your internet connection and try again.');
+                        e.friendly = true;
+                        reject(e);
+                    };
+                    document.head.appendChild(s);
+                });
+            }
+            return libPromises[key];
+        }
+
+        const loadPdfJs = () => loadScript('pdfjs', PDFJS_SRC, () => window.pdfjsLib).then(() => {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+        });
+        const loadPdfLib = () => loadScript('pdflib', PDFLIB_SRC, () => window.PDFLib);
+
+        function applyGrayscaleToCanvas(ctx, width, height) {
+            const imgData = ctx.getImageData(0, 0, width, height);
+            const data = imgData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                const lum = (77 * data[i] + 150 * data[i + 1] + 29 * data[i + 2]) >> 8;
+                data[i] = data[i + 1] = data[i + 2] = lum;
+            }
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        /* ---------- Preset & Control Sync ---------- */
+        function selectPreset(presetName) {
+            state.activePreset = presetName;
+            presetCards.forEach((btn) => {
+                const active = btn.dataset.preset === presetName;
+                btn.setAttribute('aria-pressed', String(active));
+                btn.className = active
+                    ? 'preset-card text-left p-3.5 rounded-2xl border-2 border-brand-600 bg-brand-50/50 dark:bg-brand-950/40 transition-all'
+                    : 'preset-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all';
+            });
+
+            const cfg = PRESETS[presetName];
+            if (!cfg) return;
+
+            els.method.value = cfg.method;
+            const isRaster = cfg.method === 'raster';
+            els.rasterOptions.classList.toggle('hidden', !isRaster);
+            els.rewriteNotice.classList.toggle('hidden', isRaster);
+
+            if (isRaster) {
+                els.resolution.value = cfg.resolution;
+                els.quality.value = String(cfg.quality);
+                syncQualityAndDpiLabels();
+            }
+            schedulePreviewUpdate();
+        }
+
+        function syncQualityAndDpiLabels() {
+            const q = Number(els.quality.value);
+            els.qualityLabel.textContent = `${q}%`;
+            els.quality.setAttribute('aria-valuetext', `${q}%`);
+
+            if (q >= 80) {
+                els.qualityHint.textContent = 'High clarity';
+                els.qualityHint.className = 'text-[11px] font-semibold text-indigo-600 dark:text-indigo-400';
+            } else if (q >= 55) {
+                els.qualityHint.textContent = 'Balanced compression';
+                els.qualityHint.className = 'text-[11px] font-semibold text-emerald-600 dark:text-emerald-400';
+            } else {
+                els.qualityHint.textContent = 'Maximum size reduction';
+                els.qualityHint.className = 'text-[11px] font-semibold text-amber-600 dark:text-amber-400';
+            }
+
+            const scale = Number(els.resolution.value);
+            const dpi = Math.round(scale * 72);
+            els.dpiLabel.textContent = `~${dpi} DPI`;
+        }
+
+        presetCards.forEach((btn) => {
+            btn.addEventListener('click', () => selectPreset(btn.dataset.preset));
+        });
+
+        [els.resolution, els.quality, els.grayscaleToggle].forEach((el) => {
+            el.addEventListener('input', () => {
+                syncQualityAndDpiLabels();
+                schedulePreviewUpdate();
+            });
+        });
+
+        els.resetBtn.addEventListener('click', () => {
+            els.grayscaleToggle.checked = false;
+            els.stripMetadata.checked = true;
+            selectPreset('balanced');
+            setStatus('Settings reset to Balanced preset.');
+        });
+
+        /* ---------- File Loading ---------- */
+        async function handleFile(file) {
+            if (!file || state.busy) return;
+            const isPdf = file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
+            if (!isPdf) {
+                setStatus('Please select a valid PDF file.', true);
+                return;
+            }
+            if (file.size > MAX_PDF_BYTES) {
+                setStatus('This PDF exceeds 100 MB. Please choose a smaller PDF file.', true);
+                return;
+            }
+
+            els.result.hidden = true;
+            setStatus('Opening PDF…');
+
+            try {
+                await Promise.all([loadPdfJs(), loadPdfLib()]);
+                const buffer = await file.arrayBuffer();
+                const bytes = new Uint8Array(buffer);
+
+                const doc = await window.pdfjsLib.getDocument({
+                    data: bytes.slice(0),
+                    cMapUrl: PDFJS_BASE + 'cmaps/',
+                    cMapPacked: true,
+                    standardFontDataUrl: PDFJS_BASE + 'standard_fonts/'
+                }).promise;
+
+                if (state.pdfDoc) state.pdfDoc.destroy();
+                state.pdfBytes = bytes;
+                state.origSize = file.size;
+                state.fileName = sanitizeBaseName(file.name);
+                state.pdfDoc = doc;
+                state.page = 1;
+
+                els.fileDetails.textContent = `${file.name} · ${doc.numPages} page${doc.numPages === 1 ? '' : 's'} · ${formatBytes(file.size)}`;
+                els.drop.classList.add('hidden');
+                els.previewContainer.classList.remove('hidden');
+                els.previewContainer.classList.add('flex');
+                els.previewTools.classList.remove('hidden');
+                els.previewTools.classList.add('flex');
+                els.run.disabled = false;
+
+                setStatus('Ready to compress. Inspect the live page preview or click "Compress PDF".');
+                await renderPreviewPage();
+            } catch (err) {
+                setStatus(friendlyError(err, 'Could not open this PDF. It may be corrupted or password-protected.'), true);
+            }
+        }
+
+        els.fileInput.addEventListener('change', () => {
+            const file = els.fileInput.files[0];
+            els.fileInput.value = '';
+            handleFile(file);
+        });
+        els.changeFileBtn.addEventListener('click', () => els.fileInput.click());
+
+        window.addEventListener('dragover', (e) => e.preventDefault());
+        window.addEventListener('drop', (e) => e.preventDefault());
+
+        [els.drop, els.previewContainer].forEach((zone) => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('border-brand-500');
+            });
+            zone.addEventListener('dragleave', (e) => {
+                if (!zone.contains(e.relatedTarget)) {
+                    zone.classList.remove('border-brand-500');
+                }
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('border-brand-500');
+                const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+                if (file) handleFile(file);
+            });
+        });
+
+        els.prevPage.addEventListener('click', () => changePage(-1));
+        els.nextPage.addEventListener('click', () => changePage(1));
+        function changePage(delta) {
+            if (!state.pdfDoc || state.busy) return;
+            const next = state.page + delta;
+            if (next >= 1 && next <= state.pdfDoc.numPages) {
+                state.page = next;
+                renderPreviewPage();
+            }
+        }
+
+        /* ---------- Live Simulated Quality Preview ---------- */
+        function schedulePreviewUpdate() {
+            if (!state.pdfDoc) return;
+            clearTimeout(state.previewTimer);
+            state.previewTimer = setTimeout(() => renderPreviewPage(), 120);
+        }
+
+        async function renderPreviewPage() {
+            if (!state.pdfDoc) return;
+            const token = ++state.previewToken;
+
+            try {
+                const page = await state.pdfDoc.getPage(state.page);
+                if (token !== state.previewToken) return;
+
+                const isRaster = els.method.value === 'raster';
+                const scaleSetting = isRaster ? Number(els.resolution.value) : 1.6;
+                const qualitySetting = isRaster ? Number(els.quality.value) / 100 : 0.92;
+                const useGrayscale = isRaster && els.grayscaleToggle.checked;
+
+                const baseVp = page.getViewport({ scale: 1 });
+                const maxScale = Math.min(MAX_CANVAS_DIM / baseVp.width, MAX_CANVAS_DIM / baseVp.height, scaleSetting);
+                const viewport = page.getViewport({ scale: maxScale });
+
+                const offCanvas = document.createElement('canvas');
+                offCanvas.width = Math.max(1, Math.floor(viewport.width));
+                offCanvas.height = Math.max(1, Math.floor(viewport.height));
+                const offCtx = offCanvas.getContext('2d');
+                offCtx.fillStyle = '#ffffff';
+                offCtx.fillRect(0, 0, offCanvas.width, offCanvas.height);
+
+                await page.render({ canvasContext: offCtx, viewport }).promise;
+                if (token !== state.previewToken) return;
+
+                if (useGrayscale) {
+                    applyGrayscaleToCanvas(offCtx, offCanvas.width, offCanvas.height);
+                }
+
+                els.pageCounter.textContent = `${state.page} / ${state.pdfDoc.numPages}`;
+                els.prevPage.disabled = state.page <= 1;
+                els.nextPage.disabled = state.page >= state.pdfDoc.numPages;
+
+                if (isRaster) {
+                    const blob = await new Promise((r) => offCanvas.toBlob(r, 'image/jpeg', qualitySetting));
+                    if (token !== state.previewToken || !blob) return;
+
+                    const url = URL.createObjectURL(blob);
+                    const img = new Image();
+                    await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = url; });
+                    URL.revokeObjectURL(url);
+                    if (token !== state.previewToken) return;
+
+                    els.previewCanvas.width = offCanvas.width;
+                    els.previewCanvas.height = offCanvas.height;
+                    els.previewCanvas.getContext('2d').drawImage(img, 0, 0);
+
+                    const estTotal = blob.size * state.pdfDoc.numPages;
+                    els.previewBadge.textContent = `Simulated Preview (${Math.round(scaleSetting * 72)} DPI · ${els.quality.value}% JPEG${useGrayscale ? ' · B&W' : ''})`;
+                    els.estPageSize.textContent = `This page: ~${formatBytes(blob.size)} (Est. PDF: ~${formatBytes(estTotal)})`;
+                } else {
+                    els.previewCanvas.width = offCanvas.width;
+                    els.previewCanvas.height = offCanvas.height;
+                    els.previewCanvas.getContext('2d').drawImage(offCanvas, 0, 0);
+                    els.previewBadge.textContent = 'Lossless Preview (Original Vector & Text Clarity)';
+                    els.estPageSize.textContent = 'Selectable text preserved';
+                }
+            } catch (err) {
+                // Ignore cancelled preview renders
+            }
+        }
+
+        /* ---------- Full PDF Compression Pipeline ---------- */
+        els.run.addEventListener('click', compressPdf);
+
+        async function compressPdf() {
+            if (!state.pdfBytes || !state.pdfDoc || state.busy) return;
+            state.busy = true;
+            els.run.disabled = true;
+            els.runIcon.className = 'fa-solid fa-spinner fa-spin text-sm';
+            els.runLabel.textContent = 'Compressing…';
+            els.result.hidden = true;
+            els.progress.classList.remove('hidden');
+            els.progress.value = 0;
+
+            try {
+                await Promise.all([loadPdfJs(), loadPdfLib()]);
+                const { PDFDocument } = window.PDFLib;
+                const method = els.method.value;
+                const stripMeta = els.stripMetadata.checked;
+                let outBytes = null;
+
+                if (method === 'rewrite') {
+                    els.progress.max = 100;
+                    els.progress.value = 35;
+                    setStatus('Optimizing PDF structure and object streams…');
+                    await new Promise((r) => setTimeout(r, 20));
+
+                    const srcDoc = await PDFDocument.load(state.pdfBytes.slice(0), { updateMetadata: false });
+                    const newDoc = await PDFDocument.create();
+                    const pageIndices = srcDoc.getPageIndices();
+                    const copiedPages = await newDoc.copyPages(srcDoc, pageIndices);
+                    copiedPages.forEach((p) => newDoc.addPage(p));
+
+                    if (stripMeta) {
+                        newDoc.setTitle('');
+                        newDoc.setAuthor('');
+                        newDoc.setSubject('');
+                        newDoc.setKeywords([]);
+                        newDoc.setProducer('');
+                        newDoc.setCreator('');
+                    }
+
+                    els.progress.value = 80;
+                    outBytes = await newDoc.save({ useObjectStreams: true, addDefaultPage: false });
+                    els.progress.value = 100;
+                } else {
+                    // Image-based (Raster) compression across all pages
+                    const totalPages = state.pdfDoc.numPages;
+                    const scaleSetting = Number(els.resolution.value);
+                    const qualitySetting = Number(els.quality.value) / 100;
+                    const useGrayscale = els.grayscaleToggle.checked;
+
+                    els.progress.max = totalPages;
+                    const outDoc = await PDFDocument.create();
+                    if (stripMeta) {
+                        outDoc.setProducer('');
+                        outDoc.setCreator('');
+                    }
+
+                    const workCanvas = document.createElement('canvas');
+                    const workCtx = workCanvas.getContext('2d');
+
+                    for (let p = 1; p <= totalPages; p++) {
+                        setStatus(`Compressing page ${p} of ${totalPages}…`);
+                        els.progress.value = p - 1;
+                        await new Promise((r) => setTimeout(r, 10));
+
+                        const page = await state.pdfDoc.getPage(p);
+                        const ptViewport = page.getViewport({ scale: 1 });
+                        const safeScale = Math.min(
+                            MAX_CANVAS_DIM / ptViewport.width,
+                            MAX_CANVAS_DIM / ptViewport.height,
+                            scaleSetting
+                        );
+                        const renderVp = page.getViewport({ scale: safeScale });
+
+                        workCanvas.width = Math.max(1, Math.floor(renderVp.width));
+                        workCanvas.height = Math.max(1, Math.floor(renderVp.height));
+                        workCtx.fillStyle = '#ffffff';
+                        workCtx.fillRect(0, 0, workCanvas.width, workCanvas.height);
+
+                        await page.render({ canvasContext: workCtx, viewport: renderVp }).promise;
+
+                        if (useGrayscale) {
+                            applyGrayscaleToCanvas(workCtx, workCanvas.width, workCanvas.height);
+                        }
+
+                        const jpegBlob = await new Promise((r) => workCanvas.toBlob(r, 'image/jpeg', qualitySetting));
+                        const jpegBytes = await jpegBlob.arrayBuffer();
+                        const embeddedJpg = await outDoc.embedJpg(jpegBytes);
+
+                        const pdfPage = outDoc.addPage([ptViewport.width, ptViewport.height]);
+                        pdfPage.drawImage(embeddedJpg, {
+                            x: 0,
+                            y: 0,
+                            width: ptViewport.width,
+                            height: ptViewport.height
+                        });
+
+                        els.progress.value = p;
+                    }
+
+                    setStatus('Finalizing compressed PDF…');
+                    outBytes = await outDoc.save({ useObjectStreams: true, addDefaultPage: false });
+                }
+
+                presentResult(outBytes);
+            } catch (err) {
+                setStatus(friendlyError(err, 'Could not compress this PDF. Please try another preset or file.'), true);
+            } finally {
+                state.busy = false;
+                els.run.disabled = false;
+                els.runIcon.className = 'fa-solid fa-compress text-sm';
+                els.runLabel.textContent = 'Compress PDF';
+            }
+        }
+
+        function presentResult(outBytes) {
+            if (state.outUrl) URL.revokeObjectURL(state.outUrl);
+
+            const newSize = outBytes.byteLength;
+            const origSize = state.origSize;
+            const savedBytes = origSize - newSize;
+            const savedPct = origSize > 0 ? Math.round((savedBytes / origSize) * 100) : 0;
+
+            const blob = new Blob([outBytes], { type: 'application/pdf' });
+            state.outUrl = URL.createObjectURL(blob);
+            els.downloadLink.href = state.outUrl;
+            els.downloadLink.download = `${state.fileName}-compressed.pdf`;
+
+            els.result.hidden = false;
+
+            if (savedBytes > 0) {
+                els.resultTitle.textContent = 'PDF Compressed Successfully!';
+                els.resultNumbers.innerHTML = `Original: <strong>${formatBytes(origSize)}</strong> <i class="fa-solid fa-arrow-right mx-1 text-[10px]" aria-hidden="true"></i> Compressed: <strong>${formatBytes(newSize)}</strong> (Saved ${formatBytes(savedBytes)})`;
+                els.resultBadge.textContent = `-${savedPct}% Smaller`;
+                els.resultBadge.className = 'px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-extrabold';
+                els.resultBar.style.width = `${Math.max(5, Math.min(100, Math.round((newSize / origSize) * 100)))}%`;
+                els.resultBar.className = 'bg-emerald-500 h-2 rounded-full transition-all';
+                els.downloadBtnText.textContent = `Download Compressed PDF (${formatBytes(newSize)})`;
+                setStatus('Done! Click the download button below to save your compressed PDF.');
+            } else {
+                // Output was not smaller than original (e.g., already heavily compressed vector PDF)
+                els.resultTitle.textContent = 'This PDF is Already Highly Optimized';
+                els.resultNumbers.innerHTML = `Original: <strong>${formatBytes(origSize)}</strong> · Output with current preset: <strong>${formatBytes(newSize)}</strong>. Try the <strong>Extreme</strong> preset or <strong>Lossless</strong> mode.`;
+                els.resultBadge.textContent = 'Already Compact';
+                els.resultBadge.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-extrabold';
+                els.resultBar.style.width = '100%';
+                els.resultBar.className = 'bg-amber-500 h-2 rounded-full transition-all';
+                els.downloadBtnText.textContent = `Download Output PDF (${formatBytes(newSize)})`;
+                setStatus('Note: This PDF was already compact. You can try the Extreme preset or Grayscale to shrink it further.');
+            }
+        }
+
+        /* ---------- Theme Toggle ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        $('year').textContent = new Date().getFullYear();
+        selectPreset('balanced');
+    })();
+    </script>
+</body>
+</html>

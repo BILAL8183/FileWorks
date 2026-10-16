@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PDF to Word Converter Free | Extract Text to DOCX - Filediter</title>
+<meta content="Convert text-based PDFs to editable Word DOCX files online for free. Extract selectable text into structured paragraphs right in your browser with full privacy." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://filediter.com/tools/pdf-to-word.html" rel="canonical"/>
+<meta content="#2563eb" name="theme-color"/>
+<!-- Open Graph / Social Meta -->
+<meta content="website" property="og:type"/>
+<meta content="Filediter" property="og:site_name"/>
+<meta content="PDF to Word Converter Free | Extract Text to DOCX - Filediter" property="og:title"/>
+<meta content="Convert text-based PDFs to editable Word DOCX files online. Extract selectable text into paragraphs and download your document in your browser." property="og:description"/>
+<meta content="https://filediter.com/tools/pdf-to-word.html" property="og:url"/>
+<meta content="https://filediter.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Filediter PDF to Word Converter preview" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="PDF to Word Converter Free | Extract Text to DOCX - Filediter" name="twitter:title"/>
+<meta content="Convert text-based PDFs to editable Word DOCX files online right in your browser." name="twitter:description"/>
+<meta content="https://filediter.com/og-image.png" name="twitter:image"/>
+<meta content="Filediter PDF to Word Converter preview" name="twitter:image:alt"/>
+<link href="/tools/logo.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Outfit:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Structured Data: WebApplication + FAQPage + BreadcrumbList -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "PDF to Word Converter",
+        "url": "https://filediter.com/tools/pdf-to-word.html",
+        "description": "Convert text-based PDFs to editable Word DOCX files online. Extract selectable text into paragraphs and download your document in your browser.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any modern web browser",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://filediter.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://filediter.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PDF to Word",
+            "item": "https://filediter.com/tools/pdf-to-word.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can it convert scanned PDFs to Word?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. Scanned documents consist of flat images rather than selectable font characters. Use an OCR tool first to create selectable text, then convert that PDF here."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it preserve the original layout?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No guarantee. This tool is built to recover clean, editable text into structured Word paragraphs with approximate page breaks rather than preserving complex visual formatting or tables."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it free and safe to use for sensitive documents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The tool is completely free, requires no account registration, and processes your PDF directly inside your browser so the converter does not intentionally upload the selected PDF to a conversion server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I edit the DOCX in Microsoft Word and Google Docs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the generated file adheres to the standard Office Open XML (.docx) specification and opens cleanly in Microsoft Word, Google Docs, LibreOffice Writer, and Apple Pages."
+            }
+          }
+        ]
+      }
+    ]
+  }
+</script>
+<!-- Prevent Flash of Unstyled Theme (FOUC) -->
+<script>
+  try {
+    const t = localStorage.getItem('filediter-theme');
+    if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme:dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {}
+</script>
+<!-- Progressive UI, Accessibility & Polish Enhancements -->
+<style>
+:root{color-scheme:light;--bg:#f5f8ff;--surface:#fff;--ink:#14213d;--muted:#596982;--line:#dce4f2;--accent:#2563eb;--accent2:#1d4ed8;--soft:#eaf1ff;--shadow:0 18px 50px rgba(27,58,105,.08)}
+html.dark{color-scheme:dark;--bg:#0b1324;--surface:#152136;--ink:#edf4ff;--muted:#b0bfd5;--line:#30415e;--accent:#79a7ff;--accent2:#a6c4ff;--soft:#20385c;--shadow:0 16px 48px rgba(0,0,0,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.6}h1,h2,h3,.brand{font-family:Outfit,Inter,system-ui,sans-serif;line-height:1.25}h1{font-size:clamp(2.15rem,5vw,3.65rem);letter-spacing:-.04em;margin:.7rem 0 1rem}h2{font-size:1.5rem;margin:0 0 1rem}h3{font-size:1.1rem;margin:0 0 .6rem}p{margin:.6rem 0 1rem}.wrap{width:min(1140px,calc(100% - 40px));margin:auto}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip:focus{position:fixed;top:12px;left:12px;z-index:1000;width:auto;height:auto;margin:0;clip:auto;overflow:visible;padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}header{background:var(--surface);border-bottom:1px solid var(--line)}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-size:1.48rem;font-weight:700}.brand b{color:var(--accent)}.brand-mark{display:grid;place-items:center;background:#2563eb;color:white;border-radius:11px;width:37px;height:37px}.header-actions{display:flex;align-items:center;gap:18px}.header-actions nav{display:flex;flex-wrap:wrap;gap:22px}.header-actions nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem}.iconbtn{border:1px solid var(--line);color:var(--ink);background:var(--surface);border-radius:11px;min-width:44px;min-height:44px}.hero{padding:58px 0 62px;background:linear-gradient(135deg,var(--soft),var(--bg));border-bottom:1px solid var(--line)}.hero .wrap{max-width:1140px}.hero p{font-size:1.1rem;color:var(--muted);max-width:770px}.breadcrumbs{font-size:.85rem;color:var(--muted)}.breadcrumbs a{color:inherit}.eyebrow{display:inline-block;margin-top:24px;font-size:.75rem;letter-spacing:.13em;font-weight:800;color:var(--accent)}.chips{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0;padding:0;list-style:none}.chips li{background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:999px;font-size:.84rem;font-weight:600}.content{padding:36px 0 72px}.workspace{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(285px,1fr);gap:22px;scroll-margin-top:20px}.panel,.details{border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);padding:28px}.drop{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;min-height:220px;border:2px dashed #8db1ff;border-radius:15px;background:var(--soft);padding:24px;cursor:pointer;transition:.2s}.drop:hover,.drop.dragover,.drop:focus-within{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 3px rgba(37,99,235,.12)}.drop-icon{display:grid;place-items:center;width:57px;height:57px;background:#2563eb;color:#fff;border-radius:15px;font-size:2rem}.drop strong{font-size:1.07rem}.drop small,.filename{color:var(--muted);font-size:.9rem}.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.drop input:focus-visible{outline:none}.filename{overflow-wrap:anywhere}.notice{border-radius:11px;background:var(--soft);padding:13px 16px;font-size:.9rem;color:var(--ink);margin:18px 0}.notice.warn{background:#fff4df;color:#6c4400;border:1px solid #f5dca4}.dark .notice.warn{background:#493716;color:#ffe3ac;border-color:#7a5b23}.field{margin:20px 0}.checkline{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.95rem}.checkline input{width:18px;height:18px;accent-color:#2563eb;margin-top:3px}.btn{border:0;border-radius:12px;padding:14px 24px;min-height:48px;background:#2563eb;color:white;font-weight:700;width:100%;box-shadow:0 8px 20px rgba(37,99,235,.19)}.btn:hover:not(:disabled){background:#1d4ed8}.status{margin-top:13px;min-height:25px;font-size:.95rem;overflow-wrap:anywhere}.status.error{color:#c43838}.status.success{color:#147f4b}.dark .status.success{color:#79e1aa}.dark .status.error{color:#ff9999}progress{width:100%;height:10px;margin-top:8px;accent-color:#2563eb;border-radius:999px;overflow:hidden}progress[value="0"]{opacity:.45}.side-items{display:grid;gap:20px}.side-item{display:flex;gap:14px}.side-item p{color:var(--muted);margin:4px 0 0;font-size:.92rem}.num{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800}.details{margin-top:24px}.seo-prose{max-width:950px;color:var(--muted)}.guide-grid,.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:20px}.guide-card,.info-grid article{padding:21px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}.guide-card p,.info-grid p{margin:0;color:var(--muted);font-size:.94rem}.faq details{border-bottom:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:0}.faq summary{font-weight:700;cursor:pointer}.faq details p{color:var(--muted)}.related{display:flex;flex-wrap:wrap;gap:12px}.related a{display:inline-block;padding:12px 15px;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:600;background:var(--bg)}footer{border-top:1px solid var(--line);background:var(--surface)}.foot-expanded{display:grid;grid-template-columns:2fr repeat(3,minmax(0,1fr));gap:22px;padding:43px 0 30px;border-bottom:1px solid var(--line)}.foot-brand p{max-width:310px;color:var(--muted);font-size:.92rem}.foot-col h3{font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}.foot-col ul{padding:0;margin:0;list-style:none}.foot-col li{margin:9px 0}.foot-col a{text-decoration:none;color:var(--muted);font-size:.91rem}.foot-col a:hover{text-decoration:underline;color:var(--accent)}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:24px 0;color:var(--muted);font-size:.82rem}.foot a{color:inherit}@media(max-width:900px){.workspace{grid-template-columns:1fr}.guide-grid,.info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-expanded{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.wrap{width:min(100% - 28px,1140px)}.header-inner{align-items:flex-start;padding:14px 0;flex-wrap:wrap}.header-actions{width:100%;justify-content:space-between}.header-actions nav{gap:12px}.header-actions nav a{font-size:.8rem}.hero{padding:33px 0 37px}.panel,.details{padding:19px}.guide-grid,.info-grid,.foot-expanded{grid-template-columns:1fr}.foot-expanded{gap:15px}.drop{min-height:205px}.foot{font-size:.78rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip sr-only" href="#workspace">Skip to tool</a>
+<header>
+<div class="wrap header-inner">
+<a aria-label="Filediter home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">✦</span>
+<span>File<b>diter</b></span>
+</a>
+<div class="header-actions">
+<nav aria-label="Main navigation">
+<a href="/">All tools</a>
+<a href="/tools/pdf-merger.html">PDF merger</a>
+<a href="/tools/image-compressor.html">Image compressor</a>
+</nav>
+<button aria-label="Switch to dark theme" aria-pressed="false" class="iconbtn" id="themeToggle" type="button">🌙</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+<a href="/">Home</a> / <a href="/#tools">Tools</a> / <span aria-current="page">PDF to Word</span>
+</nav>
+<span class="eyebrow">✦ EDITABLE WORD DOCUMENT</span>
+<h1>Convert PDF to Word (DOCX)</h1>
+<p>Turn selectable PDF text into an editable Microsoft Word document with this free browser utility. This tool extracts text page by page—built for clean text recovery without uploading your sensitive files to a server.</p>
+<ul aria-label="Key features" class="chips">
+<li>PDF to editable DOCX</li>
+<li>Browser-based processing</li>
+<li>Selectable text extraction</li>
+<li>No signup required</li>
+</ul>
+</div>
+</section>
+<!-- Main Tool Workspace & Details -->
+<section class="content">
+<div class="wrap">
+<div class="workspace" id="workspace">
+<!-- Left Panel: Converter Workspace -->
+<section aria-labelledby="editorTitle" class="panel" id="converterPanel">
+<h2 id="editorTitle">PDF to Word</h2>
+<label class="drop" for="fileInput" id="drop">
+<span aria-hidden="true" class="drop-icon">↑</span>
+<strong>Drop your PDF here or click to browse</strong>
+<small id="dropHint">PDF only · Maximum 70 MB · Files stay on your device</small>
+<input accept=".pdf,application/pdf" aria-describedby="dropHint fileDetails" id="fileInput" type="file"/>
+</label>
+<p class="filename" id="fileDetails">No PDF selected</p>
+<div class="notice warn" role="note">
+<strong>Important:</strong> This tool extracts selectable text into an editable Word document. It does not run OCR on scanned images or reconstruct complex multi-column layouts, tables, graphics, or custom fonts.
+</div>
+<div class="field">
+<label class="checkline" for="breaks">
+<input checked id="breaks" type="checkbox"/>
+<span>Keep approximate PDF page breaks in Word</span>
+</label>
+</div>
+<div class="actions">
+<button class="btn" data-run="" disabled id="run" type="button">Convert to Word (.docx) ↓</button>
+</div>
+<p class="filename" id="extracted"></p>
+<div aria-live="polite" class="status" id="status" role="status"></div>
+<progress aria-label="Conversion progress" id="progress" max="1" value="0"></progress>
+<p class="filename">Internet access is required to load the conversion libraries when opening this page.</p>
+</section>
+<!-- Right Panel: Instructions & Privacy -->
+<aside aria-labelledby="howItWorksTitle" class="panel">
+<h2 id="howItWorksTitle">How it works</h2>
+<div class="side-items">
+<div class="side-item">
+<span aria-hidden="true" class="num">1</span>
+<div>
+<strong>Choose a PDF</strong>
+<p>Select or drag and drop a text-based PDF file (up to 70 MB) directly from your computer or phone.</p>
+</div>
+</div>
+<div class="side-item">
+<span aria-hidden="true" class="num">2</span>
+<div>
+<strong>Extract &amp; organize</strong>
+<p>Your browser reads each page and groups selectable text into natural reading-order paragraphs.</p>
+</div>
+</div>
+<div class="side-item">
+<span aria-hidden="true" class="num">3</span>
+<div>
+<strong>Download DOCX</strong>
+<p>Save your freshly generated <code>.docx</code> file and open it in Microsoft Word, Google Docs, or LibreOffice.</p>
+</div>
+</div>
+</div>
+<div class="notice" style="margin-top:22px">
+<strong>Privacy note:</strong> Files are processed in your browser. This page loads PDF/DOCX libraries and fonts from third-party CDNs, which receive normal network requests. The conversion code does not upload the selected PDF to a server.
+</div>
+</aside>
+</div>
+<!-- Detailed Tool Description Section -->
+<section aria-labelledby="aboutHeading" class="details">
+<h2 id="aboutHeading">About the Filediter PDF to Word Converter</h2>
+<div class="seo-prose">
+<p>PDF files are ideal for sharing and printing documents with fixed layouts, but editing their text directly can be frustrating. The <strong>Filediter PDF to Word Converter</strong> bridges that gap by extracting embedded text streams from your PDF and packaging them into a clean, lightweight, and standard <code>.docx</code> document that you can edit freely.</p>
+<p>Unlike traditional converters that try to mimic visual appearance by locking every line inside rigid floating frames, this utility focuses on <strong>clean text reflow</strong>. Your exported document uses real paragraphs and optional page breaks, making it easy to copy, revise, reformat, or paste content into essays, contracts, reports, and study notes.</p>
+</div>
+<div class="guide-grid">
+<article class="guide-card">
+<h3>🔒 Browser-Based Processing</h3>
+<p>PDF text extraction and DOCX generation happen in your browser using third-party libraries loaded from CDNs. Avoid using sensitive documents on an untrusted device.</p>
+</article>
+<article class="guide-card">
+<h3>📝 Clean Reflowable Paragraphs</h3>
+<p>Instead of messy text boxes that break whenever you type a new sentence, you get continuous paragraphs ready for effortless editing in Word or Google Docs.</p>
+</article>
+<article class="guide-card">
+<h3>⚡ Fast &amp; Lightweight</h3>
+<p>No server-side conversion queue. Processing time depends on your device and the size and complexity of your PDF.</p>
+</article>
+</div>
+</section>
+<!-- Useful Tips and Limitations -->
+<section aria-labelledby="tipsHeading" class="details">
+<h2 id="tipsHeading">Useful tips and limitations</h2>
+<div class="info-grid">
+<article>
+<h3>Text-based PDFs only</h3>
+<p>Scanned or photographed pages are flat images and require Optical Character Recognition (OCR). This tool does not run OCR and will alert you if no selectable text is found.</p>
+</article>
+<article>
+<h3>Layout may change</h3>
+<p>Multi-column layouts, charts, custom fonts, interactive forms, tables, and embedded images are not reconstructed. Always review the downloaded document before final use.</p>
+</article>
+<article>
+<h3>Edit after conversion</h3>
+<p>The output is a genuine, editable <code>.docx</code> file rather than a static image snapshot embedded inside a Word page.</p>
+</article>
+</div>
+</section>
+<!-- Frequently Asked Questions -->
+<section aria-labelledby="faqheading" class="details faq">
+<h2 id="faqheading">Frequently asked questions</h2>
+<details>
+<summary>Can it convert scanned PDFs to Word?</summary>
+<p>Not directly. Scanned documents consist of flat images rather than selectable font characters. Use an OCR tool first to create selectable text, then convert that PDF here.</p>
+</details>
+<details>
+<summary>Does it preserve the original layout?</summary>
+<p>No guarantee. This tool is built to recover clean, editable text into structured Word paragraphs with approximate page breaks rather than preserving complex visual formatting or tables.</p>
+</details>
+<details>
+<summary>Is it free and safe to use for sensitive documents?</summary>
+<p>Yes. The tool is completely free, requires no account registration, and processes your PDF directly inside your browser so the converter does not intentionally upload the selected PDF to a conversion server.</p>
+</details>
+<details>
+<summary>Can I edit the DOCX in Microsoft Word and Google Docs?</summary>
+<p>Yes, the generated file adheres to the standard Office Open XML (<code>.docx</code>) specification and opens cleanly in Microsoft Word, Google Docs, LibreOffice Writer, and Apple Pages.</p>
+</details>
+</section>
+<!-- Related Tools -->
+<section aria-labelledby="relatedHeading" class="details">
+<h2 id="relatedHeading">Related Filediter tools</h2>
+<div class="related">
+<a href="/tools/pdf-compressor.html">PDF Compressor →</a>
+<a href="/tools/pdf-splitter.html">PDF Splitter →</a>
+<a href="/tools/pdf-merger.html">PDF Merger →</a>
+<a href="/tools/image-compressor.html">Image Compressor →</a>
+</div>
+</section>
+</div>
+</section>
+</main>
+<!-- Comprehensive Footer -->
+<footer>
+<div class="wrap">
+<div class="foot-expanded">
+<div class="foot-brand">
+<a aria-label="Filediter home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">✦</span>
+<span>File<b>diter</b></span>
+</a>
+<p>Fast, privacy-first browser utilities for PDF manipulation, image optimization, and document conversion. Your files stay on your device.</p>
+</div>
+<div class="foot-col">
+<h3>PDF Tools</h3>
+<ul>
+<li><a aria-current="page" href="/tools/pdf-to-word.html">PDF to Word</a></li>
+<li><a href="/tools/pdf-merger.html">PDF Merger</a></li>
+<li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li>
+<li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h3>Image &amp; File Tools</h3>
+<ul>
+<li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+<li><a href="/#tools">Browse All Tools</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h3>Company &amp; Legal</h3>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/privacy.html">Privacy Policy</a></li>
+<li><a href="/terms.html">Terms of Service</a></li>
+<li><a href="mailto:support@filediter.com">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="foot">
+<span>© <span id="year">2026</span> Filediter. Free browser-based tools. All rights reserved.</span>
+<span><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="mailto:support@filediter.com">Contact</a></span>
+</div>
+</div>
+</footer>
+<!-- External Libraries & Conversion Script -->
+<script crossorigin="anonymous" defer referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script crossorigin="anonymous" defer referrerpolicy="no-referrer" src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const fileInput = $('fileInput'),
+        drop = $('drop'),
+        run = $('run'),
+        details = $('fileDetails'),
+        status = $('status'),
+        extracted = $('extracted'),
+        progress = $('progress'),
+        breaks = $('breaks'),
+        panel = $('converterPanel');
+  const MAX = 70 * 1024 * 1024;
+  let selected = null, busy = false;
+
+  $('year').textContent = new Date().getFullYear();
+
+  const themeBtn = $('themeToggle');
+  function updateTheme() {
+    const dark = document.documentElement.classList.contains('dark');
+    themeBtn.setAttribute('aria-pressed', String(dark));
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeBtn.textContent = dark ? '☀️' : '🌙';
+  }
+  updateTheme();
+  themeBtn.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    try {
+      localStorage.setItem('filediter-theme', dark ? 'dark' : 'light');
+    } catch (e) {}
+    updateTheme();
+  });
+
+  function setStatus(msg, type = '') {
+    status.textContent = msg;
+    status.className = 'status' + (type ? ' ' + type : '');
+  }
+
+  function fileIsPDF(file) {
+    return !!file && (file.type === 'application/pdf' || /\.pdf$/i.test(file.name));
+  }
+
+  function setFile(file, fromInput = false) {
+    if (busy) return;
+    selected = null;
+    run.disabled = true;
+    progress.value = 0;
+    extracted.textContent = '';
+    if (!fromInput) fileInput.value = '';
+    if (!file) {
+      details.textContent = 'No PDF selected';
+      setStatus('');
+      return;
+    }
+    if (!fileIsPDF(file)) {
+      details.textContent = 'No PDF selected';
+      setStatus('Please choose a PDF file.', 'error');
+      fileInput.value = '';
+      return;
+    }
+    if (file.size > MAX) {
+      details.textContent = 'No PDF selected';
+      setStatus('This PDF exceeds the 70 MB limit.', 'error');
+      fileInput.value = '';
+      return;
+    }
+    if (file.size === 0) {
+      details.textContent = 'No PDF selected';
+      setStatus('This PDF is empty.', 'error');
+      fileInput.value = '';
+      return;
+    }
+    selected = file;
+    const sizeMB = (file.size / 1024 / 1024).toFixed(2);
+    details.textContent = `${file.name} · ${sizeMB} MB`;
+    run.disabled = false;
+    setStatus(`PDF selected (${file.name}, ${sizeMB} MB). Choose Convert to Word to begin.`);
+  }
+
+  fileInput.addEventListener('change', () => setFile(fileInput.files?.[0], true));
+  for (const evt of ['dragenter', 'dragover']) {
+    drop.addEventListener(evt, e => {
+      e.preventDefault();
+      if (!busy) drop.classList.add('dragover');
+    });
+  }
+  for (const evt of ['dragleave', 'drop']) {
+    drop.addEventListener(evt, e => {
+      e.preventDefault();
+      drop.classList.remove('dragover');
+    });
+  }
+  drop.addEventListener('drop', e => {
+    if (!busy) setFile(e.dataTransfer?.files?.[0], false);
+  });
+
+  function textLines(items) {
+    const groups = [];
+    for (const it of items) {
+      if (typeof it.str !== 'string' || !it.str.trim()) continue;
+      const x = Number(it.transform?.[4] || 0),
+            y = Number(it.transform?.[5] || 0),
+            size = Math.max(1, Math.abs(it.height || it.transform?.[0] || 10));
+      let group = groups.find(g => Math.abs(g.y - y) <= Math.max(2, Math.min(5, size * 0.25)));
+      if (!group) {
+        group = { y, parts: [] };
+        groups.push(group);
+      }
+      group.parts.push({ x, text: it.str, ends: !!it.hasEOL });
+    }
+    groups.sort((a, b) => b.y - a.y);
+    return groups.map(g => {
+      g.parts.sort((a, b) => a.x - b.x);
+      let str = '';
+      for (const part of g.parts) {
+        if (str && !/\s$/.test(str) && !/^\s/.test(part.text)) str += ' ';
+        str += part.text;
+      }
+      return str.replace(/\s+/g, ' ').trim();
+    }).filter(Boolean);
+  }
+
+  function paragraphs(lines) {
+    const out = [];
+    let buffer = '';
+    for (const line of lines) {
+      if (!buffer) {
+        buffer = line;
+        continue;
+      }
+      const last = buffer.trimEnd();
+      if (last.endsWith('-') && !last.endsWith(' -')) {
+        buffer = last.slice(0, -1) + line;
+      } else if (/[.!?:;]$/.test(last) || /^\s*(?:[•●▪-]|\d+[.)])\s/.test(line) || line.length < 36) {
+        out.push(buffer);
+        buffer = line;
+      } else {
+        buffer += ' ' + line;
+      }
+    }
+    if (buffer) out.push(buffer);
+    return out;
+  }
+
+  function friendlyError(e) {
+    const m = String(e?.message || e || 'Unknown error');
+    if (/password/i.test(m)) return 'This PDF is password-protected. Unlock it before converting.';
+    if (/invalid pdf|missing pdf|formaterror|bad xref/i.test(m)) return 'The selected file is not a readable PDF or may be damaged.';
+    return m.length > 240 ? m.slice(0, 240) + '…' : m;
+  }
+
+  function downloadBlob(blob, name) {
+    const url = URL.createObjectURL(blob),
+          a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  }
+
+  run.addEventListener('click', async () => {
+    if (busy || !selected) return;
+    if (!window.pdfjsLib || !window.docx) {
+      setStatus('Conversion libraries could not load. Check your internet connection or CDN access, then reload.', 'error');
+      return;
+    }
+    busy = true;
+    run.disabled = true;
+    run.setAttribute('aria-busy', 'true');
+    if (panel) panel.setAttribute('aria-busy', 'true');
+    fileInput.disabled = true;
+    progress.value = 0;
+    extracted.textContent = '';
+    let pdf = null;
+    try {
+      setStatus('Opening PDF…');
+      const pdfjs = window.pdfjsLib;
+      pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      const bytes = new Uint8Array(await selected.arrayBuffer());
+      pdf = await pdfjs.getDocument({
+        data: bytes,
+        cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+        cMapPacked: true
+      }).promise;
+
+      const { Paragraph, Document, Packer } = window.docx;
+      const children = [];
+      let nonempty = 0;
+
+      for (let n = 1; n <= pdf.numPages; n++) {
+        setStatus(`Extracting page ${n} of ${pdf.numPages}…`);
+        const page = await pdf.getPage(n);
+        const content = await page.getTextContent();
+        const lines = textLines(content.items);
+        const paras = paragraphs(lines);
+
+        if (paras.length) {
+          nonempty++;
+          paras.forEach((p, idx) => {
+            const needBreak = breaks.checked && children.length > 0 && idx === 0;
+            children.push(new Paragraph({
+              text: p,
+              pageBreakBefore: needBreak,
+              spacing: { after: 120 }
+            }));
+          });
+        } else if (breaks.checked && children.length) {
+          children.push(new Paragraph({ pageBreakBefore: true, text: '' }));
+        }
+
+        progress.value = n / pdf.numPages;
+        await new Promise(r => setTimeout(r, 0));
+        page.cleanup();
+      }
+
+      if (!nonempty) {
+        throw new Error('No selectable text was found. This file may be scanned or image-only; OCR is required first.');
+      }
+
+      setStatus('Creating editable Word document…');
+      const doc = new Document({ sections: [{ properties: {}, children }] });
+      const blob = await Packer.toBlob(doc);
+      const name = selected.name.replace(/\.pdf$/i, '') + '.docx';
+      downloadBlob(blob, name);
+      const summary = `Processed ${pdf.numPages} page${pdf.numPages === 1 ? '' : 's'}; ${nonempty} contained selectable text.`;
+      extracted.textContent = summary;
+      setStatus(`Conversion complete (${summary}). Your Word download should begin automatically.`, 'success');
+      progress.value = 1;
+    } catch (e) {
+      console.error('PDF to Word conversion:', e);
+      setStatus(friendlyError(e), 'error');
+      progress.value = 0;
+    } finally {
+      if (pdf) {
+        try { await pdf.destroy(); } catch (e) {}
+      }
+      busy = false;
+      run.removeAttribute('aria-busy');
+      if (panel) panel.removeAttribute('aria-busy');
+      fileInput.disabled = false;
+      run.disabled = !selected;
+    }
+  });
+});
+</script>
+</body>
+</html>

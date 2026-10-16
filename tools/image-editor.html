@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Free Online Image Editor – Crop, Resize, Filter, Draw &amp; Watermark | Filediter</title>
+    <meta name="description" content="Edit images online for free in your browser. Crop, rotate, flip, resize pixels, adjust brightness and contrast, apply photo filters, draw annotations, and add text watermarks with full Undo/Redo.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/image-editor.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="image-editor.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ccircle cx='24' cy='24' r='6' fill='%2393c5fd'/%3E%3Cpath d='M14 48l12-15 9 11 7-8 8 12H14z' fill='%23fff'/%3E%3Cpath d='M46 14l4 4-10 10-4-4 10-10z' fill='%23fbbf24'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Free Online Image Editor – Crop, Resize, Filter &amp; Annotate | Filediter">
+    <meta property="og:description" content="Crop, resize, color-grade, draw, and watermark JPG, PNG, and WebP photos directly in your browser. 100% private client-side editing.">
+    <meta property="og:url" content="https://filediter.com/tools/image-editor.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Image Editor | Filediter">
+    <meta name="twitter:description" content="Crop, resize, filter, draw, and add text to images online for free. Your photos never leave your browser.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter Online Image Editor",
+                "url": "https://filediter.com/tools/image-editor.html",
+                "description": "Free browser-based photo editor to crop, rotate, flip, resize dimensions, adjust brightness/contrast/saturation, apply filters, draw freehand annotations, and add text watermarks.",
+                "applicationCategory": "MultimediaApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript and HTML5 Canvas",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "Interactive cropping with aspect-ratio presets (1:1, 16:9, 4:3, 9:16, Free)",
+                    "90-degree rotation and horizontal/vertical mirroring",
+                    "Pixel dimension resizer with aspect-ratio lock",
+                    "Real-time brightness, contrast, saturation, warmth, grayscale, invert, hue, and blur controls",
+                    "Freehand brush and highlighter drawing with touch and mouse support",
+                    "Live text watermark overlay with customizable color, size, shadow, and 9-grid placement",
+                    "Multi-step Undo/Redo history and Export to PNG, JPG, or WebP"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Image Editor", "item": "https://filediter.com/tools/image-editor.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Edit, Crop, and Resize an Image Online",
+                "description": "Edit photos directly in your browser using Filediter's free online image studio.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Upload or paste your photo",
+                        "text": "Click the upload zone, drag and drop a JPG, PNG, WebP, or GIF image, or press Ctrl+V to paste from your clipboard."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Crop, adjust colors, draw, or add text",
+                        "text": "Use the studio tabs to crop to an aspect ratio, tweak brightness and contrast, apply a color preset, draw annotations, add a text watermark, or resize pixel dimensions."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Export in PNG, JPG, or WebP",
+                        "text": "Choose your output format and quality level, inspect the estimated file size, and click Save & Export Image."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Are my photos uploaded to a server when I edit them?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. All cropping, color grading, drawing, and resizing happen 100% locally inside your web browser using the HTML5 Canvas API. Your private photos never leave your device."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I undo mistakes while editing?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. The editor maintains an interactive Undo/Redo history stack (or press Ctrl+Z / Ctrl+Y) and includes a one-click Revert to Original button."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What image formats can I edit and export?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You can open JPG, PNG, WebP, GIF, BMP, and SVG images, and export your finished image as lossless PNG, high-compatibility JPEG, or modern WebP."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Cropper.js CSS & JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tailwind CSS (Pinned CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        .tab-btn[aria-selected="true"] {
+            border-color: #2563eb;
+            color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .dark .tab-btn[aria-selected="true"] {
+            border-color: #3b82f6;
+            color: #60a5fa;
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+        canvas { touch-action: none; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+        .bg-checkerboard {
+            background-color: #f8fafc;
+            background-image:
+                linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
+                linear-gradient(-45deg, #e2e8f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
+                linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+        }
+        .dark .bg-checkerboard {
+            background-color: #090d16;
+            background-image:
+                linear-gradient(45deg, #1e293b 25%, transparent 25%),
+                linear-gradient(-45deg, #1e293b 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #1e293b 75%),
+                linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main id="main" tabindex="-1" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">Image Editor</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool requires JavaScript to edit images in your browser. Please enable JavaScript and reload.</p>
+        </noscript>
+
+        <!-- Tool Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> All-in-One Browser Photo Studio
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">
+                Advanced Online Image Editor
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Crop, rotate, resize dimensions, color-grade, apply studio filters, draw annotations, and add live text watermarks—100% privately inside your browser.
+            </p>
+        </div>
+
+        <!-- Main Editor Grid Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+
+            <!-- Left Tool Control Tabs Panel -->
+            <section class="lg:col-span-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between" aria-label="Image editing tools">
+                <div>
+                    <!-- Tool Categories Navigation (6 Clear Tabs) -->
+                    <div role="tablist" aria-label="Editor tool modes" class="grid grid-cols-3 gap-1.5 pb-3 border-b border-slate-100 dark:border-slate-800 mb-4">
+                        <button type="button" role="tab" data-tab="adjust" id="tab-adjust" aria-selected="true" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-sliders" aria-hidden="true"></i> Adjust
+                        </button>
+                        <button type="button" role="tab" data-tab="crop" id="tab-crop" aria-selected="false" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-crop-simple" aria-hidden="true"></i> Crop/Flip
+                        </button>
+                        <button type="button" role="tab" data-tab="resize" id="tab-resize" aria-selected="false" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i> Resize
+                        </button>
+                        <button type="button" role="tab" data-tab="filters" id="tab-filters" aria-selected="false" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-palette" aria-hidden="true"></i> Filters
+                        </button>
+                        <button type="button" role="tab" data-tab="draw" id="tab-draw" aria-selected="false" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Draw
+                        </button>
+                        <button type="button" role="tab" data-tab="watermark" id="tab-watermark" aria-selected="false" class="tab-btn px-2.5 py-2 rounded-xl text-xs font-bold border border-transparent text-slate-600 dark:text-slate-400 transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-font" aria-hidden="true"></i> Text
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: COLOR ADJUSTMENTS -->
+                    <div id="panel-adjust" role="tabpanel" aria-labelledby="tab-adjust" class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="adj-brightness">Brightness</label> <span id="val-brightness" class="font-mono text-brand-600 dark:text-brand-400">100%</span>
+                            </div>
+                            <input type="range" id="adj-brightness" min="20" max="200" value="100" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="adj-contrast">Contrast</label> <span id="val-contrast" class="font-mono text-brand-600 dark:text-brand-400">100%</span>
+                            </div>
+                            <input type="range" id="adj-contrast" min="20" max="200" value="100" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="adj-saturate">Saturation</label> <span id="val-saturate" class="font-mono text-brand-600 dark:text-brand-400">100%</span>
+                            </div>
+                            <input type="range" id="adj-saturate" min="0" max="250" value="100" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="adj-sepia">Warmth / Sepia</label> <span id="val-sepia" class="font-mono text-brand-600 dark:text-brand-400">0%</span>
+                            </div>
+                            <input type="range" id="adj-sepia" min="0" max="100" value="0" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                    <label for="adj-grayscale">B&amp;W</label> <span id="val-grayscale" class="font-mono">0%</span>
+                                </div>
+                                <input type="range" id="adj-grayscale" min="0" max="100" value="0" class="w-full accent-brand-600 cursor-pointer">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                    <label for="adj-invert">Invert</label> <span id="val-invert" class="font-mono">0%</span>
+                                </div>
+                                <input type="range" id="adj-invert" min="0" max="100" value="0" class="w-full accent-brand-600 cursor-pointer">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                    <label for="adj-hue">Hue Shift</label> <span id="val-hue" class="font-mono">0°</span>
+                                </div>
+                                <input type="range" id="adj-hue" min="0" max="360" value="0" class="w-full accent-brand-600 cursor-pointer">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                    <label for="adj-blur">Blur</label> <span id="val-blur" class="font-mono">0px</span>
+                                </div>
+                                <input type="range" id="adj-blur" min="0" max="20" step="0.5" value="0" class="w-full accent-brand-600 cursor-pointer">
+                            </div>
+                        </div>
+
+                        <button type="button" id="resetAdjustBtn" class="w-full py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl transition-colors mt-1">
+                            <i class="fa-solid fa-rotate-left mr-1" aria-hidden="true"></i> Reset Color Adjustments
+                        </button>
+                    </div>
+
+                    <!-- TAB 2: CROP & TRANSFORM -->
+                    <div id="panel-crop" role="tabpanel" aria-labelledby="tab-crop" class="space-y-4 hidden">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">Crop Aspect Ratio</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" data-ratio="free" class="crop-ratio-btn py-2 bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 font-bold text-xs rounded-xl border border-brand-300 dark:border-brand-700">Freeform</button>
+                                <button type="button" data-ratio="1" class="crop-ratio-btn py-2 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700">1:1 Square</button>
+                                <button type="button" data-ratio="1.7777778" class="crop-ratio-btn py-2 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700">16:9 Wide</button>
+                                <button type="button" data-ratio="1.3333333" class="crop-ratio-btn py-2 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700">4:3 Standard</button>
+                                <button type="button" data-ratio="0.8" class="crop-ratio-btn py-2 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700">4:5 Portrait</button>
+                                <button type="button" data-ratio="0.5625" class="crop-ratio-btn py-2 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700">9:16 Story</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <button type="button" id="applyCropBtn" class="py-2.5 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-700 transition-colors shadow">
+                                <i class="fa-solid fa-check mr-1" aria-hidden="true"></i> Apply Crop
+                            </button>
+                            <button type="button" id="cancelCropBtn" class="py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                Cancel Box
+                            </button>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">Rotate &amp; Mirror Image</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" id="rotLeftBtn" class="py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Rotate -90°
+                                </button>
+                                <button type="button" id="rotRightBtn" class="py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Rotate +90°
+                                </button>
+                                <button type="button" id="flipHBtn" class="py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i> Flip Horiz.
+                                </button>
+                                <button type="button" id="flipVBtn" class="py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-arrows-up-down" aria-hidden="true"></i> Flip Vert.
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: RESIZE DIMENSIONS -->
+                    <div id="panel-resize" role="tabpanel" aria-labelledby="tab-resize" class="space-y-4 hidden">
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Scale your image to exact pixel dimensions.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="resizeW" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Width (px)</label>
+                                <input type="number" id="resizeW" min="16" max="8192" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold">
+                            </div>
+                            <div>
+                                <label for="resizeH" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Height (px)</label>
+                                <input type="number" id="resizeH" min="16" max="8192" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold">
+                            </div>
+                        </div>
+
+                        <label class="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                            <input type="checkbox" id="lockAspect" checked class="w-4 h-4 accent-brand-600 rounded">
+                            <span>Lock aspect ratio (prevent stretching)</span>
+                        </label>
+
+                        <div>
+                            <span class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-2">Quick Scale Presets</span>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" data-scale="0.75" class="scale-preset-btn py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-xs font-semibold rounded-lg">75%</button>
+                                <button type="button" data-scale="0.5" class="scale-preset-btn py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-xs font-semibold rounded-lg">50%</button>
+                                <button type="button" data-scale="0.25" class="scale-preset-btn py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-xs font-semibold rounded-lg">25%</button>
+                            </div>
+                        </div>
+
+                        <button type="button" id="applyResizeBtn" class="w-full py-2.5 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-700 transition-colors shadow">
+                            <i class="fa-solid fa-check mr-1" aria-hidden="true"></i> Apply New Dimensions
+                        </button>
+                    </div>
+
+                    <!-- TAB 4: PRESET FILTERS -->
+                    <div id="panel-filters" role="tabpanel" aria-labelledby="tab-filters" class="space-y-3 hidden">
+                        <p class="text-xs font-bold text-slate-700 dark:text-slate-300">One-Click Studio Looks</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button type="button" data-filter="normal" class="filter-preset-btn p-2.5 bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-300 font-bold text-xs rounded-xl border border-brand-200 dark:border-brand-800 text-left">Original (None)</button>
+                            <button type="button" data-filter="vivid" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Vivid Pop</button>
+                            <button type="button" data-filter="vintage" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Vintage Warm</button>
+                            <button type="button" data-filter="dramatic" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Dramatic Contrast</button>
+                            <button type="button" data-filter="noir" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Film Noir (B&amp;W)</button>
+                            <button type="button" data-filter="sepia" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Classic Sepia</button>
+                            <button type="button" data-filter="cool" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">Cool Cinema</button>
+                            <button type="button" data-filter="invert" class="filter-preset-btn p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 text-slate-800 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 text-left">X-Ray Invert</button>
+                        </div>
+                    </div>
+
+                    <!-- TAB 5: FREEHAND DRAWING -->
+                    <div id="panel-draw" role="tabpanel" aria-labelledby="tab-draw" class="space-y-4 hidden">
+                        <div class="p-3 rounded-xl bg-brand-50/70 dark:bg-brand-950/40 border border-brand-200/70 dark:border-brand-900 text-xs text-brand-900 dark:text-brand-200 flex items-center gap-2">
+                            <i class="fa-solid fa-paintbrush text-brand-600 dark:text-brand-400" aria-hidden="true"></i>
+                            <span><strong>Drawing Active:</strong> Drag directly on the image canvas to draw or highlight.</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="brushType" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Brush Style</label>
+                                <select id="brushType" class="w-full p-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold">
+                                    <option value="pen" selected>Solid Marker Pen</option>
+                                    <option value="highlighter">Highlighter (50%)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="brushColor" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Brush Color</label>
+                                <input type="color" id="brushColor" value="#ef4444" class="w-full h-10 p-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="brushSize">Brush Thickness</label> <span id="val-brush" class="font-mono">8px</span>
+                            </div>
+                            <input type="range" id="brushSize" min="2" max="60" value="8" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- TAB 6: LIVE WATERMARK & TEXT -->
+                    <div id="panel-watermark" role="tabpanel" aria-labelledby="tab-watermark" class="space-y-3.5 hidden">
+                        <div>
+                            <label for="watermarkText" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Overlay Text (Live Preview)</label>
+                            <input type="text" id="watermarkText" placeholder="Type text to preview on image…" autocomplete="off" class="w-full p-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <label for="wmColor" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Text Color</label>
+                                <input type="color" id="wmColor" value="#ffffff" class="w-full h-9 p-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer">
+                            </div>
+                            <div>
+                                <label for="wmPos" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Position</label>
+                                <select id="wmPos" class="w-full p-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold">
+                                    <option value="bottom-right" selected>Bottom Right</option>
+                                    <option value="bottom-center">Bottom Center</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="center">Center</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="top-center">Top Center</option>
+                                    <option value="top-left">Top Left</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                                <label for="wmSize">Text Scale</label> <span id="val-wmSize" class="font-mono">6%</span>
+                            </div>
+                            <input type="range" id="wmSize" min="2" max="20" value="6" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <label class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                            <input type="checkbox" id="wmOutline" checked class="w-4 h-4 accent-brand-600 rounded">
+                            <span>Add dark drop-shadow / outline for readability</span>
+                        </label>
+
+                        <button type="button" id="applyWatermarkBtn" class="w-full py-2.5 bg-brand-600 text-white font-bold text-xs rounded-xl hover:bg-brand-700 transition-colors shadow">
+                            <i class="fa-solid fa-check mr-1" aria-hidden="true"></i> Stamp Text onto Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-6">
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div>
+                            <label for="exportFormat" class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Export Format</label>
+                            <select id="exportFormat" class="w-full p-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200">
+                                <option value="image/jpeg" selected>JPG (Universal)</option>
+                                <option value="image/webp">WebP (Smallest)</option>
+                                <option value="image/png">PNG (Lossless)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="exportQuality" class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Quality</label>
+                            <select id="exportQuality" class="w-full p-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200">
+                                <option value="0.95">95% Maximum</option>
+                                <option value="0.85" selected>85% Balanced</option>
+                                <option value="0.70">70% Compact</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" id="downloadBtn" disabled class="w-full py-3.5 rounded-2xl bg-brand-600 text-white shadow-md hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download text-base" aria-hidden="true"></i>
+                        <span>Save &amp; Export Image</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Canvas Main Interactive Stage -->
+            <section class="lg:col-span-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between min-h-[540px]" aria-label="Image preview stage">
+
+                <div>
+                    <!-- Top Action Bar (Undo / Redo / Compare / Change Image) -->
+                    <div id="topActionBar" class="hidden flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center gap-1.5">
+                            <button type="button" id="undoBtn" disabled title="Undo (Ctrl+Z)" class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-xs font-bold text-slate-700 dark:text-slate-300 inline-flex items-center gap-1.5 transition-colors">
+                                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Undo
+                            </button>
+                            <button type="button" id="redoBtn" disabled title="Redo (Ctrl+Y)" class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-xs font-bold text-slate-700 dark:text-slate-300 inline-flex items-center gap-1.5 transition-colors">
+                                <i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Redo
+                            </button>
+                            <button type="button" id="revertOrigBtn" title="Revert all edits back to original uploaded image" class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 inline-flex items-center gap-1 transition-colors">
+                                Revert Original
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button type="button" id="compareBtn" class="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 text-xs font-bold select-none inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye" aria-hidden="true"></i> Hold to Compare
+                            </button>
+                            <button type="button" id="changeImgBtn" class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i> New Image
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Accessible Drop Zone -->
+                    <input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/svg+xml" class="sr-only peer">
+                    <label id="editorDropZone" for="imageInput"
+                           class="block border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 peer-focus-visible:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 bg-slate-50/50 dark:bg-slate-950/50 rounded-2xl p-12 text-center cursor-pointer transition-all my-auto">
+                        <span class="w-16 h-16 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto text-3xl mb-3">
+                            <i class="fa-solid fa-photo-film" aria-hidden="true"></i>
+                        </span>
+                        <span class="block font-heading text-lg font-bold text-slate-800 dark:text-slate-200 mb-1">
+                            Click, Drag &amp; Drop, or Paste (<kbd class="px-1.5 py-0.5 text-xs rounded bg-slate-200 dark:bg-slate-800">Ctrl+V</kbd>) an Image
+                        </span>
+                        <span class="block text-xs text-slate-500 dark:text-slate-400">
+                            Supports JPG, PNG, WebP, GIF &amp; SVG · 100% private in-browser editing
+                        </span>
+                    </label>
+
+                    <!-- Canvas Stage Wrapper -->
+                    <div id="canvasStage" class="hidden relative w-full flex items-center justify-center min-h-[400px] max-h-[520px] bg-checkerboard border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden p-3">
+                        <canvas id="mainCanvas" class="max-w-full max-h-[480px] object-contain rounded-lg shadow-md"></canvas>
+                    </div>
+                </div>
+
+                <!-- Image Status Footer -->
+                <div id="editorStatusBar" class="hidden pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <div class="flex items-center gap-3 font-mono">
+                        <span id="imgDimensions">0 × 0 px</span>
+                        <span id="editorFeedback" role="status" aria-live="polite" class="font-sans font-semibold text-brand-600 dark:text-brand-400"></span>
+                    </div>
+                    <button type="button" id="closeWorkspaceBtn" class="text-rose-600 dark:text-rose-400 font-sans font-bold hover:underline flex items-center gap-1">
+                        <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Close Image
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- Features & SEO Guide Section -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8 mb-16" aria-labelledby="about-heading">
+            <div>
+                <h2 id="about-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-4">Complete Browser-Based Photo Editing Studio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1.5 text-sm"><i class="fa-solid fa-shield-halved text-brand-600 mr-1.5" aria-hidden="true"></i> 100% Client-Side Privacy</h3>
+                        <p>Your photos are edited directly inside your web browser using HTML5 Canvas. No pictures are ever uploaded to a cloud server.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1.5 text-sm"><i class="fa-solid fa-clock-rotate-left text-brand-600 mr-1.5" aria-hidden="true"></i> Non-Destructive Undo &amp; Redo</h3>
+                        <p>Experiment freely with crops, rotations, brush annotations, and color filters. Step backward or forward with <kbd class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Ctrl+Z</kbd> or hold Compare to check your original photo.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1.5 text-sm"><i class="fa-solid fa-file-arrow-down text-brand-600 mr-1.5" aria-hidden="true"></i> Export to JPG, PNG &amp; WebP</h3>
+                        <p>Save your finished image in lossless PNG, universal JPEG, or next-gen WebP format with customizable compression quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Tools -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">Related Image &amp; Document Tools</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Need to shrink file weight after editing? Use the <a href="image-compressor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">Image Compressor</a> or batch-convert formats with the <a href="image-converter.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">JPG / PNG / WebP Converter</a>. Creating an official ID portrait? Try the <a href="passport-photo-maker.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">Passport Photo Maker</a>, or extract text from photos using the <a href="cam-ocr.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">OCR Text Extractor</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Are my photos uploaded to any server?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. Every edit—cropping, resizing, color grading, drawing, and watermarking—runs locally on your device inside your browser.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        How do I undo a crop, brush stroke, or text stamp?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Click the <strong>Undo</strong> button in the top bar above the image (or press <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">Ctrl+Z</kbd> on your keyboard). You can also click <strong>Revert Original</strong> to start fresh from your uploaded photo.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can I paste an image directly from my clipboard?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Yes! Take a screenshot or copy any image and press <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">Ctrl+V</kbd> (or <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">Cmd+V</kbd> on Mac) anywhere on the page to load it into the editor immediately.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Standardized Footer (Only verified, real Filediter URLs) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <!-- Image Tools -->
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-editor.html" aria-current="page" class="text-brand-400 font-semibold">Image Editor</a></li>
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-converter.html" class="hover:text-white transition-colors">JPG / PNG / WebP Converter</a></li>
+                        <li><a href="passport-photo-maker.html" class="hover:text-white transition-colors">Passport Photo Maker</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <!-- PDF Tools -->
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="pdf-compressor.html" class="hover:text-white transition-colors">PDF Compressor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-white transition-colors">PDF Extractor</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Web & Text Tools -->
+                <nav aria-label="Text and Web tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Web &amp; Text Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="word-counter.html" class="hover:text-white transition-colors">Word Counter</a></li>
+                        <li><a href="url-encoder.html" class="hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                        <li><a href="color-picker.html" class="hover:text-white transition-colors">Color Picker</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Company -->
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">All Tools (Home)</a></li>
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-6 text-xs text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Complete Client-Side Photo Studio Engine -->
+    <script>
+    (() => {
+        'use strict';
+
+        const MAX_HISTORY = 20;
+        const $ = (id) => document.getElementById(id);
+
+        const canvas = $('mainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Offscreen base canvas stores the committed pixel bitmap (crops, rotations, drawings, applied text)
+        const baseCanvas = document.createElement('canvas');
+        const baseCtx = baseCanvas.getContext('2d');
+
+        // Original uploaded bitmap for instant "Hold to Compare" and "Revert to Original"
+        const origCanvas = document.createElement('canvas');
+        const origCtx = origCanvas.getContext('2d');
+
+        const els = {
+            imageInput: $('imageInput'),
+            dropZone: $('editorDropZone'),
+            canvasStage: $('canvasStage'),
+            topActionBar: $('topActionBar'),
+            statusBar: $('editorStatusBar'),
+            imgDimensions: $('imgDimensions'),
+            feedback: $('editorFeedback'),
+            undoBtn: $('undoBtn'),
+            redoBtn: $('redoBtn'),
+            revertOrigBtn: $('revertOrigBtn'),
+            compareBtn: $('compareBtn'),
+            changeImgBtn: $('changeImgBtn'),
+            closeWorkspaceBtn: $('closeWorkspaceBtn'),
+            downloadBtn: $('downloadBtn'),
+            exportFormat: $('exportFormat'),
+            exportQuality: $('exportQuality'),
+
+            // Adjustments
+            brightness: $('adj-brightness'),
+            contrast: $('adj-contrast'),
+            saturate: $('adj-saturate'),
+            sepia: $('adj-sepia'),
+            grayscale: $('adj-grayscale'),
+            invert: $('adj-invert'),
+            hue: $('adj-hue'),
+            blur: $('adj-blur'),
+            resetAdjustBtn: $('resetAdjustBtn'),
+
+            // Crop & Flip
+            applyCropBtn: $('applyCropBtn'),
+            cancelCropBtn: $('cancelCropBtn'),
+            rotLeftBtn: $('rotLeftBtn'),
+            rotRightBtn: $('rotRightBtn'),
+            flipHBtn: $('flipHBtn'),
+            flipVBtn: $('flipVBtn'),
+
+            // Resize
+            resizeW: $('resizeW'),
+            resizeH: $('resizeH'),
+            lockAspect: $('lockAspect'),
+            applyResizeBtn: $('applyResizeBtn'),
+
+            // Draw
+            brushType: $('brushType'),
+            brushColor: $('brushColor'),
+            brushSize: $('brushSize'),
+            valBrush: $('val-brush'),
+
+            // Watermark
+            wmText: $('watermarkText'),
+            wmColor: $('wmColor'),
+            wmPos: $('wmPos'),
+            wmSize: $('wmSize'),
+            valWmSize: $('val-wmSize'),
+            wmOutline: $('wmOutline'),
+            applyWatermarkBtn: $('applyWatermarkBtn')
+        };
+
+        const state = {
+            hasImage: false,
+            fileName: 'edited-image',
+            activeTab: 'adjust',
+            cropper: null,
+            isDrawing: false,
+            lastPt: null,
+            undoStack: [],
+            redoStack: [],
+            feedbackTimer: null
+        };
+
+        /* ---------- Status Feedback & History ---------- */
+        function notify(msg) {
+            clearTimeout(state.feedbackTimer);
+            els.feedback.textContent = msg;
+            state.feedbackTimer = setTimeout(() => {
+                els.feedback.textContent = '';
+            }, 3000);
+        }
+
+        function updateDimensionsLabel() {
+            els.imgDimensions.textContent = `${baseCanvas.width} × ${baseCanvas.height} px`;
+            els.resizeW.value = String(baseCanvas.width);
+            els.resizeH.value = String(baseCanvas.height);
+        }
+
+        function getFilterString() {
+            const b = els.brightness.value;
+            const c = els.contrast.value;
+            const s = els.saturate.value;
+            const sep = els.sepia.value;
+            const g = els.grayscale.value;
+            const inv = els.invert.value;
+            const h = els.hue.value;
+            const bl = els.blur.value;
+            return `brightness(${b}%) contrast(${c}%) saturate(${s}%) sepia(${sep}%) grayscale(${g}%) invert(${inv}%) hue-rotate(${h}deg) blur(${bl}px)`;
+        }
+
+        function saveSnapshot() {
+            const snap = document.createElement('canvas');
+            snap.width = baseCanvas.width;
+            snap.height = baseCanvas.height;
+            snap.getContext('2d').drawImage(baseCanvas, 0, 0);
+
+            state.undoStack.push(snap);
+            if (state.undoStack.length > MAX_HISTORY) state.undoStack.shift();
+            state.redoStack = [];
+            syncHistoryButtons();
+        }
+
+        function syncHistoryButtons() {
+            els.undoBtn.disabled = state.undoStack.length === 0;
+            els.redoBtn.disabled = state.redoStack.length === 0;
+        }
+
+        function restoreCanvasFromSnapshot(snap) {
+            baseCanvas.width = snap.width;
+            baseCanvas.height = snap.height;
+            baseCtx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
+            baseCtx.drawImage(snap, 0, 0);
+            updateDimensionsLabel();
+            renderDisplayCanvas();
+            if (state.activeTab === 'crop') rebuildCropper();
+        }
+
+        els.undoBtn.addEventListener('click', () => {
+            if (!state.undoStack.length) return;
+            const current = document.createElement('canvas');
+            current.width = baseCanvas.width;
+            current.height = baseCanvas.height;
+            current.getContext('2d').drawImage(baseCanvas, 0, 0);
+            state.redoStack.push(current);
+
+            const prev = state.undoStack.pop();
+            restoreCanvasFromSnapshot(prev);
+            syncHistoryButtons();
+            notify('Undid last action');
+        });
+
+        els.redoBtn.addEventListener('click', () => {
+            if (!state.redoStack.length) return;
+            const current = document.createElement('canvas');
+            current.width = baseCanvas.width;
+            current.height = baseCanvas.height;
+            current.getContext('2d').drawImage(baseCanvas, 0, 0);
+            state.undoStack.push(current);
+
+            const next = state.redoStack.pop();
+            restoreCanvasFromSnapshot(next);
+            syncHistoryButtons();
+            notify('Redid action');
+        });
+
+        els.revertOrigBtn.addEventListener('click', () => {
+            if (!state.hasImage) return;
+            saveSnapshot();
+            resetFilterSliders();
+            els.wmText.value = '';
+            restoreCanvasFromSnapshot(origCanvas);
+            notify('Reverted to original uploaded image');
+        });
+
+        // Keyboard shortcuts for Undo / Redo
+        window.addEventListener('keydown', (e) => {
+            if (!state.hasImage) return;
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) {
+                e.preventDefault();
+                els.undoBtn.click();
+            } else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.shiftKey && e.key.toLowerCase() === 'z'))) {
+                e.preventDefault();
+                els.redoBtn.click();
+            }
+        });
+
+        /* ---------- Master Render Pipeline ---------- */
+        function renderDisplayCanvas(showOriginal = false) {
+            if (!state.hasImage) return;
+
+            if (showOriginal) {
+                canvas.width = origCanvas.width;
+                canvas.height = origCanvas.height;
+                ctx.filter = 'none';
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(origCanvas, 0, 0);
+                return;
+            }
+
+            canvas.width = baseCanvas.width;
+            canvas.height = baseCanvas.height;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Apply live non-destructive color adjustments
+            ctx.save();
+            ctx.filter = getFilterString();
+            ctx.drawImage(baseCanvas, 0, 0);
+            ctx.restore();
+
+            // Render live text watermark preview if text is present
+            const text = els.wmText.value.trim();
+            if (text) {
+                drawWatermarkOnContext(ctx, canvas.width, canvas.height);
+            }
+        }
+
+        function drawWatermarkOnContext(targetCtx, w, h) {
+            const text = els.wmText.value.trim();
+            if (!text) return;
+
+            const scalePct = Number(els.wmSize.value) / 100;
+            const fontSize = Math.max(14, Math.round(Math.min(w, h) * scalePct));
+            const pad = Math.max(16, Math.round(fontSize * 0.6));
+            const pos = els.wmPos.value;
+
+            targetCtx.save();
+            targetCtx.font = `700 ${fontSize}px Outfit, Inter, sans-serif`;
+            targetCtx.fillStyle = els.wmColor.value;
+            targetCtx.textBaseline = 'middle';
+
+            let x = w / 2;
+            let y = h / 2;
+            targetCtx.textAlign = 'center';
+
+            if (pos.includes('left')) {
+                x = pad;
+                targetCtx.textAlign = 'left';
+            } else if (pos.includes('right')) {
+                x = w - pad;
+                targetCtx.textAlign = 'right';
+            }
+
+            if (pos.includes('top')) {
+                y = pad + fontSize / 2;
+            } else if (pos.includes('bottom')) {
+                y = h - pad - fontSize / 2;
+            }
+
+            if (els.wmOutline.checked) {
+                targetCtx.shadowColor = 'rgba(0, 0, 0, 0.75)';
+                targetCtx.shadowBlur = Math.max(4, Math.round(fontSize * 0.15));
+                targetCtx.shadowOffsetX = 0;
+                targetCtx.shadowOffsetY = Math.max(1, Math.round(fontSize * 0.05));
+                targetCtx.lineWidth = Math.max(2, Math.round(fontSize * 0.08));
+                targetCtx.strokeStyle = 'rgba(0, 0, 0, 0.65)';
+                targetCtx.strokeText(text, x, y);
+            }
+
+            targetCtx.fillText(text, x, y);
+            targetCtx.restore();
+        }
+
+        /* ---------- Tab Navigation ---------- */
+        const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+        const tabPanels = ['adjust', 'crop', 'resize', 'filters', 'draw', 'watermark'];
+
+        function switchTab(tabName) {
+            state.activeTab = tabName;
+            tabBtns.forEach((btn) => {
+                btn.setAttribute('aria-selected', String(btn.dataset.tab === tabName));
+            });
+            tabPanels.forEach((p) => {
+                $(`panel-${p}`).classList.toggle('hidden', p !== tabName);
+            });
+
+            canvas.style.cursor = (tabName === 'draw') ? 'crosshair' : 'default';
+
+            if (tabName === 'crop' && state.hasImage) {
+                rebuildCropper();
+            } else {
+                destroyCropper();
+            }
+        }
+
+        tabBtns.forEach((btn) => {
+            btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+        });
+
+        /* ---------- File Upload, Drag-and-Drop & Clipboard Paste ---------- */
+        function handleImageFile(file) {
+            if (!file) return;
+            if (!/^image\//i.test(file.type) && !/\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(file.name)) {
+                notify('Please select a valid image file (JPG, PNG, WebP, GIF, SVG).');
+                return;
+            }
+
+            const url = URL.createObjectURL(file);
+            const img = new Image();
+            img.onload = () => {
+                URL.revokeObjectURL(url);
+                destroyCropper();
+
+                const w = img.naturalWidth || img.width || 800;
+                const h = img.naturalHeight || img.height || 600;
+
+                origCanvas.width = baseCanvas.width = w;
+                origCanvas.height = baseCanvas.height = h;
+                origCtx.clearRect(0, 0, w, h);
+                baseCtx.clearRect(0, 0, w, h);
+                origCtx.drawImage(img, 0, 0, w, h);
+                baseCtx.drawImage(img, 0, 0, w, h);
+
+                state.hasImage = true;
+                state.fileName = (file.name || 'edited-image').replace(/\.[^.]+$/, '').replace(/[<>:"/\\|?*\x00-\x1F]/g, '_') || 'edited-image';
+                state.undoStack = [];
+                state.redoStack = [];
+                syncHistoryButtons();
+                resetFilterSliders();
+                els.wmText.value = '';
+
+                els.dropZone.classList.add('hidden');
+                els.canvasStage.classList.remove('hidden');
+                els.topActionBar.classList.remove('hidden');
+                els.topActionBar.classList.add('flex');
+                els.statusBar.classList.remove('hidden');
+                els.downloadBtn.disabled = false;
+
+                updateDimensionsLabel();
+                renderDisplayCanvas();
+                if (state.activeTab === 'crop') rebuildCropper();
+                notify(`Loaded ${file.name}`);
+            };
+            img.onerror = () => {
+                URL.revokeObjectURL(url);
+                notify('Could not decode that image file.');
+            };
+            img.src = url;
+        }
+
+        els.imageInput.addEventListener('change', () => {
+            const file = els.imageInput.files[0];
+            els.imageInput.value = '';
+            handleImageFile(file);
+        });
+        els.changeImgBtn.addEventListener('click', () => els.imageInput.click());
+
+        window.addEventListener('dragover', (e) => e.preventDefault());
+        window.addEventListener('drop', (e) => e.preventDefault());
+
+        [els.dropZone, els.canvasStage].forEach((zone) => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                els.dropZone.classList.add('border-brand-500');
+            });
+            zone.addEventListener('dragleave', (e) => {
+                if (!zone.contains(e.relatedTarget)) {
+                    els.dropZone.classList.remove('border-brand-500');
+                }
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                els.dropZone.classList.remove('border-brand-500');
+                const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+                if (file) handleImageFile(file);
+            });
+        });
+
+        window.addEventListener('paste', (e) => {
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+            const file = e.clipboardData && e.clipboardData.files && e.clipboardData.files[0];
+            if (file) handleImageFile(file);
+        });
+
+        /* ---------- Hold to Compare Original ---------- */
+        ['pointerdown'].forEach((evt) => {
+            els.compareBtn.addEventListener(evt, () => {
+                if (!state.hasImage || state.cropper) return;
+                renderDisplayCanvas(true);
+            });
+        });
+        ['pointerup', 'pointerleave', 'pointercancel'].forEach((evt) => {
+            els.compareBtn.addEventListener(evt, () => {
+                if (!state.hasImage || state.cropper) return;
+                renderDisplayCanvas(false);
+            });
+        });
+
+        /* ---------- Color Adjustments & Presets ---------- */
+        function syncSliderLabels() {
+            $('val-brightness').textContent = `${els.brightness.value}%`;
+            $('val-contrast').textContent = `${els.contrast.value}%`;
+            $('val-saturate').textContent = `${els.saturate.value}%`;
+            $('val-sepia').textContent = `${els.sepia.value}%`;
+            $('val-grayscale').textContent = `${els.grayscale.value}%`;
+            $('val-invert').textContent = `${els.invert.value}%`;
+            $('val-hue').textContent = `${els.hue.value}°`;
+            $('val-blur').textContent = `${els.blur.value}px`;
+        }
+
+        function resetFilterSliders() {
+            els.brightness.value = '100';
+            els.contrast.value = '100';
+            els.saturate.value = '100';
+            els.sepia.value = '0';
+            els.grayscale.value = '0';
+            els.invert.value = '0';
+            els.hue.value = '0';
+            els.blur.value = '0';
+            syncSliderLabels();
+        }
+
+        [els.brightness, els.contrast, els.saturate, els.sepia, els.grayscale, els.invert, els.hue, els.blur].forEach((slider) => {
+            slider.addEventListener('input', () => {
+                syncSliderLabels();
+                renderDisplayCanvas();
+            });
+        });
+
+        els.resetAdjustBtn.addEventListener('click', () => {
+            resetFilterSliders();
+            renderDisplayCanvas();
+            notify('Reset color adjustments');
+        });
+
+        document.querySelectorAll('.filter-preset-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                resetFilterSliders();
+                const type = btn.dataset.filter;
+                if (type === 'vivid') {
+                    els.brightness.value = '105';
+                    els.contrast.value = '120';
+                    els.saturate.value = '155';
+                } else if (type === 'vintage') {
+                    els.sepia.value = '45';
+                    els.contrast.value = '110';
+                    els.saturate.value = '115';
+                } else if (type === 'dramatic') {
+                    els.contrast.value = '155';
+                    els.saturate.value = '130';
+                    els.brightness.value = '95';
+                } else if (type === 'noir') {
+                    els.grayscale.value = '100';
+                    els.contrast.value = '145';
+                } else if (type === 'sepia') {
+                    els.sepia.value = '85';
+                    els.contrast.value = '108';
+                } else if (type === 'cool') {
+                    els.hue.value = '190';
+                    els.saturate.value = '115';
+                } else if (type === 'invert') {
+                    els.invert.value = '100';
+                }
+                syncSliderLabels();
+                renderDisplayCanvas();
+                notify(`Applied ${btn.textContent} filter`);
+            });
+        });
+
+        /* ---------- Crop, Rotate & Flip ---------- */
+        function rebuildCropper() {
+            destroyCropper();
+            if (!state.hasImage || typeof window.Cropper === 'undefined') return;
+            renderDisplayCanvas();
+            state.cropper = new window.Cropper(canvas, {
+                viewMode: 1,
+                autoCropArea: 0.85,
+                background: false,
+                responsive: true
+            });
+        }
+
+        function destroyCropper() {
+            if (state.cropper) {
+                state.cropper.destroy();
+                state.cropper = null;
+            }
+        }
+
+        document.querySelectorAll('.crop-ratio-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                if (!state.cropper && state.hasImage) rebuildCropper();
+                if (!state.cropper) return;
+                const r = btn.dataset.ratio === 'free' ? NaN : Number(btn.dataset.ratio);
+                state.cropper.setAspectRatio(r);
+            });
+        });
+
+        els.applyCropBtn.addEventListener('click', () => {
+            if (!state.cropper) return;
+            const cropped = state.cropper.getCroppedCanvas();
+            if (!cropped) return;
+            saveSnapshot();
+            destroyCropper();
+            baseCanvas.width = cropped.width;
+            baseCanvas.height = cropped.height;
+            baseCtx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
+            baseCtx.drawImage(cropped, 0, 0);
+            updateDimensionsLabel();
+            renderDisplayCanvas();
+            switchTab('adjust');
+            notify(`Cropped to ${cropped.width} × ${cropped.height} px`);
+        });
+
+        els.cancelCropBtn.addEventListener('click', () => {
+            destroyCropper();
+            switchTab('adjust');
+        });
+
+        function transformBaseCanvas(deg, flipX = 1, flipY = 1) {
+            if (!state.hasImage) return;
+            const wasCropping = Boolean(state.cropper);
+            destroyCropper();
+            saveSnapshot();
+
+            const swapDims = Math.abs(deg) === 90;
+            const newW = swapDims ? baseCanvas.height : baseCanvas.width;
+            const newH = swapDims ? baseCanvas.width : baseCanvas.height;
+
+            const temp = document.createElement('canvas');
+            temp.width = newW;
+            temp.height = newH;
+            const tCtx = temp.getContext('2d');
+
+            tCtx.translate(newW / 2, newH / 2);
+            if (deg) tCtx.rotate((deg * Math.PI) / 180);
+            tCtx.scale(flipX, flipY);
+            tCtx.drawImage(baseCanvas, -baseCanvas.width / 2, -baseCanvas.height / 2);
+
+            baseCanvas.width = newW;
+            baseCanvas.height = newH;
+            baseCtx.clearRect(0, 0, newW, newH);
+            baseCtx.drawImage(temp, 0, 0);
+
+            updateDimensionsLabel();
+            renderDisplayCanvas();
+            if (wasCropping) rebuildCropper();
+        }
+
+        els.rotLeftBtn.addEventListener('click', () => { transformBaseCanvas(-90); notify('Rotated -90°'); });
+        els.rotRightBtn.addEventListener('click', () => { transformBaseCanvas(90); notify('Rotated +90°'); });
+        els.flipHBtn.addEventListener('click', () => { transformBaseCanvas(0, -1, 1); notify('Flipped horizontally'); });
+        els.flipVBtn.addEventListener('click', () => { transformBaseCanvas(0, 1, -1); notify('Flipped vertically'); });
+
+        /* ---------- Resize Tool ---------- */
+        els.resizeW.addEventListener('input', () => {
+            if (!state.hasImage || !els.lockAspect.checked) return;
+            const w = Number(els.resizeW.value);
+            if (w > 0) {
+                els.resizeH.value = String(Math.max(1, Math.round((w * baseCanvas.height) / baseCanvas.width)));
+            }
+        });
+
+        els.resizeH.addEventListener('input', () => {
+            if (!state.hasImage || !els.lockAspect.checked) return;
+            const h = Number(els.resizeH.value);
+            if (h > 0) {
+                els.resizeW.value = String(Math.max(1, Math.round((h * baseCanvas.width) / baseCanvas.height)));
+            }
+        });
+
+        document.querySelectorAll('.scale-preset-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                if (!state.hasImage) return;
+                const factor = Number(btn.dataset.scale);
+                els.resizeW.value = String(Math.max(16, Math.round(baseCanvas.width * factor)));
+                els.resizeH.value = String(Math.max(16, Math.round(baseCanvas.height * factor)));
+            });
+        });
+
+        els.applyResizeBtn.addEventListener('click', () => {
+            if (!state.hasImage) return;
+            const targetW = Math.min(8192, Math.max(16, Math.round(Number(els.resizeW.value) || baseCanvas.width)));
+            const targetH = Math.min(8192, Math.max(16, Math.round(Number(els.resizeH.value) || baseCanvas.height)));
+            if (targetW === baseCanvas.width && targetH === baseCanvas.height) return;
+
+            saveSnapshot();
+            const temp = document.createElement('canvas');
+            temp.width = targetW;
+            temp.height = targetH;
+            const tCtx = temp.getContext('2d');
+            tCtx.imageSmoothingEnabled = true;
+            tCtx.imageSmoothingQuality = 'high';
+            tCtx.drawImage(baseCanvas, 0, 0, targetW, targetH);
+
+            baseCanvas.width = targetW;
+            baseCanvas.height = targetH;
+            baseCtx.clearRect(0, 0, targetW, targetH);
+            baseCtx.drawImage(temp, 0, 0);
+
+            updateDimensionsLabel();
+            renderDisplayCanvas();
+            notify(`Resized to ${targetW} × ${targetH} px`);
+        });
+
+        /* ---------- Freehand Drawing (Unified Mouse + Touch Pointer Events) ---------- */
+        els.brushSize.addEventListener('input', () => {
+            els.valBrush.textContent = `${els.brushSize.value}px`;
+        });
+
+        function getCanvasPoint(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = baseCanvas.width / Math.max(rect.width, 1);
+            const scaleY = baseCanvas.height / Math.max(rect.height, 1);
+            return {
+                x: (e.clientX - rect.left) * scaleX,
+                y: (e.clientY - rect.top) * scaleY
+            };
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+            if (!state.hasImage || state.activeTab !== 'draw') return;
+            saveSnapshot();
+            state.isDrawing = true;
+            state.lastPt = getCanvasPoint(e);
+            canvas.setPointerCapture(e.pointerId);
+        });
+
+        canvas.addEventListener('pointermove', (e) => {
+            if (!state.isDrawing || state.activeTab !== 'draw') return;
+            const pt = getCanvasPoint(e);
+            const isHighlighter = els.brushType.value === 'highlighter';
+
+            baseCtx.save();
+            baseCtx.beginPath();
+            baseCtx.moveTo(state.lastPt.x, state.lastPt.y);
+            baseCtx.lineTo(pt.x, pt.y);
+            baseCtx.lineCap = 'round';
+            baseCtx.lineJoin = 'round';
+            baseCtx.lineWidth = Number(els.brushSize.value);
+            baseCtx.strokeStyle = els.brushColor.value;
+            baseCtx.globalAlpha = isHighlighter ? 0.35 : 1.0;
+            baseCtx.stroke();
+            baseCtx.restore();
+
+            state.lastPt = pt;
+            renderDisplayCanvas();
+        });
+
+        ['pointerup', 'pointercancel'].forEach((evt) => {
+            canvas.addEventListener(evt, () => {
+                state.isDrawing = false;
+                state.lastPt = null;
+            });
+        });
+
+        /* ---------- Live Text Watermark ---------- */
+        [els.wmText, els.wmColor, els.wmPos, els.wmSize, els.wmOutline].forEach((el) => {
+            el.addEventListener('input', () => {
+                els.valWmSize.textContent = `${els.wmSize.value}%`;
+                renderDisplayCanvas();
+            });
+        });
+
+        els.applyWatermarkBtn.addEventListener('click', () => {
+            if (!state.hasImage) return;
+            const text = els.wmText.value.trim();
+            if (!text) {
+                notify('Enter watermark text first');
+                return;
+            }
+            saveSnapshot();
+            drawWatermarkOnContext(baseCtx, baseCanvas.width, baseCanvas.height);
+            els.wmText.value = '';
+            renderDisplayCanvas();
+            notify('Stamped text watermark onto image');
+        });
+
+        /* ---------- Export & Close ---------- */
+        els.downloadBtn.addEventListener('click', () => {
+            if (!state.hasImage) return;
+            if (state.cropper) destroyCropper();
+
+            // Render final image including active filters and any un-stamped live watermark text
+            renderDisplayCanvas(false);
+
+            const mime = els.exportFormat.value;
+            const quality = Number(els.exportQuality.value);
+            const ext = mime === 'image/png' ? 'png' : mime === 'image/webp' ? 'webp' : 'jpg';
+
+            canvas.toBlob((blob) => {
+                if (!blob) return;
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${state.fileName}-edited.${ext}`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 8000);
+                notify(`Exported ${state.fileName}-edited.${ext}`);
+            }, mime, quality);
+        });
+
+        els.closeWorkspaceBtn.addEventListener('click', () => {
+            destroyCropper();
+            state.hasImage = false;
+            state.undoStack = [];
+            state.redoStack = [];
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            els.dropZone.classList.remove('hidden');
+            els.canvasStage.classList.add('hidden');
+            els.topActionBar.classList.add('hidden');
+            els.topActionBar.classList.remove('flex');
+            els.statusBar.classList.add('hidden');
+            els.downloadBtn.disabled = true;
+            els.imageInput.value = '';
+        });
+
+        /* ---------- Theme Toggle ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        $('year').textContent = new Date().getFullYear();
+    })();
+    </script>
+</body>
+</html>

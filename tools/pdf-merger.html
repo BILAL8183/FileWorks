@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Combine PDF Files Online Free | Fast Client-Side PDF Merger - Filediter</title>
+<meta content="Merge multiple PDF files into one document instantly in your browser. Rearrange files, inspect page counts, and join PDFs online for free with 100% private client-side processing." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://filediter.com/tools/pdf-merger.html" rel="canonical"/>
+<meta content="#2563eb" name="theme-color"/>
+<!-- Open Graph / Social Meta -->
+<meta content="website" property="og:type"/>
+<meta content="Filediter" property="og:site_name"/>
+<meta content="Combine PDF Files Online Free | Fast Client-Side PDF Merger - Filediter" property="og:title"/>
+<meta content="Merge multiple PDF files into one document instantly in your browser. Rearrange files, inspect page counts, and join PDFs online with full privacy." property="og:description"/>
+<meta content="https://filediter.com/tools/pdf-merger.html" property="og:url"/>
+<meta content="https://filediter.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Filediter PDF Merger preview" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Combine PDF Files Online Free | Fast Client-Side PDF Merger - Filediter" name="twitter:title"/>
+<meta content="Merge multiple PDF files into one document instantly right in your browser." name="twitter:description"/>
+<meta content="https://filediter.com/og-image.png" name="twitter:image"/>
+<meta content="Filediter PDF Merger preview" name="twitter:image:alt"/>
+<link href="/tools/logo.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Outfit:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Structured Data: WebApplication + FAQPage + BreadcrumbList -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "PDF Merger",
+        "url": "https://filediter.com/tools/pdf-merger.html",
+        "description": "Merge multiple PDF files into one document instantly in your browser. Rearrange files, inspect page counts, and join PDFs online for free with 100% private client-side processing.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any modern web browser",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://filediter.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://filediter.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PDF Merger",
+            "item": "https://filediter.com/tools/pdf-merger.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there a limit on how many PDFs I can merge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no arbitrary file count cap. Because merging runs locally using your device's memory and CPU, you can combine as many PDF files as your browser memory comfortably supports (up to 150 MB total recommended)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my confidential documents uploaded to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Your PDF files are read, reordered, and merged directly inside your browser using pdf-lib. Your documents never leave your device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does merging PDFs reduce image or text quality?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The merger copies the original PDF page streams losslessly into the new document, preserving all vector text, embedded fonts, high-resolution images, and page dimensions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I merge password-protected PDF files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encrypted or password-locked PDFs cannot be merged until they are unlocked. If you select a locked PDF, the tool will alert you so you can unlock it first."
+            }
+          }
+        ]
+      }
+    ]
+  }
+</script>
+<!-- Prevent Flash of Unstyled Theme (FOUC) -->
+<script>
+  try {
+    const t = localStorage.getItem('filediter-theme');
+    if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme:dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {}
+</script>
+<style>
+:root{color-scheme:light;--bg:#f5f8ff;--surface:#fff;--ink:#14213d;--muted:#596982;--line:#dce4f2;--accent:#2563eb;--accent2:#1d4ed8;--soft:#eaf1ff;--shadow:0 18px 50px rgba(27,58,105,.08);--danger:#c43838;--danger-soft:#fdecec;--success:#147f4b}
+html.dark{color-scheme:dark;--bg:#0b1324;--surface:#152136;--ink:#edf4ff;--muted:#b0bfd5;--line:#30415e;--accent:#79a7ff;--accent2:#a6c4ff;--soft:#20385c;--shadow:0 16px 48px rgba(0,0,0,.2);--danger:#ff9999;--danger-soft:#421c22;--success:#79e1aa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;display:flex;flex-direction:column}a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}h1,h2,h3,.brand{font-family:Outfit,Inter,system-ui,sans-serif;line-height:1.25}h1{font-size:clamp(2.15rem,5vw,3.5rem);letter-spacing:-.04em;margin:.7rem 0 1rem}h2{font-size:1.5rem;margin:0 0 1rem}h3{font-size:1.1rem;margin:0 0 .6rem}p{margin:.6rem 0 1rem}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--soft);padding:2px 6px;border-radius:6px}.wrap{width:min(1140px,calc(100% - 40px));margin:auto}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip:focus{position:fixed;top:12px;left:12px;z-index:1000;width:auto;height:auto;margin:0;clip:auto;overflow:visible;padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-size:1.48rem;font-weight:700}.brand b{color:var(--accent)}.brand-mark{display:grid;place-items:center;background:#2563eb;color:white;border-radius:11px;width:37px;height:37px}.header-actions{display:flex;align-items:center;gap:18px}.header-actions nav{display:flex;flex-wrap:wrap;gap:22px}.header-actions nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem}.iconbtn{border:1px solid var(--line);color:var(--ink);background:var(--surface);border-radius:11px;min-width:44px;min-height:44px}.hero{padding:54px 0 58px;background:linear-gradient(135deg,var(--soft),var(--bg));border-bottom:1px solid var(--line)}.hero .wrap{max-width:1140px}.hero p{font-size:1.1rem;color:var(--muted);max-width:770px}.breadcrumbs{font-size:.85rem;color:var(--muted)}.breadcrumbs a{color:inherit}.eyebrow{display:inline-block;margin-top:24px;font-size:.75rem;letter-spacing:.13em;font-weight:800;color:var(--accent)}.chips{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0;padding:0;list-style:none}.chips li{background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:999px;font-size:.84rem;font-weight:600}main{flex:1}.content{padding:36px 0 72px}.workspace{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(285px,1fr);gap:22px;scroll-margin-top:20px}.panel,.details{border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);padding:28px}.drop{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;min-height:200px;border:2px dashed #8db1ff;border-radius:15px;background:var(--soft);padding:24px;cursor:pointer;transition:.2s}.drop:hover,.drop.dragover,.drop:focus-within{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 3px rgba(37,99,235,.12)}.drop-icon{display:grid;place-items:center;width:54px;height:54px;background:#2563eb;color:#fff;border-radius:15px;font-size:1.75rem;font-weight:700}.drop strong{font-size:1.07rem}.drop small,.filename{color:var(--muted);font-size:.9rem}.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.drop input:focus-visible{outline:none}.queue-wrap{margin-top:22px}.queue-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}.badges{display:flex;flex-wrap:wrap;gap:8px}.badge{font-size:.82rem;font-weight:700;padding:5px 11px;border-radius:8px;background:var(--soft);color:var(--accent)}.badge.neutral{background:var(--bg);color:var(--muted);border:1px solid var(--line)}.clear-btn{border:1px solid var(--line);background:var(--bg);color:var(--muted);font-size:.82rem;font-weight:600;padding:6px 12px;border-radius:8px;transition:.15s}.clear-btn:hover:not(:disabled){color:var(--danger);border-color:var(--danger);background:var(--danger-soft)}.file-list{list-style:none;margin:14px 0;padding:0;display:grid;gap:10px}.file-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:13px;border:1px solid var(--line);background:var(--bg);transition:border-color .15s,background .15s}.file-item.dragging{opacity:.55;border-style:dashed;border-color:var(--accent)}.file-item.drag-target{border-color:var(--accent);background:var(--soft)}.file-left{display:flex;align-items:center;gap:12px;min-width:0;flex:1}.file-index{flex:none;width:30px;height:30px;border-radius:8px;background:var(--soft);color:var(--accent);font-weight:800;font-size:.84rem;display:grid;place-items:center}.file-meta{min-width:0;flex:1}.file-name{font-weight:700;font-size:.93rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.file-sub{font-size:.8rem;color:var(--muted)}.file-controls{display:flex;align-items:center;gap:6px;flex:none}.ctrl-btn{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;font-size:.9rem;transition:.15s}.ctrl-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}.ctrl-btn.danger:hover:not(:disabled){border-color:var(--danger);color:var(--danger);background:var(--danger-soft)}.field-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:18px 0}.field-row label{font-size:.9rem;font-weight:600;color:var(--ink)}.text-input{flex:1;min-width:210px;padding:10px 13px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:.92rem}.btn{border:0;border-radius:12px;padding:14px 24px;min-height:48px;background:#2563eb;color:white;font-weight:700;width:100%;box-shadow:0 8px 20px rgba(37,99,235,.19);transition:.15s}.btn:hover:not(:disabled){background:#1d4ed8}.status{margin-top:13px;min-height:25px;font-size:.95rem;overflow-wrap:anywhere}.status.error{color:var(--danger)}.status.success{color:var(--success)}progress{width:100%;height:10px;margin-top:8px;accent-color:#2563eb;border-radius:999px;overflow:hidden}progress[value="0"]{opacity:.45}.notice{border-radius:11px;background:var(--soft);padding:13px 16px;font-size:.9rem;color:var(--ink);margin:18px 0 0}.side-items{display:grid;gap:20px}.side-item{display:flex;gap:14px}.side-item p{color:var(--muted);margin:4px 0 0;font-size:.92rem}.num{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800}.details{margin-top:24px}.seo-prose{max-width:950px;color:var(--muted)}.guide-grid,.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:20px}.guide-card,.info-grid article{padding:21px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}.guide-card p,.info-grid p{margin:0;color:var(--muted);font-size:.94rem}.faq details{border-bottom:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:0}.faq summary{font-weight:700;cursor:pointer}.faq details p{color:var(--muted)}.related{display:flex;flex-wrap:wrap;gap:12px}.related a{display:inline-block;padding:12px 15px;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:600;background:var(--bg)}footer{border-top:1px solid var(--line);background:var(--surface)}.foot-expanded{display:grid;grid-template-columns:2fr repeat(3,minmax(0,1fr));gap:22px;padding:43px 0 30px;border-bottom:1px solid var(--line)}.foot-brand p{max-width:310px;color:var(--muted);font-size:.92rem}.foot-col h3{font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}.foot-col ul{padding:0;margin:0;list-style:none}.foot-col li{margin:9px 0}.foot-col a{text-decoration:none;color:var(--muted);font-size:.91rem}.foot-col a:hover{text-decoration:underline;color:var(--accent)}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:24px 0;color:var(--muted);font-size:.82rem}.foot a{color:inherit}@media(max-width:900px){.workspace{grid-template-columns:1fr}.guide-grid,.info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-expanded{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.wrap{width:min(100% - 28px,1140px)}.header-inner{align-items:flex-start;padding:14px 0;flex-wrap:wrap}.header-actions{width:100%;justify-content:space-between}.header-actions nav{gap:12px}.header-actions nav a{font-size:.8rem}.hero{padding:33px 0 37px}.panel,.details{padding:19px}.guide-grid,.info-grid,.foot-expanded{grid-template-columns:1fr}.foot-expanded{gap:15px}.drop{min-height:185px}.foot{font-size:.78rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip sr-only" href="#workspace">Skip to tool</a>
+<header>
+<div class="wrap header-inner">
+<a aria-label="Filediter home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">✦</span>
+<span>File<b>diter</b></span>
+</a>
+<div class="header-actions">
+<nav aria-label="Main navigation">
+<a href="/">All tools</a>
+<a href="/tools/pdf-to-word.html">PDF to Word</a>
+<a href="/tools/image-compressor.html">Image compressor</a>
+<a href="/tools/url-encoder.html">URL encoder</a>
+</nav>
+<button aria-label="Switch to dark theme" aria-pressed="false" class="iconbtn" id="themeToggle" type="button">🌙</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+<a href="/">Home</a> / <a href="/#tools">Tools</a> / <span aria-current="page">PDF Merger</span>
+</nav>
+<span class="eyebrow">✦ ADVANCED PDF BINDER</span>
+<h1>Combine PDF Files Online Free</h1>
+<p>Merge multiple PDF documents into a single organized file in seconds. Add files in batches, drag or use keyboard controls to reorder, inspect page counts, and download locally with 100% privacy.</p>
+<ul aria-label="Key features" class="chips">
+<li>Lossless PDF combination</li>
+<li>Drag &amp; keyboard reordering</li>
+<li>100% browser-based privacy</li>
+<li>No watermarks or signup</li>
+</ul>
+</div>
+</section>
+<!-- Main Tool Workspace & Details -->
+<section class="content">
+<div class="wrap">
+<div class="workspace" id="workspace">
+<!-- Left Panel: Merger Workspace -->
+<section aria-labelledby="mergerTitle" class="panel" id="mergerPanel">
+<h2 id="mergerTitle">Merge PDF Documents</h2>
+<label class="drop" for="fileInput" id="dropZone">
+<span aria-hidden="true" class="drop-icon">+</span>
+<strong>Drop PDF files here or click to browse</strong>
+<small id="dropHint">Select 2 or more PDFs · Up to 150 MB total · Files stay on your device</small>
+<input accept=".pdf,application/pdf" aria-describedby="dropHint status" id="fileInput" multiple type="file"/>
+</label>
+
+<div class="queue-wrap" id="queueContainer" hidden>
+<div class="queue-bar">
+<div class="badges">
+<span class="badge" id="fileCountBadge">0 Files Selected</span>
+<span class="badge neutral" id="totalPagesBadge">Total Pages: 0</span>
+<span class="badge neutral" id="totalSizeBadge">0.00 MB</span>
+</div>
+<button class="clear-btn" id="clearBtn" type="button">✕ Clear All</button>
+</div>
+
+<ul aria-label="Selected PDF files in merge order" class="file-list" id="fileList"></ul>
+
+<div class="field-row">
+<label for="outputName">Output filename:</label>
+<input class="text-input" id="outputName" placeholder="merged-document.pdf" type="text" value="merged-document.pdf"/>
+</div>
+</div>
+
+<div style="margin-top:18px">
+<button class="btn" disabled id="mergeBtn" type="button">Merge &amp; Download PDF ↓</button>
+</div>
+<div aria-live="polite" class="status" id="status" role="status">No PDFs added yet. Select or drop PDF files above to begin.</div>
+<progress aria-label="PDF merge progress" id="progress" max="1" value="0"></progress>
+</section>
+
+<!-- Right Panel: Instructions & Privacy -->
+<aside aria-labelledby="howItWorksTitle" class="panel">
+<h2 id="howItWorksTitle">How it works</h2>
+<div class="side-items">
+<div class="side-item">
+<span aria-hidden="true" class="num">1</span>
+<div>
+<strong>Add PDF files</strong>
+<p>Select or drag and drop multiple PDF documents from your computer or phone. You can keep adding more files at any time.</p>
+</div>
+</div>
+<div class="side-item">
+<span aria-hidden="true" class="num">2</span>
+<div>
+<strong>Arrange merge order</strong>
+<p>Drag rows or use the Up (↑) and Down (↓) buttons to set the exact sequence in which your documents will be joined.</p>
+</div>
+</div>
+<div class="side-item">
+<span aria-hidden="true" class="num">3</span>
+<div>
+<strong>Merge &amp; download</strong>
+<p>Click Merge &amp; Download PDF to stitch every page together losslessly and save your combined PDF immediately.</p>
+</div>
+</div>
+</div>
+<div class="notice">
+<strong>Privacy note:</strong> Your PDF files never leave your browser memory. Merging is powered locally by <code>pdf-lib</code> loaded from a CDN, with zero file uploads to external servers.
+</div>
+</aside>
+</div>
+
+<!-- Detailed Tool Description Section -->
+<section aria-labelledby="aboutHeading" class="details">
+<h2 id="aboutHeading">How to Combine PDF Files Online Safely</h2>
+<div class="seo-prose">
+<p>Combining financial reports, invoices, contracts, lecture slides, or scanned pages into a single unified document shouldn't require uploading confidential files to a remote cloud server. The <strong>Filediter PDF Merger</strong> lets you join multiple PDF files directly inside your browser with complete privacy.</p>
+<p>Unlike traditional online PDF joiners that queue your uploads on third-party servers, Filediter uses client-side document processing (<code>pdf-lib</code>) to read, sequence, and stitch your PDF page streams in local memory—preserving vector sharpness, fonts, and page dimensions without watermarks.</p>
+</div>
+<div class="guide-grid">
+<article class="guide-card">
+<h3>🔒 100% Client-Side Privacy</h3>
+<p>Your documents stay on your device from start to finish. Ideal for legal contracts, tax records, medical forms, and internal business decks.</p>
+</article>
+<article class="guide-card">
+<h3>⚡ Instant Local Merging</h3>
+<p>Skip slow upload and download queues. Even multi-chapter PDFs combine in seconds using your device's native processing power.</p>
+</article>
+<article class="guide-card">
+<h3>✨ Lossless Vector Quality</h3>
+<p>Pages are copied directly at the PDF object level without rasterizing text or re-compressing embedded images.</p>
+</article>
+</div>
+</section>
+
+<!-- Key Features Section -->
+<section aria-labelledby="featuresHeading" class="details">
+<h2 id="featuresHeading">Key features of our PDF binder</h2>
+<div class="info-grid">
+<article>
+<h3>Flexible file ordering</h3>
+<p>Move individual PDF files up or down via drag-and-drop or accessible keyboard buttons so your combined document follows your exact sequence.</p>
+</article>
+<article>
+<h3>Automatic page count inspection</h3>
+<p>Each file is inspected as soon as you add it, displaying its individual page count, file size, and the combined total page count before you merge.</p>
+</article>
+<article>
+<h3>Custom output filename</h3>
+<p>Name your combined PDF right before downloading so it is ready to share or archive immediately without renaming later.</p>
+</article>
+</div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section aria-labelledby="faqheading" class="details faq">
+<h2 id="faqheading">Frequently asked questions</h2>
+<details>
+<summary>Is there a limit on how many PDFs I can merge?</summary>
+<p>There is no arbitrary file count cap. Because merging runs locally using your device's memory and CPU, you can combine as many PDF files as your browser memory comfortably supports (up to 150 MB total recommended).</p>
+</details>
+<details>
+<summary>Are my confidential documents uploaded to a server?</summary>
+<p>No. Your PDF files are read, reordered, and merged directly inside your browser using <code>pdf-lib</code>. Your documents never leave your device.</p>
+</details>
+<details>
+<summary>Does merging PDFs reduce image or text quality?</summary>
+<p>No. The merger copies the original PDF page streams losslessly into the new document, preserving all vector text, embedded fonts, high-resolution images, and page dimensions.</p>
+</details>
+<details>
+<summary>Can I merge password-protected PDF files?</summary>
+<p>Encrypted or password-locked PDFs cannot be merged until they are unlocked. If you select a locked PDF, the tool will alert you so you can unlock it first.</p>
+</details>
+</section>
+
+<!-- Related Tools -->
+<section aria-labelledby="relatedHeading" class="details">
+<h2 id="relatedHeading">Related Filediter tools</h2>
+<div class="related">
+<a href="/tools/pdf-to-word.html">PDF to Word →</a>
+<a href="/tools/pdf-splitter.html">PDF Splitter →</a>
+<a href="/tools/pdf-compressor.html">PDF Compressor →</a>
+<a href="/tools/image-compressor.html">Image Compressor →</a>
+<a href="/tools/url-encoder.html">URL Encoder / Decoder →</a>
+</div>
+</section>
+</div>
+</section>
+</main>
+
+<!-- Comprehensive Footer -->
+<footer>
+<div class="wrap">
+<div class="foot-expanded">
+<div class="foot-brand">
+<a aria-label="Filediter home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">✦</span>
+<span>File<b>diter</b></span>
+</a>
+<p>Fast, privacy-first browser utilities for PDF manipulation, image optimization, developer workflows, and document conversion. Your files stay on your device.</p>
+</div>
+<div class="foot-col">
+<h3>PDF Tools</h3>
+<ul>
+<li><a href="/tools/pdf-to-word.html">PDF to Word</a></li>
+<li><a aria-current="page" href="/tools/pdf-merger.html">PDF Merger</a></li>
+<li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li>
+<li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h3>Developer &amp; Image Tools</h3>
+<ul>
+<li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+<li><a href="/tools/url-encoder.html">URL Encoder / Decoder</a></li>
+<li><a href="/#tools">Browse All Tools</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h3>Company &amp; Legal</h3>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/privacy.html">Privacy Policy</a></li>
+<li><a href="/terms.html">Terms of Service</a></li>
+<li><a href="mailto:support@filediter.com">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="foot">
+<span>© <span id="year">2026</span> Filediter. Free browser-based tools. All rights reserved.</span>
+<span><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="mailto:support@filediter.com">Contact</a></span>
+</div>
+</div>
+</footer>
+
+<!-- Single External Library: pdf-lib (No redundant PDF.js needed!) -->
+<script crossorigin="anonymous" defer referrerpolicy="no-referrer" src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const dropZone = $('dropZone'),
+        fileInput = $('fileInput'),
+        queueContainer = $('queueContainer'),
+        fileList = $('fileList'),
+        fileCountBadge = $('fileCountBadge'),
+        totalPagesBadge = $('totalPagesBadge'),
+        totalSizeBadge = $('totalSizeBadge'),
+        clearBtn = $('clearBtn'),
+        mergeBtn = $('mergeBtn'),
+        outputName = $('outputName'),
+        status = $('status'),
+        progress = $('progress'),
+        panel = $('mergerPanel'),
+        themeBtn = $('themeToggle');
+
+  const MAX_TOTAL_BYTES = 150 * 1024 * 1024; // 150 MB safe browser memory ceiling
+  let pdfQueue = [];
+  let busy = false;
+  let dragSrcIndex = null;
+
+  $('year').textContent = new Date().getFullYear();
+
+  function updateTheme() {
+    const dark = document.documentElement.classList.contains('dark');
+    themeBtn.setAttribute('aria-pressed', String(dark));
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeBtn.textContent = dark ? '☀️' : '🌙';
+  }
+  updateTheme();
+  themeBtn.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    try {
+      localStorage.setItem('filediter-theme', dark ? 'dark' : 'light');
+    } catch (e) {}
+    updateTheme();
+  });
+
+  function setStatus(msg, type = '') {
+    status.textContent = msg;
+    status.className = 'status' + (type ? ' ' + type : '');
+  }
+
+  function fileIsPDF(file) {
+    return !!file && (file.type === 'application/pdf' || /\.pdf$/i.test(file.name));
+  }
+
+  function formatMB(bytes) {
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
+
+  function renderQueue() {
+    fileList.innerHTML = '';
+    if (!pdfQueue.length) {
+      queueContainer.hidden = true;
+      mergeBtn.disabled = true;
+      progress.value = 0;
+      return;
+    }
+
+    queueContainer.hidden = false;
+    const totalPages = pdfQueue.reduce((sum, item) => sum + item.pages, 0);
+    const totalBytes = pdfQueue.reduce((sum, item) => sum + item.file.size, 0);
+
+    fileCountBadge.textContent = `${pdfQueue.length} File${pdfQueue.length === 1 ? '' : 's'}`;
+    totalPagesBadge.textContent = `Total Pages: ${totalPages}`;
+    totalSizeBadge.textContent = formatMB(totalBytes);
+    mergeBtn.disabled = busy || pdfQueue.length < 2;
+
+    pdfQueue.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.className = 'file-item';
+      li.draggable = !busy;
+      li.dataset.index = String(index);
+
+      // Drag reordering handlers
+      li.addEventListener('dragstart', e => {
+        if (busy) return;
+        dragSrcIndex = index;
+        li.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      li.addEventListener('dragend', () => {
+        dragSrcIndex = null;
+        li.classList.remove('dragging');
+        document.querySelectorAll('.file-item.drag-target').forEach(el => el.classList.remove('drag-target'));
+      });
+      li.addEventListener('dragover', e => {
+        if (busy || dragSrcIndex === null || dragSrcIndex === index) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        li.classList.add('drag-target');
+      });
+      li.addEventListener('dragleave', () => {
+        li.classList.remove('drag-target');
+      });
+      li.addEventListener('drop', e => {
+        e.preventDefault();
+        li.classList.remove('drag-target');
+        if (busy || dragSrcIndex === null || dragSrcIndex === index) return;
+        const [moved] = pdfQueue.splice(dragSrcIndex, 1);
+        pdfQueue.splice(index, 0, moved);
+        dragSrcIndex = null;
+        renderQueue();
+        setStatus(`Moved "${moved.name}" to position ${index + 1}.`);
+      });
+
+      const left = document.createElement('div');
+      left.className = 'file-left';
+
+      const idxBadge = document.createElement('span');
+      idxBadge.className = 'file-index';
+      idxBadge.setAttribute('aria-hidden', 'true');
+      idxBadge.textContent = String(index + 1);
+
+      const meta = document.createElement('div');
+      meta.className = 'file-meta';
+
+      const nameEl = document.createElement('span');
+      nameEl.className = 'file-name';
+      nameEl.textContent = item.name; // Safe textContent prevents XSS from filenames!
+
+      const subEl = document.createElement('span');
+      subEl.className = 'file-sub';
+      subEl.textContent = `${item.pages} page${item.pages === 1 ? '' : 's'} · ${formatMB(item.file.size)}`;
+
+      meta.appendChild(nameEl);
+      meta.appendChild(subEl);
+      left.appendChild(idxBadge);
+      left.appendChild(meta);
+
+      const controls = document.createElement('div');
+      controls.className = 'file-controls';
+
+      const upBtn = document.createElement('button');
+      upBtn.type = 'button';
+      upBtn.className = 'ctrl-btn';
+      upBtn.disabled = busy || index === 0;
+      upBtn.title = 'Move up';
+      upBtn.setAttribute('aria-label', `Move ${item.name} up`);
+      upBtn.textContent = '↑';
+      upBtn.addEventListener('click', () => moveItem(index, -1));
+
+      const downBtn = document.createElement('button');
+      downBtn.type = 'button';
+      downBtn.className = 'ctrl-btn';
+      downBtn.disabled = busy || index === pdfQueue.length - 1;
+      downBtn.title = 'Move down';
+      downBtn.setAttribute('aria-label', `Move ${item.name} down`);
+      downBtn.textContent = '↓';
+      downBtn.addEventListener('click', () => moveItem(index, 1));
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'ctrl-btn danger';
+      removeBtn.disabled = busy;
+      removeBtn.title = 'Remove file';
+      removeBtn.setAttribute('aria-label', `Remove ${item.name}`);
+      removeBtn.textContent = '✕';
+      removeBtn.addEventListener('click', () => removeItem(item.id, item.name));
+
+      controls.appendChild(upBtn);
+      controls.appendChild(downBtn);
+      controls.appendChild(removeBtn);
+
+      li.appendChild(left);
+      li.appendChild(controls);
+      fileList.appendChild(li);
+    });
+  }
+
+  function moveItem(index, delta) {
+    if (busy) return;
+    const target = index + delta;
+    if (target < 0 || target >= pdfQueue.length) return;
+    const temp = pdfQueue[index];
+    pdfQueue[index] = pdfQueue[target];
+    pdfQueue[target] = temp;
+    renderQueue();
+    setStatus(`Moved "${temp.name}" to position ${target + 1}.`);
+  }
+
+  function removeItem(id, name) {
+    if (busy) return;
+    pdfQueue = pdfQueue.filter(item => item.id !== id);
+    renderQueue();
+    if (!pdfQueue.length) {
+      setStatus('Queue cleared. Select or drop PDF files to begin.');
+    } else if (pdfQueue.length === 1) {
+      setStatus(`Removed "${name}". Add at least 1 more PDF file to merge.`);
+    } else {
+      setStatus(`Removed "${name}". ${pdfQueue.length} files ready to merge.`);
+    }
+  }
+
+  clearBtn.addEventListener('click', () => {
+    if (busy) return;
+    pdfQueue = [];
+    fileInput.value = '';
+    renderQueue();
+    setStatus('All files cleared.');
+  });
+
+  async function addFiles(fileListObj) {
+    if (busy || !fileListObj || !fileListObj.length) return;
+    if (!window.PDFLib) {
+      setStatus('PDF merger library could not load. Check your internet connection and reload the page.', 'error');
+      return;
+    }
+
+    const incoming = Array.from(fileListObj);
+    const validPDFs = incoming.filter(fileIsPDF);
+
+    if (!validPDFs.length) {
+      setStatus('Please select valid PDF (.pdf) files.', 'error');
+      fileInput.value = '';
+      return;
+    }
+
+    busy = true;
+    fileInput.disabled = true;
+    mergeBtn.disabled = true;
+    let addedCount = 0;
+    let skippedReason = '';
+
+    try {
+      const { PDFDocument } = window.PDFLib;
+      let runningBytes = pdfQueue.reduce((sum, item) => sum + item.file.size, 0);
+
+      for (const file of validPDFs) {
+        if (file.size === 0) {
+          skippedReason = `"${file.name}" is empty and was skipped.`;
+          continue;
+        }
+        if (runningBytes + file.size > MAX_TOTAL_BYTES) {
+          skippedReason = `Skipped "${file.name}" because total queue size would exceed the 150 MB browser limit.`;
+          continue;
+        }
+
+        setStatus(`Inspecting "${file.name}"…`);
+        try {
+          const buffer = await file.arrayBuffer();
+          const doc = await PDFDocument.load(buffer, { updateMetadata: false });
+          const pageCount = doc.getPageCount();
+          if (pageCount < 1) {
+            skippedReason = `"${file.name}" has no pages and was skipped.`;
+            continue;
+          }
+          pdfQueue.push({
+            id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random())),
+            file,
+            name: file.name,
+            pages: pageCount
+          });
+          runningBytes += file.size;
+          addedCount++;
+        } catch (err) {
+          const msg = String(err?.message || err || '');
+          if (/encrypted|password/i.test(msg)) {
+            skippedReason = `"${file.name}" is password-protected. Unlock it before merging.`;
+          } else {
+            skippedReason = `"${file.name}" is damaged or not a valid PDF.`;
+          }
+        }
+      }
+    } finally {
+      busy = false;
+      fileInput.disabled = false;
+      fileInput.value = '';
+      renderQueue();
+    }
+
+    if (skippedReason && addedCount === 0) {
+      setStatus(skippedReason, 'error');
+    } else if (skippedReason) {
+      setStatus(`Added ${addedCount} PDF${addedCount === 1 ? '' : 's'}. Note: ${skippedReason}`, 'error');
+    } else if (pdfQueue.length === 1) {
+      setStatus('1 PDF added. Add at least 1 more PDF file to enable merging.');
+    } else {
+      setStatus(`Added ${addedCount} PDF${addedCount === 1 ? '' : 's'}. ${pdfQueue.length} files ready to merge.`, 'success');
+    }
+  }
+
+  fileInput.addEventListener('change', () => addFiles(fileInput.files));
+  for (const evt of ['dragenter', 'dragover']) {
+    dropZone.addEventListener(evt, e => {
+      e.preventDefault();
+      if (!busy) dropZone.classList.add('dragover');
+    });
+  }
+  for (const evt of ['dragleave', 'drop']) {
+    dropZone.addEventListener(evt, e => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+    });
+  }
+  dropZone.addEventListener('drop', e => {
+    if (!busy && e.dataTransfer?.files?.length) {
+      addFiles(e.dataTransfer.files);
+    }
+  });
+
+  function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  }
+
+  mergeBtn.addEventListener('click', async () => {
+    if (busy || pdfQueue.length < 2) return;
+    if (!window.PDFLib) {
+      setStatus('PDF merger library could not load. Please check your connection and reload.', 'error');
+      return;
+    }
+
+    busy = true;
+    mergeBtn.disabled = true;
+    mergeBtn.setAttribute('aria-busy', 'true');
+    if (panel) panel.setAttribute('aria-busy', 'true');
+    fileInput.disabled = true;
+    progress.value = 0;
+    renderQueue();
+
+    try {
+      const { PDFDocument } = window.PDFLib;
+      const mergedPdf = await PDFDocument.create();
+
+      for (let i = 0; i < pdfQueue.length; i++) {
+        const item = pdfQueue[i];
+        setStatus(`Merging file ${i + 1} of ${pdfQueue.length} ("${item.name}")…`);
+        const buffer = await item.file.arrayBuffer();
+        const srcPdf = await PDFDocument.load(buffer, { updateMetadata: false });
+        const copiedPages = await mergedPdf.copyPages(srcPdf, srcPdf.getPageIndices());
+        for (const page of copiedPages) {
+          mergedPdf.addPage(page);
+        }
+        progress.value = (i + 1) / pdfQueue.length;
+        await new Promise(r => setTimeout(r, 0));
+      }
+
+      setStatus('Finalizing combined PDF document…');
+      const mergedBytes = await mergedPdf.save();
+      const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+
+      let cleanName = (outputName.value || 'merged-document.pdf').trim().replace(/[<>:"/\\|?*\x00-\x1F]/g, '-');
+      if (!/\.pdf$/i.test(cleanName)) cleanName += '.pdf';
+
+      downloadBlob(blob, cleanName);
+      const totalPages = mergedPdf.getPageCount();
+      setStatus(`Merged ${pdfQueue.length} files (${totalPages} total pages) into "${cleanName}". Download started!`, 'success');
+      progress.value = 1;
+    } catch (err) {
+      console.error('PDF Merge error:', err);
+      setStatus('Could not merge PDFs: ' + String(err?.message || err || 'Unknown error'), 'error');
+      progress.value = 0;
+    } finally {
+      busy = false;
+      mergeBtn.removeAttribute('aria-busy');
+      if (panel) panel.removeAttribute('aria-busy');
+      fileInput.disabled = false;
+      renderQueue();
+    }
+  });
+});
+</script>
+</body>
+</html>

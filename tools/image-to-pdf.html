@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Convert Image to PDF Online Free – JPG, PNG &amp; WebP to PDF | Filediter</title>
+    <meta name="description" content="Convert JPG, PNG, WebP, and GIF images into a single PDF document online for free. Reorder pages, rotate photos, adjust margins, paper size, and compression quality. 100% private in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/image-to-pdf.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="image-to-pdf.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Crect x='12' y='12' width='28' height='24' rx='4' fill='%2393c5fd'/%3E%3Crect x='22' y='24' width='30' height='28' rx='4' fill='%23fff'/%3E%3Cpath d='M28 42h18M28 34h10' stroke='%232563eb' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Convert Image to PDF Online Free – JPG, PNG &amp; WebP to PDF | Filediter">
+    <meta property="og:description" content="Combine multiple JPG, PNG, and WebP images into one PDF in seconds. Drag to reorder, rotate pages, customize margins, and compress file size locally in your browser.">
+    <meta property="og:url" content="https://filediter.com/tools/image-to-pdf.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convert Image to PDF Online Free | Filediter">
+    <meta name="twitter:description" content="Combine JPG, PNG, and WebP images into a single PDF right in your browser. 100% client-side privacy.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter Image to PDF Converter",
+                "url": "https://filediter.com/tools/image-to-pdf.html",
+                "description": "Free online tool to convert and combine JPG, PNG, WebP, and GIF images into a single PDF document. Features drag-and-drop page reordering, per-image rotation, custom margins, paper sizes (A4, US Letter, Fit to Image), and adjustable JPEG compression.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript and HTML5 Canvas",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "Combine multiple JPG, PNG, WebP, and GIF images into one PDF",
+                    "Drag-and-drop page reordering plus A-Z and Reverse sorting",
+                    "Individual 90-degree image rotation before PDF generation",
+                    "A4, US Letter, and Fit-to-Image page formats with Auto, Portrait, or Landscape orientation",
+                    "Adjustable margins, image compression quality, grayscale mode, and optional page numbers",
+                    "100% client-side processing — personal photos and ID scans never leave your browser"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Image to PDF Converter", "item": "https://filediter.com/tools/image-to-pdf.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Convert Images to a Single PDF Online",
+                "description": "Combine multiple JPG, PNG, or WebP photos into a PDF file directly in your browser.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Upload or drop your images",
+                        "text": "Click the upload box, drag and drop your JPG, PNG, or WebP images, or press Ctrl+V to paste from your clipboard."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Arrange pages and customize layout",
+                        "text": "Drag thumbnails to reorder pages, rotate any sideways images, and choose your preferred paper size (A4, Letter, or Fit to Image), orientation, and margin."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Convert and download PDF",
+                        "text": "Click Convert & Download PDF to instantly generate and save your combined PDF document."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Are my images uploaded to a server when converting to PDF?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Your images are processed and combined into a PDF 100% locally inside your web browser using JavaScript. Your private photos, receipts, and ID scans never leave your device."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I change the order of images in the PDF?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Simply drag and drop the image thumbnails in the grid to rearrange their page sequence, or use the Sort A-Z and Reverse buttons above the grid."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I combine transparent PNG and WebP images without black backgrounds?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Transparent areas in PNG and WebP files are automatically composited onto your chosen page background color (clean white by default) so they never turn black."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How can I make the output PDF file size smaller?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Lower the Image Quality slider (for example to 65–75%) or enable the Grayscale (Black & White) option when converting scanned documents."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- SortableJS & jsPDF (Pinned CDNs) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tailwind CSS (Pinned CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        @media (prefers-reduced-motion: no-preference) {
+            .feature-card { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            .feature-card:hover { transform: translateY(-4px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            .animate-pulse { animation: none !important; }
+        }
+        .grid-item { cursor: grab; user-select: none; }
+        .grid-item:active { cursor: grabbing; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform motion-reduce:transition-none">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main id="main" tabindex="-1" class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">Image to PDF Converter</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool requires JavaScript to convert images into a PDF in your browser. Please enable JavaScript and reload.</p>
+        </noscript>
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> High-Speed Batch Image to PDF Creator
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Convert Images to PDF Online Free
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Combine JPG, PNG, WebP, and GIF images into a single polished PDF document. Drag to reorder pages, rotate sideways photos, customize margins, and control file size—100% privately in your browser.
+            </p>
+        </div>
+
+        <!-- Main Tool Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+            <!-- Controls Sidebar -->
+            <section class="lg:col-span-4 space-y-6" aria-labelledby="settings-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-4">
+                        <h2 id="settings-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-600 dark:text-brand-400" aria-hidden="true"></i> PDF Layout &amp; Settings
+                        </h2>
+                        <button type="button" id="resetSettingsBtn" class="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <i class="fa-solid fa-rotate-left text-[11px]" aria-hidden="true"></i> Reset
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Paper Size -->
+                        <div>
+                            <label for="pdfPageSize" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Page Size</label>
+                            <select id="pdfPageSize" class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                <option value="a4" selected>A4 Standard (210 × 297 mm)</option>
+                                <option value="letter">US Letter (8.5 × 11 in)</option>
+                                <option value="legal">US Legal (8.5 × 14 in)</option>
+                                <option value="fit">Fit Page to Each Image Size</option>
+                            </select>
+                        </div>
+
+                        <!-- Orientation -->
+                        <div id="orientationWrap">
+                            <label for="pdfOrientation" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Page Orientation</label>
+                            <select id="pdfOrientation" class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                <option value="auto" selected>Auto-Detect (Match Each Image)</option>
+                                <option value="p">Portrait (Vertical)</option>
+                                <option value="l">Landscape (Horizontal)</option>
+                            </select>
+                        </div>
+
+                        <!-- Margins & Image Scaling Mode -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="pdfMargin" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Page Margin</label>
+                                <select id="pdfMargin" class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="0">No Margin (0 mm)</option>
+                                    <option value="6">Small (6 mm)</option>
+                                    <option value="12" selected>Medium (12 mm)</option>
+                                    <option value="20">Large (20 mm)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="pdfFitMode" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Image Fit</label>
+                                <select id="pdfFitMode" class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="contain" selected>Fit Entire Image</option>
+                                    <option value="cover">Fill / Cover Page</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Compression Quality -->
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center justify-between mb-1">
+                                <label for="pdfQuality" class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                                    Image Quality (<output id="qualityVal" for="pdfQuality">85</output>%)
+                                </label>
+                                <span id="qualityHint" class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Balanced</span>
+                            </div>
+                            <input type="range" id="pdfQuality" min="25" max="100" value="85" aria-valuetext="85%" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <!-- Page Background Color & Options -->
+                        <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center justify-between gap-2">
+                                <div>
+                                    <label for="pageBgColor" class="block text-xs font-bold text-slate-700 dark:text-slate-300">Page Background</label>
+                                    <span class="block text-[11px] text-slate-500 dark:text-slate-400">For margins &amp; transparent PNGs</span>
+                                </div>
+                                <input type="color" id="pageBgColor" value="#ffffff" aria-label="PDF page background color" class="w-11 h-9 p-1 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl cursor-pointer">
+                            </div>
+
+                            <label class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                                <input type="checkbox" id="grayscaleMode" class="w-4 h-4 accent-brand-600 rounded">
+                                <span>Convert images to <strong>Grayscale (B&amp;W)</strong></span>
+                            </label>
+
+                            <label class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                                <input type="checkbox" id="addPageNumbers" class="w-4 h-4 accent-brand-600 rounded">
+                                <span>Add page numbers (<code class="text-[11px]">1 / N</code>) at bottom</span>
+                            </label>
+                        </div>
+
+                        <!-- Output PDF Filename -->
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
+                            <label for="pdfFileName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Output PDF Filename</label>
+                            <div class="relative">
+                                <input type="text" id="pdfFileName" value="filediter-images" maxlength="60" autocomplete="off"
+                                       class="w-full pr-12 p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 pointer-events-none">.pdf</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drag & Drop / Preview Workspace -->
+            <section class="lg:col-span-8" aria-labelledby="workspace-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between h-full min-h-[460px]">
+
+                    <div>
+                        <h2 id="workspace-heading" class="sr-only">Image Upload and Page Sequence Grid</h2>
+
+                        <!-- Accessible Dropzone -->
+                        <input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,.jpg,.jpeg,.png,.webp,.gif,.bmp" multiple class="sr-only peer">
+                        <label id="dropZone" for="imageInput"
+                               class="block border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 peer-focus-visible:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 bg-slate-50/50 dark:bg-slate-950/50 rounded-2xl p-8 text-center cursor-pointer transition-all mb-6">
+                            <span class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto text-2xl mb-3">
+                                <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            </span>
+                            <span class="block font-heading text-base font-bold text-slate-800 dark:text-slate-200 mb-1">
+                                Click, Drag &amp; Drop, or Paste (<kbd class="px-1.5 py-0.5 text-xs rounded bg-slate-200 dark:bg-slate-800">Ctrl+V</kbd>) Images Here
+                            </span>
+                            <span class="block text-xs text-slate-500 dark:text-slate-400">
+                                Supports JPG, PNG, WebP, GIF &amp; BMP · Batch selection supported · 100% browser-side
+                            </span>
+                        </label>
+
+                        <!-- Actions Bar -->
+                        <div id="workspaceHeader" class="hidden flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 text-xs font-bold">
+                                    <span id="imageCount">0</span> Page(s)
+                                </span>
+                                <span class="text-[11px] text-slate-400 hidden sm:inline"><i class="fa-solid fa-grip-vertical mr-1" aria-hidden="true"></i>Drag cards to reorder</span>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-2">
+                                <button type="button" id="sortAzBtn" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors" title="Sort images alphabetically by filename">
+                                    <i class="fa-solid fa-arrow-down-a-z mr-1" aria-hidden="true"></i>Sort A–Z
+                                </button>
+                                <button type="button" id="reverseOrderBtn" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors" title="Reverse current page order">
+                                    <i class="fa-solid fa-arrow-right-arrow-left mr-1" aria-hidden="true"></i>Reverse
+                                </button>
+                                <button type="button" id="addMoreBtn" class="px-2.5 py-1 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 hover:bg-brand-100 text-xs font-semibold transition-colors">
+                                    <i class="fa-solid fa-plus mr-1" aria-hidden="true"></i>Add More
+                                </button>
+                                <button type="button" id="clearAllBtn" class="px-2.5 py-1 rounded-lg bg-red-50 dark:bg-red-950/50 text-rose-600 dark:text-rose-400 hover:bg-red-100 text-xs font-semibold transition-colors">
+                                    <i class="fa-solid fa-trash-can mr-1" aria-hidden="true"></i>Clear All
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Grid Area for Reordering -->
+                        <div id="imageGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-h-[420px] overflow-y-auto p-1"></div>
+
+                        <!-- Empty Queue State -->
+                        <div id="emptyGridState" class="py-8 text-center text-slate-400 dark:text-slate-500 text-xs">
+                            <i class="fa-regular fa-images text-2xl mb-2 block opacity-60" aria-hidden="true"></i>
+                            Select or drop your images above. You can drag thumbnails to arrange the exact page sequence before creating your PDF.
+                        </div>
+                    </div>
+
+                    <!-- Status, Progress & Convert Button -->
+                    <div class="pt-5 border-t border-slate-100 dark:border-slate-800 mt-6 space-y-3">
+                        <div class="space-y-1.5">
+                            <p id="statusMsg" role="status" aria-live="polite" aria-atomic="true" class="text-xs font-semibold text-slate-700 dark:text-slate-300"></p>
+                            <progress id="pdfProgress" max="100" value="0" aria-label="PDF generation progress" class="hidden w-full h-2 rounded-full overflow-hidden [&::-webkit-progress-bar]:bg-slate-100 dark:[&::-webkit-progress-bar]:bg-slate-800 [&::-webkit-progress-value]:bg-brand-600 [&::-moz-progress-bar]:bg-brand-600"></progress>
+                        </div>
+
+                        <button type="button" id="convertBtn" disabled
+                                class="w-full py-3.5 rounded-2xl bg-brand-600 text-white shadow-md hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i id="convertIcon" class="fa-solid fa-file-pdf text-base" aria-hidden="true"></i>
+                            <span id="convertLabel">Convert &amp; Download PDF</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Value Proposition Cards -->
+        <section class="mb-16" aria-labelledby="why-heading">
+            <div class="text-center mb-8">
+                <h2 id="why-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Why Use Filediter Image to PDF?</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">Fast, private, browser-based PDF creation with zero cloud uploads.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-up-down-left-right text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Drag-and-Drop &amp; Rotate</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Arrange your exact page sequence with drag-and-drop handles, sort A–Z, and rotate individual sideways images before building your PDF.</p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-wand-magic-sparkles text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Smart Auto-Orientation</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Auto-detect orientation matches each PDF page to landscape photos or portrait document scans while keeping uniform margins.</p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-shield-halved text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">100% On-Device Privacy</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Your files remain inside your browser memory. Ideal for combining confidential ID cards, bank receipts, and signed contracts.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEO Guide & Related Tools -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8 mb-16" aria-labelledby="guide-heading">
+            <div>
+                <h2 id="guide-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">Combine JPG, PNG, and WebP Photos into One PDF</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Submitting multiple receipt photos, handwritten assignments, or identity documents is much easier when they are merged into a single, cleanly formatted PDF. With Filediter's <strong>online Image to PDF converter</strong>, you can combine dozens of images in seconds without uploading sensitive files to an external server.
+                </p>
+                <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                    <li><strong>Add your images:</strong> Select multiple JPG, PNG, WebP, or GIF files from your device, drag them into the drop zone, or paste screenshots with <kbd class="px-1.5 py-0.5 text-xs rounded bg-slate-100 dark:bg-slate-800">Ctrl+V</kbd>.</li>
+                    <li><strong>Order and rotate pages:</strong> Drag cards to reorder pages, use the Rotate button on any sideways scan, and pick A4, US Letter, or Fit-to-Image sizing.</li>
+                    <li><strong>Download your PDF:</strong> Adjust the Image Quality slider to control the output file size, then click "Convert &amp; Download PDF".</li>
+                </ol>
+            </div>
+
+            <!-- Related Tools (Strictly verified existing Filediter tools) -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Related PDF &amp; Image Utilities</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Need to turn PDF pages back into pictures? Try the <a href="pdf-to-image.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF to Image Converter</a>. To combine existing PDF files, use the <a href="pdf-merger.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Merger</a>, or shrink document weight with the <a href="pdf-compressor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Compressor</a>. For enhancing camera scans before creating a PDF, check out the <a href="cam-enhancer.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">Doc Enhancer</a> and <a href="image-editor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">Image Editor</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Are my photos uploaded to any server?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. All image decoding, resizing, and PDF compilation happen locally inside your web browser. Your personal documents never leave your device.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        How do I reorder or rotate images before creating the PDF?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Drag any thumbnail card in the grid to move it to a new page position, or click the Rotate icon on any card to rotate that specific image by 90 degrees.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        What is the difference between A4 and "Fit Page to Each Image Size"?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed"><strong>A4</strong> and <strong>US Letter</strong> give every page in your PDF uniform standard paper dimensions—ideal for printing. <strong>Fit Page to Each Image Size</strong> sets each PDF page's exact dimensions to match the photo itself with no extra whitespace.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Standardized Footer (Only verified, real Filediter URLs) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <!-- Image Tools -->
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-converter.html" class="hover:text-white transition-colors">JPG / PNG / WebP Converter</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="passport-photo-maker.html" class="hover:text-white transition-colors">Passport Photo Maker</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <!-- PDF Tools -->
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-to-pdf.html" aria-current="page" class="text-brand-400 font-semibold">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-compressor.html" class="hover:text-white transition-colors">PDF Compressor</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-white transition-colors">PDF Extractor</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Web & Text Tools -->
+                <nav aria-label="Text and Web tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Web &amp; Text Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="word-counter.html" class="hover:text-white transition-colors">Word Counter</a></li>
+                        <li><a href="url-encoder.html" class="hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                        <li><a href="color-picker.html" class="hover:text-white transition-colors">Color Picker</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Company -->
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">All Tools (Home)</a></li>
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-6 text-xs text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Complete Client-Side Image-to-PDF Engine -->
+    <script>
+    (() => {
+        'use strict';
+
+        const MAX_IMAGE_DIM = 3200; // Caps extreme camera dimensions to prevent browser canvas OOM
+        const $ = (id) => document.getElementById(id);
+
+        const els = {
+            imageInput: $('imageInput'),
+            dropZone: $('dropZone'),
+            workspaceHeader: $('workspaceHeader'),
+            imageCount: $('imageCount'),
+            imageGrid: $('imageGrid'),
+            emptyGridState: $('emptyGridState'),
+            sortAzBtn: $('sortAzBtn'),
+            reverseOrderBtn: $('reverseOrderBtn'),
+            addMoreBtn: $('addMoreBtn'),
+            clearAllBtn: $('clearAllBtn'),
+            resetSettingsBtn: $('resetSettingsBtn'),
+
+            pdfPageSize: $('pdfPageSize'),
+            orientationWrap: $('orientationWrap'),
+            pdfOrientation: $('pdfOrientation'),
+            pdfMargin: $('pdfMargin'),
+            pdfFitMode: $('pdfFitMode'),
+            pdfQuality: $('pdfQuality'),
+            qualityVal: $('qualityVal'),
+            qualityHint: $('qualityHint'),
+            pageBgColor: $('pageBgColor'),
+            grayscaleMode: $('grayscaleMode'),
+            addPageNumbers: $('addPageNumbers'),
+            pdfFileName: $('pdfFileName'),
+
+            statusMsg: $('statusMsg'),
+            pdfProgress: $('pdfProgress'),
+            convertBtn: $('convertBtn'),
+            convertIcon: $('convertIcon'),
+            convertLabel: $('convertLabel')
+        };
+
+        // Items in imageList: { id, name, url, width, height, rotation }
+        let imageList = [];
+        let nextId = 1;
+        let busy = false;
+
+        /* ---------- Helpers ---------- */
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function setStatus(text, isError = false) {
+            els.statusMsg.textContent = text || '';
+            els.statusMsg.className = isError
+                ? 'text-xs font-semibold text-red-600 dark:text-red-400'
+                : 'text-xs font-semibold text-slate-700 dark:text-slate-300';
+        }
+
+        function sanitizeFileName(name) {
+            const cleaned = (name || 'filediter-images')
+                .replace(/\.pdf$/i, '')
+                .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
+                .trim();
+            return cleaned || 'filediter-images';
+        }
+
+        /* ---------- Initialize Sortable Grid ---------- */
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.Sortable) {
+                new window.Sortable(els.imageGrid, {
+                    animation: 150,
+                    ghostClass: 'opacity-40',
+                    onEnd: syncImageListOrder
+                });
+            }
+        });
+
+        /* ---------- Settings Sync ---------- */
+        function updateQualityUI() {
+            const q = Number(els.pdfQuality.value);
+            els.qualityVal.textContent = String(q);
+            els.pdfQuality.setAttribute('aria-valuetext', `${q}%`);
+            if (q >= 90) {
+                els.qualityHint.textContent = 'Max quality';
+                els.qualityHint.className = 'text-[11px] font-semibold text-brand-600 dark:text-brand-400';
+            } else if (q >= 70) {
+                els.qualityHint.textContent = 'Balanced';
+                els.qualityHint.className = 'text-[11px] font-semibold text-emerald-600 dark:text-emerald-400';
+            } else {
+                els.qualityHint.textContent = 'Small PDF';
+                els.qualityHint.className = 'text-[11px] font-semibold text-amber-600 dark:text-amber-400';
+            }
+        }
+
+        els.pdfQuality.addEventListener('input', updateQualityUI);
+
+        els.pdfPageSize.addEventListener('change', () => {
+            const isFit = els.pdfPageSize.value === 'fit';
+            els.orientationWrap.classList.toggle('opacity-50', isFit);
+            els.pdfOrientation.disabled = isFit;
+        });
+
+        els.resetSettingsBtn.addEventListener('click', () => {
+            els.pdfPageSize.value = 'a4';
+            els.pdfOrientation.value = 'auto';
+            els.pdfOrientation.disabled = false;
+            els.orientationWrap.classList.remove('opacity-50');
+            els.pdfMargin.value = '12';
+            els.pdfFitMode.value = 'contain';
+            els.pdfQuality.value = '85';
+            updateQualityUI();
+            els.pageBgColor.value = '#ffffff';
+            els.grayscaleMode.checked = false;
+            els.addPageNumbers.checked = false;
+            els.pdfFileName.value = 'filediter-images';
+            setStatus('Settings reset to defaults.');
+        });
+
+        /* ---------- File Loading (Sequential Order Preserved) ---------- */
+        async function addImageFiles(fileList) {
+            if (!fileList || !fileList.length || busy) return;
+            const files = Array.from(fileList);
+            let added = 0;
+
+            setStatus('Loading images…');
+
+            for (const file of files) {
+                const isImg = /^image\//i.test(file.type) || /\.(jpe?g|png|webp|gif|bmp)$/i.test(file.name);
+                if (!isImg) continue;
+
+                try {
+                    const url = URL.createObjectURL(file);
+                    const dims = await probeImage(url);
+                    imageList.push({
+                        id: `img_${nextId++}`,
+                        name: file.name || `image-${nextId}.jpg`,
+                        url,
+                        width: dims.width,
+                        height: dims.height,
+                        rotation: 0
+                    });
+                    added++;
+                } catch (err) {
+                    // Skip unreadable image file
+                }
+            }
+
+            renderThumbnails();
+            if (added > 0) {
+                setStatus(`Added ${added} image${added === 1 ? '' : 's'}. Drag cards to reorder or click "Convert & Download PDF".`);
+            } else {
+                setStatus('Please select valid JPG, PNG, WebP, or GIF image files.', true);
+            }
+        }
+
+        function probeImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve({
+                    width: img.naturalWidth || img.width || 800,
+                    height: img.naturalHeight || img.height || 600
+                });
+                img.onerror = () => {
+                    URL.revokeObjectURL(url);
+                    reject(new Error('Invalid image'));
+                };
+                img.src = url;
+            });
+        }
+
+        els.imageInput.addEventListener('change', () => {
+            addImageFiles(els.imageInput.files);
+            els.imageInput.value = '';
+        });
+
+        els.addMoreBtn.addEventListener('click', () => els.imageInput.click());
+
+        // Drag and Drop support on Dropzone & Window
+        window.addEventListener('dragover', (e) => e.preventDefault());
+        window.addEventListener('drop', (e) => e.preventDefault());
+
+        els.dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            els.dropZone.classList.add('border-brand-500');
+        });
+        els.dropZone.addEventListener('dragleave', (e) => {
+            if (!els.dropZone.contains(e.relatedTarget)) {
+                els.dropZone.classList.remove('border-brand-500');
+            }
+        });
+        els.dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            els.dropZone.classList.remove('border-brand-500');
+            if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+                addImageFiles(e.dataTransfer.files);
+            }
+        });
+
+        // Clipboard Paste (Ctrl+V) support
+        window.addEventListener('paste', (e) => {
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+            const files = e.clipboardData && e.clipboardData.files;
+            if (files && files.length) {
+                addImageFiles(files);
+            }
+        });
+
+        /* ---------- Grid Rendering, Sorting & Card Actions ---------- */
+        function renderThumbnails() {
+            els.imageGrid.innerHTML = '';
+            const count = imageList.length;
+
+            els.imageCount.textContent = String(count);
+            els.workspaceHeader.classList.toggle('hidden', count === 0);
+            els.workspaceHeader.classList.toggle('flex', count > 0);
+            els.emptyGridState.classList.toggle('hidden', count > 0);
+            els.convertBtn.disabled = count === 0 || busy;
+
+            imageList.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'grid-item relative group bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden flex flex-col justify-between p-2 shadow-sm';
+                card.dataset.id = item.id;
+
+                const isRotatedSideways = item.rotation % 180 !== 0;
+                const dispW = isRotatedSideways ? item.height : item.width;
+                const dispH = isRotatedSideways ? item.width : item.height;
+
+                card.innerHTML = `
+                    <div class="relative w-full aspect-square flex items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-slate-950">
+                        <img src="${item.url}" alt="${escapeHtml(item.name)}"
+                             style="transform: rotate(${item.rotation}deg)"
+                             class="max-h-full max-w-full object-contain transition-transform duration-200">
+                        <span class="absolute top-1.5 left-1.5 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-md font-mono shadow">
+                            #${index + 1}
+                        </span>
+                        <div class="absolute top-1.5 right-1.5 flex items-center gap-1">
+                            <button type="button" data-rotate="${item.id}" title="Rotate 90°" aria-label="Rotate ${escapeHtml(item.name)} 90 degrees"
+                                    class="w-7 h-7 rounded-lg bg-slate-900/75 hover:bg-brand-600 text-white flex items-center justify-center transition-colors shadow">
+                                <i class="fa-solid fa-rotate-right text-[11px]" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" data-remove="${item.id}" title="Remove image" aria-label="Remove ${escapeHtml(item.name)}"
+                                    class="w-7 h-7 rounded-lg bg-rose-600/90 hover:bg-rose-700 text-white flex items-center justify-center transition-colors shadow">
+                                <i class="fa-solid fa-trash-can text-[11px]" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pt-2 px-1 flex items-center justify-between gap-1 text-[11px]">
+                        <span class="font-semibold text-slate-700 dark:text-slate-200 truncate" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span>
+                        <span class="font-mono text-[10px] text-slate-400 shrink-0">${dispW}×${dispH}</span>
+                    </div>
+                `;
+                els.imageGrid.appendChild(card);
+            });
+        }
+
+        els.imageGrid.addEventListener('click', (e) => {
+            if (busy) return;
+            const rotBtn = e.target.closest('[data-rotate]');
+            if (rotBtn) {
+                const id = rotBtn.dataset.rotate;
+                const found = imageList.find((i) => i.id === id);
+                if (found) {
+                    found.rotation = (found.rotation + 90) % 360;
+                    renderThumbnails();
+                }
+                return;
+            }
+            const rmBtn = e.target.closest('[data-remove]');
+            if (rmBtn) {
+                const id = rmBtn.dataset.remove;
+                const idx = imageList.findIndex((i) => i.id === id);
+                if (idx !== -1) {
+                    URL.revokeObjectURL(imageList[idx].url);
+                    imageList.splice(idx, 1);
+                    renderThumbnails();
+                }
+            }
+        });
+
+        function syncImageListOrder() {
+            const newOrder = [];
+            els.imageGrid.querySelectorAll('.grid-item').forEach((card) => {
+                const id = card.dataset.id;
+                const found = imageList.find((img) => img.id === id);
+                if (found) newOrder.push(found);
+            });
+            imageList = newOrder;
+            renderThumbnails();
+        }
+
+        els.sortAzBtn.addEventListener('click', () => {
+            if (imageList.length < 2 || busy) return;
+            imageList.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+            renderThumbnails();
+            setStatus('Sorted images alphabetically (A–Z).');
+        });
+
+        els.reverseOrderBtn.addEventListener('click', () => {
+            if (imageList.length < 2 || busy) return;
+            imageList.reverse();
+            renderThumbnails();
+            setStatus('Reversed page sequence.');
+        });
+
+        els.clearAllBtn.addEventListener('click', () => {
+            if (busy) return;
+            imageList.forEach((item) => URL.revokeObjectURL(item.url));
+            imageList = [];
+            els.pdfProgress.classList.add('hidden');
+            setStatus('');
+            renderThumbnails();
+        });
+
+        /* ---------- Canvas Pre-Processing & PDF Generation ---------- */
+        async function processImageToJpegDataUrl(item, quality, bgColor, useGrayscale) {
+            const img = new Image();
+            await new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = reject;
+                img.src = item.url;
+            });
+
+            const swap = item.rotation % 180 !== 0;
+            let rawW = swap ? img.naturalHeight : img.naturalWidth;
+            let rawH = swap ? img.naturalWidth : img.naturalHeight;
+
+            // Downscale ultra-high-resolution images to keep PDF creation fast and prevent memory spikes
+            let scale = 1;
+            if (rawW > MAX_IMAGE_DIM || rawH > MAX_IMAGE_DIM) {
+                scale = Math.min(MAX_IMAGE_DIM / rawW, MAX_IMAGE_DIM / rawH);
+            }
+            const outW = Math.max(1, Math.round(rawW * scale));
+            const outH = Math.max(1, Math.round(rawH * scale));
+
+            const canvas = document.createElement('canvas');
+            canvas.width = outW;
+            canvas.height = outH;
+            const ctx = canvas.getContext('2d');
+
+            // Fill page/background color so transparent PNGs/WebPs never turn black
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, outW, outH);
+
+            ctx.save();
+            ctx.translate(outW / 2, outH / 2);
+            ctx.rotate((item.rotation * Math.PI) / 180);
+            const drawW = swap ? outH : outW;
+            const drawH = swap ? outW : outH;
+            ctx.drawImage(img, -drawW / 2, -drawH / 2, drawW, drawH);
+            ctx.restore();
+
+            if (useGrayscale) {
+                const imgData = ctx.getImageData(0, 0, outW, outH);
+                const d = imgData.data;
+                for (let i = 0; i < d.length; i += 4) {
+                    const lum = (77 * d[i] + 150 * d[i + 1] + 29 * d[i + 2]) >> 8;
+                    d[i] = d[i + 1] = d[i + 2] = lum;
+                }
+                ctx.putImageData(imgData, 0, 0);
+            }
+
+            return {
+                dataUrl: canvas.toDataURL('image/jpeg', quality),
+                width: outW,
+                height: outH
+            };
+        }
+
+        els.convertBtn.addEventListener('click', generatePDF);
+
+        async function generatePDF() {
+            if (imageList.length === 0 || busy) return;
+            if (!window.jspdf || !window.jspdf.jsPDF) {
+                setStatus('PDF library is still loading. Please try again in a moment.', true);
+                return;
+            }
+
+            busy = true;
+            els.convertBtn.disabled = true;
+            els.convertIcon.className = 'fa-solid fa-spinner fa-spin text-base';
+            els.convertLabel.textContent = 'Building PDF…';
+            els.pdfProgress.classList.remove('hidden');
+            els.pdfProgress.max = imageList.length;
+            els.pdfProgress.value = 0;
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const orientationSetting = els.pdfOrientation.value;
+                const pageSizeSetting = els.pdfPageSize.value;
+                const margin = Number(els.pdfMargin.value);
+                const fitMode = els.pdfFitMode.value;
+                const quality = Math.min(Math.max(Number(els.pdfQuality.value) / 100, 0.2), 1.0);
+                const bgColor = els.pageBgColor.value || '#ffffff';
+                const useGrayscale = els.grayscaleMode.checked;
+                const stampPageNums = els.addPageNumbers.checked;
+                const outFileName = sanitizeFileName(els.pdfFileName.value);
+
+                let doc = null;
+                const total = imageList.length;
+
+                for (let i = 0; i < total; i++) {
+                    const item = imageList[i];
+                    setStatus(`Processing page ${i + 1} of ${total}: ${item.name}…`);
+                    els.pdfProgress.value = i;
+
+                    // Yield to browser UI thread so progress bar updates smoothly
+                    await new Promise((r) => setTimeout(r, 15));
+
+                    const processed = await processImageToJpegDataUrl(item, quality, bgColor, useGrayscale);
+                    const isLandscape = processed.width > processed.height;
+
+                    if (pageSizeSetting === 'fit') {
+                        const imgWmm = processed.width * 0.264583;
+                        const imgHmm = processed.height * 0.264583;
+                        const pageW = imgWmm + margin * 2;
+                        const pageH = imgHmm + margin * 2;
+                        const orient = pageW > pageH ? 'l' : 'p';
+
+                        if (i === 0) {
+                            doc = new jsPDF({
+                                orientation: orient,
+                                unit: 'mm',
+                                format: [pageW, pageH],
+                                compress: true
+                            });
+                        } else {
+                            doc.addPage([pageW, pageH], orient);
+                        }
+
+                        if (bgColor.toLowerCase() !== '#ffffff') {
+                            doc.setFillColor(bgColor);
+                            doc.rect(0, 0, pageW, pageH, 'F');
+                        }
+
+                        doc.addImage(processed.dataUrl, 'JPEG', margin, margin, imgWmm, imgHmm, undefined, 'FAST');
+
+                        if (stampPageNums) {
+                            doc.setFontSize(9);
+                            doc.setTextColor(120, 120, 120);
+                            doc.text(`${i + 1} / ${total}`, pageW / 2, pageH - Math.max(3, margin / 2), { align: 'center' });
+                        }
+                    } else {
+                        const pageOrientation = orientationSetting === 'auto'
+                            ? (isLandscape ? 'l' : 'p')
+                            : orientationSetting;
+
+                        if (i === 0) {
+                            doc = new jsPDF({
+                                orientation: pageOrientation,
+                                unit: 'mm',
+                                format: pageSizeSetting,
+                                compress: true
+                            });
+                        } else {
+                            doc.addPage(pageSizeSetting, pageOrientation);
+                        }
+
+                        const pageWidth = doc.internal.pageSize.getWidth();
+                        const pageHeight = doc.internal.pageSize.getHeight();
+
+                        if (bgColor.toLowerCase() !== '#ffffff') {
+                            doc.setFillColor(bgColor);
+                            doc.rect(0, 0, pageWidth, pageHeight, 'F');
+                        }
+
+                        const availWidth = Math.max(10, pageWidth - margin * 2);
+                        const availHeight = Math.max(10, pageHeight - margin * 2);
+
+                        const widthRatio = availWidth / processed.width;
+                        const heightRatio = availHeight / processed.height;
+                        const scaleFactor = fitMode === 'cover'
+                            ? Math.max(widthRatio, heightRatio)
+                            : Math.min(widthRatio, heightRatio);
+
+                        const finalWidth = processed.width * scaleFactor;
+                        const finalHeight = processed.height * scaleFactor;
+                        const xPos = margin + (availWidth - finalWidth) / 2;
+                        const yPos = margin + (availHeight - finalHeight) / 2;
+
+                        doc.addImage(processed.dataUrl, 'JPEG', xPos, yPos, finalWidth, finalHeight, undefined, 'FAST');
+
+                        if (stampPageNums) {
+                            doc.setFontSize(9);
+                            doc.setTextColor(120, 120, 120);
+                            doc.text(`${i + 1} / ${total}`, pageWidth / 2, pageHeight - Math.max(4, margin / 2), { align: 'center' });
+                        }
+                    }
+
+                    els.pdfProgress.value = i + 1;
+                }
+
+                doc.save(`${outFileName}.pdf`);
+                setStatus(`Done! Downloaded "${outFileName}.pdf" (${total} page${total === 1 ? '' : 's'}).`);
+            } catch (err) {
+                setStatus('Something went wrong while creating the PDF. Please check your images and try again.', true);
+            } finally {
+                busy = false;
+                els.convertBtn.disabled = imageList.length === 0;
+                els.convertIcon.className = 'fa-solid fa-file-pdf text-base';
+                els.convertLabel.textContent = 'Convert & Download PDF';
+            }
+        }
+
+        /* ---------- Theme Toggle ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        $('year').textContent = new Date().getFullYear();
+        updateQualityUI();
+    })();
+    </script>
+</body>
+</html>

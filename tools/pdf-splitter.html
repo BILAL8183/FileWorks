@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Split PDF Online Free – Split by Page Ranges, Every N Pages or Burst | Filediter</title>
+    <meta name="description" content="Split PDF files online for free. Split a PDF into custom page ranges, slice every N pages into separate PDFs, burst every page into a ZIP, or extract selected pages. 100% private in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/pdf-splitter.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="pdf-splitter.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Crect x='10' y='14' width='19' height='36' rx='3' fill='%23fff'/%3E%3Crect x='35' y='14' width='19' height='36' rx='3' fill='%23dbeafe'/%3E%3Cpath d='M32 10v44' stroke='%23fbbf24' stroke-width='3' stroke-dasharray='4 4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Split PDF Online Free – Custom Ranges &amp; Batch PDF Splitter | Filediter">
+    <meta property="og:description" content="Split PDF pages by custom ranges, every N pages, or into individual 1-page PDFs (ZIP) directly in your browser. Your files never leave your device.">
+    <meta property="og:url" content="https://filediter.com/tools/pdf-splitter.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Split PDF Online Free | Filediter">
+    <meta name="twitter:description" content="Split a PDF into multiple files by page ranges or fixed intervals right in your browser. 100% private.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter PDF Splitter",
+                "url": "https://filediter.com/tools/pdf-splitter.html",
+                "description": "Free online PDF splitter to divide PDF documents by custom page ranges, split every N pages into separate chunks, burst every page into individual PDFs (ZIP), or extract selected pages into one PDF.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript and HTML5 Canvas",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "Split PDF by custom page ranges into separate PDF files (ZIP)",
+                    "Split PDF every N pages (fixed page interval chunking)",
+                    "Burst every page of a PDF into individual 1-page PDF files (ZIP)",
+                    "Extract and merge specific non-consecutive pages into a single PDF",
+                    "Live visual page thumbnail preview with output file grouping badges",
+                    "100% client-side processing — PDFs never leave your browser"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "PDF Splitter", "item": "https://filediter.com/tools/pdf-splitter.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Split a PDF into Multiple Files Online",
+                "description": "Divide a PDF document into separate files by page ranges, fixed intervals, or individual pages.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Upload your PDF",
+                        "text": "Click the upload box or drag and drop your PDF document to load its page thumbnails."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Choose a split mode",
+                        "text": "Select Custom Page Ranges (e.g. 1-3, 4-8), Split Every N Pages, Save Every Page Separately, or Extract into 1 PDF."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Review output plan and download",
+                        "text": "Verify the planned output files in the live summary bar and click Split PDF to download your single PDF or ZIP archive."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can I split a PDF into individual 1-page files?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Select the 'Every Page (Burst to ZIP)' mode and click Split PDF to download a ZIP archive containing one separate PDF file for each page."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I split a PDF every N pages (for example, every 5 pages)?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Choose the 'Split Every N Pages' mode and set the chunk size to 5. A 20-page PDF will automatically be divided into 4 separate 5-page PDF files inside a ZIP download."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will splitting a PDF reduce text or image quality?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Pages are copied losslessly at the PDF object level using pdf-lib without re-encoding images or flattening vector text."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my PDF uploaded to any server?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Your PDF is opened, split, and packaged into a ZIP 100% locally inside your web browser. Your files are never sent to any external server."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- PDF-Lib & PDF.js (Pinned CDNs) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tailwind CSS (Pinned CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        @media (prefers-reduced-motion: no-preference) {
+            .feature-card { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            .feature-card:hover { transform: translateY(-4px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            .animate-pulse { animation: none !important; }
+        }
+        .page-card { user-select: none; }
+        .page-card.active-page {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .dark .page-card.active-page {
+            border-color: #3b82f6;
+            background-color: rgba(30, 58, 138, 0.35);
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform motion-reduce:transition-none">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" tabindex="-1" class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">PDF Splitter</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool requires JavaScript to split PDF files in your browser. Please enable JavaScript and reload.</p>
+        </noscript>
+
+        <!-- Hero Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-table-columns" aria-hidden="true"></i> Multi-Mode PDF Page Splitter
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Split PDF Pages Online for Free
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-4">
+                Divide any PDF into multiple files by custom page ranges, slice every <em>N</em> pages into equal chunks, burst every page into separate PDFs (.ZIP), or extract selected pages into one PDF.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">Split by Page Ranges</span>
+                <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">Split Every N Pages</span>
+                <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">Burst to Individual PDFs</span>
+                <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">100% Browser-Side</span>
+            </div>
+        </div>
+
+        <!-- Workspace -->
+        <div id="workspace" class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+            <!-- Left Column: Split Settings -->
+            <section class="lg:col-span-5 space-y-6" aria-labelledby="editorTitle">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none space-y-5">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <h2 id="editorTitle" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Split Method
+                        </h2>
+                        <span id="pageCount" class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold">No PDF loaded</span>
+                    </div>
+
+                    <!-- 4 Visual Split Mode Cards -->
+                    <div role="radiogroup" aria-label="Split mode" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <button type="button" data-mode="ranges" aria-pressed="true"
+                                class="mode-card text-left p-3.5 rounded-2xl border-2 border-brand-600 bg-brand-50/50 dark:bg-brand-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Custom Ranges</span>
+                                <span class="px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold">ZIP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Each range (e.g. <code class="font-mono">1-3, 4-6</code>) becomes a separate PDF</p>
+                        </button>
+
+                        <button type="button" data-mode="fixed" aria-pressed="false"
+                                class="mode-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Every N Pages</span>
+                                <span class="px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold">Chunks</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Slice PDF into equal chunks of 2, 5, 10… pages</p>
+                        </button>
+
+                        <button type="button" data-mode="extract" aria-pressed="false"
+                                class="mode-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Extract into 1 PDF</span>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">1 File</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Combine selected pages or ranges into one PDF</p>
+                        </button>
+
+                        <button type="button" data-mode="every" aria-pressed="false"
+                                class="mode-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-xs text-slate-900 dark:text-white">Burst All Pages</span>
+                                <span class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-[10px] font-bold">1/Page</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">Save every single page as its own separate PDF</p>
+                        </button>
+                    </div>
+
+                    <!-- Hidden select kept for compatibility -->
+                    <select id="splitMode" class="sr-only" aria-hidden="true" tabindex="-1">
+                        <option value="ranges" selected>Split custom ranges into separate PDFs (ZIP)</option>
+                        <option value="fixed">Split every N pages into separate PDFs (ZIP)</option>
+                        <option value="extract">Extract selected pages into one PDF</option>
+                        <option value="every">Save every page as a separate PDF (ZIP)</option>
+                    </select>
+
+                    <!-- Controls for 'ranges' and 'extract' modes -->
+                    <div id="pagesArea" class="space-y-3 border-t border-slate-100 dark:border-slate-800 pt-4">
+                        <div class="flex items-center justify-between">
+                            <label for="pages" id="pagesLabel" class="text-xs font-bold text-slate-700 dark:text-slate-300">Page Ranges (comma-separated)</label>
+                            <div class="flex items-center gap-2 text-[11px]">
+                                <button type="button" id="selectAllPagesBtn" disabled class="text-brand-600 dark:text-brand-400 font-semibold hover:underline disabled:opacity-40">All</button>
+                                <span class="text-slate-300 dark:text-slate-700">|</span>
+                                <button type="button" id="clearPagesBtn" disabled class="text-slate-500 hover:text-rose-600 font-semibold hover:underline disabled:opacity-40">Clear</button>
+                            </div>
+                        </div>
+
+                        <input id="pages" type="text" placeholder="e.g. 1-3, 4-6, 7-10" inputmode="text" spellcheck="false" autocomplete="off" disabled
+                               aria-describedby="pagesHelp"
+                               class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-mono font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none disabled:opacity-50">
+                        <small id="pagesHelp" class="block text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Each comma-separated entry (e.g. <code class="font-mono">1-3, 4-6, 8</code>) creates a separate PDF file. You can also click page thumbnails on the right.
+                        </small>
+                    </div>
+
+                    <!-- Controls for 'fixed' (Split every N pages) mode -->
+                    <div id="fixedChunkArea" class="hidden space-y-3 border-t border-slate-100 dark:border-slate-800 pt-4">
+                        <label for="chunkSize" class="block text-xs font-bold text-slate-700 dark:text-slate-300">Pages per Split PDF File</label>
+                        <div class="flex items-center gap-3">
+                            <input type="number" id="chunkSize" min="1" max="500" value="2"
+                                   class="w-28 p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-mono font-bold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" data-chunk="2" class="chunk-preset px-2.5 py-1.5 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 text-xs font-bold">Every 2</button>
+                                <button type="button" data-chunk="5" class="chunk-preset px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Every 5</button>
+                                <button type="button" data-chunk="10" class="chunk-preset px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Every 10</button>
+                            </div>
+                        </div>
+                        <small class="block text-[11px] text-slate-500 dark:text-slate-400">
+                            Divides your PDF into consecutive multi-page PDF chunks and packages them in a ZIP archive.
+                        </small>
+                    </div>
+
+                    <!-- Live Output Files Plan Preview -->
+                    <div id="outputPlanWrap" class="hidden border-t border-slate-100 dark:border-slate-800 pt-4 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-700 dark:text-slate-300">Planned Output Files</span>
+                            <span id="outputFilesCount" class="font-mono font-bold text-brand-600 dark:text-brand-400">0 files</span>
+                        </div>
+                        <div id="outputPlanList" class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto p-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-[11px]"></div>
+                    </div>
+
+                    <!-- Filename Prefix -->
+                    <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+                        <label for="filePrefix" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Output Filename Prefix</label>
+                        <input type="text" id="filePrefix" value="split-document" maxlength="50" autocomplete="off" disabled
+                               class="w-full p-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none disabled:opacity-50">
+                    </div>
+
+                    <!-- Primary Action Button -->
+                    <div class="pt-1">
+                        <button type="button" data-run id="run" disabled
+                                class="w-full py-3.5 rounded-2xl bg-brand-600 text-white shadow-md hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i id="runIcon" class="fa-solid fa-scissors text-sm" aria-hidden="true"></i>
+                            <span id="runLabel">Split PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Upload Drop Zone & Visual Page Thumbnails -->
+            <section class="lg:col-span-7" aria-labelledby="preview-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between h-full min-h-[480px]">
+
+                    <div>
+                        <!-- Workspace Header -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <h2 id="preview-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-grip text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Document Pages
+                                </h2>
+                                <span id="fileDetails" class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold truncate max-w-[210px]">No PDF selected</span>
+                            </div>
+
+                            <div id="fileActionBtns" class="hidden items-center gap-3">
+                                <button type="button" id="changePdfBtn" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                                    <i class="fa-solid fa-folder-open" aria-hidden="true"></i> Change PDF
+                                </button>
+                                <button type="button" id="closePdfBtn" class="text-xs font-semibold text-rose-600 dark:text-rose-400 hover:underline inline-flex items-center gap-1">
+                                    <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Close
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Accessible Drop Zone -->
+                        <input id="fileInput" type="file" accept=".pdf,application/pdf" class="sr-only peer">
+                        <label id="drop" for="fileInput"
+                               class="block border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 peer-focus-visible:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 bg-slate-50/50 dark:bg-slate-950/50 rounded-2xl p-10 text-center cursor-pointer transition-all mb-6">
+                            <span class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto text-2xl mb-3">
+                                <i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i>
+                            </span>
+                            <strong class="block font-heading text-base font-bold text-slate-800 dark:text-slate-200 mb-1">
+                                Drop your PDF here or click to browse
+                            </strong>
+                            <small class="block text-xs text-slate-500 dark:text-slate-400">
+                                PDF only · Up to 100 MB · 100% private in-browser splitting
+                            </small>
+                        </label>
+
+                        <!-- Visual Page Grid -->
+                        <div id="thumbnailsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 max-h-[430px] overflow-y-auto p-1"></div>
+
+                        <!-- Empty State Helper -->
+                        <div id="emptyGridState" class="py-8 text-center text-slate-400 dark:text-slate-500 text-xs">
+                            <i class="fa-regular fa-clone text-2xl mb-2 block opacity-60" aria-hidden="true"></i>
+                            Upload a PDF above to view page thumbnails, click pages to build ranges, and preview your split files.
+                        </div>
+                    </div>
+
+                    <!-- Status & Progress Bar -->
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-5 space-y-2">
+                        <div id="status" role="status" aria-live="polite" aria-atomic="true" class="text-xs font-semibold text-slate-700 dark:text-slate-300"></div>
+                        <progress id="progress" max="100" value="0" aria-label="Processing progress" class="hidden w-full h-2 rounded-full overflow-hidden [&::-webkit-progress-bar]:bg-slate-100 dark:[&::-webkit-progress-bar]:bg-slate-800 [&::-webkit-progress-value]:bg-brand-600 [&::-moz-progress-bar]:bg-brand-600"></progress>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Value Proposition Cards -->
+        <section class="mb-16" aria-labelledby="tips-heading">
+            <div class="text-center mb-8">
+                <h2 id="tips-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Flexible, Lossless PDF Splitting</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">Divide large PDFs into organized chapters, single pages, or custom bundles.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-file-shield text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Original Quality Preserved</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        Pages are copied directly into new PDF containers without rasterizing. Selectable text, vector graphics, and embedded fonts remain 100% sharp.
+                    </p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-layer-group text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Multi-Range &amp; Fixed Chunks</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        Enter multiple page ranges like <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">1-4, 5-9, 10-12</code> or slice every <em>N</em> pages to generate multiple ready-to-use PDFs in one ZIP download.
+                    </p>
+                </article>
+
+                <article class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-lock text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">100% Local Browser Privacy</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                        No server queues and no file uploads. Legal contracts, financial statements, and academic records stay on your own device.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEO Guide & Related Tools -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8 mb-16" aria-labelledby="guide-heading">
+            <div>
+                <h2 id="guide-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">How to Split a PDF into Multiple Files in Seconds</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Whether you need to break a scanned textbook into individual chapters, split a batch of invoices every 2 pages, or pull out specific pages for an email attachment, Filediter's <strong>online PDF splitter</strong> gives you four specialized splitting modes with a live visual preview:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                    <li><strong>Custom Ranges (ZIP):</strong> Type comma-separated ranges such as <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">1-3, 4-7, 8-12</code>. Each range is exported as its own separate PDF file inside a ZIP archive.</li>
+                    <li><strong>Every N Pages (Chunks):</strong> Automatically divide a document every 2, 5, 10, or <em>N</em> pages into equal PDF chunks.</li>
+                    <li><strong>Extract into 1 PDF:</strong> Click page thumbnails or enter page numbers to combine only those pages into a single new PDF.</li>
+                    <li><strong>Burst All Pages (1/Page):</strong> Save every single page of the document as an individual 1-page PDF file inside a ZIP archive.</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools (Strictly verified existing Filediter tools) -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Related PDF &amp; Document Tools</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Want to delete or rotate individual pages visually? Try the <a href="pdf-extractor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Extractor</a>. Need to combine multiple PDF files into one? Use the <a href="pdf-merger.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Merger</a>. To reduce PDF file size for email or portal uploads, use the <a href="pdf-compressor.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Compressor</a>, or convert pages into pictures with the <a href="pdf-to-image.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF to Image Converter</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section aria-labelledby="faqheading">
+            <h2 id="faqheading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can I split a PDF into individual pages?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Yes. Choose the <strong>Burst All Pages</strong> mode to download a ZIP archive containing one separate PDF file for each page in your document.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can I extract pages 2 to 5 into a single PDF?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Yes. Either select <strong>Extract into 1 PDF</strong> (or keep <strong>Custom Ranges</strong> with a single range <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">2-5</code>) and the tool will download that single 4-page PDF directly without needing a ZIP file.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Will my page quality or selectable text change?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. Pages are copied directly at the native PDF object level, not rasterized, so all original vector text, fonts, links, and image resolutions are preserved.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can it open password-protected PDFs?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Encrypted or password-locked PDFs must be unlocked with authorization before splitting.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Page Zoom Inspection Modal -->
+    <div id="zoomModal" role="dialog" aria-modal="true" aria-labelledby="zoomModalTitle" class="fixed inset-0 z-[70] hidden bg-slate-950/80 backdrop-blur-sm p-4 flex items-center justify-center">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 dark:border-slate-800">
+                <h3 id="zoomModalTitle" class="font-heading font-bold text-sm text-slate-900 dark:text-white">Page Preview</h3>
+                <button type="button" id="closeZoomModalBtn" aria-label="Close preview modal" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="p-4 overflow-auto flex-grow flex items-center justify-center bg-slate-100 dark:bg-slate-950">
+                <canvas id="zoomModalCanvas" class="max-w-full h-auto rounded-lg shadow-md bg-white"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standardized Footer (Only verified, real Filediter URLs) -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <!-- Image Tools -->
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-converter.html" class="hover:text-white transition-colors">JPG / PNG / WebP Converter</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="passport-photo-maker.html" class="hover:text-white transition-colors">Passport Photo Maker</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <!-- PDF Tools -->
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="pdf-splitter.html" aria-current="page" class="text-brand-400 font-semibold">PDF Splitter</a></li>
+                        <li><a href="pdf-extractor.html" class="hover:text-white transition-colors">PDF Extractor</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="pdf-compressor.html" class="hover:text-white transition-colors">PDF Compressor</a></li>
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" class="hover:text-white transition-colors">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Web & Text Tools -->
+                <nav aria-label="Text and Web tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Web &amp; Text Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="word-counter.html" class="hover:text-white transition-colors">Word Counter</a></li>
+                        <li><a href="url-encoder.html" class="hover:text-white transition-colors">URL Encoder / Decoder</a></li>
+                        <li><a href="color-picker.html" class="hover:text-white transition-colors">Color Picker</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Company -->
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">All Tools (Home)</a></li>
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-6 text-xs text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Complete Client-Side PDF Splitter Engine -->
+    <script>
+    (() => {
+        'use strict';
+
+        const PDFJS_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+        const PDFJS_WORKER = PDFJS_BASE + 'pdf.worker.min.js';
+        const JSZIP_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+        const MAX_PDF_BYTES = 100 * 1024 * 1024; // 100 MB max file size
+
+        const $ = (id) => document.getElementById(id);
+
+        const els = {
+            fileInput: $('fileInput'),
+            drop: $('drop'),
+            fileDetails: $('fileDetails'),
+            pageCount: $('pageCount'),
+            fileActionBtns: $('fileActionBtns'),
+            changePdfBtn: $('changePdfBtn'),
+            closePdfBtn: $('closePdfBtn'),
+
+            splitMode: $('splitMode'),
+            pagesArea: $('pagesArea'),
+            pagesLabel: $('pagesLabel'),
+            pages: $('pages'),
+            pagesHelp: $('pagesHelp'),
+            selectAllPagesBtn: $('selectAllPagesBtn'),
+            clearPagesBtn: $('clearPagesBtn'),
+            fixedChunkArea: $('fixedChunkArea'),
+            chunkSize: $('chunkSize'),
+
+            outputPlanWrap: $('outputPlanWrap'),
+            outputFilesCount: $('outputFilesCount'),
+            outputPlanList: $('outputPlanList'),
+            filePrefix: $('filePrefix'),
+
+            thumbnailsGrid: $('thumbnailsGrid'),
+            emptyGridState: $('emptyGridState'),
+
+            run: $('run'),
+            runIcon: $('runIcon'),
+            runLabel: $('runLabel'),
+            status: $('status'),
+            progress: $('progress'),
+
+            zoomModal: $('zoomModal'),
+            zoomModalTitle: $('zoomModalTitle'),
+            zoomModalCanvas: $('zoomModalCanvas'),
+            closeZoomModalBtn: $('closeZoomModalBtn')
+        };
+
+        const modeCards = Array.from(document.querySelectorAll('.mode-card'));
+        const chunkPresets = Array.from(document.querySelectorAll('.chunk-preset'));
+
+        const state = {
+            pdfBytes: null,
+            pdfDoc: null,
+            numPages: 0,
+            baseName: 'document',
+            mode: 'ranges', // 'ranges' | 'fixed' | 'extract' | 'every'
+            clickedPages: new Set(),
+            renderToken: 0,
+            busy: false,
+            jszipPromise: null
+        };
+
+        /* ---------- Helpers ---------- */
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatBytes(bytes) {
+            if (!Number.isFinite(bytes) || bytes <= 0) return '0 B';
+            const units = ['B', 'KB', 'MB', 'GB'];
+            const idx = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+            const val = bytes / Math.pow(1024, idx);
+            return `${val.toFixed(idx === 0 ? 0 : val >= 10 ? 1 : 2)} ${units[idx]}`;
+        }
+
+        function sanitizeBaseName(name) {
+            const cleaned = (name || 'document')
+                .replace(/\.pdf$/i, '')
+                .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
+                .trim();
+            return cleaned || 'document';
+        }
+
+        function setStatus(msg, isError = false) {
+            els.status.textContent = msg || '';
+            els.status.className = isError
+                ? 'text-xs font-semibold text-red-600 dark:text-red-400'
+                : 'text-xs font-semibold text-slate-700 dark:text-slate-300';
+        }
+
+        function loadJsZip() {
+            if (window.JSZip) return Promise.resolve(window.JSZip);
+            if (!state.jszipPromise) {
+                state.jszipPromise = new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.src = JSZIP_SRC;
+                    s.async = true;
+                    s.crossOrigin = 'anonymous';
+                    s.onload = () => resolve(window.JSZip);
+                    s.onerror = () => {
+                        state.jszipPromise = null;
+                        s.remove();
+                        reject(new Error('Could not load ZIP library. Check your internet connection and try again.'));
+                    };
+                    document.head.appendChild(s);
+                });
+            }
+            return state.jszipPromise;
+        }
+
+        function pagesSetToRangeString(set) {
+            const sorted = Array.from(set).sort((a, b) => a - b);
+            if (!sorted.length) return '';
+            const out = [];
+            let start = sorted[0];
+            let prev = sorted[0];
+            for (let i = 1; i < sorted.length; i++) {
+                const c = sorted[i];
+                if (c === prev + 1) {
+                    prev = c;
+                } else {
+                    out.push(start === prev ? `${start}` : `${start}-${prev}`);
+                    start = prev = c;
+                }
+            }
+            out.push(start === prev ? `${start}` : `${start}-${prev}`);
+            return out.join(', ');
+        }
+
+        /**
+         * Compute the array of output PDF file descriptors based on current mode & settings.
+         * Each descriptor: { label, fileSuffix, pages: [1-based page numbers] }
+         */
+        function buildSplitGroups() {
+            const total = state.numPages;
+            if (!total) return [];
+
+            const mode = state.mode;
+
+            if (mode === 'every') {
+                const groups = [];
+                for (let p = 1; p <= total; p++) {
+                    const pad = String(p).padStart(String(total).length, '0');
+                    groups.push({
+                        label: `Page ${p}`,
+                        fileSuffix: `page-${pad}`,
+                        pages: [p]
+                    });
+                }
+                return groups;
+            }
+
+            if (mode === 'fixed') {
+                const step = Math.max(1, Math.min(total, Number(els.chunkSize.value) || 2));
+                const groups = [];
+                let part = 1;
+                for (let start = 1; start <= total; start += step) {
+                    const end = Math.min(total, start + step - 1);
+                    const pages = [];
+                    for (let p = start; p <= end; p++) pages.push(p);
+                    const rangeLabel = start === end ? `p.${start}` : `p.${start}-${end}`;
+                    groups.push({
+                        label: `Part ${part} (${rangeLabel})`,
+                        fileSuffix: `part-${part}-pages-${start}-${end}`,
+                        pages
+                    });
+                    part++;
+                }
+                return groups;
+            }
+
+            // 'ranges' or 'extract' mode: parse els.pages.value
+            const raw = els.pages.value.trim();
+            if (!raw) return [];
+
+            const tokens = raw.split(',').map((s) => s.trim()).filter(Boolean);
+            const parsedRanges = [];
+
+            for (const token of tokens) {
+                const m = /^(\d+)(?:\s*-\s*(\d+)?)?$/.exec(token);
+                if (!m) continue;
+                let a = Number(m[1]);
+                let b = m[2] !== undefined && m[2] !== '' ? Number(m[2]) : a;
+                if (a > b) [a, b] = [b, a];
+                if (b < 1 || a > total) continue;
+                a = Math.max(1, a);
+                b = Math.min(total, b);
+                const pages = [];
+                for (let p = a; p <= b; p++) pages.push(p);
+                if (pages.length) {
+                    parsedRanges.push({
+                        start: a,
+                        end: b,
+                        pages
+                    });
+                }
+            }
+
+            if (!parsedRanges.length) return [];
+
+            if (mode === 'extract') {
+                // Combine all specified pages (preserving unique sorted order) into 1 PDF
+                const seen = new Set();
+                const merged = [];
+                for (const r of parsedRanges) {
+                    for (const p of r.pages) {
+                        if (!seen.has(p)) {
+                            seen.add(p);
+                            merged.push(p);
+                        }
+                    }
+                }
+                return [{
+                    label: `Extracted (${merged.length} page${merged.length === 1 ? '' : 's'})`,
+                    fileSuffix: `extracted`,
+                    pages: merged
+                }];
+            }
+
+            // 'ranges' mode: each comma-separated range becomes its own separate PDF file
+            return parsedRanges.map((r, idx) => {
+                const rangeStr = r.start === r.end ? `${r.start}` : `${r.start}-${r.end}`;
+                return {
+                    label: `File ${idx + 1} (p.${rangeStr})`,
+                    fileSuffix: `pages-${rangeStr}`,
+                    pages: r.pages
+                };
+            });
+        }
+
+        /* ---------- Mode & Settings Sync ---------- */
+        function setSplitMode(mode) {
+            state.mode = mode;
+            els.splitMode.value = mode;
+
+            modeCards.forEach((btn) => {
+                const active = btn.dataset.mode === mode;
+                btn.setAttribute('aria-pressed', String(active));
+                btn.className = active
+                    ? 'mode-card text-left p-3.5 rounded-2xl border-2 border-brand-600 bg-brand-50/50 dark:bg-brand-950/40 transition-all'
+                    : 'mode-card text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brand-400 bg-slate-50/50 dark:bg-slate-950/40 transition-all';
+            });
+
+            const showPagesInput = (mode === 'ranges' || mode === 'extract');
+            els.pagesArea.classList.toggle('hidden', !showPagesInput);
+            els.fixedChunkArea.classList.toggle('hidden', mode !== 'fixed');
+
+            if (mode === 'ranges') {
+                els.pagesLabel.textContent = 'Custom Page Ranges (each range = 1 PDF)';
+                els.pagesHelp.innerHTML = 'Each comma-separated range (e.g. <code class="font-mono">1-3, 4-6, 7-10</code>) becomes a separate PDF file. Click thumbnails on the right to toggle pages.';
+            } else if (mode === 'extract') {
+                els.pagesLabel.textContent = 'Pages to Extract into 1 Combined PDF';
+                els.pagesHelp.innerHTML = 'All listed pages/ranges (e.g. <code class="font-mono">1-3, 5, 8</code>) will be merged into a single new PDF document.';
+            }
+
+            syncPlanAndThumbnails();
+        }
+
+        modeCards.forEach((btn) => {
+            btn.addEventListener('click', () => setSplitMode(btn.dataset.mode));
+        });
+
+        chunkPresets.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                els.chunkSize.value = btn.dataset.chunk;
+                chunkPresets.forEach((b) => {
+                    b.className = (b === btn)
+                        ? 'chunk-preset px-2.5 py-1.5 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 text-xs font-bold'
+                        : 'chunk-preset px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold';
+                });
+                syncPlanAndThumbnails();
+            });
+        });
+
+        els.chunkSize.addEventListener('input', syncPlanAndThumbnails);
+
+        els.pages.addEventListener('input', () => {
+            // Sync clickedPages set from typed text without overwriting els.pages.value
+            state.clickedPages.clear();
+            const groups = buildSplitGroups();
+            for (const g of groups) {
+                for (const p of g.pages) state.clickedPages.add(p);
+            }
+            syncPlanAndThumbnails();
+        });
+
+        els.selectAllPagesBtn.addEventListener('click', () => {
+            if (!state.numPages) return;
+            state.clickedPages.clear();
+            for (let p = 1; p <= state.numPages; p++) state.clickedPages.add(p);
+            els.pages.value = state.numPages === 1 ? '1' : `1-${state.numPages}`;
+            syncPlanAndThumbnails();
+        });
+
+        els.clearPagesBtn.addEventListener('click', () => {
+            state.clickedPages.clear();
+            els.pages.value = '';
+            syncPlanAndThumbnails();
+        });
+
+        function syncPlanAndThumbnails() {
+            if (!state.pdfDoc) {
+                els.outputPlanWrap.classList.add('hidden');
+                els.run.disabled = true;
+                return;
+            }
+
+            const groups = buildSplitGroups();
+            els.outputPlanWrap.classList.remove('hidden');
+            els.outputFilesCount.textContent = `${groups.length} PDF file${groups.length === 1 ? '' : 's'}`;
+
+            if (groups.length === 0) {
+                els.outputPlanList.innerHTML = `<span class="text-slate-400 italic">Enter valid page numbers between 1 and ${state.numPages} (or click page thumbnails).</span>`;
+                els.run.disabled = true;
+                els.runLabel.textContent = 'Select Pages to Split';
+            } else {
+                els.outputPlanList.innerHTML = groups.slice(0, 24).map((g) =>
+                    `<span class="px-2 py-0.5 rounded-md bg-brand-50 dark:bg-brand-950/70 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 font-semibold">${escapeHtml(g.label)}</span>`
+                ).join('') + (groups.length > 24 ? `<span class="px-2 py-0.5 text-slate-400">+${groups.length - 24} more…</span>` : '');
+
+                els.run.disabled = state.busy;
+                if (groups.length === 1) {
+                    els.runLabel.textContent = `Download Split PDF (${groups[0].pages.length} Page${groups[0].pages.length === 1 ? '' : 's'})`;
+                } else {
+                    els.runLabel.textContent = `Split & Download ${groups.length} PDFs (.ZIP)`;
+                }
+            }
+
+            // Map each page to its assigned group badge
+            const pageToGroupLabel = new Map();
+            groups.forEach((g, idx) => {
+                const shortBadge = groups.length === 1 ? 'Included' : `File #${idx + 1}`;
+                for (const p of g.pages) {
+                    if (!pageToGroupLabel.has(p)) pageToGroupLabel.set(p, shortBadge);
+                }
+            });
+
+            for (let p = 1; p <= state.numPages; p++) {
+                const card = $(`split-card-${p}`);
+                const badge = $(`split-badge-${p}`);
+                if (!card || !badge) continue;
+                const assigned = pageToGroupLabel.get(p);
+                if (assigned) {
+                    card.classList.add('active-page');
+                    badge.textContent = assigned;
+                    badge.className = 'px-1.5 py-0.5 rounded bg-brand-600 text-white text-[10px] font-bold shadow';
+                } else {
+                    card.classList.remove('active-page');
+                    badge.textContent = 'Skipped';
+                    badge.className = 'px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-500 text-[10px] font-semibold';
+                }
+            }
+        }
+
+        /* ---------- File Upload & Progressive Thumbnail Grid ---------- */
+        async function handlePdfUpload(file) {
+            if (!file || state.busy) return;
+            const isPdf = file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
+            if (!isPdf) {
+                setStatus('Please choose a valid PDF document.', true);
+                return;
+            }
+            if (file.size > MAX_PDF_BYTES) {
+                setStatus('This PDF exceeds 100 MB. Please select a smaller PDF file.', true);
+                return;
+            }
+
+            setStatus('Opening PDF…');
+
+            try {
+                if (!window.pdfjsLib || !window.PDFLib) {
+                    throw new Error('PDF libraries are still loading. Please try again in a moment.');
+                }
+                window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+
+                const buffer = await file.arrayBuffer();
+                const bytes = new Uint8Array(buffer);
+
+                const testDoc = await window.PDFLib.PDFDocument.load(bytes, { updateMetadata: false });
+                if (testDoc.isEncrypted) {
+                    const err = new Error('This PDF is password-protected or encrypted. Please unlock it first.');
+                    err.friendly = true;
+                    throw err;
+                }
+
+                const doc = await window.pdfjsLib.getDocument({
+                    data: bytes.slice(0),
+                    cMapUrl: PDFJS_BASE + 'cmaps/',
+                    cMapPacked: true,
+                    standardFontDataUrl: PDFJS_BASE + 'standard_fonts/'
+                }).promise;
+
+                if (state.pdfDoc) state.pdfDoc.destroy();
+                state.pdfBytes = bytes;
+                state.pdfDoc = doc;
+                state.numPages = doc.numPages;
+                state.baseName = sanitizeBaseName(file.name);
+
+                // Default initial range suggestion so the user sees how it works immediately
+                state.clickedPages.clear();
+                if (doc.numPages >= 2) {
+                    const half = Math.ceil(doc.numPages / 2);
+                    els.pages.value = `1-${half}, ${half + 1}-${doc.numPages}`;
+                } else {
+                    els.pages.value = '1';
+                }
+                for (let p = 1; p <= doc.numPages; p++) state.clickedPages.add(p);
+
+                els.filePrefix.value = `${state.baseName}`;
+                els.fileDetails.textContent = `${file.name} (${formatBytes(file.size)})`;
+                els.pageCount.textContent = `${doc.numPages} page${doc.numPages === 1 ? '' : 's'}`;
+
+                els.drop.classList.add('hidden');
+                els.emptyGridState.classList.add('hidden');
+                els.fileActionBtns.classList.remove('hidden');
+                els.fileActionBtns.classList.add('flex');
+
+                [els.pages, els.selectAllPagesBtn, els.clearPagesBtn, els.filePrefix].forEach((el) => {
+                    el.disabled = false;
+                });
+
+                syncPlanAndThumbnails();
+                await renderThumbnailsGrid();
+            } catch (err) {
+                const msg = (err && err.friendly) ? err.message : 'Could not open this PDF. It may be encrypted or damaged.';
+                setStatus(msg, true);
+            }
+        }
+
+        async function renderThumbnailsGrid() {
+            const token = ++state.renderToken;
+            els.thumbnailsGrid.innerHTML = '';
+            const total = state.numPages;
+
+            for (let p = 1; p <= total; p++) {
+                const card = document.createElement('div');
+                card.id = `split-card-${p}`;
+                card.dataset.page = String(p);
+                card.className = 'page-card active-page relative bg-slate-50 dark:bg-slate-950 border-2 border-slate-200 dark:border-slate-800 rounded-2xl p-2 cursor-pointer transition-all hover:border-brand-400 flex flex-col justify-between shadow-sm';
+                card.innerHTML = `
+                    <div class="relative w-full aspect-[3/4] flex items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                        <canvas id="split-thumb-${p}" class="max-h-full max-w-full object-contain"></canvas>
+                        <span id="split-badge-${p}" class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-brand-600 text-white text-[10px] font-bold shadow">File #1</span>
+                        <button type="button" data-zoom="${p}" title="Zoom page ${p}" aria-label="Zoom preview page ${p}"
+                                class="absolute top-1.5 right-1.5 w-7 h-7 rounded-lg bg-slate-900/75 hover:bg-brand-600 text-white flex items-center justify-center transition-colors shadow">
+                            <i class="fa-solid fa-magnifying-glass-plus text-[11px]" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="pt-2 text-center">
+                        <span class="text-xs font-bold font-mono text-slate-700 dark:text-slate-300">Page ${p}</span>
+                    </div>
+                `;
+                els.thumbnailsGrid.appendChild(card);
+            }
+
+            syncPlanAndThumbnails();
+
+            for (let p = 1; p <= total; p++) {
+                if (token !== state.renderToken || !state.pdfDoc) return;
+                try {
+                    const page = await state.pdfDoc.getPage(p);
+                    if (token !== state.renderToken) return;
+                    const vp = page.getViewport({ scale: 0.38 });
+                    const c = $(`split-thumb-${p}`);
+                    if (!c) continue;
+                    c.width = Math.max(1, Math.floor(vp.width));
+                    c.height = Math.max(1, Math.floor(vp.height));
+                    await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+                } catch (e) {}
+            }
+
+            if (token === state.renderToken) {
+                setStatus('PDF ready. Adjust split settings on the left or click "Split PDF".');
+            }
+        }
+
+        els.thumbnailsGrid.addEventListener('click', (e) => {
+            if (!state.pdfDoc || state.busy) return;
+            const zoomBtn = e.target.closest('[data-zoom]');
+            if (zoomBtn) {
+                e.stopPropagation();
+                openZoomModal(Number(zoomBtn.dataset.zoom));
+                return;
+            }
+
+            const card = e.target.closest('.page-card');
+            if (!card) return;
+            const pageNum = Number(card.dataset.page);
+
+            // If user clicks thumbnails while in 'every' or 'fixed' mode, switch to 'extract' mode for intuitive selection
+            if (state.mode === 'every' || state.mode === 'fixed') {
+                setSplitMode('extract');
+            }
+
+            if (state.clickedPages.has(pageNum)) {
+                state.clickedPages.delete(pageNum);
+            } else {
+                state.clickedPages.add(pageNum);
+            }
+            els.pages.value = pagesSetToRangeString(state.clickedPages);
+            syncPlanAndThumbnails();
+        });
+
+        /* ---------- Zoom Modal ---------- */
+        async function openZoomModal(pageNum) {
+            if (!state.pdfDoc) return;
+            els.zoomModalTitle.textContent = `Page ${pageNum} of ${state.numPages}`;
+            els.zoomModal.classList.remove('hidden');
+            try {
+                const page = await state.pdfDoc.getPage(pageNum);
+                const vp = page.getViewport({ scale: 1.45 });
+                els.zoomModalCanvas.width = Math.floor(vp.width);
+                els.zoomModalCanvas.height = Math.floor(vp.height);
+                await page.render({ canvasContext: els.zoomModalCanvas.getContext('2d'), viewport: vp }).promise;
+            } catch (e) {}
+        }
+
+        function closeZoomModal() {
+            els.zoomModal.classList.add('hidden');
+        }
+        els.closeZoomModalBtn.addEventListener('click', closeZoomModal);
+        els.zoomModal.addEventListener('click', (e) => {
+            if (e.target === els.zoomModal) closeZoomModal();
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !els.zoomModal.classList.contains('hidden')) closeZoomModal();
+        });
+
+        /* ---------- File & Drag-and-Drop Listeners ---------- */
+        els.fileInput.addEventListener('change', () => {
+            const file = els.fileInput.files[0];
+            els.fileInput.value = '';
+            handlePdfUpload(file);
+        });
+        els.changePdfBtn.addEventListener('click', () => els.fileInput.click());
+
+        els.closePdfBtn.addEventListener('click', () => {
+            if (state.busy) return;
+            state.renderToken++;
+            if (state.pdfDoc) state.pdfDoc.destroy();
+            state.pdfBytes = null;
+            state.pdfDoc = null;
+            state.numPages = 0;
+            state.clickedPages.clear();
+
+            els.thumbnailsGrid.innerHTML = '';
+            els.drop.classList.remove('hidden');
+            els.emptyGridState.classList.remove('hidden');
+            els.fileActionBtns.classList.add('hidden');
+            els.fileActionBtns.classList.remove('flex');
+            els.outputPlanWrap.classList.add('hidden');
+            els.progress.classList.add('hidden');
+            els.fileDetails.textContent = 'No PDF selected';
+            els.pageCount.textContent = 'No PDF loaded';
+            els.pages.value = '';
+            els.pages.disabled = true;
+            els.selectAllPagesBtn.disabled = true;
+            els.clearPagesBtn.disabled = true;
+            els.filePrefix.disabled = true;
+            els.run.disabled = true;
+            els.runLabel.textContent = 'Split PDF';
+            setStatus('');
+        });
+
+        window.addEventListener('dragover', (e) => e.preventDefault());
+        window.addEventListener('drop', (e) => e.preventDefault());
+
+        [els.drop, els.thumbnailsGrid].forEach((zone) => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                els.drop.classList.add('border-brand-500');
+            });
+            zone.addEventListener('dragleave', (e) => {
+                if (!zone.contains(e.relatedTarget)) {
+                    els.drop.classList.remove('border-brand-500');
+                }
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                els.drop.classList.remove('border-brand-500');
+                const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+                if (file) handlePdfUpload(file);
+            });
+        });
+
+        /* ---------- Execute Split & Download ---------- */
+        els.run.addEventListener('click', executeSplit);
+
+        async function executeSplit() {
+            if (!state.pdfBytes || !state.pdfDoc || state.busy) return;
+            const groups = buildSplitGroups();
+            if (!groups.length) {
+                setStatus(`Please enter valid page numbers between 1 and ${state.numPages}.`, true);
+                return;
+            }
+
+            state.busy = true;
+            els.run.disabled = true;
+            els.runIcon.className = 'fa-solid fa-spinner fa-spin text-sm';
+            els.progress.classList.remove('hidden');
+            els.progress.value = 0;
+
+            const prefix = sanitizeBaseName(els.filePrefix.value || state.baseName);
+
+            try {
+                const { PDFDocument } = window.PDFLib;
+                const srcDoc = await PDFDocument.load(state.pdfBytes.slice(0));
+
+                if (groups.length === 1) {
+                    // Single output PDF — download directly without needing a ZIP wrapper
+                    els.progress.max = 100;
+                    els.progress.value = 35;
+                    setStatus('Extracting selected pages into PDF…');
+                    await new Promise((r) => setTimeout(r, 15));
+
+                    const singleGroup = groups[0];
+                    const outDoc = await PDFDocument.create();
+                    const copied = await outDoc.copyPages(srcDoc, singleGroup.pages.map((p) => p - 1));
+                    copied.forEach((p) => outDoc.addPage(p));
+
+                    els.progress.value = 85;
+                    const pdfBytes = await outDoc.save();
+                    els.progress.value = 100;
+
+                    const outName = `${prefix}-${singleGroup.fileSuffix}.pdf`;
+                    triggerDownload(new Blob([pdfBytes], { type: 'application/pdf' }), outName);
+                    setStatus(`Done! Downloaded "${outName}" (${singleGroup.pages.length} page${singleGroup.pages.length === 1 ? '' : 's'}).`);
+                } else {
+                    // Multiple output PDFs — package into a ZIP archive
+                    els.progress.max = groups.length;
+                    setStatus('Loading ZIP archiver…');
+                    const JSZip = await loadJsZip();
+                    const zip = new JSZip();
+
+                    for (let i = 0; i < groups.length; i++) {
+                        const g = groups[i];
+                        setStatus(`Creating file ${i + 1} of ${groups.length} (${g.label})…`);
+                        els.progress.value = i;
+                        await new Promise((r) => setTimeout(r, 10));
+
+                        const outDoc = await PDFDocument.create();
+                        const copied = await outDoc.copyPages(srcDoc, g.pages.map((p) => p - 1));
+                        copied.forEach((p) => outDoc.addPage(p));
+                        const outBytes = await outDoc.save();
+
+                        zip.file(`${prefix}-${g.fileSuffix}.pdf`, outBytes);
+                        els.progress.value = i + 1;
+                    }
+
+                    setStatus('Packaging split PDFs into ZIP archive…');
+                    const zipBlob = await zip.generateAsync({ type: 'blob' });
+                    const zipName = `${prefix}-split-${groups.length}-files.zip`;
+                    triggerDownload(zipBlob, zipName);
+                    setStatus(`Done! Downloaded "${zipName}" containing ${groups.length} split PDF files.`);
+                }
+            } catch (err) {
+                setStatus(err.message || 'An error occurred while splitting the PDF.', true);
+            } finally {
+                state.busy = false;
+                els.runIcon.className = 'fa-solid fa-scissors text-sm';
+                syncPlanAndThumbnails();
+            }
+        }
+
+        function triggerDownload(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
+        }
+
+        /* ---------- Theme Toggle ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        $('year').textContent = new Date().getFullYear();
+    })();
+    </script>
+</body>
+</html>

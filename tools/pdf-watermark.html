@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Apply saved/system theme before first paint (prevents a light/dark flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Add Watermark to PDF Online Free – Text &amp; Image | Filediter</title>
+    <meta name="description" content="Add a text or image logo watermark to any PDF online for free. Customize font, opacity, rotation angle, tiled grid, page range, and position with a live preview. 100% private in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://filediter.com/tools/pdf-watermark.html">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="pdf-watermark.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M20 14h16l10 10v26a2 2 0 0 1-2 2H20a2 2 0 0 1-2-2V16a2 2 0 0 1 2-2z' fill='%23fff'/%3E%3Cpath d='M35 14v9a2 2 0 0 0 2 2h9' fill='%23dbeafe'/%3E%3Cpath d='M23 41l18-10' stroke='%23dc2626' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Filediter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Add Watermark to PDF Online Free – Text &amp; Image | Filediter">
+    <meta property="og:description" content="Add a text or image watermark to any PDF for free. Adjust opacity, angle, tiled layout, and page ranges with a live preview. Your files never leave your browser.">
+    <meta property="og:url" content="https://filediter.com/tools/pdf-watermark.html">
+    <meta property="og:image" content="https://filediter.com/assets/og-pdf-watermark.png">
+    <meta property="og:image:alt" content="Filediter PDF Watermark Tool – Add text or logo watermarks to PDFs in your browser">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Add Watermark to PDF Online Free | Filediter">
+    <meta name="twitter:description" content="Add a text or image watermark to any PDF for free. Your files never leave your browser.">
+    <meta name="twitter:image" content="https://filediter.com/assets/og-pdf-watermark.png">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Filediter PDF Watermark Tool",
+                "url": "https://filediter.com/tools/pdf-watermark.html",
+                "description": "Free online tool to add text or image watermarks to PDF files with single or tiled layouts and custom page ranges. Processing happens locally in your browser; files are never uploaded.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any (modern web browser)",
+                "browserRequirements": "Requires JavaScript and HTML5 Canvas",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "Custom text watermarks with font, size, and color control",
+                    "Image logo watermarks supporting PNG, JPG, and WebP with transparency",
+                    "Single-stamp corner/center placement and repeated tiled grid mode",
+                    "Custom page range selection (all pages, current page, or specific ranges)",
+                    "100% client-side PDF processing for complete document privacy"
+                ],
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@type": "Organization", "name": "Filediter", "url": "https://filediter.com/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "PDF Watermark", "item": "https://filediter.com/tools/pdf-watermark.html" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to Watermark a PDF Online",
+                "description": "Add a custom text or image logo watermark to a PDF document directly in your browser.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Upload your PDF",
+                        "text": "Click the upload box or drag and drop your PDF file into the workspace."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Customize the watermark",
+                        "text": "Select a text stamp or upload a logo image, then adjust the font, size, opacity, rotation angle, position (or tiled grid), and target pages."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Download the watermarked PDF",
+                        "text": "Click Apply & Download Watermarked PDF to save the updated document to your device."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is my PDF uploaded to a server?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. The PDF is opened and edited locally in your browser, and the watermarked file is generated directly on your device. Your document is never transmitted to any server."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I use my own logo as a watermark?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Open the Image Logo tab and upload a PNG, JPG, or WebP file. Transparent PNG and WebP backgrounds are preserved, and you can adjust the size, opacity, rotation angle, and placement."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does the text watermark support Arabic, Urdu, or Chinese?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Text watermarks use standard built-in PDF fonts, which cover Latin characters. For scripts such as Arabic, Urdu, or Chinese, create a transparent PNG of your text and upload it using the Image Logo tab."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can someone remove the watermark?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The watermark is embedded as standard PDF page content. It serves as a clear visual label rather than cryptographic DRM, so users with specialized PDF editing software may still be able to edit page objects."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind (Play CDN, version pinned). For production, compile to a static CSS file with the Tailwind CLI. -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .dark :focus-visible { outline-color: #60a5fa; }
+        @media (prefers-reduced-motion: no-preference) {
+            .feature-card { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            .feature-card:hover { transform: translateY(-4px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            .animate-pulse { animation: none !important; }
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] > summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white dark:focus:bg-slate-900 focus:text-brand-700 dark:focus:text-brand-400 focus:shadow-lg">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 px-4 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group rounded-lg" aria-label="Filediter home">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform motion-reduce:transition-none">
+                    <i class="fa-solid fa-screwdriver-wrench text-base" aria-hidden="true"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    File<span class="text-brand-600 dark:text-brand-400">diter</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4" aria-label="Primary">
+                <button type="button" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors py-2">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span>Back to Tools</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 w-full focus:outline-none">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-slate-600 dark:text-slate-400">
+            <ol class="flex items-center gap-2">
+                <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 underline-offset-2 hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">PDF Watermark</li>
+            </ol>
+        </nav>
+
+        <noscript>
+            <p class="mb-8 p-4 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-sm">This tool needs JavaScript to process PDFs in your browser. Please enable JavaScript and reload the page.</p>
+        </noscript>
+
+        <!-- Tool header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold mb-3">
+                <i class="fa-solid fa-stamp" aria-hidden="true"></i> Advanced PDF Watermarker
+            </div>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">
+                Add Watermark to PDF Online Free
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                Protect your documents by adding custom text or logo watermarks. Fine-tune opacity, rotation, tiled layout, and page ranges with a live preview.
+            </p>
+        </div>
+
+        <!-- Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+            <!-- Controls -->
+            <section class="lg:col-span-5 space-y-6" aria-labelledby="settings-heading">
+                <div id="controls" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-4">
+                        <h2 id="settings-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Watermark Settings
+                        </h2>
+                        <button type="button" id="resetSettingsBtn" class="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" title="Reset watermark settings to defaults">
+                            <i class="fa-solid fa-rotate-left text-[11px]" aria-hidden="true"></i> Reset
+                        </button>
+                    </div>
+
+                    <!-- Mode tabs -->
+                    <div role="tablist" aria-label="Watermark type" class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl text-xs font-bold mb-5">
+                        <button type="button" role="tab" id="tab-text" data-mode="text" aria-selected="true" aria-controls="textControls" class="tab-btn py-2.5 rounded-lg text-center transition-colors text-slate-700 dark:text-slate-300 aria-selected:bg-white aria-selected:text-brand-700 aria-selected:shadow-sm dark:aria-selected:bg-slate-900 dark:aria-selected:text-brand-400">
+                            <i class="fa-solid fa-font mr-1" aria-hidden="true"></i> Text Watermark
+                        </button>
+                        <button type="button" role="tab" id="tab-image" data-mode="image" aria-selected="false" tabindex="-1" aria-controls="imageControls" class="tab-btn py-2.5 rounded-lg text-center transition-colors text-slate-700 dark:text-slate-300 aria-selected:bg-white aria-selected:text-brand-700 aria-selected:shadow-sm dark:aria-selected:bg-slate-900 dark:aria-selected:text-brand-400">
+                            <i class="fa-solid fa-image mr-1" aria-hidden="true"></i> Image Logo
+                        </button>
+                    </div>
+
+                    <!-- Text controls -->
+                    <div id="textControls" role="tabpanel" aria-labelledby="tab-text" class="space-y-4">
+                        <div>
+                            <label for="wmText" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Watermark text</label>
+                            <input type="text" id="wmText" value="CONFIDENTIAL" maxlength="60" autocomplete="off" placeholder="Enter watermark text…"
+                                   class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-brand-500 focus:outline-none text-xs font-semibold text-slate-800 dark:text-slate-100">
+                            <p id="textWarning" class="text-xs text-amber-700 dark:text-amber-400 [&:not(:empty)]:mt-1.5" aria-live="polite"></p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2" role="group" aria-label="Preset texts">
+                            <button type="button" data-preset="CONFIDENTIAL" aria-pressed="true" class="preset-btn px-3 py-1.5 bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 rounded-lg text-xs font-semibold transition-colors">CONFIDENTIAL</button>
+                            <button type="button" data-preset="DRAFT" aria-pressed="false" class="preset-btn px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-transparent rounded-lg text-xs font-semibold transition-colors">DRAFT</button>
+                            <button type="button" data-preset="APPROVED" aria-pressed="false" class="preset-btn px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-transparent rounded-lg text-xs font-semibold transition-colors">APPROVED</button>
+                            <button type="button" data-preset="SAMPLE" aria-pressed="false" class="preset-btn px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-transparent rounded-lg text-xs font-semibold transition-colors">SAMPLE</button>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="wmFont" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Font</label>
+                                <select id="wmFont" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="Helvetica">Helvetica (Sans)</option>
+                                    <option value="TimesRoman">Times (Serif)</option>
+                                    <option value="Courier">Courier (Mono)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="wmColor" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Font color</label>
+                                <input type="color" id="wmColor" value="#dc2626" class="w-full h-10 p-1 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl cursor-pointer">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="wmFontSize" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Font size (<output id="fontSizeVal" for="wmFontSize">36</output> pt)</label>
+                            <input type="range" id="wmFontSize" min="16" max="100" value="36" data-out="fontSizeVal" data-unit=" pt" aria-valuetext="36 pt" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <label class="inline-flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                            <input type="checkbox" id="wmBold" checked class="w-4 h-4 accent-brand-600 rounded">
+                            Bold text
+                        </label>
+                    </div>
+
+                    <!-- Image controls -->
+                    <div id="imageControls" role="tabpanel" aria-labelledby="tab-image" class="hidden space-y-4">
+                        <div>
+                            <label for="wmImageInput" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Watermark image (PNG, JPG, or WebP)</label>
+                            <input type="file" id="wmImageInput" accept="image/png,image/jpeg,image/webp"
+                                   class="w-full text-xs text-slate-600 dark:text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 dark:file:bg-brand-950/50 file:text-brand-700 dark:file:text-brand-400 hover:file:bg-brand-100 cursor-pointer">
+                            <p id="imageName" class="text-xs text-slate-600 dark:text-slate-400 [&:not(:empty)]:mt-1.5"></p>
+                        </div>
+                        <div>
+                            <label for="wmImageScale" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Image size (<output id="imgScaleVal" for="wmImageScale">30</output>% of page width)</label>
+                            <input type="range" id="wmImageScale" min="5" max="100" value="30" data-out="imgScaleVal" data-unit="%" aria-valuetext="30%" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- Common controls -->
+                    <div class="space-y-4 border-t border-slate-100 dark:border-slate-800 pt-4 mt-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label for="wmPosition" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Position / Layout</label>
+                                <select id="wmPosition" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="center">Center Overlay</option>
+                                    <option value="tile">Tiled Grid (Repeated)</option>
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="wmPages" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Target Pages</label>
+                                <select id="wmPages" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="all">All Pages</option>
+                                    <option value="current">Current Preview Page</option>
+                                    <option value="custom">Custom Range…</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="customPagesWrap" class="hidden">
+                            <label for="wmCustomPages" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Page range (e.g. 1-3, 5)</label>
+                            <input type="text" id="wmCustomPages" placeholder="e.g. 1-3, 5, 7-9" autocomplete="off"
+                                   class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-brand-500 focus:outline-none text-xs font-semibold text-slate-800 dark:text-slate-100">
+                        </div>
+
+                        <div>
+                            <label for="wmOpacity" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Opacity (<output id="opacityVal" for="wmOpacity">40</output>%)</label>
+                            <input type="range" id="wmOpacity" min="5" max="100" value="40" data-out="opacityVal" data-unit="%" aria-valuetext="40%" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <label for="wmAngle" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Rotation angle (<output id="angleVal" for="wmAngle">-45</output>°)</label>
+                            <input type="range" id="wmAngle" min="-180" max="180" value="-45" data-out="angleVal" data-unit="°" aria-valuetext="-45°" class="w-full accent-brand-600 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview & output -->
+            <section class="lg:col-span-7" aria-labelledby="preview-heading">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-between h-full">
+
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 mb-5">
+                            <h2 id="preview-heading" class="font-heading text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa-solid fa-eye text-brand-600 dark:text-brand-400" aria-hidden="true"></i> Document Preview
+                            </h2>
+                            <div id="previewTools" class="hidden flex-wrap items-center gap-2 sm:gap-3">
+                                <button type="button" id="changeFileBtn" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold transition-colors">
+                                    <i class="fa-solid fa-folder-open mr-1" aria-hidden="true"></i>Change PDF
+                                </button>
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button" id="prevPage" aria-label="Previous page" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-xs transition-colors"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                                    <span id="pageCounter" class="text-xs font-mono text-slate-600 dark:text-slate-400 min-w-[5.5rem] text-center" aria-live="polite">Page 1 of 1</span>
+                                    <button type="button" id="nextPage" aria-label="Next page" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-xs transition-colors"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upload (keyboard accessible: real file input is visually hidden, label is the drop zone) -->
+                        <input type="file" id="pdfInput" accept="application/pdf,.pdf" class="sr-only peer">
+                        <label id="pdfDropZone" for="pdfInput"
+                               class="block border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 peer-focus-visible:border-brand-500 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 bg-slate-50/50 dark:bg-slate-950/50 rounded-2xl p-10 text-center cursor-pointer transition-colors">
+                            <span class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto text-2xl mb-3">
+                                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                            </span>
+                            <span class="block font-heading text-base font-bold text-slate-800 dark:text-slate-200 mb-1">Click to upload or drag a PDF here</span>
+                            <span class="block text-xs text-slate-600 dark:text-slate-400">Your file stays on your device. Nothing is uploaded.</span>
+                        </label>
+
+                        <!-- Preview -->
+                        <div id="previewContainer" class="hidden overflow-auto border-2 border-transparent bg-slate-100/70 dark:bg-slate-950/60 ring-1 ring-slate-200 dark:ring-slate-800 rounded-2xl p-4 max-h-[600px] flex items-center justify-center transition-colors">
+                            <div id="canvasStack" class="relative mx-auto">
+                                <canvas id="pdfCanvas" role="img" aria-label="Preview of the PDF page with the watermark applied" class="block w-full h-auto rounded-lg shadow-md bg-white"></canvas>
+                                <canvas id="wmCanvas" aria-hidden="true" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download -->
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+                        <p id="statusMsg" role="status" aria-live="polite" aria-atomic="true" class="text-xs text-slate-700 dark:text-slate-300 [&:not(:empty)]:mb-3"></p>
+                        <p id="errorMsg" role="alert" aria-live="assertive" aria-atomic="true" class="text-xs font-semibold text-red-700 dark:text-red-400 [&:not(:empty)]:mb-3"></p>
+                        <button type="button" id="downloadBtn" disabled
+                                class="w-full py-3.5 rounded-2xl bg-brand-600 text-white shadow-md hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-500 disabled:shadow-none dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i id="downloadIcon" class="fa-solid fa-download text-base" aria-hidden="true"></i>
+                            <span id="downloadLabel">Apply &amp; Download Watermarked PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Value proposition -->
+        <section class="mb-16" aria-labelledby="why-heading">
+            <div class="text-center mb-8">
+                <h2 id="why-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Why Choose Filediter Watermarker?</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">Private, client-side processing with full control over the result.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-user-shield text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Client-Side Privacy</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Your PDF is never uploaded to a server. Confidential files are processed directly on your own computer.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-compass text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Precision Angle &amp; Tiled Grid</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Control transparency, single or repeated tiled placement, size, and rotation, and inspect the exact result before downloading.</p>
+                </div>
+
+                <div class="feature-card p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-900 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-bolt text-base" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-slate-900 dark:text-white mb-1">Fast Multi-Page Stamping</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Watermark every page or specific page ranges of a multi-page PDF with zero upload wait time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO content -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8 mb-16" aria-labelledby="about-heading">
+            <div>
+                <h2 id="about-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">Stamp PDF Documents Safely Online</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Watermarking a PDF labels draft versions, marks contracts as confidential, and discourages unauthorized redistribution. This <strong>PDF watermark tool</strong> lets you add text stamps such as "CONFIDENTIAL" or "DRAFT", or your own transparent company logo, directly in your web browser.
+                </p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    The tool runs on the open-source <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">pdf-lib</code> and <code class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-xs">PDF.js</code> libraries inside your browser, so your document stays on your device while you work and is never sent to external servers.
+                </p>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">How to Watermark a PDF in 3 Easy Steps</h3>
+                <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                    <li><strong>Upload your PDF:</strong> Click the upload box or drag your PDF into the preview workspace.</li>
+                    <li><strong>Customize the watermark:</strong> Choose text or an image logo, then adjust font, opacity, rotation angle, position (single stamp or repeated grid), and target page range.</li>
+                    <li><strong>Download the result:</strong> Click "Apply &amp; Download Watermarked PDF" to save your updated PDF immediately.</li>
+                </ol>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white mb-3">Related PDF Tools</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Need to combine files first? Try the <a href="pdf-merger.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF Merger</a>. To sign a document, use the <a href="esign-pdf.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">E-Sign PDF Pad</a>, or turn pages into pictures with the <a href="pdf-to-image.html" class="text-brand-700 dark:text-brand-400 underline underline-offset-2">PDF to Image Converter</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Is my PDF uploaded to a server?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">No. The PDF is opened and edited in your browser, and the watermarked file is created on your device. The page itself loads open-source libraries from public CDNs, but your document is never sent anywhere.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can I use my own logo as a watermark?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Yes. Open the Image Logo tab and upload a PNG, JPG, or WebP file. Transparent PNG and WebP backgrounds are preserved, and you can set the size, opacity, angle, and position.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Does the text watermark support Arabic, Urdu, or Chinese?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Text watermarks use the standard PDF fonts, which cover Latin characters only. For other scripts, create an image of your text and add it with the Image Logo tab.</p>
+                </details>
+                <details class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 text-sm font-semibold text-slate-900 dark:text-white rounded-2xl">
+                        Can someone remove the watermark?
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-slate-500 transition-transform motion-reduce:transition-none" aria-hidden="true"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">The watermark is added as regular page content. It works as a visible label, not as tamper-proof protection, and someone with PDF editing software may be able to remove it.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+
+                <div class="md:col-span-1">
+                    <a href="../index.html" class="inline-flex items-center gap-2 mb-4 rounded-lg" aria-label="Filediter home">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-white">Filediter</span>
+                    </a>
+                    <p class="text-slate-400 text-xs max-w-sm mb-4 leading-relaxed">
+                        Free browser-based developer and media conversion utilities. Convert, compress, and edit files instantly with private, on-device processing.
+                    </p>
+                    <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                        Client-side processing, nothing uploaded
+                    </p>
+                </div>
+
+                <nav aria-label="Image tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Image Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-compressor.html" class="hover:text-white transition-colors">Image Compressor</a></li>
+                        <li><a href="image-editor.html" class="hover:text-white transition-colors">Image Editor</a></li>
+                        <li><a href="cam-ocr.html" class="hover:text-white transition-colors">OCR Text Extractor</a></li>
+                        <li><a href="cam-enhancer.html" class="hover:text-white transition-colors">Doc Enhancer</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="PDF tools">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">PDF Tools</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="image-to-pdf.html" class="hover:text-white transition-colors">Image to PDF Converter</a></li>
+                        <li><a href="pdf-to-image.html" class="hover:text-white transition-colors">PDF to Image Converter</a></li>
+                        <li><a href="pdf-merger.html" class="hover:text-white transition-colors">PDF Merger</a></li>
+                        <li><a href="esign-pdf.html" class="hover:text-white transition-colors">E-Sign PDF Pad</a></li>
+                        <li><a href="pdf-watermark.html" aria-current="page" class="text-brand-400 font-semibold">PDF Watermark</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Company">
+                    <h2 class="font-heading text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h2>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="../index.html#about" class="hover:text-white transition-colors">About Filediter</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© <span id="year">2026</span> Filediter. All rights reserved. Files are processed locally in your browser.</p>
+                <div class="flex items-center gap-4 text-slate-400 text-base">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Filediter on GitHub (opens in a new tab)" class="hover:text-slate-200 transition-colors p-1"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Filediter on X (opens in a new tab)" class="hover:text-slate-200 transition-colors p-1"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Filediter on Discord (opens in a new tab)" class="hover:text-slate-200 transition-colors p-1"><i class="fa-brands fa-discord" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (() => {
+        'use strict';
+
+        /* ---------- Constants ---------- */
+        const PDFJS_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+        const PDFJS_SRC = PDFJS_BASE + 'pdf.min.js';
+        const PDFJS_WORKER = PDFJS_BASE + 'pdf.worker.min.js';
+        const PDFLIB_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+
+        const MARGIN = 36;               // points between a corner-placed watermark and the page edge
+        const CAP_HEIGHT = 0.72;         // approx. cap height of standard PDF fonts as a fraction of font size
+        const MAX_PDF_BYTES = 150 * 1024 * 1024; // 150 MB guard against browser tab memory exhaustion
+        const MAX_IMG_BYTES = 25 * 1024 * 1024;  // 25 MB max logo file size
+        const MAX_CANVAS_DIM = 4096;     // max raster dimension for WebP conversion or high-DPI preview
+
+        const FONTS = {
+            Helvetica:  { css: 'Helvetica, Arial, sans-serif' },
+            TimesRoman: { css: '"Times New Roman", Times, serif' },
+            Courier:    { css: '"Courier New", Courier, monospace' }
+        };
+
+        const DEFAULTS = {
+            mode: 'text',
+            text: 'CONFIDENTIAL',
+            fontFamily: 'Helvetica',
+            bold: true,
+            color: '#dc2626',
+            fontSize: 36,
+            imageScale: 30,
+            position: 'center',
+            pagesMode: 'all',
+            customPages: '',
+            opacity: 40,
+            angle: -45
+        };
+
+        // Characters the built-in PDF fonts (WinAnsi) can encode
+        const UNSUPPORTED_TEXT = /[^\u0020-\u007E\u00A0-\u00FF\u2013\u2014\u2018\u2019\u201C\u201D\u2022\u2026\u20AC]/;
+
+        /* ---------- State & elements ---------- */
+        const $ = (id) => document.getElementById(id);
+        const els = {
+            pdfInput: $('pdfInput'),
+            dropZone: $('pdfDropZone'),
+            previewContainer: $('previewContainer'),
+            canvasStack: $('canvasStack'),
+            pdfCanvas: $('pdfCanvas'),
+            wmCanvas: $('wmCanvas'),
+            previewTools: $('previewTools'),
+            pageCounter: $('pageCounter'),
+            prevPage: $('prevPage'),
+            nextPage: $('nextPage'),
+            changeFile: $('changeFileBtn'),
+            controls: $('controls'),
+            resetBtn: $('resetSettingsBtn'),
+            textPanel: $('textControls'),
+            imagePanel: $('imageControls'),
+            textWarning: $('textWarning'),
+            imageInput: $('wmImageInput'),
+            imageName: $('imageName'),
+            wmPages: $('wmPages'),
+            customPagesWrap: $('customPagesWrap'),
+            wmCustomPages: $('wmCustomPages'),
+            download: $('downloadBtn'),
+            downloadIcon: $('downloadIcon'),
+            downloadLabel: $('downloadLabel'),
+            status: $('statusMsg'),
+            error: $('errorMsg')
+        };
+
+        const state = {
+            pdfBytes: null,
+            fileName: 'document',
+            pdfDoc: null,
+            page: 1,
+            mode: 'text',
+            image: null,
+            pageW: 0,
+            pageH: 0,
+            scale: 1,
+            renderToken: 0,
+            renderTask: null,
+            busy: false,
+            drawQueued: false
+        };
+
+        /* ---------- Helpers ---------- */
+        function showMessage(text, isError = false) {
+            els.status.textContent = isError ? '' : text;
+            els.error.textContent = isError ? text : '';
+        }
+
+        function friendlyError(err, fallback) {
+            if (err && err.friendly) return err.message;
+            if (err && (err.name === 'PasswordException' || /encrypt/i.test(err.message || ''))) {
+                return 'This PDF is password-protected or encrypted. Remove the password protection, then try again.';
+            }
+            if (err && err.name === 'InvalidPDFException') {
+                return 'This file does not look like a valid PDF.';
+            }
+            if (err && /WinAnsi|cannot encode/i.test(err.message || '')) {
+                return 'The text contains characters the built-in PDF fonts cannot encode (for example Arabic, Urdu, Chinese, or emoji). Use the Image Logo tab with an image of your text instead.';
+            }
+            return fallback;
+        }
+
+        function sanitizeFileName(name) {
+            const cleaned = (name || 'document')
+                .replace(/\.pdf$/i, '')
+                .replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
+                .trim();
+            return cleaned || 'document';
+        }
+
+        const libPromises = {};
+        function loadScript(key, src, isReady, integrity) {
+            if (isReady()) return Promise.resolve();
+            if (!libPromises[key]) {
+                libPromises[key] = new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.src = src;
+                    s.async = true;
+                    s.crossOrigin = 'anonymous';
+                    if (integrity) s.integrity = integrity;
+                    s.onload = resolve;
+                    s.onerror = () => {
+                        delete libPromises[key];
+                        s.remove();
+                        const e = new Error('Could not load a required PDF library. Check your internet connection and try again.');
+                        e.friendly = true;
+                        reject(e);
+                    };
+                    document.head.appendChild(s);
+                });
+            }
+            return libPromises[key];
+        }
+
+        const loadPdfJs = () => loadScript('pdfjs', PDFJS_SRC, () => window.pdfjsLib).then(() => {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+        });
+        const loadPdfLib = () => loadScript('pdflib', PDFLIB_SRC, () => window.PDFLib);
+
+        function setBusy(busy, label) {
+            state.busy = busy;
+            els.downloadLabel.textContent = label || 'Apply & Download Watermarked PDF';
+            els.downloadIcon.className = busy ? 'fa-solid fa-spinner fa-spin text-base' : 'fa-solid fa-download text-base';
+            els.download.disabled = busy || !state.pdfDoc;
+            els.download.setAttribute('aria-busy', String(busy));
+        }
+
+        function getSettings() {
+            return {
+                mode: state.mode,
+                text: $('wmText').value.trim(),
+                fontFamily: $('wmFont').value,
+                bold: $('wmBold').checked,
+                color: $('wmColor').value,
+                fontSize: Number($('wmFontSize').value),
+                imageScale: Number($('wmImageScale').value),
+                position: $('wmPosition').value,
+                pagesMode: els.wmPages.value,
+                customPages: els.wmCustomPages.value.trim(),
+                opacity: Number($('wmOpacity').value) / 100,
+                angle: Number($('wmAngle').value) // degrees, counter-clockwise
+            };
+        }
+
+        /**
+         * Parse custom page selection (1-based page numbers).
+         * Returns a Set of 1-based page indices. Throws a friendly error if invalid.
+         */
+        function resolveTargetPages(totalPages, currentPage, pagesMode, customRangeStr) {
+            if (pagesMode === 'all') {
+                const set = new Set();
+                for (let i = 1; i <= totalPages; i++) set.add(i);
+                return set;
+            }
+            if (pagesMode === 'current') {
+                return new Set([currentPage]);
+            }
+            // Custom range: e.g. "1-3, 5, 8-10"
+            if (!customRangeStr) {
+                const err = new Error(`Enter a page range between 1 and ${totalPages} (for example: 1-3, 5).`);
+                err.friendly = true;
+                throw err;
+            }
+            const set = new Set();
+            const parts = customRangeStr.split(',').map((s) => s.trim()).filter(Boolean);
+            for (const part of parts) {
+                const match = /^(\d+)(?:\s*-\s*(\d+))?$/.exec(part);
+                if (!match) {
+                    const err = new Error(`Invalid page range "${part}". Use numbers or ranges like 1-3, 5.`);
+                    err.friendly = true;
+                    throw err;
+                }
+                let start = Number(match[1]);
+                let end = match[2] !== undefined ? Number(match[2]) : start;
+                if (start > end) [start, end] = [end, start];
+                if (start < 1 || end > totalPages) {
+                    const err = new Error(`Page range "${part}" is out of bounds. This PDF has ${totalPages} page${totalPages === 1 ? '' : 's'}.`);
+                    err.friendly = true;
+                    throw err;
+                }
+                for (let p = start; p <= end; p++) set.add(p);
+            }
+            if (set.size === 0) {
+                const err = new Error('Select at least one valid page to watermark.');
+                err.friendly = true;
+                throw err;
+            }
+            return set;
+        }
+
+        /**
+         * Compute watermark center points in visual page coordinates (origin bottom-left, y up).
+         * Supports single positions ('center', 'top-left', 'top-right', 'bottom-left', 'bottom-right')
+         * as well as repeated 'tile' mode. Clamps corner positions so oversized watermarks stay on-page.
+         */
+        function computePlacements(pageW, pageH, boxW, boxH, angleDeg, position) {
+            const t = angleDeg * Math.PI / 180;
+            const c = Math.abs(Math.cos(t));
+            const s = Math.abs(Math.sin(t));
+            const bw = boxW * c + boxH * s;
+            const bh = boxW * s + boxH * c;
+
+            if (position === 'tile') {
+                const stepX = Math.max(bw + 72, pageW / 3, 140);
+                const stepY = Math.max(bh + 72, pageH / 4, 120);
+                const cols = Math.min(Math.max(Math.ceil(pageW / stepX) + 1, 2), 8);
+                const rows = Math.min(Math.max(Math.ceil(pageH / stepY) + 1, 2), 10);
+                const points = [];
+                const startX = pageW / 2 - ((cols - 1) * stepX) / 2;
+                const startY = pageH / 2 - ((rows - 1) * stepY) / 2;
+                for (let r = 0; r < rows; r++) {
+                    const rowOffset = (r % 2 === 1) ? stepX * 0.25 : -stepX * 0.25;
+                    for (let col = 0; col < cols; col++) {
+                        const cx = startX + col * stepX + rowOffset;
+                        const cy = startY + r * stepY;
+                        if (cx + bw / 2 > 0 && cx - bw / 2 < pageW && cy + bh / 2 > 0 && cy - bh / 2 < pageH) {
+                            points.push({ cx, cy });
+                        }
+                    }
+                }
+                return points.length ? points : [{ cx: pageW / 2, cy: pageH / 2 }];
+            }
+
+            let cx = pageW / 2;
+            let cy = pageH / 2;
+            const minX = Math.min(MARGIN + bw / 2, pageW / 2);
+            const maxX = Math.max(pageW - MARGIN - bw / 2, pageW / 2);
+            const minY = Math.min(MARGIN + bh / 2, pageH / 2);
+            const maxY = Math.max(pageH - MARGIN - bh / 2, pageH / 2);
+
+            if (position.includes('left')) cx = minX;
+            if (position.includes('right')) cx = maxX;
+            if (position.includes('top')) cy = maxY;
+            if (position.includes('bottom')) cy = minY;
+
+            return [{
+                cx: Math.min(Math.max(cx, minX), maxX),
+                cy: Math.min(Math.max(cy, minY), maxY)
+            }];
+        }
+
+        // Convert a point from visual page coordinates (after /Rotate) to the page's unrotated coordinate system
+        function visualToPage(vx, vy, rot, W, H) {
+            switch (rot) {
+                case 90:  return { x: W - vy, y: vx };
+                case 180: return { x: W - vx, y: H - vy };
+                case 270: return { x: vy, y: H - vx };
+                default:  return { x: vx, y: vy };
+            }
+        }
+
+        function hexToRgb(hex) {
+            return {
+                r: parseInt(hex.slice(1, 3), 16) / 255,
+                g: parseInt(hex.slice(3, 5), 16) / 255,
+                b: parseInt(hex.slice(5, 7), 16) / 255
+            };
+        }
+
+        /* ---------- Mode tabs & presets ---------- */
+        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        const presetBtns = Array.from(document.querySelectorAll('.preset-btn'));
+
+        function syncPresetButtons(currentText) {
+            const upper = currentText.trim();
+            presetBtns.forEach((btn) => {
+                const active = btn.dataset.preset === upper;
+                btn.setAttribute('aria-pressed', String(active));
+                btn.className = active
+                    ? 'preset-btn px-3 py-1.5 bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 rounded-lg text-xs font-semibold transition-colors'
+                    : 'preset-btn px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-transparent rounded-lg text-xs font-semibold transition-colors';
+            });
+        }
+
+        function setMode(mode, focus = false) {
+            state.mode = mode;
+            tabs.forEach((tab) => {
+                const on = tab.dataset.mode === mode;
+                tab.setAttribute('aria-selected', String(on));
+                tab.tabIndex = on ? 0 : -1;
+                if (on && focus) tab.focus();
+            });
+            els.textPanel.classList.toggle('hidden', mode !== 'text');
+            els.imagePanel.classList.toggle('hidden', mode !== 'image');
+            if (mode === 'image' && !state.image && state.pdfDoc) {
+                showMessage('Select a PNG, JPG, or WebP logo image to preview the watermark.');
+            } else if (mode === 'text' && els.status.textContent.includes('Select a PNG')) {
+                showMessage('');
+            }
+            scheduleDraw();
+        }
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => setMode(tab.dataset.mode));
+            tab.addEventListener('keydown', (e) => {
+                let next = null;
+                if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+                else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+                else if (e.key === 'Home') next = 0;
+                else if (e.key === 'End') next = tabs.length - 1;
+                if (next !== null) {
+                    e.preventDefault();
+                    setMode(tabs[next].dataset.mode, true);
+                }
+            });
+        });
+
+        /* ---------- Controls ---------- */
+        function syncRangeOutput(inputEl) {
+            if (!inputEl.dataset || !inputEl.dataset.out) return;
+            const outEl = $(inputEl.dataset.out);
+            if (outEl) outEl.textContent = inputEl.value;
+            const unit = inputEl.dataset.unit || '';
+            inputEl.setAttribute('aria-valuetext', `${inputEl.value}${unit}`);
+        }
+
+        els.controls.addEventListener('input', (e) => {
+            const t = e.target;
+            syncRangeOutput(t);
+            if (t.id === 'wmText') {
+                syncPresetButtons(t.value);
+                els.textWarning.textContent = UNSUPPORTED_TEXT.test(t.value)
+                    ? 'Some characters are not supported by the built-in PDF fonts and will block the download. Use the Image Logo tab for non-Latin scripts.'
+                    : '';
+            }
+            if (t.id === 'wmPages') {
+                els.customPagesWrap.classList.toggle('hidden', t.value !== 'custom');
+            }
+            scheduleDraw();
+        });
+
+        els.controls.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-preset]');
+            if (!btn) return;
+            const textInput = $('wmText');
+            textInput.value = btn.dataset.preset;
+            els.textWarning.textContent = '';
+            syncPresetButtons(textInput.value);
+            scheduleDraw();
+        });
+
+        els.resetBtn.addEventListener('click', () => {
+            $('wmText').value = DEFAULTS.text;
+            $('wmFont').value = DEFAULTS.fontFamily;
+            $('wmBold').checked = DEFAULTS.bold;
+            $('wmColor').value = DEFAULTS.color;
+            $('wmFontSize').value = String(DEFAULTS.fontSize);
+            $('wmImageScale').value = String(DEFAULTS.imageScale);$('wmPosition').value = DEFAULTS.position;
+            els.wmPages.value = DEFAULTS.pagesMode;
+            els.wmCustomPages.value = DEFAULTS.customPages;
+            els.customPagesWrap.classList.add('hidden');
+            $('wmOpacity').value = String(DEFAULTS.opacity);$('wmAngle').value = String(DEFAULTS.angle);
+
+            ['wmFontSize', 'wmImageScale', 'wmOpacity', 'wmAngle'].forEach((id) => syncRangeOutput($(id)));
+            els.textWarning.textContent = '';
+            syncPresetButtons(DEFAULTS.text);
+            setMode('text');
+            showMessage('');
+            scheduleDraw();
+        });
+
+        function scheduleDraw() {
+            if (state.drawQueued) return;
+            state.drawQueued = true;
+            requestAnimationFrame(() => {
+                state.drawQueued = false;
+                drawWatermark();
+            });
+        }
+
+        /* ---------- PDF loading ---------- */
+        async function handleFile(file) {
+            if (!file) return;
+            const isPdf = file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
+            if (!isPdf) {
+                showMessage('Please choose a valid PDF file.', true);
+                return;
+            }
+            if (file.size > MAX_PDF_BYTES) {
+                showMessage('This PDF exceeds 150 MB and may freeze your browser tab. Please choose a smaller PDF.', true);
+                return;
+            }
+
+            showMessage('Loading PDF…');
+            try {
+                await Promise.all([loadPdfJs(), loadPdfLib()]);
+                const buffer = await file.arrayBuffer();
+                const bytes = new Uint8Array(buffer);
+
+                // Validate upfront with pdf-lib so encrypted/restricted PDFs are caught immediately on upload
+                const testPdf = await window.PDFLib.PDFDocument.load(bytes, { updateMetadata: false });
+                if (testPdf.isEncrypted) {
+                    const err = new Error('This PDF is encrypted or has editing restrictions. Please remove password/security restrictions first.');
+                    err.friendly = true;
+                    throw err;
+                }
+
+                const doc = await window.pdfjsLib.getDocument({
+                    data: bytes.slice(0),
+                    cMapUrl: PDFJS_BASE + 'cmaps/',
+                    cMapPacked: true,
+                    standardFontDataUrl: PDFJS_BASE + 'standard_fonts/'
+                }).promise;
+
+                if (state.pdfDoc) state.pdfDoc.destroy();
+                state.pdfBytes = bytes;
+                state.pdfDoc = doc;
+                state.page = 1;
+                state.fileName = sanitizeFileName(file.name);
+
+                els.dropZone.classList.add('hidden');
+                els.previewContainer.classList.remove('hidden');
+                els.previewTools.classList.remove('hidden');
+                els.previewTools.classList.add('flex');
+                setBusy(false);
+
+                if (state.mode === 'image' && !state.image) {
+                    showMessage('PDF loaded. Now choose a watermark image in the Image Logo tab.');
+                } else {
+                    showMessage('');
+                }
+                await renderPage();
+            } catch (err) {
+                showMessage(friendlyError(err, 'Could not open this PDF. The file may be damaged or encrypted.'), true);
+            }
+        }
+
+        els.pdfInput.addEventListener('change', () => {
+            const file = els.pdfInput.files[0];
+            els.pdfInput.value = ''; // allow choosing the same file again
+            handleFile(file);
+        });
+        els.changeFile.addEventListener('click', () => els.pdfInput.click());
+
+        // Prevent accidental browser file navigation when dropping slightly outside the drop zone
+        window.addEventListener('dragover', (e) => e.preventDefault());
+        window.addEventListener('drop', (e) => e.preventDefault());
+
+        [els.dropZone, els.previewContainer].forEach((zone) => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('border-brand-500');
+            });
+            zone.addEventListener('dragleave', (e) => {
+                if (!zone.contains(e.relatedTarget)) {
+                    zone.classList.remove('border-brand-500');
+                }
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('border-brand-500');
+                const droppedFile = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+                if (droppedFile) handleFile(droppedFile);
+            });
+        });
+
+        els.prevPage.addEventListener('click', () => changePage(-1));
+        els.nextPage.addEventListener('click', () => changePage(1));
+        function changePage(dir) {
+            if (!state.pdfDoc) return;
+            const next = state.page + dir;
+            if (next >= 1 && next <= state.pdfDoc.numPages) {
+                state.page = next;
+                renderPage();
+            }
+        }
+
+        /* ---------- Preview rendering ---------- */
+        async function renderPage() {
+            if (!state.pdfDoc) return;
+            const token = ++state.renderToken;
+
+            if (state.renderTask) {
+                state.renderTask.cancel();
+                try { await state.renderTask.promise; } catch (e) { /* cancelled */ }
+                state.renderTask = null;
+            }
+            try {
+                const page = await state.pdfDoc.getPage(state.page);
+                if (token !== state.renderToken) return;
+
+                const base = page.getViewport({ scale: 1 });
+                const containerW = Math.max((els.previewContainer.clientWidth || 640) - 32, 260);
+                const maxDisplayH = 540;
+                const displayScale = Math.min(containerW / base.width, maxDisplayH / base.height, 1.35);
+                const displayW = Math.round(base.width * displayScale);
+
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                const maxSafeScale = Math.min(MAX_CANVAS_DIM / base.width, MAX_CANVAS_DIM / base.height);
+                const renderScale = Math.min(Math.max(displayScale * dpr, 1), maxSafeScale, 2.5);
+                const viewport = page.getViewport({ scale: renderScale });
+
+                state.pageW = base.width;
+                state.pageH = base.height;
+                state.scale = renderScale;
+
+                const { pdfCanvas, wmCanvas } = els;
+                pdfCanvas.width = wmCanvas.width = Math.ceil(viewport.width);
+                pdfCanvas.height = wmCanvas.height = Math.ceil(viewport.height);
+                els.canvasStack.style.width = `${displayW}px`;
+                els.canvasStack.style.maxWidth = '100%';
+
+                els.pageCounter.textContent = `Page ${state.page} of ${state.pdfDoc.numPages}`;
+                pdfCanvas.setAttribute('aria-label', `Preview of page ${state.page} of ${state.pdfDoc.numPages} with the watermark applied`);
+                els.prevPage.disabled = state.page <= 1;
+                els.nextPage.disabled = state.page >= state.pdfDoc.numPages;
+
+                state.renderTask = page.render({ canvasContext: pdfCanvas.getContext('2d'), viewport });
+                await state.renderTask.promise;
+                state.renderTask = null;
+                if (token !== state.renderToken) return;
+                drawWatermark();
+            } catch (err) {
+                if (err && err.name === 'RenderingCancelledException') return;
+                showMessage('Could not render this page preview.', true);
+            }
+        }
+
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            if (!state.pdfDoc) return;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => renderPage(), 180);
+        });
+
+        function drawWatermark() {
+            const canvas = els.wmCanvas;
+            const ctx = canvas.getContext('2d');
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!state.pdfDoc) return;
+
+            const o = getSettings();
+
+            // Check if current preview page is included in the selected target pages
+            try {
+                const targetSet = resolveTargetPages(state.pdfDoc.numPages, state.page, o.pagesMode, o.customPages);
+                if (!targetSet.has(state.page)) return;
+            } catch (e) {
+                // While user is still typing a custom range, keep showing preview on current page
+            }
+
+            const { pageW, pageH, scale } = state;
+
+            if (o.mode === 'text') {
+                if (!o.text) return;
+                ctx.save();
+                ctx.setTransform(scale, 0, 0, scale, 0, 0);
+                ctx.globalAlpha = o.opacity;
+                ctx.font = `${o.bold ? 'bold ' : ''}${o.fontSize}px ${FONTS[o.fontFamily].css}`;
+                const w = ctx.measureText(o.text).width;
+                const h = o.fontSize * CAP_HEIGHT;
+                const placements = computePlacements(pageW, pageH, w, h, o.angle, o.position);
+
+                ctx.fillStyle = o.color;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'alphabetic';
+
+                for (const { cx, cy } of placements) {
+                    ctx.save();
+                    ctx.translate(cx, pageH - cy);
+                    ctx.rotate(-o.angle * Math.PI / 180);
+                    ctx.fillText(o.text, 0, h / 2);
+                    ctx.restore();
+                }
+                ctx.restore();
+            } else if (state.image) {
+                const img = state.image.el;
+                const w = pageW * o.imageScale / 100;
+                const h = w * img.naturalHeight / img.naturalWidth;
+                const placements = computePlacements(pageW, pageH, w, h, o.angle, o.position);
+
+                ctx.save();
+                ctx.setTransform(scale, 0, 0, scale, 0, 0);
+                ctx.globalAlpha = o.opacity;
+                for (const { cx, cy } of placements) {
+                    ctx.save();
+                    ctx.translate(cx, pageH - cy);
+                    ctx.rotate(-o.angle * Math.PI / 180);
+                    ctx.drawImage(img, -w / 2, -h / 2, w, h);
+                    ctx.restore();
+                }
+                ctx.restore();
+            }
+        }
+
+        /* ---------- Watermark image ---------- */
+        els.imageInput.addEventListener('change', async () => {
+            const file = els.imageInput.files[0];
+            els.imageInput.value = ''; // allow re-selecting the same image file
+            if (!file) return;
+            if (!/^image\/(png|jpeg|webp)$/.test(file.type)) {
+                showMessage('Please choose a PNG, JPG, or WebP image.', true);
+                return;
+            }
+            if (file.size > MAX_IMG_BYTES) {
+                showMessage('Watermark image is too large (max 25 MB). Please choose a smaller image.', true);
+                return;
+            }
+
+            let url = null;
+            try {
+                const bytes = await file.arrayBuffer();
+                url = URL.createObjectURL(new Blob([bytes], { type: file.type }));
+                const el = new Image();
+                await new Promise((resolve, reject) => {
+                    el.onload = resolve;
+                    el.onerror = reject;
+                    el.src = url;
+                });
+                if (!el.naturalWidth || !el.naturalHeight) throw new Error('Invalid image dimensions');
+                state.image = { el, bytes, type: file.type };
+                els.imageName.textContent = `Selected: ${file.name} (${el.naturalWidth}×${el.naturalHeight} px)`;
+                showMessage('');
+                scheduleDraw();
+            } catch (err) {
+                state.image = null;
+                els.imageName.textContent = '';
+                showMessage('Could not read that image. Try a different PNG, JPG, or WebP file.', true);
+            } finally {
+                if (url) URL.revokeObjectURL(url);
+            }
+        });
+
+        async function embedWatermarkImage(pdf) {
+            const { bytes, type, el } = state.image;
+            if (type === 'image/png') return pdf.embedPng(bytes);
+            if (type === 'image/jpeg') return pdf.embedJpg(bytes);
+            // WebP: rasterize to PNG first (capped to MAX_CANVAS_DIM to prevent canvas memory errors)
+            const ratio = Math.min(1, MAX_CANVAS_DIM / el.naturalWidth, MAX_CANVAS_DIM / el.naturalHeight);
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.max(1, Math.round(el.naturalWidth * ratio));
+            canvas.height = Math.max(1, Math.round(el.naturalHeight * ratio));
+            canvas.getContext('2d').drawImage(el, 0, 0, canvas.width, canvas.height);
+            const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+            if (!blob) throw new Error('Could not convert WebP watermark image.');
+            return pdf.embedPng(await blob.arrayBuffer());
+        }
+
+        /* ---------- Export ---------- */
+        els.download.addEventListener('click', applyAndDownload);
+
+        async function applyAndDownload() {
+            if (!state.pdfBytes || state.busy) return;
+            const o = getSettings();
+            if (o.mode === 'text' && !o.text) {
+                showMessage('Enter the watermark text first.', true);
+                return;
+            }
+            if (o.mode === 'image' && !state.image) {
+                showMessage('Choose a watermark image first.', true);
+                return;
+            }
+
+            let targetPages;
+            try {
+                targetPages = resolveTargetPages(state.pdfDoc.numPages, state.page, o.pagesMode, o.customPages);
+            } catch (err) {
+                showMessage(friendlyError(err, 'Invalid page range.'), true);
+                return;
+            }
+
+            setBusy(true, 'Processing…');
+            showMessage('Applying watermark…');
+            try {
+                await loadPdfLib();
+                const { PDFDocument, StandardFonts, rgb, degrees } = window.PDFLib;
+                const pdf = await PDFDocument.load(state.pdfBytes.slice(0));
+
+                // Embed the font or image once and reuse it across all targeted pages
+                let font = null;
+                let embedded = null;
+                let color = null;
+                if (o.mode === 'text') {
+                    font = await pdf.embedFont(StandardFonts[o.fontFamily + (o.bold ? 'Bold' : '')]);
+                    const c = hexToRgb(o.color);
+                    color = rgb(c.r, c.g, c.b);
+                } else {
+                    embedded = await embedWatermarkImage(pdf);
+                }
+
+                const pages = pdf.getPages();
+                const total = pages.length;
+                const t = o.angle * Math.PI / 180;
+                const cosT = Math.cos(t);
+                const sinT = Math.sin(t);
+
+                for (let idx = 0; idx < total; idx++) {
+                    const pageNum = idx + 1;
+                    if (!targetPages.has(pageNum)) continue;
+
+                    // Yield periodically on multi-page PDFs to keep UI responsive
+                    if (idx > 0 && idx % 15 === 0) {
+                        showMessage(`Applying watermark (page ${pageNum} of ${total})…`);
+                        await new Promise((r) => setTimeout(r, 0));
+                    }
+
+                    const page = pages[idx];
+                    const box = page.getCropBox();
+                    const rot = ((page.getRotation().angle % 360) + 360) % 360;
+                    const swap = rot === 90 || rot === 270;
+                    const visW = swap ? box.height : box.width;
+                    const visH = swap ? box.width : box.height;
+
+                    let w, h, offX, offY;
+                    if (font) {
+                        w = font.widthOfTextAtSize(o.text, o.fontSize);
+                        h = o.fontSize * CAP_HEIGHT;
+                        offX = w / 2;
+                        offY = h / 2; // origin = baseline-left
+                    } else {
+                        w = visW * o.imageScale / 100;
+                        h = w * embedded.height / embedded.width;
+                        offX = w / 2;
+                        offY = h / 2; // origin = bottom-left
+                    }
+
+                    const placements = computePlacements(visW, visH, w, h, o.angle, o.position);
+
+                    for (const { cx, cy } of placements) {
+                        const vx = cx - (offX * cosT - offY * sinT);
+                        const vy = cy - (offX * sinT + offY * cosT);
+                        const p = visualToPage(vx, vy, rot, box.width, box.height);
+
+                        const common = {
+                            x: box.x + p.x,
+                            y: box.y + p.y,
+                            opacity: o.opacity,
+                            rotate: degrees(o.angle + rot)
+                        };
+                        if (font) {
+                            page.drawText(o.text, { ...common, font, size: o.fontSize, color });
+                        } else {
+                            page.drawImage(embedded, { ...common, width: w, height: h });
+                        }
+                    }
+                }
+
+                const out = await pdf.save();
+                downloadBlob(new Blob([out], { type: 'application/pdf' }), `${state.fileName}-watermarked.pdf`);
+                showMessage('Done. Your watermarked PDF has been downloaded.');
+            } catch (err) {
+                showMessage(friendlyError(err, 'Something went wrong while creating the PDF. Please try again.'), true);
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
+        }
+
+        /* ---------- Theme ---------- */
+        const themeToggle = $('themeToggle');
+        const themeIcon = $('themeIcon');
+        function syncThemeButton() {
+            const dark = document.documentElement.classList.contains('dark');
+            themeToggle.setAttribute('aria-pressed', String(dark));
+            themeIcon.className = dark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+        themeToggle.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) { /* storage unavailable */ }
+            syncThemeButton();
+        });
+        syncThemeButton();
+
+        $('year').textContent = new Date().getFullYear();
+    })();
+    </script>
+</body>
+</html>
