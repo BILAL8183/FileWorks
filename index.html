@@ -15,14 +15,12 @@
 <meta property="og:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://filediter.com/">
-<!-- Add a 1200x630 image named og-image.png to your project root -->
-<meta property="og:image" content="https://filediter.com/og-image.png">
-<meta property="og:image:alt" content="Filediter free online PDF, image and text utilities">
+<!-- When /og-image.png is deployed and verified, add og:image (1200x630) metadata here. -->
 
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filediter – Free Online PDF, Image, Text &amp; File Tools">
 <meta name="twitter:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more.">
-<meta name="twitter:image" content="https://filediter.com/og-image.png">
+<!-- Add twitter:image after a real, publicly accessible social preview image is deployed. -->
 
 <script type="application/ld+json">
 {
@@ -57,16 +55,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Asynchronous Google Fonts loading (non-blocking) -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"></noscript>
-
-<!-- Asynchronous FontAwesome loading (non-blocking) -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+<!-- Load critical site styles and icon CSS before the initial render to reduce layout changes. -->
 <link rel="stylesheet" href="tailwind.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- display=optional prioritizes stable text layout over late web-font swapping. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=optional">
 <style>
 section[id]{scroll-margin-top:6rem}
+/* Stabilize icon width even if the external icon font loads later. */
+.fa-solid{display:inline-block;width:1.25em;text-align:center;vertical-align:middle}
 :focus-visible{outline:2px solid #2563eb;outline-offset:3px}
 summary::-webkit-details-marker{display:none}
 input[type="search"]::-webkit-search-cancel-button{display:none}
@@ -94,11 +92,11 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="Main">
     <div class="relative group py-2">
      <button id="toolsTrigger" type="button" aria-expanded="false" aria-controls="navTools" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Tools <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
-     <div id="navTools" class="absolute top-full left-0 w-72 max-h-80 overflow-y-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200"></div>
+     <div id="navTools" aria-label="Tool shortcuts" class="absolute top-full left-0 w-72 max-h-80 overflow-y-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200"></div>
     </div>
     <div class="relative group py-2">
      <button id="solutionsTrigger" type="button" aria-expanded="false" aria-controls="navSolutions" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Solutions <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
-     <div id="navSolutions" class="absolute top-full left-0 w-60 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200 text-xs font-medium space-y-1">
+     <div id="navSolutions" aria-label="Solutions" class="absolute top-full left-0 w-60 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200 text-xs font-medium space-y-1">
       <a href="#tools" data-cat="developer" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Developers</a>
       <a href="#tools" data-cat="pdf" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Students &amp; Professionals</a>
       <a href="#tools" data-cat="seo" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Marketers</a>
@@ -178,7 +176,7 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
     <input id="searchInput" type="search" aria-label="Search tools" placeholder="Search tools (e.g. pdf merge, compress, ocr, color)…" class="w-full pl-11 pr-12 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 text-base sm:text-lg shadow-md shadow-slate-200/50 dark:shadow-none">
     <button id="clearSearch" type="button" aria-label="Clear search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-2xl leading-none px-1">&times;</button>
    </div>
-   <div id="cats" class="flex flex-wrap items-center justify-center gap-2 mt-8" role="group" aria-label="Filter tools by category"></div>
+   <div id="cats" class="category-filters flex flex-wrap items-center justify-center gap-2 mt-8" role="group" aria-label="Filter tools by category"></div>
   </div>
  </section>
 
@@ -202,7 +200,7 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
  </section>
 
  <!-- Tools -->
- <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+ <section id="tools" tabindex="-1" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
   <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
    <div>
     <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">All Utility Tools</h2>
@@ -212,7 +210,7 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
   </div>
   <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   <noscript><ul class="grid sm:grid-cols-2 gap-2 text-brand-600 underline">
-   <li><a href="/tools/url-encoder.html">URL Encoder / Decoder</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/color-picker.html">Color Picker</a></li><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/image-editor.html">Image Editor</a></li><li><a href="/tools/cam-ocr.html">OCR Text Extractor</a></li><li><a href="/tools/cam-enhancer.html">Doc Enhancer</a></li><li><a href="/tools/esign-pdf.html">E-Sign PDF</a></li><li><a href="/tools/pdf-merger.html">PDF Merger</a></li><li><a href="/tools/pdf-watermark.html">PDF Watermark</a></li><li><a href="/tools/image-to-pdf.html">Image to PDF</a></li><li><a href="/tools/pdf-to-image.html">PDF to Image</a></li><li><a href="/tools/pdf-extractor.html">PDF Extractor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/pdf-to-word.html">PDF to Word</a></li><li><a href="/tools/image-converter.html">JPG PNG WebP Converter</a></li><li><a href="/tools/passport-photo-maker.html">Passport Photo Maker</a></li><li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li>
+   <li><a href="/tools/url-encoder">URL Encoder / Decoder</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/color-picker">Color Picker</a></li><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/image-editor">Image Editor</a></li><li><a href="/tools/cam-ocr">OCR Text Extractor</a></li><li><a href="/tools/cam-enhancer">Doc Enhancer</a></li><li><a href="/tools/esign-pdf">E-Sign PDF</a></li><li><a href="/tools/pdf-merger">PDF Merger</a></li><li><a href="/tools/pdf-watermark">PDF Watermark</a></li><li><a href="/tools/image-to-pdf">Image to PDF</a></li><li><a href="/tools/pdf-to-image">PDF to Image</a></li><li><a href="/tools/pdf-extractor">PDF Extractor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/pdf-to-word">PDF to Word</a></li><li><a href="/tools/image-converter">JPG PNG WebP Converter</a></li><li><a href="/tools/passport-photo-maker">Passport Photo Maker</a></li><li><a href="/tools/pdf-splitter">PDF Splitter</a></li>
   </ul></noscript>
   <div id="noResults" class="hidden text-center py-16">
    <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto text-slate-400 text-2xl mb-4 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -333,7 +331,7 @@ const T=[
 ['passport-photo-maker','Passport Photo Maker','Create 35x45 mm and 2x2 inch photo prints with precise crop controls.','id-card','violet','image','passport photo 2x2 35x45 id'],
 ['pdf-splitter','PDF Splitter','Extract PDF pages or split PDFs into separate files.','scissors','emerald','pdf converter','split pdf extract pages'],
 ['pdf-extractor','PDF Extractor','Extract pages, embedded images or raw text from a PDF.','boxes-packing','rose','pdf','split extract pages']
-].map(([id,title,desc,icon,color,cat,kw])=>({id,title,desc,icon,color,cat,kw,url:`/tools/${id}.html`,hay:`${title} ${desc} ${cat} ${kw}`.toLowerCase()}));
+].map(([id,title,desc,icon,color,cat,kw])=>({id,title,desc,icon,color,cat,kw,url:`/tools/${id}`,hay:`${title} ${desc} ${cat} ${kw}`.toLowerCase()}));
 
 const CATS=[['all','All Tools'],['developer','Developer'],['seo','SEO & Content'],['pdf','PDF'],['image','Images & Media'],['text','Text']];
 const PRINCIPLES=[['Simplicity','Useful tools should be straightforward, focused and easy to understand.','brand'],['Privacy','Tools are designed with privacy-conscious, browser-based workflows where processing can happen locally on your device.','emerald'],['Practicality','Every tool should solve a clear, useful digital task.','purple'],['Continuous improvement','Filediter is an evolving toolkit with new utilities added over time.','amber']];
@@ -345,7 +343,7 @@ const FAQ=[
 ['How do I find a tool quickly?','Use the search bar, press Ctrl K (⌘K on Mac) to open the command palette, or filter by category.'],
 ['Are there file size limits?','File size limits can vary by tool and depend on your browser, device memory and the way the tool processes your file. Check the individual tool for details.'],
 ['Can I save my favorite tools?','Yes. Click the star on any tool card, then open your saved list from the star button in the header.'],
-['How do I request a new tool?','Use the Contact link in the footer to send suggestions or feature requests.']
+['How do I request a new tool?','Visit the Contact page in the footer to find our support email and send suggestions or feature requests.']
 ];
 const COLORS={brand:'bg-blue-50 dark:bg-blue-950/50 text-brand-600 border-blue-100 dark:border-blue-900',emerald:'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 border-emerald-100 dark:border-emerald-900',purple:'bg-purple-50 dark:bg-purple-950/50 text-purple-600 border-purple-100 dark:border-purple-900',amber:'bg-amber-50 dark:bg-amber-950/50 text-amber-600 border-amber-100 dark:border-amber-900'};
 
@@ -411,6 +409,10 @@ dropdowns.forEach(({trigger,menu})=>{
     }
   });
   menu.addEventListener('click',closeDropdowns);
+  // Close on Escape with focus restored to the triggering button.
+  menu.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){e.preventDefault();closeDropdowns();trigger.focus()}
+  });
 });
 document.addEventListener('click',e=>{
   if(!e.target.closest('#toolsTrigger,#navTools,#solutionsTrigger,#navSolutions'))closeDropdowns();
