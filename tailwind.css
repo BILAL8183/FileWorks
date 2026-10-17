@@ -388,7 +388,7 @@ input:where([type='button'], [type='reset'], [type='submit']),
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 @layer properties;
 :root, :host {
-  --font-sans: Inter, sans-serif;
+  --font-sans: Inter, Arial, sans-serif;
   --default-font-family: var(--font-sans);
   --color-red-50: oklch(97.1% 0.013 17.38);
   --color-red-100: oklch(93.6% 0.032 17.717);
@@ -519,7 +519,7 @@ input:where([type='button'], [type='reset'], [type='submit']),
   --blur-3xl: 64px;
   --default-transition-duration: 150ms;
   --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --font-heading: Outfit, sans-serif;
+  --font-heading: Outfit, Arial, sans-serif;
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
   --color-brand-200: #bfdbfe;
@@ -2496,3 +2496,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     }
   }
 }
+
+/* Filediter homepage layout-stability enhancements.
+   Keep custom overrides after the Tailwind-generated utilities. */
+@media (max-width: 639px) {
+  .category-filters { min-height: 5.5rem; }
+}
+@media (min-width: 640px) {
+  .category-filters { min-height: 2.5rem; }
+}
+/* An invisible external icon font should never collapse an icon's width. */
+.tool-icon .fa-solid { min-width: 1.25em; text-align: center; }
