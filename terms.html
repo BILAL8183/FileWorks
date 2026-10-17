@@ -4,575 +4,143 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Filediter – Free Online PDF, Image, Text &amp; File Tools</title>
+    <!-- Apply saved/system theme before first paint (prevents a white flash in dark mode) -->
 
-<meta name="description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser.">
+    <script>
 
-<meta name="robots" content="index, follow, max-image-preview:large">
+        (function () {
 
-<meta name="theme-color" content="#2563eb">
+            var t = null;
 
-<link rel="canonical" href="https://filediter.com/">
+            try { t = localStorage.getItem('theme'); } catch (e) {}
 
-<link rel="icon" type="image/png" href="/tools/logo.png">
+            if (t !== 'dark' && t !== 'light') {
 
+                t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-<meta property="og:site_name" content="Filediter">
+            }
 
-<meta property="og:title" content="Filediter – Free Online PDF, Image, Text & File Tools">
+            document.documentElement.classList.toggle('dark', t === 'dark');
 
-<meta property="og:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser.">
+        })();
 
-<meta property="og:type" content="website">
+    </script>
 
-<meta property="og:url" content="https://filediter.com/">
+    <!-- SEO -->
 
-<!-- Add a 1200x630 image named og-image.png to your project root -->
+    <title>Terms of Service | Filediter</title>
 
-<meta property="og:image" content="https://filediter.com/og-image.png">
-<meta property="og:image:alt" content="Filediter free online PDF, image and text utilities">
+    <meta name="description" content="Read the Filediter Terms of Service: the rules and conditions for using our browser-based file tools, your content, acceptable use, and liability.">
 
-<meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
-<meta name="twitter:title" content="Filediter – Free Online PDF, Image, Text & File Tools">
+    <link rel="canonical" href="https://filediter.com/terms.html">
 
-<meta name="twitter:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more.">
+    <meta name="theme-color" content="#2563eb">
 
-<meta name="twitter:image" content="https://filediter.com/og-image.png">
+    <link rel="icon" type="image/png" href="/tools/logo.png">
 
+    <!-- Open Graph -->
 
-<script type="application/ld+json">
+    <meta property="og:type" content="website">
 
-{
+    <meta property="og:site_name" content="Filediter">
 
-  "@context": "https://schema.org",
+    <meta property="og:locale" content="en_US">
 
-  "@graph": [
+    <meta property="og:title" content="Terms of Service | Filediter">
+
+    <meta property="og:description" content="The rules and conditions for using Filediter's browser-based file tools and website.">
+
+    <meta property="og:url" content="https://filediter.com/terms.html">
+
+    <!-- Confirm /og-image.png is published, ideally 1200x630. -->
+
+    <meta property="og:image" content="https://filediter.com/og-image.png">
+    <meta property="og:image:alt" content="Filediter online PDF, image and document tools">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Terms of Service | Filediter">
+
+    <meta name="twitter:description" content="The rules and conditions for using Filediter's browser-based file tools and website.">
+
+    <meta name="twitter:image" content="https://filediter.com/og-image.png">
+
+    <!-- Structured data -->
+
+    <script type="application/ld+json">
 
     {
 
-      "@type": "WebSite",
+        "@context": "https://schema.org",
 
-      "name": "Filediter",
+        "@graph": [
 
-      "url": "https://filediter.com/",
+            {
 
-      "description": "Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser."
+                "@type": "WebPage",
 
-    },
+                "@id": "https://filediter.com/terms.html#webpage",
 
-    {
+                "url": "https://filediter.com/terms.html",
 
-      "@type": "WebApplication",
+                "name": "Terms of Service",
 
-      "name": "Filediter",
+                "description": "The rules and conditions governing use of Filediter's browser-based file utilities and website.",
 
-      "url": "https://filediter.com/",
+                "inLanguage": "en",
 
-      "applicationCategory": "UtilitiesApplication",
+                "dateModified": "2026-10-04",
 
-      "operatingSystem": "Any (web browser)",
+                "isPartOf": { "@type": "WebSite", "name": "Filediter", "url": "https://filediter.com/" }
 
-      "offers": {
+            },
 
-        "@type": "Offer",
+            {
 
-        "price": "0",
+                "@type": "BreadcrumbList",
 
-        "priceCurrency": "USD"
+                "itemListElement": [
 
-      }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filediter.com/" },
+
+                    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://filediter.com/terms.html" }
+
+                ]
+
+            }
+
+        ]
 
     }
 
-  ]
+    </script>
 
-}
+    <!-- Fonts & icons -->
 
-</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Apply saved theme before paint (prevents white flash) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script>try{var t=localStorage.theme;if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-
-<!-- Compiled Tailwind CSS embedded below so only this index.html file is required. -->
-<style id="compiled-tailwind">/* Tailwind v4 compiled locally for Filediter: no Tailwind CDN or extra CSS file needed. */
-/*
-  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-  2. Remove default margins and padding
-  3. Reset all borders.
-*/
-
-*,
-::after,
-::before,
-::backdrop,
-::file-selector-button {
-  box-sizing: border-box; /* 1 */
-  margin: 0; /* 2 */
-  padding: 0; /* 2 */
-  border: 0 solid; /* 3 */
-}
-
-/*
-  1. Use a consistent sensible line-height in all browsers.
-  2. Prevent adjustments of font size after orientation changes in iOS.
-  3. Use a more readable tab size.
-  4. Use the user's configured `sans` font-family by default.
-  5. Use the user's configured `sans` font-feature-settings by default.
-  6. Use the user's configured `sans` font-variation-settings by default.
-  7. Disable tap highlights on iOS.
-*/
-
-html,
-:host {
-  line-height: 1.5; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  tab-size: 4; /* 3 */
-  font-family: --theme(
-    --default-font-family,
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji'
-  ); /* 4 */
-  font-feature-settings: --theme(--default-font-feature-settings, normal); /* 5 */
-  font-variation-settings: --theme(--default-font-variation-settings, normal); /* 6 */
-  -webkit-tap-highlight-color: transparent; /* 7 */
-}
-
-/*
-  1. Add the correct height in Firefox.
-  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-  3. Reset the default border style to a 1px solid border.
-*/
-
-hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
-  border-top-width: 1px; /* 3 */
-}
-
-/*
-  Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
-}
-
-/*
-  Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-  Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  -webkit-text-decoration: inherit;
-  text-decoration: inherit;
-}
-
-/*
-  Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-  1. Use the user's configured `mono` font-family by default.
-  2. Use the user's configured `mono` font-feature-settings by default.
-  3. Use the user's configured `mono` font-variation-settings by default.
-  4. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: --theme(
-    --default-mono-font-family,
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Liberation Mono',
-    'Courier New',
-    monospace
-  ); /* 1 */
-  font-feature-settings: --theme(--default-mono-font-feature-settings, normal); /* 2 */
-  font-variation-settings: --theme(--default-mono-font-variation-settings, normal); /* 3 */
-  font-size: 1em; /* 4 */
-}
-
-/*
-  Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-  3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border-collapse: collapse; /* 3 */
-}
-
-/*
-  Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-  Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-  Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-  Make lists unstyled by default.
-*/
-
-ol,
-ul,
-menu {
-  list-style: none;
-}
-
-/*
-  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-      This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
-}
-
-/*
-  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/*
-  1. Inherit font styles in all browsers.
-  2. Remove border radius in all browsers.
-  3. Remove background color in all browsers.
-  4. Ensure consistent opacity for disabled states in all browsers.
-*/
-
-button,
-input,
-select,
-optgroup,
-textarea,
-::file-selector-button {
-  font: inherit; /* 1 */
-  font-feature-settings: inherit; /* 1 */
-  font-variation-settings: inherit; /* 1 */
-  letter-spacing: inherit; /* 1 */
-  color: inherit; /* 1 */
-  border-radius: 0; /* 2 */
-  background-color: transparent; /* 3 */
-  opacity: 1; /* 4 */
-}
-
-/*
-  Restore default font weight.
-*/
-
-:where(select:is([multiple], [size])) optgroup {
-  font-weight: bolder;
-}
-
-/*
-  Restore indentation.
-*/
-
-:where(select:is([multiple], [size])) optgroup option {
-  padding-inline-start: 20px;
-}
-
-/*
-  Restore space after button.
-*/
-
-::file-selector-button {
-  margin-inline-end: 4px;
-}
-
-/*
-  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-*/
-
-::placeholder {
-  opacity: 1;
-}
-
-/*
-  Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not
-  crash when using `color-mix(…)` with `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)
-*/
-
-@supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or
-  (contain-intrinsic-size: 1px) /* Safari 17+ */ {
-  ::placeholder {
-    color: color-mix(in oklab, currentcolor 50%, transparent);
-  }
-}
-
-/*
-  Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-  Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-  1. Ensure date/time inputs have the same height when empty in iOS Safari.
-  2. Ensure text alignment can be changed on date/time inputs in iOS Safari.
-*/
-
-::-webkit-date-and-time-value {
-  min-height: 1lh; /* 1 */
-  text-align: inherit; /* 2 */
-}
-
-/*
-  Prevent height from changing on date/time inputs in macOS Safari when the input is set to `display: block`.
-*/
-
-::-webkit-datetime-edit {
-  display: inline-flex;
-}
-
-/*
-  Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.
-*/
-
-::-webkit-datetime-edit-fields-wrapper {
-  padding: 0;
-}
-
-::-webkit-datetime-edit,
-::-webkit-datetime-edit-year-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-minute-field,
-::-webkit-datetime-edit-second-field,
-::-webkit-datetime-edit-millisecond-field,
-::-webkit-datetime-edit-meridiem-field {
-  padding-block: 0;
-}
-
-/*
-  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-  Correct the inability to style the border radius in iOS Safari.
-*/
-
-button,
-input:where([type='button'], [type='reset'], [type='submit']),
-::file-selector-button {
-  appearance: button;
-}
-
-/*
-  Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-  Make elements with the HTML hidden attribute stay hidden by default.
-*/
-
-[hidden]:where(:not([hidden='until-found'])) {
-  display: none !important;
-}
-
+    <!-- Compiled styles: no Tailwind Play CDN required. -->
+    <style>
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 @layer properties;
+@layer theme, base, components, utilities;
 :root, :host {
-  --font-sans: Inter, sans-serif;
-  --color-red-50: oklch(97.1% 0.013 17.38);
-  --color-red-100: oklch(93.6% 0.032 17.717);
-  --color-red-600: oklch(57.7% 0.245 27.325);
-  --color-red-900: oklch(39.6% 0.141 25.723);
-  --color-red-950: oklch(25.8% 0.092 26.042);
-  --color-orange-50: oklch(98% 0.016 73.684);
-  --color-orange-100: oklch(95.4% 0.038 75.164);
-  --color-orange-600: oklch(64.6% 0.222 41.116);
-  --color-orange-900: oklch(40.8% 0.123 38.172);
-  --color-orange-950: oklch(26.6% 0.079 36.259);
-  --color-amber-50: oklch(98.7% 0.022 95.277);
-  --color-amber-100: oklch(96.2% 0.059 95.617);
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
   --color-amber-400: oklch(82.8% 0.189 84.429);
-  --color-amber-500: oklch(76.9% 0.188 70.08);
-  --color-amber-600: oklch(66.6% 0.179 58.318);
-  --color-amber-900: oklch(41.4% 0.112 45.904);
-  --color-amber-950: oklch(27.9% 0.077 45.635);
-  --color-emerald-50: oklch(97.9% 0.021 166.113);
-  --color-emerald-100: oklch(95% 0.052 163.051);
-  --color-emerald-500: oklch(69.6% 0.17 162.48);
-  --color-emerald-600: oklch(59.6% 0.145 163.225);
-  --color-emerald-900: oklch(37.8% 0.077 168.94);
-  --color-emerald-950: oklch(26.2% 0.051 172.552);
-  --color-teal-50: oklch(98.4% 0.014 180.72);
-  --color-teal-100: oklch(95.3% 0.051 180.801);
-  --color-teal-600: oklch(60% 0.118 184.704);
-  --color-teal-900: oklch(38.6% 0.063 188.416);
-  --color-teal-950: oklch(27.7% 0.046 192.524);
-  --color-cyan-50: oklch(98.4% 0.019 200.873);
-  --color-cyan-100: oklch(95.6% 0.045 203.388);
-  --color-cyan-500: oklch(71.5% 0.143 215.221);
-  --color-cyan-600: oklch(60.9% 0.126 221.723);
-  --color-cyan-900: oklch(39.8% 0.07 227.392);
-  --color-cyan-950: oklch(30.2% 0.056 229.695);
-  --color-sky-50: oklch(97.7% 0.013 236.62);
-  --color-sky-100: oklch(95.1% 0.026 236.824);
-  --color-sky-600: oklch(58.8% 0.158 241.966);
-  --color-sky-900: oklch(39.1% 0.09 240.876);
-  --color-sky-950: oklch(29.3% 0.066 243.157);
-  --color-blue-50: oklch(97% 0.014 254.604);
-  --color-blue-100: oklch(93.2% 0.032 255.585);
-  --color-blue-600: oklch(54.6% 0.245 262.881);
-  --color-blue-900: oklch(37.9% 0.146 265.522);
-  --color-blue-950: oklch(28.2% 0.091 267.935);
-  --color-indigo-50: oklch(96.2% 0.018 272.314);
-  --color-indigo-100: oklch(93% 0.034 272.788);
-  --color-indigo-500: oklch(58.5% 0.233 277.117);
-  --color-indigo-600: oklch(51.1% 0.262 276.966);
-  --color-indigo-900: oklch(35.9% 0.144 278.697);
-  --color-indigo-950: oklch(25.7% 0.09 281.288);
-  --color-violet-50: oklch(96.9% 0.016 293.756);
-  --color-violet-100: oklch(94.3% 0.029 294.588);
-  --color-violet-500: oklch(60.6% 0.25 292.717);
-  --color-violet-600: oklch(54.1% 0.281 293.009);
-  --color-violet-900: oklch(38% 0.189 293.745);
-  --color-violet-950: oklch(28.3% 0.141 291.089);
-  --color-purple-50: oklch(97.7% 0.014 308.299);
-  --color-purple-100: oklch(94.6% 0.033 307.174);
-  --color-purple-600: oklch(55.8% 0.288 302.321);
-  --color-purple-900: oklch(38.1% 0.176 304.987);
-  --color-purple-950: oklch(29.1% 0.149 302.717);
-  --color-pink-50: oklch(97.1% 0.014 343.198);
-  --color-pink-100: oklch(94.8% 0.028 342.258);
-  --color-pink-600: oklch(59.2% 0.249 0.584);
-  --color-pink-900: oklch(40.8% 0.153 2.432);
-  --color-pink-950: oklch(28.4% 0.109 3.907);
-  --color-rose-50: oklch(96.9% 0.015 12.422);
-  --color-rose-100: oklch(94.1% 0.03 12.58);
-  --color-rose-600: oklch(58.6% 0.253 17.585);
-  --color-rose-900: oklch(41% 0.159 10.272);
-  --color-rose-950: oklch(27.1% 0.105 12.094);
   --color-slate-50: oklch(98.4% 0.003 247.858);
   --color-slate-100: oklch(96.8% 0.007 247.896);
   --color-slate-200: oklch(92.9% 0.013 255.508);
@@ -586,12 +154,8 @@ input:where([type='button'], [type='reset'], [type='submit']),
   --color-white: #fff;
   --spacing: 0.25rem;
   --container-sm: 24rem;
-  --container-lg: 32rem;
-  --container-xl: 36rem;
   --container-2xl: 42rem;
-  --container-3xl: 48rem;
   --container-4xl: 56rem;
-  --container-5xl: 64rem;
   --container-7xl: 80rem;
   --text-xs: 0.75rem;
   --text-xs--line-height: calc(1 / 0.75);
@@ -611,46 +175,179 @@ input:where([type='button'], [type='reset'], [type='submit']),
   --text-4xl--line-height: calc(2.5 / 2.25);
   --text-5xl: 3rem;
   --text-5xl--line-height: 1;
-  --text-6xl: 3.75rem;
-  --text-6xl--line-height: 1;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --tracking-tight: -0.025em;
   --tracking-wider: 0.05em;
-  --tracking-widest: 0.1em;
   --leading-relaxed: 1.625;
+  --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
-  --radius-3xl: 1.5rem;
-  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --blur-sm: 8px;
   --blur-md: 12px;
-  --blur-3xl: 64px;
   --default-transition-duration: 150ms;
   --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --font-heading: Outfit, sans-serif;
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
   --color-brand-300: #93c5fd;
   --color-brand-400: #60a5fa;
   --color-brand-500: #3b82f6;
   --color-brand-600: #2563eb;
   --color-brand-700: #1d4ed8;
-  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
   --color-brand-950: #172554;
+  --color-night-900: #0b1220;
+  --color-night-800: #111a2e;
+  --color-night-700: #172033;
 }
-.pointer-events-none {
-  pointer-events: none;
-}
-.invisible {
-  visibility: hidden;
-}
-.visible {
-  visibility: visible;
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
 }
 .sr-only {
   position: absolute;
@@ -663,95 +360,38 @@ input:where([type='button'], [type='reset'], [type='submit']),
   white-space: nowrap;
   border-width: 0;
 }
-.absolute {
-  position: absolute;
-}
-.fixed {
-  position: fixed;
-}
-.relative {
-  position: relative;
-}
 .sticky {
   position: sticky;
-}
-.inset-0 {
-  inset: calc(var(--spacing) * 0);
-}
-.-top-1 {
-  top: calc(var(--spacing) * -1);
 }
 .top-0 {
   top: calc(var(--spacing) * 0);
 }
-.top-1\/2 {
-  top: calc(1/2 * 100%);
-}
-.top-1\/4 {
-  top: calc(1/4 * 100%);
-}
-.top-full {
-  top: 100%;
-}
-.-right-1 {
-  right: calc(var(--spacing) * -1);
-}
-.-right-10 {
-  right: calc(var(--spacing) * -10);
-}
-.right-4 {
-  right: calc(var(--spacing) * 4);
-}
-.-bottom-10 {
-  bottom: calc(var(--spacing) * -10);
-}
-.left-0 {
-  left: calc(var(--spacing) * 0);
-}
-.left-1\/2 {
-  left: calc(1/2 * 100%);
-}
-.left-4 {
-  left: calc(var(--spacing) * 4);
-}
-.z-10 {
-  z-index: 10;
+.top-24 {
+  top: calc(var(--spacing) * 24);
 }
 .z-40 {
   z-index: 40;
 }
-.z-50 {
-  z-index: 50;
-}
 .mx-auto {
   margin-inline: auto;
 }
-.mt-1 {
-  margin-top: calc(var(--spacing) * 1);
-}
-.mt-1\.5 {
-  margin-top: calc(var(--spacing) * 1.5);
+.my-3 {
+  margin-block: calc(var(--spacing) * 3);
 }
 .mt-2 {
   margin-top: calc(var(--spacing) * 2);
 }
-.mt-3 {
-  margin-top: calc(var(--spacing) * 3);
+.mt-4 {
+  margin-top: calc(var(--spacing) * 4);
 }
-.mt-8 {
-  margin-top: calc(var(--spacing) * 8);
+.mt-16 {
+  margin-top: calc(var(--spacing) * 16);
 }
-.mt-auto {
-  margin-top: auto;
+.mr-1\.5 {
+  margin-right: calc(var(--spacing) * 1.5);
 }
 .mr-2 {
   margin-right: calc(var(--spacing) * 2);
-}
-.mb-1 {
-  margin-bottom: calc(var(--spacing) * 1);
-}
-.mb-2 {
-  margin-bottom: calc(var(--spacing) * 2);
 }
 .mb-3 {
   margin-bottom: calc(var(--spacing) * 3);
@@ -765,15 +405,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .mb-8 {
   margin-bottom: calc(var(--spacing) * 8);
 }
-.mb-10 {
-  margin-bottom: calc(var(--spacing) * 10);
-}
-.mb-12 {
-  margin-bottom: calc(var(--spacing) * 12);
-}
-.ml-1\.5 {
-  margin-left: calc(var(--spacing) * 1.5);
-}
 .block {
   display: block;
 }
@@ -786,17 +417,17 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .hidden {
   display: none;
 }
+.inline-block {
+  display: inline-block;
+}
 .inline-flex {
   display: inline-flex;
 }
-.h-2 {
-  height: calc(var(--spacing) * 2);
-}
-.h-4 {
-  height: calc(var(--spacing) * 4);
-}
 .h-8 {
   height: calc(var(--spacing) * 8);
+}
+.h-9 {
+  height: calc(var(--spacing) * 9);
 }
 .h-10 {
   height: calc(var(--spacing) * 10);
@@ -807,29 +438,17 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .h-16 {
   height: calc(var(--spacing) * 16);
 }
-.h-20 {
-  height: calc(var(--spacing) * 20);
-}
-.h-60 {
-  height: calc(var(--spacing) * 60);
-}
-.h-\[300px\] {
-  height: 300px;
-}
-.max-h-80 {
-  max-height: calc(var(--spacing) * 80);
-}
-.max-h-96 {
-  max-height: calc(var(--spacing) * 96);
+.max-h-\[calc\(100vh-220px\)\] {
+  max-height: calc(100vh - 220px);
 }
 .min-h-screen {
   min-height: 100vh;
 }
-.w-2 {
-  width: calc(var(--spacing) * 2);
-}
 .w-8 {
   width: calc(var(--spacing) * 8);
+}
+.w-9 {
+  width: calc(var(--spacing) * 9);
 }
 .w-10 {
   width: calc(var(--spacing) * 10);
@@ -837,50 +456,20 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .w-12 {
   width: calc(var(--spacing) * 12);
 }
-.w-16 {
-  width: calc(var(--spacing) * 16);
-}
-.w-60 {
-  width: calc(var(--spacing) * 60);
-}
-.w-72 {
-  width: calc(var(--spacing) * 72);
-}
-.w-\[600px\] {
-  width: 600px;
-}
 .w-full {
   width: 100%;
 }
 .max-w-2xl {
   max-width: var(--container-2xl);
 }
-.max-w-3xl {
-  max-width: var(--container-3xl);
-}
 .max-w-4xl {
   max-width: var(--container-4xl);
-}
-.max-w-5xl {
-  max-width: var(--container-5xl);
 }
 .max-w-7xl {
   max-width: var(--container-7xl);
 }
-.max-w-lg {
-  max-width: var(--container-lg);
-}
 .max-w-sm {
   max-width: var(--container-sm);
-}
-.max-w-xl {
-  max-width: var(--container-xl);
-}
-.min-w-0 {
-  min-width: calc(var(--spacing) * 0);
-}
-.min-w-4 {
-  min-width: calc(var(--spacing) * 4);
 }
 .shrink-0 {
   flex-shrink: 0;
@@ -888,34 +477,20 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .flex-grow {
   flex-grow: 1;
 }
-.-translate-x-1\/2 {
-  --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-  translate: var(--tw-translate-x) var(--tw-translate-y);
-}
-.-translate-y-1\/2 {
-  --tw-translate-y: calc(calc(1/2 * 100%) * -1);
-  translate: var(--tw-translate-x) var(--tw-translate-y);
-}
-.animate-pulse {
-  animation: var(--animate-pulse);
-}
 .cursor-pointer {
   cursor: pointer;
 }
-.list-none {
-  list-style-type: none;
+.scroll-mt-24 {
+  scroll-margin-top: calc(var(--spacing) * 24);
+}
+.list-disc {
+  list-style-type: disc;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .flex-col {
   flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
 }
 .items-center {
   align-items: center;
@@ -929,32 +504,30 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .justify-center {
   justify-content: center;
 }
-.gap-1\.5 {
-  gap: calc(var(--spacing) * 1.5);
-}
 .gap-2 {
   gap: calc(var(--spacing) * 2);
-}
-.gap-3 {
-  gap: calc(var(--spacing) * 3);
 }
 .gap-4 {
   gap: calc(var(--spacing) * 4);
 }
-.gap-6 {
-  gap: calc(var(--spacing) * 6);
-}
-.gap-7 {
-  gap: calc(var(--spacing) * 7);
-}
 .gap-8 {
   gap: calc(var(--spacing) * 8);
+}
+.gap-10 {
+  gap: calc(var(--spacing) * 10);
 }
 .space-y-1 {
   :where(& > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-1\.5 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
   }
 }
 .space-y-2 {
@@ -964,27 +537,54 @@ input:where([type='button'], [type='reset'], [type='submit']),
     margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
   }
 }
-.space-y-2\.5 {
+.space-y-4 {
   :where(& > :not(:last-child)) {
     --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
 }
-.space-y-3 {
+.space-y-10 {
   :where(& > :not(:last-child)) {
     --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
   }
 }
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.space-y-12 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+  }
 }
-.overflow-hidden {
-  overflow: hidden;
+.space-x-2 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-4 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-6 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+.space-x-8 {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));
+  }
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -992,20 +592,20 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .scroll-smooth {
   scroll-behavior: smooth;
 }
-.rounded {
-  border-radius: 0.25rem;
+.\!rounded-2xl {
+  border-radius: var(--radius-2xl) !important;
 }
 .rounded-2xl {
   border-radius: var(--radius-2xl);
-}
-.rounded-3xl {
-  border-radius: var(--radius-3xl);
 }
 .rounded-full {
   border-radius: calc(infinity * 1px);
 }
 .rounded-lg {
   border-radius: var(--radius-lg);
+}
+.rounded-md {
+  border-radius: var(--radius-md);
 }
 .rounded-xl {
   border-radius: var(--radius-xl);
@@ -1022,44 +622,8 @@ input:where([type='button'], [type='reset'], [type='submit']),
   border-bottom-style: var(--tw-border-style);
   border-bottom-width: 1px;
 }
-.border-amber-100 {
-  border-color: var(--color-amber-100);
-}
-.border-blue-100 {
-  border-color: var(--color-blue-100);
-}
-.border-brand-200 {
-  border-color: var(--color-brand-200);
-}
-.border-brand-600 {
-  border-color: var(--color-brand-600);
-}
-.border-cyan-100 {
-  border-color: var(--color-cyan-100);
-}
-.border-emerald-100 {
-  border-color: var(--color-emerald-100);
-}
-.border-indigo-100 {
-  border-color: var(--color-indigo-100);
-}
-.border-orange-100 {
-  border-color: var(--color-orange-100);
-}
-.border-pink-100 {
-  border-color: var(--color-pink-100);
-}
-.border-purple-100 {
-  border-color: var(--color-purple-100);
-}
-.border-red-100 {
-  border-color: var(--color-red-100);
-}
-.border-rose-100 {
-  border-color: var(--color-rose-100);
-}
-.border-sky-100 {
-  border-color: var(--color-sky-100);
+.border-brand-100 {
+  border-color: var(--color-brand-100);
 }
 .border-slate-100 {
   border-color: var(--color-slate-100);
@@ -1067,86 +631,17 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .border-slate-200 {
   border-color: var(--color-slate-200);
 }
-.border-teal-100 {
-  border-color: var(--color-teal-100);
-}
-.border-violet-100 {
-  border-color: var(--color-violet-100);
-}
-.bg-amber-50 {
-  background-color: var(--color-amber-50);
-}
-.bg-blue-50 {
-  background-color: var(--color-blue-50);
-}
 .bg-brand-50 {
   background-color: var(--color-brand-50);
 }
-.bg-brand-500\/10 {
-  background-color: color-mix(in srgb, #3b82f6 10%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-brand-500) 10%, transparent);
-  }
-}
-.bg-brand-500\/20 {
-  background-color: color-mix(in srgb, #3b82f6 20%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-brand-500) 20%, transparent);
-  }
+.bg-brand-100 {
+  background-color: var(--color-brand-100);
 }
 .bg-brand-600 {
   background-color: var(--color-brand-600);
 }
-.bg-cyan-50 {
-  background-color: var(--color-cyan-50);
-}
-.bg-emerald-50 {
-  background-color: var(--color-emerald-50);
-}
-.bg-indigo-50 {
-  background-color: var(--color-indigo-50);
-}
-.bg-orange-50 {
-  background-color: var(--color-orange-50);
-}
-.bg-pink-50 {
-  background-color: var(--color-pink-50);
-}
-.bg-purple-50 {
-  background-color: var(--color-purple-50);
-}
-.bg-red-50 {
-  background-color: var(--color-red-50);
-}
-.bg-rose-50 {
-  background-color: var(--color-rose-50);
-}
-.bg-sky-50 {
-  background-color: var(--color-sky-50);
-}
 .bg-slate-50 {
   background-color: var(--color-slate-50);
-}
-.bg-slate-100 {
-  background-color: var(--color-slate-100);
-}
-.bg-slate-900 {
-  background-color: var(--color-slate-900);
-}
-.bg-slate-900\/60 {
-  background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 60%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-slate-900) 60%, transparent);
-  }
-}
-.bg-teal-50 {
-  background-color: var(--color-teal-50);
-}
-.bg-transparent {
-  background-color: transparent;
-}
-.bg-violet-50 {
-  background-color: var(--color-violet-50);
 }
 .bg-white {
   background-color: var(--color-white);
@@ -1161,81 +656,22 @@ input:where([type='button'], [type='reset'], [type='submit']),
   --tw-gradient-position: to bottom in oklab;
   background-image: linear-gradient(var(--tw-gradient-stops));
 }
-.bg-gradient-to-r {
-  --tw-gradient-position: to right in oklab;
-  background-image: linear-gradient(var(--tw-gradient-stops));
-}
-.bg-gradient-to-tr {
-  --tw-gradient-position: to top right in oklab;
-  background-image: linear-gradient(var(--tw-gradient-stops));
-}
-.from-blue-50\/60 {
-  --tw-gradient-from: color-mix(in srgb, oklch(97% 0.014 254.604) 60%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    --tw-gradient-from: color-mix(in oklab, var(--color-blue-50) 60%, transparent);
-  }
+.from-white {
+  --tw-gradient-from: var(--color-white);
   --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
 }
-.from-brand-600 {
-  --tw-gradient-from: var(--color-brand-600);
+.to-slate-100 {
+  --tw-gradient-to: var(--color-slate-100);
   --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
 }
-.via-indigo-600 {
-  --tw-gradient-via: var(--color-indigo-600);
-  --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-via-stops);
+.\!p-6 {
+  padding: calc(var(--spacing) * 6) !important;
 }
-.to-cyan-600 {
-  --tw-gradient-to: var(--color-cyan-600);
-  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-}
-.to-indigo-500 {
-  --tw-gradient-to: var(--color-indigo-500);
-  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-}
-.to-indigo-600 {
-  --tw-gradient-to: var(--color-indigo-600);
-  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-}
-.to-slate-50 {
-  --tw-gradient-to: var(--color-slate-50);
-  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-}
-.bg-clip-text {
-  background-clip: text;
-}
-.p-2 {
-  padding: calc(var(--spacing) * 2);
-}
-.p-2\.5 {
-  padding: calc(var(--spacing) * 2.5);
-}
-.p-3 {
-  padding: calc(var(--spacing) * 3);
-}
-.p-4 {
-  padding: calc(var(--spacing) * 4);
-}
-.p-5 {
-  padding: calc(var(--spacing) * 5);
+.p-1 {
+  padding: calc(var(--spacing) * 1);
 }
 .p-6 {
   padding: calc(var(--spacing) * 6);
-}
-.p-8 {
-  padding: calc(var(--spacing) * 8);
-}
-.p-10 {
-  padding: calc(var(--spacing) * 10);
-}
-.px-1 {
-  padding-inline: calc(var(--spacing) * 1);
-}
-.px-1\.5 {
-  padding-inline: calc(var(--spacing) * 1.5);
-}
-.px-2 {
-  padding-inline: calc(var(--spacing) * 2);
 }
 .px-3 {
   padding-inline: calc(var(--spacing) * 3);
@@ -1246,8 +682,8 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .px-4 {
   padding-inline: calc(var(--spacing) * 4);
 }
-.px-8 {
-  padding-inline: calc(var(--spacing) * 8);
+.px-5 {
+  padding-inline: calc(var(--spacing) * 5);
 }
 .py-0\.5 {
   padding-block: calc(var(--spacing) * 0.5);
@@ -1258,80 +694,45 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .py-1\.5 {
   padding-block: calc(var(--spacing) * 1.5);
 }
-.py-2 {
-  padding-block: calc(var(--spacing) * 2);
-}
 .py-2\.5 {
   padding-block: calc(var(--spacing) * 2.5);
 }
-.py-4 {
-  padding-block: calc(var(--spacing) * 4);
-}
-.py-6 {
-  padding-block: calc(var(--spacing) * 6);
-}
-.py-8 {
-  padding-block: calc(var(--spacing) * 8);
+.py-10 {
+  padding-block: calc(var(--spacing) * 10);
 }
 .py-12 {
   padding-block: calc(var(--spacing) * 12);
 }
-.py-16 {
-  padding-block: calc(var(--spacing) * 16);
-}
-.py-20 {
-  padding-block: calc(var(--spacing) * 20);
-}
 .pt-2 {
   padding-top: calc(var(--spacing) * 2);
 }
-.pt-3 {
-  padding-top: calc(var(--spacing) * 3);
+.pt-4 {
+  padding-top: calc(var(--spacing) * 4);
 }
 .pt-8 {
   padding-top: calc(var(--spacing) * 8);
 }
-.pt-16 {
-  padding-top: calc(var(--spacing) * 16);
+.pr-2 {
+  padding-right: calc(var(--spacing) * 2);
 }
-.pt-20 {
-  padding-top: calc(var(--spacing) * 20);
+.pb-4 {
+  padding-bottom: calc(var(--spacing) * 4);
 }
-.pr-12 {
-  padding-right: calc(var(--spacing) * 12);
+.pl-5 {
+  padding-left: calc(var(--spacing) * 5);
 }
-.pb-6 {
-  padding-bottom: calc(var(--spacing) * 6);
-}
-.pb-16 {
-  padding-bottom: calc(var(--spacing) * 16);
-}
-.pl-11 {
-  padding-left: calc(var(--spacing) * 11);
+.pl-6 {
+  padding-left: calc(var(--spacing) * 6);
 }
 .text-center {
   text-align: center;
 }
-.text-left {
-  text-align: left;
-}
-.font-heading {
-  font-family: var(--font-heading);
-}
 .font-sans {
   font-family: var(--font-sans);
-}
-.text-2xl {
-  font-size: var(--text-2xl);
-  line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 .text-3xl {
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
-}
-.text-4xl {
-  font-size: var(--text-4xl);
-  line-height: var(--tw-leading, var(--text-4xl--line-height));
 }
 .text-base {
   font-size: var(--text-base);
@@ -1352,17 +753,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .text-xs {
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));
-}
-.text-\[10px\] {
-  font-size: 10px;
-}
-.leading-\[1\.15\] {
-  --tw-leading: 1.15;
-  line-height: 1.15;
-}
-.leading-none {
-  --tw-leading: 1;
-  line-height: 1;
 }
 .leading-relaxed {
   --tw-leading: var(--leading-relaxed);
@@ -1392,75 +782,17 @@ input:where([type='button'], [type='reset'], [type='submit']),
   --tw-tracking: var(--tracking-wider);
   letter-spacing: var(--tracking-wider);
 }
-.tracking-widest {
-  --tw-tracking: var(--tracking-widest);
-  letter-spacing: var(--tracking-widest);
+.break-all {
+  word-break: break-all;
 }
 .text-amber-400 {
   color: var(--color-amber-400);
-}
-.text-amber-500 {
-  color: var(--color-amber-500);
-}
-.text-amber-600 {
-  color: var(--color-amber-600);
-}
-.text-blue-600 {
-  color: var(--color-blue-600);
-}
-.text-brand-100 {
-  color: var(--color-brand-100);
-}
-.text-brand-400 {
-  color: var(--color-brand-400);
-}
-.text-brand-500 {
-  color: var(--color-brand-500);
 }
 .text-brand-600 {
   color: var(--color-brand-600);
 }
 .text-brand-700 {
   color: var(--color-brand-700);
-}
-.text-cyan-500 {
-  color: var(--color-cyan-500);
-}
-.text-cyan-600 {
-  color: var(--color-cyan-600);
-}
-.text-emerald-500 {
-  color: var(--color-emerald-500);
-}
-.text-emerald-600 {
-  color: var(--color-emerald-600);
-}
-.text-indigo-600 {
-  color: var(--color-indigo-600);
-}
-.text-orange-600 {
-  color: var(--color-orange-600);
-}
-.text-pink-600 {
-  color: var(--color-pink-600);
-}
-.text-purple-600 {
-  color: var(--color-purple-600);
-}
-.text-red-600 {
-  color: var(--color-red-600);
-}
-.text-rose-600 {
-  color: var(--color-rose-600);
-}
-.text-sky-600 {
-  color: var(--color-sky-600);
-}
-.text-slate-300 {
-  color: var(--color-slate-300);
-}
-.text-slate-400 {
-  color: var(--color-slate-400);
 }
 .text-slate-500 {
   color: var(--color-slate-500);
@@ -1477,96 +809,28 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .text-slate-900 {
   color: var(--color-slate-900);
 }
-.text-teal-600 {
-  color: var(--color-teal-600);
-}
-.text-transparent {
-  color: transparent;
-}
-.text-violet-500 {
-  color: var(--color-violet-500);
-}
-.text-violet-600 {
-  color: var(--color-violet-600);
-}
 .text-white {
   color: var(--color-white);
 }
 .uppercase {
   text-transform: uppercase;
 }
-.underline {
-  text-decoration-line: underline;
-}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.placeholder-slate-400 {
-  &::placeholder {
-    color: var(--color-slate-400);
-  }
-}
-.opacity-0 {
-  opacity: 0%;
-}
-.opacity-100 {
-  opacity: 100%;
-}
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 .shadow-sm {
   --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.shadow-brand-500\/25 {
-  --tw-shadow-color: color-mix(in srgb, #3b82f6 25%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-brand-500) 25%, transparent) var(--tw-shadow-alpha), transparent);
-  }
-}
-.shadow-slate-200\/50 {
-  --tw-shadow-color: color-mix(in srgb, oklch(92.9% 0.013 255.508) 50%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-slate-200) 50%, transparent) var(--tw-shadow-alpha), transparent);
-  }
-}
-.blur-3xl {
-  --tw-blur: blur(var(--blur-3xl));
-  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-}
-.blur-\[120px\] {
-  --tw-blur: blur(120px);
-  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-}
 .backdrop-blur-md {
   --tw-backdrop-blur: blur(var(--blur-md));
   -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-}
-.backdrop-blur-sm {
-  --tw-backdrop-blur: blur(var(--blur-sm));
-  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-}
-.transition-all {
-  transition-property: all;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
 .transition-colors {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -1578,43 +842,9 @@ input:where([type='button'], [type='reset'], [type='submit']),
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
-.duration-200 {
-  --tw-duration: 200ms;
-  transition-duration: 200ms;
-}
-.duration-300 {
-  --tw-duration: 300ms;
-  transition-duration: 300ms;
-}
-.group-hover\:scale-105 {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      --tw-scale-x: 105%;
-      --tw-scale-y: 105%;
-      --tw-scale-z: 105%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-}
-.group-hover\:bg-brand-600 {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      background-color: var(--color-brand-600);
-    }
-  }
-}
-.group-hover\:text-brand-600 {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      color: var(--color-brand-600);
-    }
-  }
-}
-.group-hover\:text-white {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      color: var(--color-white);
-    }
+.group-open\:rotate-180 {
+  &:is(:where(.group):is([open], :popover-open, :open) *) {
+    rotate: 180deg;
   }
 }
 .selection\:bg-brand-500 {
@@ -1631,14 +861,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
   }
   &::selection {
     color: var(--color-white);
-  }
-}
-.hover\:-translate-y-1 {
-  &:hover {
-    @media (hover: hover) {
-      --tw-translate-y: calc(var(--spacing) * -1);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
   }
 }
 .hover\:border-brand-500 {
@@ -1662,45 +884,17 @@ input:where([type='button'], [type='reset'], [type='submit']),
     }
   }
 }
-.hover\:bg-slate-50 {
+.hover\:text-brand-700 {
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-slate-50);
+      color: var(--color-brand-700);
     }
   }
 }
-.hover\:bg-slate-100 {
+.hover\:text-slate-900 {
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-slate-100);
-    }
-  }
-}
-.hover\:bg-slate-200 {
-  &:hover {
-    @media (hover: hover) {
-      background-color: var(--color-slate-200);
-    }
-  }
-}
-.hover\:text-amber-500 {
-  &:hover {
-    @media (hover: hover) {
-      color: var(--color-amber-500);
-    }
-  }
-}
-.hover\:text-brand-600 {
-  &:hover {
-    @media (hover: hover) {
-      color: var(--color-brand-600);
-    }
-  }
-}
-.hover\:text-slate-700 {
-  &:hover {
-    @media (hover: hover) {
-      color: var(--color-slate-700);
+      color: var(--color-slate-900);
     }
   }
 }
@@ -1708,14 +902,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
   &:hover {
     @media (hover: hover) {
       text-decoration-line: underline;
-    }
-  }
-}
-.hover\:shadow-xl {
-  &:hover {
-    @media (hover: hover) {
-      --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
 }
@@ -1736,14 +922,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     position: fixed;
   }
 }
-.focus\:top-2 {
+.focus\:top-3 {
   &:focus {
-    top: calc(var(--spacing) * 2);
+    top: calc(var(--spacing) * 3);
   }
 }
-.focus\:left-2 {
+.focus\:left-3 {
   &:focus {
-    left: calc(var(--spacing) * 2);
+    left: calc(var(--spacing) * 3);
   }
 }
 .focus\:z-50 {
@@ -1776,15 +962,10 @@ input:where([type='button'], [type='reset'], [type='submit']),
     color: var(--color-brand-700);
   }
 }
-.focus\:ring-2 {
+.focus\:shadow-md {
   &:focus {
-    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-}
-.focus\:ring-brand-500 {
-  &:focus {
-    --tw-ring-color: var(--color-brand-500);
   }
 }
 .focus\:outline-none {
@@ -1793,14 +974,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     outline-style: none;
   }
 }
+.sm\:mt-0 {
+  @media (width >= 40rem) {
+    margin-top: calc(var(--spacing) * 0);
+  }
+}
 .sm\:grid-cols-2 {
   @media (width >= 40rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.sm\:grid-cols-3 {
-  @media (width >= 40rem) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 .sm\:flex-row {
@@ -1813,25 +994,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     align-items: center;
   }
 }
-.sm\:p-12 {
+.sm\:p-10 {
   @media (width >= 40rem) {
-    padding: calc(var(--spacing) * 12);
-  }
-}
-.sm\:p-14 {
-  @media (width >= 40rem) {
-    padding: calc(var(--spacing) * 14);
+    padding: calc(var(--spacing) * 10);
   }
 }
 .sm\:px-6 {
   @media (width >= 40rem) {
     padding-inline: calc(var(--spacing) * 6);
-  }
-}
-.sm\:text-3xl {
-  @media (width >= 40rem) {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
 }
 .sm\:text-4xl {
@@ -1840,28 +1010,10 @@ input:where([type='button'], [type='reset'], [type='submit']),
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
 }
-.sm\:text-5xl {
-  @media (width >= 40rem) {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-}
-.sm\:text-base {
-  @media (width >= 40rem) {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-}
 .sm\:text-lg {
   @media (width >= 40rem) {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-}
-.sm\:text-xl {
-  @media (width >= 40rem) {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
 }
 .md\:col-span-2 {
@@ -1879,44 +1031,50 @@ input:where([type='button'], [type='reset'], [type='submit']),
     display: none;
   }
 }
-.md\:grid-cols-2 {
-  @media (width >= 48rem) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.md\:grid-cols-3 {
-  @media (width >= 48rem) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 .md\:grid-cols-4 {
   @media (width >= 48rem) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-.md\:grid-cols-6 {
+.md\:gap-6 {
   @media (width >= 48rem) {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 6);
   }
 }
-.md\:pt-24 {
+.md\:py-16 {
   @media (width >= 48rem) {
-    padding-top: calc(var(--spacing) * 24);
+    padding-block: calc(var(--spacing) * 16);
   }
 }
-.md\:pb-20 {
+.md\:text-5xl {
   @media (width >= 48rem) {
-    padding-bottom: calc(var(--spacing) * 20);
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
 }
-.lg\:grid-cols-3 {
+.lg\:col-span-4 {
   @media (width >= 64rem) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: span 4 / span 4;
   }
 }
-.lg\:grid-cols-4 {
+.lg\:col-span-8 {
   @media (width >= 64rem) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-column: span 8 / span 8;
+  }
+}
+.lg\:block {
+  @media (width >= 64rem) {
+    display: block;
+  }
+}
+.lg\:hidden {
+  @media (width >= 64rem) {
+    display: none;
+  }
+}
+.lg\:grid-cols-12 {
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 }
 .lg\:px-8 {
@@ -1924,10 +1082,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     padding-inline: calc(var(--spacing) * 8);
   }
 }
-.lg\:text-6xl {
-  @media (width >= 64rem) {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
+.xl\:col-span-3 {
+  @media (width >= 80rem) {
+    grid-column: span 3 / span 3;
+  }
+}
+.xl\:col-span-9 {
+  @media (width >= 80rem) {
+    grid-column: span 9 / span 9;
   }
 }
 .dark\:hidden {
@@ -1935,74 +1097,14 @@ input:where([type='button'], [type='reset'], [type='submit']),
     display: none;
   }
 }
-.dark\:inline {
+.dark\:inline-block {
   &:where(.dark, .dark *) {
-    display: inline;
+    display: inline-block;
   }
 }
-.dark\:border-amber-900 {
+.dark\:border-brand-900 {
   &:where(.dark, .dark *) {
-    border-color: var(--color-amber-900);
-  }
-}
-.dark\:border-blue-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-blue-900);
-  }
-}
-.dark\:border-brand-800 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-brand-800);
-  }
-}
-.dark\:border-cyan-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-cyan-900);
-  }
-}
-.dark\:border-emerald-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-emerald-900);
-  }
-}
-.dark\:border-indigo-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-indigo-900);
-  }
-}
-.dark\:border-orange-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-orange-900);
-  }
-}
-.dark\:border-pink-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-pink-900);
-  }
-}
-.dark\:border-purple-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-purple-900);
-  }
-}
-.dark\:border-red-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-red-900);
-  }
-}
-.dark\:border-rose-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-rose-900);
-  }
-}
-.dark\:border-sky-900 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-sky-900);
-  }
-}
-.dark\:border-slate-700 {
-  &:where(.dark, .dark *) {
-    border-color: var(--color-slate-700);
+    border-color: var(--color-brand-900);
   }
 }
 .dark\:border-slate-800 {
@@ -2010,179 +1112,43 @@ input:where([type='button'], [type='reset'], [type='submit']),
     border-color: var(--color-slate-800);
   }
 }
-.dark\:border-teal-900 {
+.dark\:bg-brand-900 {
   &:where(.dark, .dark *) {
-    border-color: var(--color-teal-900);
+    background-color: var(--color-brand-900);
   }
 }
-.dark\:border-violet-900 {
+.dark\:bg-brand-950 {
   &:where(.dark, .dark *) {
-    border-color: var(--color-violet-900);
+    background-color: var(--color-brand-950);
   }
 }
-.dark\:bg-amber-950\/50 {
+.dark\:bg-night-800 {
   &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(27.9% 0.077 45.635) 50%, transparent);
+    background-color: var(--color-night-800);
+  }
+}
+.dark\:bg-night-800\/90 {
+  &:where(.dark, .dark *) {
+    background-color: color-mix(in srgb, #111a2e 90%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-amber-950) 50%, transparent);
+      background-color: color-mix(in oklab, var(--color-night-800) 90%, transparent);
     }
   }
 }
-.dark\:bg-blue-950\/50 {
+.dark\:bg-night-900 {
   &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(28.2% 0.091 267.935) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-blue-950) 50%, transparent);
-    }
+    background-color: var(--color-night-900);
   }
 }
-.dark\:bg-brand-950\/50 {
+.dark\:from-night-800 {
   &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, #172554 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-brand-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-cyan-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(30.2% 0.056 229.695) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-cyan-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-emerald-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(26.2% 0.051 172.552) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-emerald-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-indigo-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(25.7% 0.09 281.288) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-indigo-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-orange-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(26.6% 0.079 36.259) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-orange-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-pink-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(28.4% 0.109 3.907) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-pink-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-purple-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(29.1% 0.149 302.717) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-purple-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-red-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(25.8% 0.092 26.042) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-red-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-rose-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(27.1% 0.105 12.094) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-rose-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-sky-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(29.3% 0.066 243.157) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-sky-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-slate-700 {
-  &:where(.dark, .dark *) {
-    background-color: var(--color-slate-700);
-  }
-}
-.dark\:bg-slate-700\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-slate-700) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-slate-800 {
-  &:where(.dark, .dark *) {
-    background-color: var(--color-slate-800);
-  }
-}
-.dark\:bg-slate-900 {
-  &:where(.dark, .dark *) {
-    background-color: var(--color-slate-900);
-  }
-}
-.dark\:bg-slate-900\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-slate-900) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-slate-900\/90 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 90%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-slate-900) 90%, transparent);
-    }
-  }
-}
-.dark\:bg-teal-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(27.7% 0.046 192.524) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-teal-950) 50%, transparent);
-    }
-  }
-}
-.dark\:bg-violet-950\/50 {
-  &:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(28.3% 0.141 291.089) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-violet-950) 50%, transparent);
-    }
-  }
-}
-.dark\:from-slate-800\/40 {
-  &:where(.dark, .dark *) {
-    --tw-gradient-from: color-mix(in srgb, oklch(27.9% 0.041 260.031) 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-gradient-from: color-mix(in oklab, var(--color-slate-800) 40%, transparent);
-    }
+    --tw-gradient-from: var(--color-night-800);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 }
-.dark\:to-slate-900 {
+.dark\:to-night-900 {
   &:where(.dark, .dark *) {
-    --tw-gradient-to: var(--color-slate-900);
+    --tw-gradient-to: var(--color-night-900);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 }
@@ -2194,11 +1160,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
 .dark\:text-brand-400 {
   &:where(.dark, .dark *) {
     color: var(--color-brand-400);
-  }
-}
-.dark\:text-slate-100 {
-  &:where(.dark, .dark *) {
-    color: var(--color-slate-100);
   }
 }
 .dark\:text-slate-200 {
@@ -2216,91 +1177,253 @@ input:where([type='button'], [type='reset'], [type='submit']),
     color: var(--color-slate-400);
   }
 }
-.dark\:text-slate-500 {
-  &:where(.dark, .dark *) {
-    color: var(--color-slate-500);
-  }
-}
 .dark\:text-white {
   &:where(.dark, .dark *) {
     color: var(--color-white);
   }
 }
-.dark\:shadow-none {
-  &:where(.dark, .dark *) {
-    --tw-shadow: 0 0 #0000;
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-}
-.dark\:hover\:bg-slate-700 {
+.dark\:hover\:bg-brand-950 {
   &:where(.dark, .dark *) {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-slate-700);
+        background-color: var(--color-brand-950);
       }
     }
   }
 }
-.dark\:hover\:bg-slate-700\/50 {
+.dark\:hover\:text-brand-300 {
   &:where(.dark, .dark *) {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 50%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-slate-700) 50%, transparent);
+        color: var(--color-brand-300);
+      }
+    }
+  }
+}
+.dark\:hover\:text-white {
+  &:where(.dark, .dark *) {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+@layer base {
+  html.dark {
+    color-scheme: dark;
+  }
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+  .dark :focus-visible {
+    outline-color: #60a5fa;
+  }
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+@layer components {
+  .policy-h2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+    border-color: var(--color-slate-100);
+    padding-bottom: calc(var(--spacing) * 3);
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-slate-900);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-800);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-100);
+    }
+  }
+  .policy-link {
+    color: var(--color-brand-700);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: none;
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .toc-link {
+    display: block;
+    border-radius: var(--radius-lg);
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
+    border-color: transparent;
+    padding-inline: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 1.5);
+    color: var(--color-slate-600);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-50);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-400);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-night-700);
+        }
+      }
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
         }
       }
     }
   }
-}
-.dark\:hover\:bg-slate-800 {
-  &:where(.dark, .dark *) {
+  .toc-link[aria-current="location"] {
+    border-color: var(--color-brand-600);
+    background-color: var(--color-slate-50);
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-brand-400);
+    }
+    &:where(.dark, .dark *) {
+      background-color: var(--color-night-700);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .mobile-toc-link {
+    display: block;
+    padding-block: calc(var(--spacing) * 1.5);
+    color: var(--color-slate-600);
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-slate-800);
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-400);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
+        }
       }
     }
   }
-}
-.dark\:hover\:text-brand-400 {
-  &:where(.dark, .dark *) {
+  .nav-link {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
     &:hover {
       @media (hover: hover) {
-        color: var(--color-brand-400);
+        color: var(--color-brand-700);
+      }
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-brand-400);
+        }
       }
     }
   }
-}
-.dark\:hover\:text-slate-200 {
-  &:where(.dark, .dark *) {
+  .nav-link[aria-current="page"] {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-400);
+    }
+  }
+  .drawer-link {
+    display: block;
+    border-radius: var(--radius-md);
+    padding-inline: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 2);
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-slate-700);
     &:hover {
       @media (hover: hover) {
-        color: var(--color-slate-200);
+        background-color: var(--color-slate-100);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-300);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-slate-800);
+        }
       }
     }
   }
-}
-.group-open\:rotate-180 {
-  &:is(:where(.group):open *) {
-    rotate: 180deg;
+  .drawer-link[aria-current="page"] {
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-700);
+    &:where(.dark, .dark *) {
+      background-color: var(--color-brand-950);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-300);
+    }
+  }
+  .info-box {
+    border-radius: var(--radius-xl);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-slate-200);
+    background-color: var(--color-slate-50);
+    padding: calc(var(--spacing) * 5);
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-800);
+    }
+    &:where(.dark, .dark *) {
+      background-color: var(--color-night-900);
+    }
   }
 }
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
 }
 @property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;
@@ -2429,59 +1552,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-backdrop-blur {
   syntax: "*";
   inherits: false;
@@ -2518,37 +1588,11 @@ input:where([type='button'], [type='reset'], [type='submit']),
   syntax: "*";
   inherits: false;
 }
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@keyframes pulse {
-  50% {
-    opacity: 0.5;
-  }
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
       --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
@@ -2576,19 +1620,6 @@ input:where([type='button'], [type='reset'], [type='submit']),
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;
@@ -2598,954 +1629,983 @@ input:where([type='button'], [type='reset'], [type='submit']),
       --tw-backdrop-opacity: initial;
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
     }
   }
 }
-</style>
 
-<style>
-
-section[id]{scroll-margin-top:6rem}
-:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
-
-.tool-card:hover .tool-icon i{animation:wig .5s ease-in-out infinite alternate}
-
-@keyframes wig{from{transform:rotate(-10deg) scale(1)}to{transform:rotate(10deg) scale(1.15)}}
-
-@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Smooth anchor scrolling, and sufficient offset for the sticky header. */
+html{scroll-padding-top:6rem;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Compact menu icons and responsive SVG support. */
+svg{display:inline-block}
 
 </style>
+
+    <!-- Reusable component classes (processed by Tailwind) -->
+
+    <!-- Component styles compiled with Tailwind -->
 
 </head>
 
+<body class="bg-slate-50 dark:bg-night-900 text-slate-800 dark:text-slate-200 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
 
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-brand-700 focus:shadow-md">
 
-<a href="#tools" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-brand-700 focus:px-4 focus:py-2 focus:rounded-lg">Skip to tools</a>
+        Skip to main content
 
+    </a>
 
-<!-- Header -->
+    <!-- Header -->
 
-<header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-night-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
 
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-  <div class="flex items-center justify-between h-20">
+            <a href="/" class="flex items-center space-x-2 text-slate-900 dark:text-white rounded-md p-1" aria-label="Filediter home">
 
-   <a href="/" class="flex items-center gap-3 group" aria-label="Filediter home">
+                <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">
 
-    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform"><i class="fa-solid fa-screwdriver-wrench text-xl"></i></span>
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M3 19V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2"/><path d="M2 19l3-8h17l-3 8H2z"/></svg>
 
-    <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+                </div>
 
-    File<span class="text-brand-600">diter</span>
+                <span class="font-bold text-xl tracking-tight">File<span class="text-brand-600 dark:text-brand-400">diter</span></span>
 
-</span>
+            </a>
 
-   </a>
+            <div class="flex items-center gap-2 md:gap-6">
 
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400" aria-label="Primary">
 
-   <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="Main">
+                    <a href="/" class="nav-link">Home</a>
 
-    <div class="relative group py-2">
+                    <a href="/#tools" class="nav-link">Tools</a>
 
-     <button id="toolsTrigger" type="button" aria-expanded="false" aria-controls="navTools" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Tools <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
+                    <a href="/privacy.html" class="nav-link">Privacy Policy</a>
 
-     <div id="navTools" class="absolute top-full left-0 w-72 max-h-80 overflow-y-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200"></div>
+                    <a href="/terms.html" class="nav-link" aria-current="page">Terms of Service</a>
 
-    </div>
+                </nav>
 
-    <div class="relative group py-2">
+                <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
 
-     <button id="solutionsTrigger" type="button" aria-expanded="false" aria-controls="navSolutions" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Solutions <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-night-800 text-slate-600 dark:text-slate-400 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-500 dark:hover:bg-brand-950 dark:hover:text-brand-300 transition-colors">
 
-     <div id="navSolutions" class="absolute top-full left-0 w-60 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200 text-xs font-medium space-y-1">
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block dark:hidden" style="vertical-align:middle"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.6 8.6 0 1 0 20.5 14.5z"/></svg>
 
-      <a href="#tools" data-cat="developer" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Developers</a>
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block hidden dark:inline-block text-amber-400" style="vertical-align:middle"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
 
-      <a href="#tools" data-cat="pdf" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Students &amp; Professionals</a>
+                </button>
 
-      <a href="#tools" data-cat="seo" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Marketers</a>
+                <div class="flex items-center md:hidden">
 
-      <a href="#tools" data-cat="image" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Creators</a>
+                    <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu"
 
-     </div>
+                            class="w-10 h-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg">
 
-    </div>
+                        <span id="menu-icon" aria-hidden="true" class="text-xl" style="font-size:1.25rem">☰</span>
 
-    <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
+                    </button>
 
-    <a href="#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">FAQ</a>
+                </div>
 
-   </nav>
+            </div>
 
+        </div>
 
-   <div class="hidden md:flex items-center gap-3">
+        <!-- Mobile drawer -->
 
-    <button id="favOpen" aria-label="Open saved favorites" class="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all">
+        <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-night-800 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-2 shadow-lg" aria-label="Mobile">
 
-     <i class="fa-solid fa-star text-amber-500"></i>
+            <a href="/" class="drawer-link">Home</a>
 
-     <span id="favBadge" class="hidden absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-brand-600 text-white text-[10px] font-bold items-center justify-center">0</span>
+            <a href="/#tools" class="drawer-link">Tools</a>
 
-    </button>
+            <a href="/privacy.html" class="drawer-link">Privacy Policy</a>
 
-    <button id="palOpen" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-2">
+            <a href="/terms.html" class="drawer-link" aria-current="page">Terms of Service</a>
 
-     <i class="fa-solid fa-magnifying-glass text-slate-400"></i><span>Search</span>
+        </nav>
 
-     <kbd class="kbd-hint ml-1.5 px-1.5 py-0.5 text-xs bg-white dark:bg-slate-900 text-slate-500 rounded border border-slate-200 dark:border-slate-700">Ctrl K</kbd>
+    </header>
 
-    </button>
+    <main id="main-content" tabindex="-1" class="flex-grow focus:outline-none">
 
-    <button class="theme-btn p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all" aria-label="Toggle dark mode">
+        <!-- Hero -->
 
-     <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-amber-400"></i>
+        <section class="bg-gradient-to-b from-white to-slate-100 dark:from-night-800 dark:to-night-900 border-b border-slate-200 dark:border-slate-800 py-12 md:py-16" aria-labelledby="page-title">
 
-    </button>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-   </div>
+                <nav aria-label="Breadcrumb" class="mb-4 text-xs text-slate-600 dark:text-slate-400">
 
+                    <ol class="inline-flex items-center gap-2">
 
-   <button id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"><i class="fa-solid fa-bars text-xl"></i></button>
+                        <li><a href="/" class="hover:underline">Home</a></li>
 
-  </div>
+                        <li aria-hidden="true">/</li>
 
- </div>
+                        <li aria-current="page" class="font-semibold text-slate-800 dark:text-slate-200">Terms of Service</li>
 
+                    </ol>
 
- <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2 text-sm font-medium">
+                </nav>
 
-  <button id="palOpenM" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-magnifying-glass mr-2"></i>Search tools</button>
+                <div class="inline-flex items-center space-x-2 bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-brand-100 dark:border-brand-900">
 
-  <button id="favOpenM" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-star text-amber-500 mr-2"></i>Saved favorites</button>
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M12 3v18M7 21h10M4 7h16M6 7l-4 7h8L6 7zM18 7l-4 7h8l-4-7z"/></svg>
 
-  <a href="#tools" class="mnav block py-2 px-1">All Tools</a>
+                    <span>Legal &amp; Agreement</span>
 
-  <a href="#about" class="mnav block py-2 px-1">About</a>
+                </div>
 
-  <a href="#faq" class="mnav block py-2 px-1">FAQ</a>
+                <h1 id="page-title" class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
 
-  <div class="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800"><span class="text-xs text-slate-500">Theme</span><button class="theme-btn p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold">Toggle mode</button></div>
+                    Terms of Service
 
- </div>
+                </h1>
 
-</header>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
 
+                    These Terms of Service govern your use of Filediter and its online tools and services. Please read them carefully.
 
-<!-- Command palette -->
+                </p>
 
-<div id="palette" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm items-start justify-center pt-20 px-4" role="dialog" aria-modal="true" aria-label="Search tools">
+                <div class="inline-flex items-center text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-night-800 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
 
- <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden">
+                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-1.5 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01"/></svg>
 
-  <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center gap-3">
+                    <span>Last updated: <time datetime="2026-10-04">October 4, 2026</time></span>
 
-   <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                </div>
 
-   <input id="palInput" type="text" role="combobox" aria-label="Search tools" aria-autocomplete="list" aria-expanded="true" aria-controls="palResults" autocomplete="off" placeholder="Type a tool name or keyword…" class="w-full bg-transparent placeholder-slate-400 focus:outline-none text-base">
+            </div>
 
-   <button data-close class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 font-semibold">ESC</button>
+        </section>
 
-  </div>
+        <!-- Content layout -->
 
-  <div id="palResults" role="listbox" aria-label="Matching tools" class="max-h-96 overflow-y-auto p-3 space-y-1"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
 
-  <div class="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500">↑ ↓ to navigate · Enter to open · Esc to close</div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
- </div>
+                <!-- Desktop sticky table of contents -->
 
-</div>
+                <aside class="hidden lg:block lg:col-span-4 xl:col-span-3" aria-label="Table of contents">
 
+                    <div class="sticky top-24 bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
 
-<!-- Favorites modal -->
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4 flex items-center">
 
-<div id="favModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm items-center justify-center px-4" role="dialog" aria-modal="true" aria-label="Saved favorites">
+                            <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><path d="M9 6h12M9 12h12M9 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg> On this page
 
- <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
+                        </h2>
 
-  <div class="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <nav class="space-y-1 text-sm max-h-[calc(100vh-220px)] overflow-y-auto pr-2" aria-label="On this page">
 
-   <h2 class="font-heading text-lg font-bold flex items-center gap-2"><i class="fa-solid fa-star text-amber-500"></i> Saved Favorites</h2>
+                            <a href="#acceptance-of-terms" class="toc-link">1. Acceptance of Terms</a>
 
-   <button data-close aria-label="Close favorites" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"><i class="fa-solid fa-xmark text-lg"></i></button>
+                            <a href="#description-of-services" class="toc-link">2. Description of Services</a>
 
-  </div>
+                            <a href="#eligibility" class="toc-link">3. Eligibility</a>
 
-  <div id="favList" class="p-5 max-h-80 overflow-y-auto space-y-3"></div>
+                            <a href="#use-of-filediter" class="toc-link">4. Use of Filediter</a>
 
- </div>
+                            <a href="#user-content-and-files" class="toc-link">5. User Content and Files</a>
 
-</div>
+                            <a href="#browser-based-processing" class="toc-link">6. Browser-Based Processing</a>
 
+                            <a href="#third-party-services" class="toc-link">7. Third-Party Services</a>
 
-<main class="flex-grow">
+                            <a href="#intellectual-property" class="toc-link">8. Intellectual Property</a>
 
- <!-- Hero -->
+                            <a href="#prohibited-activities" class="toc-link">9. Prohibited Activities</a>
 
- <section class="relative pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden bg-gradient-to-b from-blue-50/60 dark:from-slate-800/40 to-slate-50 dark:to-slate-900">
+                            <a href="#accuracy-and-reliability" class="toc-link">10. Accuracy and Reliability</a>
 
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+                            <a href="#availability-and-changes" class="toc-link">11. Availability and Service Changes</a>
 
-  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                            <a href="#disclaimer-of-warranties" class="toc-link">12. Disclaimer of Warranties</a>
 
-   <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+                            <a href="#limitation-of-liability" class="toc-link">13. Limitation of Liability</a>
 
-    <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>Free Browser Toolkit
+                            <a href="#indemnification" class="toc-link">14. Indemnification</a>
 
-   </div>
+                            <a href="#privacy" class="toc-link">15. Privacy</a>
 
-   <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
+                            <a href="#third-party-links" class="toc-link">16. Third-Party Links</a>
 
-    Free Online Tools for <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">PDF, Images, Text &amp; Files</span>
+                            <a href="#termination" class="toc-link">17. Termination</a>
 
-   </h1>
+                            <a href="#governing-law" class="toc-link">18. Governing Law</a>
 
-   <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">Fast, browser-based developer utilities, content tools and file converters — built to work right on your device for speed and privacy.</p>
+                            <a href="#changes-to-these-terms" class="toc-link">19. Changes to These Terms</a>
 
-   <div class="max-w-2xl mx-auto relative">
+                            <a href="#contact-us" class="toc-link">20. Contact Us</a>
 
-    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none"></i>
+                        </nav>
 
-    <input id="searchInput" type="search" aria-label="Search tools" placeholder="Search tools (e.g. pdf merge, compress, ocr, color)…" class="w-full pl-11 pr-12 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 text-base sm:text-lg shadow-md shadow-slate-200/50 dark:shadow-none">
+                    </div>
 
-    <button id="clearSearch" aria-label="Clear search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-2xl leading-none px-1">&times;</button>
+                </aside>
 
-   </div>
+                <!-- Terms body -->
 
-   <div id="cats" class="flex flex-wrap items-center justify-center gap-2 mt-8" role="group" aria-label="Filter tools by category"></div>
+                <div class="lg:col-span-8 xl:col-span-9 space-y-12">
 
-  </div>
+                    <!-- Mobile table of contents -->
 
- </section>
+                    <div class="block lg:hidden bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
 
+                        <details id="mobile-toc" class="group">
 
- <!-- Trust -->
+                            <summary class="flex items-center justify-between font-semibold text-slate-900 dark:text-white cursor-pointer rounded-lg">
 
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800">
+                                <span class="flex items-center">
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs font-semibold">
+                                    <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-brand-600 dark:text-brand-400" style="vertical-align:middle"><path d="M9 6h12M9 12h12M9 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg> Table of Contents
 
-   <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-shield-halved text-emerald-500 mr-2"></i>Privacy-conscious workflows</div>
+                                </span>
 
-   <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-bolt text-brand-500 mr-2"></i>Fast processing</div>
+                                <span class="transition-transform group-open:rotate-180" aria-hidden="true">
 
-   <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-user-check text-violet-500 mr-2"></i>No sign-up needed</div>
+                                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-xs text-slate-500 dark:text-slate-400" style="vertical-align:middle"><path d="m6 9 6 6 6-6"/></svg>
 
-   <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-check text-cyan-500 mr-2"></i>Free utilities</div>
+                                </span>
 
-  </div>
+                            </summary>
 
- </section>
+                            <nav class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-1 text-sm" aria-label="Table of contents">
 
+                                <a href="#acceptance-of-terms" class="mobile-toc-link">1. Acceptance of Terms</a>
 
- <!-- Recent -->
+                                <a href="#description-of-services" class="mobile-toc-link">2. Description of Services</a>
 
- <section id="recentSection" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" aria-label="Recently used tools">
+                                <a href="#eligibility" class="mobile-toc-link">3. Eligibility</a>
 
-  <div class="flex items-center justify-between mb-4">
+                                <a href="#use-of-filediter" class="mobile-toc-link">4. Use of Filediter</a>
 
-   <h2 class="font-heading text-lg font-bold">Recently Used Tools</h2>
+                                <a href="#user-content-and-files" class="mobile-toc-link">5. User Content and Files</a>
 
-   <button id="clearRecent" class="text-xs text-slate-500 hover:text-brand-600">Clear history</button>
+                                <a href="#browser-based-processing" class="mobile-toc-link">6. Browser-Based Processing</a>
 
-  </div>
+                                <a href="#third-party-services" class="mobile-toc-link">7. Third-Party Services</a>
 
-  <div id="recentGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4"></div>
+                                <a href="#intellectual-property" class="mobile-toc-link">8. Intellectual Property</a>
 
- </section>
+                                <a href="#prohibited-activities" class="mobile-toc-link">9. Prohibited Activities</a>
 
+                                <a href="#accuracy-and-reliability" class="mobile-toc-link">10. Accuracy and Reliability</a>
 
- <!-- Tools -->
+                                <a href="#availability-and-changes" class="mobile-toc-link">11. Availability and Service Changes</a>
 
- <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+                                <a href="#disclaimer-of-warranties" class="mobile-toc-link">12. Disclaimer of Warranties</a>
 
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+                                <a href="#limitation-of-liability" class="mobile-toc-link">13. Limitation of Liability</a>
 
-   <div>
+                                <a href="#indemnification" class="mobile-toc-link">14. Indemnification</a>
 
-    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">All Utility Tools</h2>
+                                <a href="#privacy" class="mobile-toc-link">15. Privacy</a>
 
-    <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Select a tool below to get started.</p>
+                                <a href="#third-party-links" class="mobile-toc-link">16. Third-Party Links</a>
 
-   </div>
+                                <a href="#termination" class="mobile-toc-link">17. Termination</a>
 
-   <span id="toolCount" class="text-xs font-semibold px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 shadow-sm" aria-live="polite"></span>
+                                <a href="#governing-law" class="mobile-toc-link">18. Governing Law</a>
 
-  </div>
+                                <a href="#changes-to-these-terms" class="mobile-toc-link">19. Changes to These Terms</a>
 
-  <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                                <a href="#contact-us" class="mobile-toc-link">20. Contact Us</a>
 
-  <noscript><ul class="grid sm:grid-cols-2 gap-2 text-brand-600 underline">
+                            </nav>
 
-   <li><a href="/tools/url-encoder.html">URL Encoder / Decoder</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/color-picker.html">Color Picker</a></li><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/image-editor.html">Image Editor</a></li><li><a href="/tools/cam-ocr.html">OCR Text Extractor</a></li><li><a href="/tools/cam-enhancer.html">Doc Enhancer</a></li><li><a href="/tools/esign-pdf.html">E-Sign PDF</a></li><li><a href="/tools/pdf-merger.html">PDF Merger</a></li><li><a href="/tools/pdf-watermark.html">PDF Watermark</a></li><li><a href="/tools/image-to-pdf.html">Image to PDF</a></li><li><a href="/tools/pdf-to-image.html">PDF to Image</a></li><li><a href="/tools/pdf-extractor.html">PDF Extractor</a></li>
+                        </details>
 
-  <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/pdf-to-word.html">PDF to Word</a></li><li><a href="/tools/image-converter.html">JPG PNG WebP Converter</a></li><li><a href="/tools/passport-photo-maker.html">Passport Photo Maker</a></li><li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li></ul></noscript>
+                    </div>
 
-  <div id="noResults" class="hidden text-center py-16">
+                    <!-- Document card -->
 
-   <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto text-slate-400 text-2xl mb-4 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <article class="bg-white dark:bg-night-800 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed text-base">
 
-   <h3 class="text-lg font-bold mb-1">No tools matched your search</h3>
+                        <section id="acceptance-of-terms" class="scroll-mt-24 space-y-4" aria-labelledby="acceptance-of-terms-title">
 
-   <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Try keywords like “PDF”, “image” or “compress”, or pick another category.</p>
+                            <h2 id="acceptance-of-terms-title" class="policy-h2">1. Acceptance of Terms</h2>
 
-   <button id="resetAll" class="px-4 py-2 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold text-brand-600 dark:text-brand-400 shadow-sm">Reset search &amp; filters</button>
+                            <p>
 
-  </div>
+                                By accessing, browsing, or otherwise using <strong>Filediter</strong> (<a href="/" class="policy-link">https://filediter.com/</a>), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
 
- </section>
+                            </p>
 
+                            <p>
 
- <!-- About -->
+                                If you do not agree with any part of these Terms, you must immediately discontinue your use of the website and its tools. Your continued use of the website constitutes your ongoing acceptance of the applicable Terms.
 
- <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800">
+                            </p>
 
-  <div class="text-center max-w-3xl mx-auto mb-12">
+                        </section>
 
-   <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">About Filediter</span>
+                        <section id="description-of-services" class="scroll-mt-24 space-y-4" aria-labelledby="description-of-services-title">
 
-   <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Built to make everyday digital work simpler.</h2>
+                            <h2 id="description-of-services-title" class="policy-h2">2. Description of Services</h2>
 
-   <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">Filediter is a collection of browser-based utility tools for developers, creators, students, marketers and professionals — bringing common tasks into one clean, ad-light place instead of dozens of scattered sites.</p>
+                            <p>
 
-  </div>
+                                Filediter provides a browser-based collection of online utility tools designed to assist users in working with files, documents, images, PDFs, text, URLs, and other digital content. Available utilities include, but are not limited to:
 
-  <div id="principles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"></div>
+                            </p>
 
-  <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-12 relative overflow-hidden shadow-xl">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-5 list-disc text-sm text-slate-600 dark:text-slate-400 my-3">
 
-   <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                                <li>URL Encoder</li>
 
-   <div class="max-w-3xl relative z-10">
+                                <li>Word &amp; Character Counter</li>
 
-    <span class="text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">Design philosophy</span>
+                                <li>Color Picker</li>
 
-    <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">“Good tools should get out of the way.”</h3>
+                                <li>Image Compressor &amp; Editor</li>
 
-    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">Clear interfaces, focused workflows, useful defaults, responsive layouts and privacy-conscious design.</p>
+                                <li>OCR Text Extractor</li>
 
-   </div>
+                                <li>Document Enhancer</li>
 
-  </div>
+                                <li>E-Sign PDF &amp; PDF Watermark</li>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <li>PDF Merger, Extractor, &amp; Converter</li>
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span id="statTools" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">13 Tools</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Active utilities</span></div>
+                            </ul>
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span id="statCategories" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">5 Categories</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Organized workflows</span></div>
+                            <p>
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">Browser-based</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Client-side processing</span></div>
+                                Filediter reserves the right to add, remove, modify, replace, or discontinue any tool, feature, or service at any time without prior notice. We do not guarantee that any specific tool will remain available indefinitely.
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">No sign-up</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Instant access</span></div>
+                            </p>
 
-  </div>
+                        </section>
 
- </section>
+                        <section id="eligibility" class="scroll-mt-24 space-y-4" aria-labelledby="eligibility-title">
 
+                            <h2 id="eligibility-title" class="policy-h2">3. Eligibility</h2>
 
- <!-- How it works -->
+                            <p>
 
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
+                                You are responsible for ensuring that you are legally permitted to use Filediter under the laws applicable to your location and jurisdiction. By using Filediter, you represent that your use complies with all applicable local, national, and international laws and regulations.
 
-  <h2 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-10">How Filediter Works</h2>
+                            </p>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        </section>
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">01</span><h3 class="font-heading text-lg font-bold mb-2">Choose a tool</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Pick any developer utility, converter or PDF tool.</p></div>
+                        <section id="use-of-filediter" class="scroll-mt-24 space-y-4" aria-labelledby="use-of-filediter-title">
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">02</span><h3 class="font-heading text-lg font-bold mb-2">Process your content</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Use the selected tool to process your file or content directly in your browser.</p></div>
+                            <h2 id="use-of-filediter-title" class="policy-h2">4. Use of Filediter</h2>
 
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">03</span><h3 class="font-heading text-lg font-bold mb-2">Get your result</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Download the file or copy the output instantly.</p></div>
+                            <p>
 
-  </div>
+                                You may use Filediter solely for lawful purposes and in accordance with these Terms. You are solely responsible for:
 
- </section>
+                            </p>
 
+                            <ul class="list-disc pl-6 space-y-2">
 
- <!-- FAQ -->
+                                <li>Your overall use of the website and its tools.</li>
 
- <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800">
+                                <li>The integrity, security, and legality of the files you process or upload.</li>
 
-  <div class="text-center max-w-3xl mx-auto mb-12">
+                                <li>The accuracy of information you enter and the results you obtain.</li>
 
-   <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">Got questions?</span>
+                                <li>Maintaining independent backups of all important files and documents.</li>
 
-   <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
+                            </ul>
 
-  </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
 
-  <div id="faqList" class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start"></div>
+                                We do not guarantee that processed files or generated output results will always be recoverable or stored by the platform.
 
- </section>
+                            </p>
 
+                        </section>
 
- <!-- CTA -->
+                        <section id="user-content-and-files" class="scroll-mt-24 space-y-4" aria-labelledby="user-content-and-files-title">
 
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                            <h2 id="user-content-and-files-title" class="policy-h2">5. User Content and Files</h2>
 
-  <div class="bg-gradient-to-r from-brand-600 to-indigo-600 rounded-3xl p-10 sm:p-14 text-white shadow-xl">
+                            <p>
 
-   <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-4">Ready to get more done?</h2>
+                                When using Filediter, you may upload, input, or process content including images, PDFs, documents, text, and URLs ("User Content").
 
-   <p class="text-brand-100 text-base sm:text-lg max-w-xl mx-auto mb-8">Explore the Filediter toolkit and speed up your daily workflows.</p>
+                            </p>
 
-   <a href="#tools" class="inline-flex px-8 py-4 rounded-2xl bg-white text-brand-600 font-bold hover:bg-brand-50 transition-colors shadow-lg">
+                            <p>
 
-  Explore All Tools
+                                <strong>Ownership:</strong> You retain all intellectual property rights and ownership in and to your User Content. Filediter does not claim ownership of your files or data merely because you utilize our tools.
 
-</a>
+                            </p>
 
-  </div>
+                            <p>
 
- </section>
+                                <strong>Responsibility:</strong> You represent and warrant that you possess all necessary rights, licenses, consents, and authority to submit, process, and handle your User Content through our platform without violating third-party rights or applicable laws.
 
-</main>
+                            </p>
 
+                        </section>
 
-<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
+                        <section id="browser-based-processing" class="scroll-mt-24 space-y-4" aria-labelledby="browser-based-processing-title">
 
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                            <h2 id="browser-based-processing-title" class="policy-h2">6. Browser-Based Processing</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                            <p>
 
-   <div class="md:col-span-2">
+                                Many Filediter tools are designed to process content within your browser. Depending on the specific tool, feature, or technical implementation, certain functionality may require communication with external services or other technical infrastructure.
 
-    <a href="/" class="flex items-center gap-2 mb-4"><span class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white text-sm shadow-md"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="font-heading font-bold text-xl">Filediter</span></a>
+                            </p>
 
-    <p class="text-slate-600 dark:text-slate-400 text-sm max-w-sm mb-4 leading-relaxed">Fast, free, browser-based file converters, developer utilities and content tools.</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
 
-    <p class="text-xs text-slate-500">© <span id="year">2026</span> Filediter. All rights reserved.</p>
+                                For detailed information regarding how data and files are handled across different tools, please review our <a href="/privacy.html" class="policy-link">Privacy Policy</a>.
 
-   </div>
+                            </p>
 
-   <div>
+                        </section>
 
-    <h3 class="font-heading text-sm font-semibold uppercase tracking-wider mb-4">Product</h3>
+                        <section id="third-party-services" class="scroll-mt-24 space-y-4" aria-labelledby="third-party-services-title">
 
-    <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400">
+                            <h2 id="third-party-services-title" class="policy-h2">7. Third-Party Services</h2>
 
-     <li><a href="#tools" data-cat="all" class="hover:text-brand-600">All Tools</a></li>
+                            <p>
 
-     <li><a href="#tools" data-cat="developer" class="hover:text-brand-600">Developer Tools</a></li>
+                                Filediter may rely on third-party services and infrastructure providers necessary for website hosting (such as Vercel), content delivery (such as cdnjs), fonts (such as Google Fonts), icon libraries (Font Awesome), styling frameworks (Tailwind CSS), analytics, security, and APIs.
 
-     <li><a href="#tools" data-cat="pdf" class="hover:text-brand-600">PDF Tools</a></li>
+                            </p>
 
-     <li><a href="#tools" data-cat="image" class="hover:text-brand-600">Images &amp; Media</a></li>
+                            <p>
 
-     <li><a href="#tools" data-cat="seo" class="hover:text-brand-600">SEO &amp; Content</a></li>
+                                Third-party services operate under their own terms and privacy policies. Filediter is not responsible or liable for the actions, failures, or terms of third-party services beyond the extent required by applicable law.
 
-    </ul>
+                            </p>
 
-   </div>
+                        </section>
 
-   <div>
+                        <section id="intellectual-property" class="scroll-mt-24 space-y-4" aria-labelledby="intellectual-property-title">
 
-    <h3 class="font-heading text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
+                            <h2 id="intellectual-property-title" class="policy-h2">8. Intellectual Property</h2>
 
-   <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400">
+                            <p>
 
- <li><a href="#about" class="hover:text-brand-600">About</a></li>
+                                All website design, text, graphics, logos, button icons, software code, user interfaces, branding, audio, video, and overall arrangement (the "Filediter Materials") are the property of Filediter or its licensors and are protected by applicable intellectual property laws.
 
- <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
+                            </p>
 
- <li><a href="privacy.html" class="hover:text-brand-600">Privacy Policy</a></li>
+                            <p>
 
- <li><a href="terms.html" class="hover:text-brand-600">Terms of Service</a></li>
+                                You may not copy, reproduce, modify, distribute, sell, license, reverse engineer, or commercially exploit any portion of Filediter Materials without prior express written authorization, except where permitted by applicable law. User-owned content remains distinct from Filediter-owned materials.
 
-</ul>
+                            </p>
 
-   </div>
+                        </section>
 
-  </div>
+                        <section id="prohibited-activities" class="scroll-mt-24 space-y-4" aria-labelledby="prohibited-activities-title">
 
-  <div class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500">Designed for speed, accessibility and user privacy.</div>
+                            <h2 id="prohibited-activities-title" class="policy-h2">9. Prohibited Activities</h2>
 
- </div>
+                            <p>When using Filediter, you agree strictly not to:</p>
 
-</footer>
+                            <ul class="list-disc pl-6 space-y-1.5">
 
+                                <li>Violate any local, national, or international law or regulation.</li>
 
-<script>
+                                <li>Infringe upon copyrights, trademarks, patents, or other intellectual property rights.</li>
 
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+                                <li>Upload, transmit, or process unlawful, threatening, defamatory, obscene, or harmful content.</li>
 
-const store={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+                                <li>Distribute malware, viruses, trojan horses, or other malicious code.</li>
 
+                                <li>Attempt unauthorized access to our servers, infrastructure, accounts, or networks.</li>
 
-// id, title, description, icon, color, categories, keywords
+                                <li>Disrupt, overload, or interfere with the proper functioning or security of the website.</li>
 
-const T=[
+                                <li>Abuse APIs, scraper tools, or automated systems in a manner that degrades service availability.</li>
 
-['url-encoder','URL Encoder / Decoder','Safely encode special characters or decode URL strings for web development.','link','amber','developer text','percent encode decode web'],
+                                <li>Circumvent security controls or technological protection measures.</li>
 
-['word-counter','Word & Char Counter','Count words and characters and estimate reading time for SEO content.','keyboard','pink','seo text','reading time characters'],
+                                <li>Impersonate any person or entity, or misrepresent your affiliation with Filediter.</li>
 
-['color-picker','Color Picker','Build color palettes and copy HEX, RGB and HSL codes for UI design.','palette','red','developer image','hex rgb hsl css design'],
+                            </ul>
 
-['image-compressor','Image Compressor','Reduce JPG, PNG and WEBP file sizes while keeping visual quality.','file-image','blue','image','compress photo reduce size'],
+                        </section>
 
-['image-editor','Image Editor','Crop, rotate, adjust brightness and apply filters to photos.','sliders','indigo','image','photo crop resize filter'],
+                        <section id="accuracy-and-reliability" class="scroll-mt-24 space-y-4" aria-labelledby="accuracy-and-reliability-title">
 
-['cam-ocr','OCR Text Extractor','Extract text from scanned documents, photos and forms.','font','cyan','scanner pdf image','ocr scan read text'],
+                            <h2 id="accuracy-and-reliability-title" class="policy-h2">10. Accuracy and Reliability</h2>
 
-['cam-enhancer','Doc Enhancer & Filter','Clean up scans with Magic Color, B&W filters and contrast boost.','wand-magic-sparkles','teal','scanner image','document scan magic color'],
+                            <p>
 
-['esign-pdf','E-Sign PDF Pad','Draw your signature and place it on PDFs or documents.','signature','violet','scanner pdf security','signature sign draw'],
+                                Filediter provides online utilities as convenience tools. You are solely responsible for reviewing and verifying all processed results before relying on them for professional, legal, commercial, or personal purposes.
 
-['pdf-merger','PDF Merger','Combine multiple PDF files into one organized PDF.','code-merge','sky','pdf converter','merge combine join'],
+                            </p>
 
-['pdf-watermark','PDF Watermark','Add text watermarks or status stamps like CONFIDENTIAL to PDFs.','stamp','orange','pdf','stamp confidential'],
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
 
-['image-to-pdf','Image to PDF','Convert JPG, PNG and WEBP images into a single PDF.','file-pdf','emerald','converter pdf image','jpg png convert'],
+                                We do not guarantee 100% accuracy, error-free processing, perfect OCR text extraction, flawless document formatting conversion, or permanent availability. Results may vary depending on input file quality, format, size, browser environment, device specifications, and technical conditions.
 
-['pdf-to-image','PDF to Image','Convert PDF pages into JPG or PNG images.','file-export','amber','converter pdf image','jpg png convert'],
+                            </p>
 
-['pdf-compressor','PDF Compressor','Reduce PDF file size with image-based or text-preserving compression.','file-zipper','blue','pdf converter','compress pdf reduce size shrink'],
-['pdf-to-word','PDF to Word','Extract selectable PDF text into an editable Word DOCX file.','file-word','indigo','pdf converter text','pdf docx convert text'],
-['image-converter','JPG PNG WebP Converter','Convert JPG, PNG, and WebP images in batches.','images','cyan','image converter','jpg jpeg png webp batch'],
-['passport-photo-maker','Passport Photo Maker','Create 35x45 mm and 2x2 inch photo prints with precise crop controls.','id-card','violet','image','passport photo 2x2 35x45 id'],
-['pdf-splitter','PDF Splitter','Extract PDF pages or split PDFs into separate files.','scissors','emerald','pdf converter','split pdf extract pages'],
-['pdf-extractor','PDF Extractor','Extract pages, embedded images or raw text from a PDF.','boxes-packing','rose','pdf','split extract pages']
+                        </section>
 
-].map(([id,title,desc,icon,color,cat,kw])=>({id,title,desc,icon,color,cat,kw,url:`/tools/${id}.html`,hay:`${title} ${desc} ${cat} ${kw}`.toLowerCase()}));
+                        <section id="availability-and-changes" class="scroll-mt-24 space-y-4" aria-labelledby="availability-and-changes-title">
 
+                            <h2 id="availability-and-changes-title" class="policy-h2">11. Availability and Service Changes</h2>
 
-const CATS=[['all','All Tools'],['developer','Developer'],['seo','SEO & Content'],['pdf','PDF'],['image','Images & Media'],['text','Text']];
+                            <p>
 
-const PRINCIPLES=[['Simplicity','Useful tools should be straightforward, focused and easy to understand.','brand'],['Privacy','Tools are designed with privacy-conscious, browser-based workflows where processing can happen locally on your device.','emerald'],['Practicality','Every tool should solve a clear, useful digital task.','purple'],['Continuous improvement','Filediter is an evolving toolkit with new utilities added over time.','amber']];
+                                We strive to maintain reliable access to Filediter, but we do not promise uninterrupted availability. We reserve the right at any time to modify, suspend, or discontinue (temporarily or permanently) the website or any tool with or without notice where permitted by law.
 
-const FAQ=[
+                            </p>
 
-['Are all tools on Filediter free?','Yes. Every tool on Filediter is free to use, with no subscription or paywall.'],
+                        </section>
 
-['Do I need an account to use the tools?','No. There is no registration or login — open a tool and start using it.'],
+                        <section id="disclaimer-of-warranties" class="scroll-mt-24 space-y-4" aria-labelledby="disclaimer-of-warranties-title">
 
-['Is my file content private?','Many Filediter tools are designed to process content directly in your browser. Check the individual tool for details about how your files are handled.'],
+                            <h2 id="disclaimer-of-warranties-title" class="policy-h2">12. Disclaimer of Warranties</h2>
 
-['Does Filediter work on mobile?','Yes. The site is responsive and works on phones, tablets and desktops in modern browsers.'],
+                            <p>
 
-['How do I find a tool quickly?','Use the search bar, press Ctrl K (⌘K on Mac) to open the command palette, or filter by category.'],
+                                To the maximum extent permitted by applicable law, Filediter and its services are provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis, without warranties of any kind, whether express or implied.
 
-['Are there file size limits?','File size limits can vary by tool and depend on your browser, device memory and the way the tool processes your file. Check the individual tool for details.'],
+                            </p>
 
-['Can I save my favorite tools?','Yes. Click the star on any tool card, then open your saved list from the star button in the header.'],
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
 
-['How do I request a new tool?','Use the Contact link in the footer to send suggestions or feature requests.']
+                                Filediter explicitly disclaims all warranties, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not warrant that the service will meet your requirements, operate without interruption, or be free of security vulnerabilities or errors.
 
-];
+                            </p>
 
-const COLORS={brand:'bg-blue-50 dark:bg-blue-950/50 text-brand-600 border-blue-100 dark:border-blue-900',emerald:'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 border-emerald-100 dark:border-emerald-900',purple:'bg-purple-50 dark:bg-purple-950/50 text-purple-600 border-purple-100 dark:border-purple-900',amber:'bg-amber-50 dark:bg-amber-950/50 text-amber-600 border-amber-100 dark:border-amber-900'};
+                        </section>
 
+                        <section id="limitation-of-liability" class="scroll-mt-24 space-y-4" aria-labelledby="limitation-of-liability-title">
 
-let cat='all', favs=store.get('Filediter_favorites',[]), lastFocus=null, palIdx=0;
+                            <h2 id="limitation-of-liability-title" class="policy-h2">13. Limitation of Liability</h2>
 
-const byId=id=>T.find(t=>t.id===id);
+                            <p>
 
+                                To the maximum extent permitted by applicable law, Filediter, its operators, affiliates, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation loss of profits, data, use, goodwill, or other intangible losses, resulting from:
 
-// ---- Render static pieces
+                            </p>
 
-$('#navTools').innerHTML='<div class="space-y-1">'+T.slice(0,5).map(t=>`<a href="${t.url}" data-tool="${t.id}" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">${t.title}</a>`).join('')+'</div><div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700"><a href="#tools" data-cat="all" class="block px-3 py-1.5 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline">View all tools →</a></div>';
+                            <ul class="list-disc pl-6 space-y-1 text-sm">
 
-$('#cats').innerHTML=CATS.map(([k,l])=>`<button data-cat="${k}" aria-pressed="false" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold border transition-all shadow-sm">${l}</button>`).join('');
+                                <li>Your access to, use of, or inability to use Filediter.</li>
 
-$('#toolsGrid').innerHTML=T.map(t=>`
+                                <li>Any conduct or content of any third party on the service.</li>
 
-<article data-id="${t.id}" class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm">
+                                <li>Any content obtained from the website or reliance on processed results.</li>
 
- <div>
+                                <li>Unauthorized access, use, or alteration of your transmissions or content.</li>
 
-  <div class="flex items-start justify-between mb-4">
+                            </ul>
 
-   <div class="tool-icon w-12 h-12 rounded-xl bg-${t.color}-50 dark:bg-${t.color}-950/50 border border-${t.color}-100 dark:border-${t.color}-900 text-${t.color}-600 flex items-center justify-center text-xl"><i class="fa-solid fa-${t.icon}"></i></div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
 
-   <button data-fav="${t.id}" aria-pressed="false" aria-label="Save ${t.title} to favorites" class="fav-btn text-slate-300 dark:text-slate-500 hover:text-amber-500 text-lg"><span aria-hidden="true" class="text-lg font-semibold">☆</span></button>
+                                Nothing in these Terms excludes or limits liability where such exclusion or limitation is prohibited by applicable mandatory law.
 
-  </div>
+                            </p>
 
-  <h3 class="font-heading text-xl font-bold mb-2 group-hover:text-brand-600 transition-colors">${t.title}</h3>
+                        </section>
 
-  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">${t.desc}</p>
+                        <section id="indemnification" class="scroll-mt-24 space-y-4" aria-labelledby="indemnification-title">
 
- </div>
+                            <h2 id="indemnification-title" class="policy-h2">14. Indemnification</h2>
 
- <a href="${t.url}" data-tool="${t.id}" aria-label="Open ${t.title}" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm"><span>Open Tool</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
+                            <p>
 
-</article>`).join('');
+                                To the maximum extent permitted by applicable law, you agree to indemnify, defend, and hold harmless Filediter and its operators from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal and accounting fees) arising out of or in any way connected with your violation of these Terms, your misuse of the website, or your infringement of any third-party rights.
 
-$('#principles').innerHTML=PRINCIPLES.map(([h,p,c],i)=>`<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm"><div class="w-10 h-10 rounded-xl border ${COLORS[c]} flex items-center justify-center font-bold text-sm mb-4">0${i+1}</div><h3 class="font-heading text-lg font-bold mb-2">${h}</h3><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">${p}</p></div>`).join('');
+                            </p>
 
-$('#faqList').innerHTML=FAQ.map(([q,a])=>`<details class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm"><summary class="cursor-pointer list-none flex items-start justify-between gap-3 font-heading font-bold text-base">${q}<i class="fa-solid fa-chevron-down text-xs mt-1.5 text-brand-600 transition-transform group-open:rotate-180"></i></summary><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mt-3">${a}</p></details>`).join('');
+                        </section>
 
-const ld=document.createElement('script');ld.type='application/ld+json';
+                        <section id="privacy" class="scroll-mt-24 space-y-4" aria-labelledby="privacy-title">
 
-ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
+                            <h2 id="privacy-title" class="policy-h2">15. Privacy</h2>
 
-document.head.appendChild(ld);
+                            <p>
 
-$('#statTools').textContent=T.length+' Tools';
-$('#statCategories').textContent=(CATS.length-1)+' Categories';
+                                Your use of Filediter is also governed by our Privacy Policy. Please review our <a href="/privacy.html" class="policy-link">Privacy Policy</a> to understand how information may be handled and protected.
 
-$('#year').textContent=new Date().getFullYear();
+                            </p>
 
-if(!/Mac|iPhone|iPad/.test(navigator.platform))$$('.kbd-hint').forEach(k=>k.textContent='Ctrl K');else $$('.kbd-hint').forEach(k=>k.textContent='⌘K');
+                        </section>
 
+                        <section id="third-party-links" class="scroll-mt-24 space-y-4" aria-labelledby="third-party-links-title">
 
-// ---- Theme
+                            <h2 id="third-party-links-title" class="policy-h2">16. Third-Party Links</h2>
 
-$$('.theme-btn').forEach(b=>b.addEventListener('click',()=>{const d=document.documentElement.classList.toggle('dark');try{localStorage.theme=d?'dark':'light'}catch{}}));
+                            <p>
 
+                                Filediter may contain links to external websites, services, or resources that are not owned or controlled by us. We assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.
 
-// ---- Mobile menu
+                            </p>
 
-function toggleMenu(open){const m=$('#mobileMenu');const o=open??m.classList.contains('hidden');m.classList.toggle('hidden',!o);$('#menuBtn').setAttribute('aria-expanded',o)}
+                        </section>
 
-$('#menuBtn').addEventListener('click',()=>toggleMenu());
+                        <section id="termination" class="scroll-mt-24 space-y-4" aria-labelledby="termination-title">
 
-$$('.mnav').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+                            <h2 id="termination-title" class="policy-h2">17. Termination</h2>
 
+                            <p>
 
-// ---- Desktop navigation dropdowns
-const dropdowns=[
-  {trigger:$('#toolsTrigger'),menu:$('#navTools')},
-  {trigger:$('#solutionsTrigger'),menu:$('#navSolutions')}
-];
-function closeDropdowns(){
-  dropdowns.forEach(({trigger,menu})=>{
-    trigger.setAttribute('aria-expanded','false');
-    menu.classList.add('invisible','opacity-0');
-    menu.classList.remove('visible','opacity-100');
-  });
-}
-dropdowns.forEach(({trigger,menu})=>{
-  trigger.addEventListener('click',()=>{
-    const open=trigger.getAttribute('aria-expanded')!=='true';
-    closeDropdowns();
-    if(open){
-      trigger.setAttribute('aria-expanded','true');
-      menu.classList.remove('invisible','opacity-0');
-      menu.classList.add('visible','opacity-100');
-    }
-  });
-  menu.addEventListener('click',closeDropdowns);
-});
-document.addEventListener('click',e=>{
-  if(!e.target.closest('#toolsTrigger,#navTools,#solutionsTrigger,#navSolutions'))closeDropdowns();
-});
+                                We reserve the right to restrict, suspend, or terminate your access to Filediter at any time, with or without notice, for conduct that we believe violates these Terms, poses a security threat, or is otherwise harmful to other users, third parties, or us. You may also discontinue your use of the service at any time.
 
-// ---- Search + category filter
+                            </p>
 
-function setCat(c){
-   if(!CATS.some(([key])=>key===c)) c='all';
-   cat=c;
+                        </section>
 
-  $$('.cat-btn').forEach(b=>{
+                        <section id="governing-law" class="scroll-mt-24 space-y-4" aria-labelledby="governing-law-title">
 
-    const on=b.dataset.cat===c;
+                            <h2 id="governing-law-title" class="policy-h2">18. Governing Law</h2>
 
-    b.setAttribute('aria-pressed', on);
-    b.classList.toggle('bg-brand-600',on);b.classList.toggle('text-white',on);b.classList.toggle('border-brand-600',on);
+                            <!-- TODO (required before publishing): review this section with qualified legal counsel and name the actual governing jurisdiction. -->
 
-    ['bg-white','dark:bg-slate-800','text-slate-600','dark:text-slate-300','border-slate-200','dark:border-slate-700'].forEach(k=>b.classList.toggle(k,!on));
+                            <p>
 
-  });
+                                These Terms are governed by the applicable laws of the jurisdiction in which the Filediter service operator is established, without regard to conflict of law principles, except where mandatory local law provides otherwise.
 
-  applyFilter();
+                            </p>
 
-}
+                        </section>
 
-function applyFilter(){
+                        <section id="changes-to-these-terms" class="scroll-mt-24 space-y-4" aria-labelledby="changes-to-these-terms-title">
 
-  const q=$('#searchInput').value.toLowerCase().trim();
+                            <h2 id="changes-to-these-terms-title" class="policy-h2">19. Changes to These Terms</h2>
 
-  let n=0;
+                            <p>
 
-  T.forEach(t=>{
+                                We may revise these Terms of Service from time to time. When we make updates, we will post the revised version on this page and update the "Last updated" date at the top. Continued use of Filediter after any modifications indicates your acceptance of the updated Terms where permitted by law.
 
-    const show=(!q||t.hay.includes(q))&&(cat==='all'||t.cat.split(' ').includes(cat));
+                            </p>
 
-    $(`[data-id="${t.id}"]`).classList.toggle('hidden',!show);
+                        </section>
 
-    if(show)n++;
+                        <section id="contact-us" class="scroll-mt-24 space-y-4" aria-labelledby="contact-us-title">
 
-  });
+                            <h2 id="contact-us-title" class="policy-h2">20. Contact Us</h2>
 
-  $('#toolCount').textContent=`Showing ${n} of ${T.length} tools`;
+                            <p>
 
-  $('#noResults').classList.toggle('hidden',n>0);
+                                If you have any questions, concerns, legal notices, or support inquiries regarding these Terms of Service, please contact us:
 
-  $('#clearSearch').classList.toggle('hidden',!q);
+                            </p>
 
-}
+                            <div class="info-box !p-6 !rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-4">
 
-$('#searchInput').addEventListener('input',applyFilter);
+                                <div class="flex items-center space-x-4">
 
-$('#clearSearch').addEventListener('click',()=>{$('#searchInput').value='';applyFilter();$('#searchInput').focus()});
+                                    <div class="w-12 h-12 shrink-0 bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-300 rounded-xl flex items-center justify-center text-xl">
 
-$('#resetAll').addEventListener('click',()=>{$('#searchInput').value='';setCat('all')});
+                                        <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 8 10-8"/></svg>
 
+                                    </div>
 
-// ---- Favorites
+                                    <div>
 
-function updateFavUI(){
+                                        <h3 class="font-bold text-slate-900 dark:text-white">Filediter Support &amp; Legal Team</h3>
 
-  $$('.fav-btn').forEach(b=>{
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">For terms inquiries, service issues, and legal notices.</p>
 
-    const on=favs.includes(b.dataset.fav),i=b.firstElementChild;
+                                    </div>
 
-    b.setAttribute('aria-pressed',on);
-     const tool=byId(b.dataset.fav);
-     if(tool)b.setAttribute('aria-label',on?`Remove ${tool.title} from favorites`:`Save ${tool.title} to favorites`);
+                                </div>
 
-    i.textContent=on?'★':'☆';
-     i.className='text-lg font-semibold'+(on?' text-amber-500':'');
+                                <!-- Confirm this support email is active before publishing. -->
 
-  });
+                                <a href="mailto:support@filediter.com" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors shadow-sm break-all">
 
-  const badge=$('#favBadge');badge.textContent=favs.length;
+                                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-xs" style="vertical-align:middle"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
 
-  badge.classList.toggle('hidden',!favs.length);badge.classList.toggle('flex',!!favs.length);
+                                    <span>support@filediter.com</span>
 
-}
+                                </a>
 
-function renderFavs(){
+                            </div>
 
-  const items=favs.map(byId).filter(Boolean);
+                        </section>
 
-  $('#favList').innerHTML=items.length?items.map(t=>`<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700"><div class="min-w-0"><div class="font-bold text-sm">${t.title}</div><div class="text-xs text-slate-500 truncate">${t.desc}</div></div><a href="${t.url}" data-tool="${t.id}" class="shrink-0 px-3 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700">Open</a></div>`).join(''):'<p class="text-center text-sm text-slate-500 py-6">No favorites yet. Click the star on any tool card to save it here.</p>';
+                    </article>
 
-}
+                </div>
 
+            </div>
 
-// ---- Recently used
+        </div>
 
-function loadRecent(){
+    </main>
 
-  const saved=store.get('Filediter_recent',[]);
-   const ids=[...new Set((Array.isArray(saved)?saved:[]).filter(x=>typeof x==='string'&&byId(x)))].slice(0,6);
+    <!-- Footer -->
 
-  $('#recentSection').classList.toggle('hidden',!ids.length);
+    <footer class="bg-white dark:bg-night-800 border-t border-slate-200 dark:border-slate-800 mt-16 text-slate-600 dark:text-slate-400 text-sm">
 
-  $('#recentGrid').innerHTML=ids.map(id=>{const t=byId(id);return `<a href="${t.url}" data-tool="${id}" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-brand-500 transition-all shadow-sm block truncate text-xs font-bold">${t.title}</a>`}).join('');
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-}
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 
-function record(id) {
+                <div class="md:col-span-2 space-y-4">
 
-  if (!byId(id)) return;
+                    <a href="/" class="inline-flex items-center space-x-2 text-slate-900 dark:text-white rounded-lg" aria-label="Filediter home">
 
+                        <div class="w-8 h-8 bg-brand-600 text-white rounded-lg flex items-center justify-center font-bold text-base shadow-sm">
 
-  const saved = store.get('Filediter_recent', []);
+                            <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block" style="vertical-align:middle"><path d="M3 19V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2"/><path d="M2 19l3-8h17l-3 8H2z"/></svg>
 
-  const r = (Array.isArray(saved) ? saved : [])
+                        </div>
 
-    .filter(x => x !== id && typeof x === 'string' && byId(x));
+                        <span class="font-bold text-lg tracking-tight">File<span class="text-brand-600 dark:text-brand-400">diter</span></span>
 
+                    </a>
 
-  r.unshift(id);
+                    <p class="text-slate-600 dark:text-slate-400 max-w-sm text-sm">
 
-  store.set('Filediter_recent', r.slice(0, 6));
+                        A modern web-based collection of utility tools designed to help you work with files, images, and data efficiently right inside your browser.
 
-}
+                    </p>
 
-$('#clearRecent').addEventListener('click',()=>{try{localStorage.removeItem('Filediter_recent')}catch{}loadRecent()});
+                </div>
 
+                <nav aria-label="Footer navigation">
 
-// ---- Modals (palette + favorites)
+                    <h2 class="font-semibold text-slate-900 dark:text-white mb-3 text-xs uppercase tracking-wider">Navigation</h2>
 
+                    <ul class="space-y-2 text-sm">
 
-function openModal(el, focusEl) {
+                        <li><a href="/" class="nav-link inline-block py-0.5">Home</a></li>
 
-  const modalIds = ['#palette', '#favModal'];
+                        <li><a href="/#tools" class="nav-link inline-block py-0.5">Utility Tools</a></li>
 
+                        <li><a href="/privacy.html" class="nav-link inline-block py-0.5">Privacy Policy</a></li>
 
-  const alreadyOpen = modalIds.some(
+                        <li><a href="/terms.html" class="nav-link inline-block py-0.5" aria-current="page">Terms of Service</a></li>
 
-    s => !$(s).classList.contains('hidden')
+                    </ul>
 
-  );
+                </nav>
 
+                <div>
 
-  if (!alreadyOpen) {
+                    <h2 class="font-semibold text-slate-900 dark:text-white mb-3 text-xs uppercase tracking-wider">Support</h2>
 
-    lastFocus = document.activeElement;
+                    <ul class="space-y-2 text-sm">
 
-  }
+                        <!-- Use the same support address as the contact box above. -->
 
+                        <li><a href="mailto:support@filediter.com" class="nav-link inline-block py-0.5"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-1.5" style="vertical-align:middle"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 8 10-8"/></svg> Contact Support</a></li>
 
-  // Allow only one modal to be open
+                        <li><span class="text-slate-600 dark:text-slate-400 text-xs">Client-side processing</span></li>
 
-  modalIds.forEach(s => {
+                    </ul>
 
-    $(s).classList.add('hidden');
+                </div>
 
-    $(s).classList.remove('flex');
+            </div>
 
-  });
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400">
 
+                <p>&copy; <span id="year">2026</span> Filediter. All rights reserved.</p>
 
-  el.classList.remove('hidden');
+                <div class="flex space-x-6 mt-4 sm:mt-0">
 
-  el.classList.add('flex');
+                    <a href="/privacy.html" class="nav-link">Privacy</a>
 
+                    <a href="/terms.html" class="nav-link" aria-current="page">Terms</a>
 
-  document.body.classList.add('overflow-hidden');
+                </div>
 
+            </div>
 
-  // Prevent keyboard access to background content
+        </div>
 
-  document.querySelectorAll('header, main, footer')
+    </footer>
 
-    .forEach(element => element.inert = true);
+    <script>
 
+    (function () {
 
-  (focusEl || el.querySelector('button, input')).focus();
+        'use strict';
 
-}
+        var root = document.documentElement;
 
+        /* ----- Copyright year ----- */
 
-function closeModals() {
-  if (['#palette','#favModal'].every(s=>$(s).classList.contains('hidden'))) return;
+        var year = document.getElementById('year');
 
-  ['#palette', '#favModal'].forEach(s => {
+        if (year) year.textContent = new Date().getFullYear();
 
-    $(s).classList.add('hidden');
+        /* ----- Mobile navigation ----- */
 
-    $(s).classList.remove('flex');
+        var menuBtn = document.getElementById('mobile-menu-button');
 
-  });
+        var menu = document.getElementById('mobile-menu');
 
+        var menuIcon = document.getElementById('menu-icon');
 
-  document.body.classList.remove('overflow-hidden');
+        function setMenu(open) {
 
+            menu.classList.toggle('hidden', !open);
 
-  document.querySelectorAll('header, main, footer')
+            menuBtn.setAttribute('aria-expanded', String(open));
 
-    .forEach(element => element.inert = false);
+            menuIcon.textContent = open ? '✕' : '☰';
 
+        }
 
-  if (lastFocus) {
+        if (menuBtn && menu) {
 
-    lastFocus.focus();
+            menuBtn.addEventListener('click', function () {
 
-    lastFocus = null;
+                setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
 
-  }
+            });
 
-}
+            menu.addEventListener('click', function (e) {
 
+                if (e.target.closest('a')) setMenu(false);
 
-function openPalette(){closeDropdowns();toggleMenu(false);$('#palInput').value='';renderPalette('');openModal($('#palette'),$('#palInput'))}
+            });
 
-function openFavs(){closeDropdowns();toggleMenu(false);renderFavs();openModal($('#favModal'))}
+            document.addEventListener('keydown', function (e) {
 
-function renderPalette(q){
-  const matches=T.filter(t=>!q||t.hay.includes(q));
-  palIdx=0;
-  $('#palResults').innerHTML=matches.length
-    ?matches.map((t,i)=>`<a id="palOption${i}" role="option" aria-selected="${i===0}" href="${t.url}" data-tool="${t.id}" class="pal-item block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700/50 ${i===0?'bg-slate-100 dark:bg-slate-700/50':''}"><div class="font-bold text-sm">${t.title}</div><div class="text-xs text-slate-500 truncate">${t.desc}</div></a>`).join('')
-    :'<div class="p-4 text-center text-sm text-slate-500">No matching tools found.</div>';
-  if(matches.length)$('#palInput').setAttribute('aria-activedescendant','palOption0');
-  else $('#palInput').removeAttribute('aria-activedescendant');
-}
+                if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
 
-function movePal(d){
-  const items=$$('.pal-item');if(!items.length)return;
-  items[palIdx].classList.remove('bg-slate-100','dark:bg-slate-700/50');
-  items[palIdx].setAttribute('aria-selected','false');
-  palIdx=(palIdx+d+items.length)%items.length;
-  items[palIdx].classList.add('bg-slate-100','dark:bg-slate-700/50');
-  items[palIdx].setAttribute('aria-selected','true');
-  $('#palInput').setAttribute('aria-activedescendant',items[palIdx].id);
-  items[palIdx].scrollIntoView({block:'nearest'});
-}
+                    setMenu(false);
 
-$('#palInput').addEventListener('input',e=>renderPalette(e.target.value.toLowerCase().trim()));
+                    menuBtn.focus();
 
-$('#palInput').addEventListener('keydown',e=>{
+                }
 
-  if(e.key==='ArrowDown'){e.preventDefault();movePal(1)}
+            });
 
-  else if(e.key==='ArrowUp'){e.preventDefault();movePal(-1)}
+            // Close the drawer if the window grows to the desktop layout
 
-  else if(e.key==='Enter'){const a=$$('.pal-item')[palIdx];if(a){record(a.dataset.tool);location.href=a.getAttribute('href')}}
+            if (window.matchMedia) {
 
-});
+                window.matchMedia('(min-width: 768px)').addEventListener('change', function (e) {
 
-['#palOpen','#palOpenM'].forEach(s=>$(s).addEventListener('click',openPalette));
+                    if (e.matches) setMenu(false);
 
-['#favOpen','#favOpenM'].forEach(s=>$(s).addEventListener('click',openFavs));
+                });
 
-['#palette','#favModal'].forEach(s=>$(s).addEventListener('click',e=>{if(e.target===e.currentTarget||e.target.closest('[data-close]'))closeModals()}));
+            }
 
-document.addEventListener('keydown',e=>{
-  const active=['#palette','#favModal'].map(s=>$(s)).find(el=>!el.classList.contains('hidden'));
-  if(e.key==='Tab'&&active){
-    const els=[...active.querySelectorAll('button:not([disabled]),input:not([disabled]),a[href]')]
-      .filter(el=>el.getClientRects().length>0);
-    if(els.length){
-      const first=els[0],last=els[els.length-1],current=document.activeElement;
-      if(e.shiftKey&&(current===first||!els.includes(current))){e.preventDefault();last.focus()}
-      else if(!e.shiftKey&&(current===last||!els.includes(current))){e.preventDefault();first.focus()}
-    }
-  }
-  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){
-    e.preventDefault();
-    if(!active||active.id!=='palette')openPalette();
-    else $('#palInput').focus();
-  }
-  if(e.key==='Escape'){
-    if(active)closeModals();
-    closeDropdowns();
-    toggleMenu(false);
-  }
-});
+        }
 
+        /* ----- Collapse the mobile table of contents after choosing a link ----- */
 
-// ---- Global click delegation
+        var mobileToc = document.getElementById('mobile-toc');
 
-document.addEventListener('click',e=>{
+        if (mobileToc) {
 
-  const f=e.target.closest('[data-fav]');
+            mobileToc.addEventListener('click', function (e) {
 
-  if(f){const id=f.dataset.fav,i=favs.indexOf(id);i>-1?favs.splice(i,1):favs.push(id);store.set('Filediter_favorites',favs);updateFavUI();return}
+                if (e.target.closest('a')) mobileToc.open = false;
 
-  const a=e.target.closest('a[data-tool]');
+            });
 
-  if(a){record(a.dataset.tool);return}
+        }
 
-  const c=e.target.closest('[data-cat]');
+        /* ----- Table of contents: highlight the section being read ----- */
 
-  if(c){
+        var tocLinks = Array.prototype.slice.call(document.querySelectorAll('aside .toc-link'));
 
-    e.preventDefault();toggleMenu(false);setCat(c.dataset.cat);
+        var sections = document.querySelectorAll('article section[id]');
 
-    if(!c.closest('#cats'))$('#tools').scrollIntoView({behavior:'smooth'});
+        function setActive(id) {
 
-  }
+            tocLinks.forEach(function (link) {
 
-});
+                if (link.getAttribute('href') === '#' + id) link.setAttribute('aria-current', 'location');
 
+                else link.removeAttribute('aria-current');
 
-// ---- Init
+            });
 
-favs = Array.isArray(favs)
+        }
 
-  ? [...new Set(favs.filter(id =>
+        if (tocLinks.length && sections.length && 'IntersectionObserver' in window) {
 
-      typeof id === 'string' && byId(id)
+            // Active band = just below the sticky header, upper part of the viewport
 
-    ))]
+            var observer = new IntersectionObserver(function (entries) {
 
-  : [];
+                entries.forEach(function (entry) {
 
-setCat('all');updateFavUI();loadRecent();
+                    if (entry.isIntersecting) setActive(entry.target.id);
 
-</script>
+                });
+
+            }, { rootMargin: '-96px 0px -65% 0px', threshold: 0 });
+
+            sections.forEach(function (s) { observer.observe(s); });
+
+        }
+
+        /* ----- Theme toggle ----- */
+
+        var KEY = 'theme';
+
+        var themeBtn = document.getElementById('theme-toggle');
+
+        function applyTheme(dark) {
+
+            root.classList.toggle('dark', dark);
+
+            if (!themeBtn) return;
+
+            themeBtn.setAttribute('aria-pressed', String(dark));
+
+            themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+
+        }
+
+        function savedTheme() {
+
+            try {
+
+                var t = localStorage.getItem(KEY);
+
+                return t === 'dark' || t === 'light' ? t : null;
+
+            } catch (e) { return null; }
+
+        }
+
+        if (themeBtn) {
+
+            applyTheme(root.classList.contains('dark'));
+
+            themeBtn.addEventListener('click', function () {
+
+                var dark = !root.classList.contains('dark');
+
+                applyTheme(dark);
+
+                try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+
+            });
+
+        }
+
+        // Follow the device setting live, unless the visitor chose a theme manually
+
+        if (window.matchMedia) {
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+
+                if (!savedTheme()) applyTheme(e.matches);
+
+            });
+
+        }
+
+    })();
+
+    </script>
 
 </body>
 
