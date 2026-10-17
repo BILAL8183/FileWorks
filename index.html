@@ -109,12 +109,10 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"></noscript>
 
 <!-- Asynchronous FontAwesome loading (non-blocking) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
-<link rel="preload" href="tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="tailwind.css"></noscript>
-
+<link rel="stylesheet" href="tailwind.css">
 <style>
 
 section[id]{scroll-margin-top:6rem}
@@ -298,8 +296,7 @@ section[id]{scroll-margin-top:6rem}
  <!-- Hero -->
 
  <section class="relative pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden bg-gradient-to-b from-blue-50/60 dark:from-slate-800/40 to-slate-50 dark:to-slate-900 min-h-[480px]">
-  
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none contain-paint"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
 
@@ -649,7 +646,8 @@ const FAQ=[
 
 ];
 
-const COLORS={brand:'bg-blue-50 dark:bg-blue-950/50 text-brand-600 dark:text-brand-400 border-blue-100 dark:border-blue-900',emerald:'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900',purple:'bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border-purple-100 dark:border-purple-900',amber:'bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 border-amber-100 dark:border-amber-900'};
+const COLORS={brand:'bg-blue-50 dark:bg-blue-950/50 text-brand-600 border-blue-100 dark:border-blue-900',emerald:'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 border-emerald-100 dark:border-emerald-900',purple:'bg-purple-50 dark:bg-purple-950/50 text-purple-600 border-purple-100 dark:border-purple-900',amber:'bg-amber-50 dark:bg-amber-950/50 text-amber-600 border-amber-100 dark:border-amber-900'};
+
 
 let cat='all', favs=store.get('Filediter_favorites',[]), lastFocus=null, palIdx=0;
 
