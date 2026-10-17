@@ -1,103 +1,56 @@
 <!DOCTYPE html>
-
 <html lang="en" class="scroll-smooth">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Filediter – Free Online PDF, Image, Text &amp; File Tools</title>
-
 <meta name="description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser.">
-
 <meta name="robots" content="index, follow, max-image-preview:large">
-
 <meta name="theme-color" content="#2563eb">
-
 <link rel="canonical" href="https://filediter.com/">
-
 <link rel="icon" type="image/png" href="/tools/logo.png">
 
-
 <meta property="og:site_name" content="Filediter">
-
-<meta property="og:title" content="Filediter – Free Online PDF, Image, Text & File Tools">
-
+<meta property="og:title" content="Filediter – Free Online PDF, Image, Text &amp; File Tools">
 <meta property="og:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser.">
-
 <meta property="og:type" content="website">
-
 <meta property="og:url" content="https://filediter.com/">
-
 <!-- Add a 1200x630 image named og-image.png to your project root -->
-
 <meta property="og:image" content="https://filediter.com/og-image.png">
 <meta property="og:image:alt" content="Filediter free online PDF, image and text utilities">
 
 <meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="Filediter – Free Online PDF, Image, Text & File Tools">
-
+<meta name="twitter:title" content="Filediter – Free Online PDF, Image, Text &amp; File Tools">
 <meta name="twitter:description" content="Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more.">
-
 <meta name="twitter:image" content="https://filediter.com/og-image.png">
 
-
 <script type="application/ld+json">
-
 {
-
   "@context": "https://schema.org",
-
   "@graph": [
-
     {
-
       "@type": "WebSite",
-
       "name": "Filediter",
-
       "url": "https://filediter.com/",
-
       "description": "Free online tools for PDFs, images, documents and text. Merge PDFs, compress images, extract text with OCR, edit images, convert files and more — directly in your browser."
-
     },
-
     {
-
       "@type": "WebApplication",
-
       "name": "Filediter",
-
       "url": "https://filediter.com/",
-
       "applicationCategory": "UtilitiesApplication",
-
       "operatingSystem": "Any (web browser)",
-
       "offers": {
-
         "@type": "Offer",
-
         "price": "0",
-
         "priceCurrency": "USD"
-
       }
-
     }
-
   ]
-
 }
-
 </script>
 
-
 <!-- Apply saved theme before paint (prevents white flash) -->
-
 <script>try{var t=localStorage.theme;if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
 
 <!-- Preconnect for performance -->
@@ -113,607 +66,327 @@
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 <link rel="stylesheet" href="tailwind.css">
 <style>
-
 section[id]{scroll-margin-top:6rem}
 :focus-visible{outline:2px solid #2563eb;outline-offset:3px}
-
+summary::-webkit-details-marker{display:none}
+input[type="search"]::-webkit-search-cancel-button{display:none}
 .tool-card:hover .tool-icon i{animation:wig .5s ease-in-out infinite alternate}
-
 @keyframes wig{from{transform:rotate(-10deg) scale(1)}to{transform:rotate(10deg) scale(1.15)}}
-
 @media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-
 </style>
-
 </head>
-
 
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white transition-colors">
 
 <a href="#tools" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-brand-700 focus:px-4 focus:py-2 focus:rounded-lg">Skip to tools</a>
 
-
 <!-- Header -->
-
 <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm">
-
  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
   <div class="flex items-center justify-between h-20">
-
    <a href="/" class="flex items-center gap-3 group" aria-label="Filediter home">
-
     <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform"><i class="fa-solid fa-screwdriver-wrench text-xl"></i></span>
-
     <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
-
-    File<span class="text-brand-600">diter</span>
-
-</span>
-
+     File<span class="text-brand-600">diter</span>
+    </span>
    </a>
 
-
    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="Main">
-
     <div class="relative group py-2">
-
      <button id="toolsTrigger" type="button" aria-expanded="false" aria-controls="navTools" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Tools <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
-
      <div id="navTools" class="absolute top-full left-0 w-72 max-h-80 overflow-y-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200"></div>
-
     </div>
-
     <div class="relative group py-2">
-
      <button id="solutionsTrigger" type="button" aria-expanded="false" aria-controls="navSolutions" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Solutions <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i></button>
-
      <div id="navSolutions" class="absolute top-full left-0 w-60 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl rounded-2xl p-3 opacity-0 invisible transition-all duration-200 text-xs font-medium space-y-1">
-
       <a href="#tools" data-cat="developer" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Developers</a>
-
       <a href="#tools" data-cat="pdf" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Students &amp; Professionals</a>
-
       <a href="#tools" data-cat="seo" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Marketers</a>
-
       <a href="#tools" data-cat="image" class="block px-3 py-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">For Creators</a>
-
      </div>
-
     </div>
-
     <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
-
     <a href="#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">FAQ</a>
-
    </nav>
 
-
    <div class="hidden md:flex items-center gap-3">
-
-    <button id="favOpen" aria-label="Open saved favorites" class="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all">
-
+    <button id="favOpen" type="button" aria-label="Open saved favorites" class="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all">
      <i class="fa-solid fa-star text-amber-500"></i>
-
      <span id="favBadge" class="hidden absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-brand-600 text-white text-[10px] font-bold items-center justify-center">0</span>
-
     </button>
-
-    <button id="palOpen" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-2">
-
+    <button id="palOpen" type="button" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-2">
      <i class="fa-solid fa-magnifying-glass text-slate-400"></i><span>Search</span>
-
      <kbd class="kbd-hint ml-1.5 px-1.5 py-0.5 text-xs bg-white dark:bg-slate-900 text-slate-500 rounded border border-slate-200 dark:border-slate-700">Ctrl K</kbd>
-
     </button>
-
-    <button class="theme-btn p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all" aria-label="Toggle dark mode">
-
+    <button type="button" class="theme-btn p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all" aria-label="Toggle dark mode">
      <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-amber-400"></i>
-
     </button>
-
    </div>
 
-
-   <button id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"><i class="fa-solid fa-bars text-xl"></i></button>
-
+   <button id="menuBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"><i class="fa-solid fa-bars text-xl"></i></button>
   </div>
-
  </div>
-
 
  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2 text-sm font-medium">
-
-  <button id="palOpenM" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-magnifying-glass mr-2"></i>Search tools</button>
-
-  <button id="favOpenM" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-star text-amber-500 mr-2"></i>Saved favorites</button>
-
+  <button id="palOpenM" type="button" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-magnifying-glass mr-2"></i>Search tools</button>
+  <button id="favOpenM" type="button" class="w-full text-left py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800"><i class="fa-solid fa-star text-amber-500 mr-2"></i>Saved favorites</button>
   <a href="#tools" class="mnav block py-2 px-1">All Tools</a>
-
   <a href="#about" class="mnav block py-2 px-1">About</a>
-
   <a href="#faq" class="mnav block py-2 px-1">FAQ</a>
-
-  <div class="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800"><span class="text-xs text-slate-500">Theme</span><button class="theme-btn p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold">Toggle mode</button></div>
-
+  <div class="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800"><span class="text-xs text-slate-500">Theme</span><button type="button" class="theme-btn p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold">Toggle mode</button></div>
  </div>
-
 </header>
 
-
 <!-- Command palette -->
-
 <div id="palette" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm items-start justify-center pt-20 px-4" role="dialog" aria-modal="true" aria-label="Search tools">
-
  <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden">
-
   <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center gap-3">
-
    <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
-
    <input id="palInput" type="text" role="combobox" aria-label="Search tools" aria-autocomplete="list" aria-expanded="true" aria-controls="palResults" autocomplete="off" placeholder="Type a tool name or keyword…" class="w-full bg-transparent placeholder-slate-400 focus:outline-none text-base">
-
-   <button data-close class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 font-semibold">ESC</button>
-
+   <button type="button" data-close class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 font-semibold">ESC</button>
   </div>
-
   <div id="palResults" role="listbox" aria-label="Matching tools" class="max-h-96 overflow-y-auto p-3 space-y-1"></div>
-
   <div class="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500">↑ ↓ to navigate · Enter to open · Esc to close</div>
-
  </div>
-
 </div>
-
 
 <!-- Favorites modal -->
-
 <div id="favModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm items-center justify-center px-4" role="dialog" aria-modal="true" aria-label="Saved favorites">
-
  <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
-
   <div class="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-
    <h2 class="font-heading text-lg font-bold flex items-center gap-2"><i class="fa-solid fa-star text-amber-500"></i> Saved Favorites</h2>
-
-   <button data-close aria-label="Close favorites" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"><i class="fa-solid fa-xmark text-lg"></i></button>
-
+   <button type="button" data-close aria-label="Close favorites" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"><i class="fa-solid fa-xmark text-lg"></i></button>
   </div>
-
   <div id="favList" class="p-5 max-h-80 overflow-y-auto space-y-3"></div>
-
  </div>
-
 </div>
 
-
 <main class="flex-grow">
-
  <!-- Hero -->
-
- <!-- Hero -->
-
  <section class="relative pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden bg-gradient-to-b from-blue-50/60 dark:from-slate-800/40 to-slate-50 dark:to-slate-900 min-h-[480px]">
   <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-
   <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-
    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-
     <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>Free Browser Toolkit
-
    </div>
-
    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
-
     Free Online Tools for <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">PDF, Images, Text &amp; Files</span>
-
    </h1>
-
    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">Fast, browser-based developer utilities, content tools and file converters — built to work right on your device for speed and privacy.</p>
-
    <div class="max-w-2xl mx-auto relative">
-
     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none"></i>
-
     <input id="searchInput" type="search" aria-label="Search tools" placeholder="Search tools (e.g. pdf merge, compress, ocr, color)…" class="w-full pl-11 pr-12 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 text-base sm:text-lg shadow-md shadow-slate-200/50 dark:shadow-none">
-
-    <button id="clearSearch" aria-label="Clear search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-2xl leading-none px-1">&times;</button>
-
+    <button id="clearSearch" type="button" aria-label="Clear search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-2xl leading-none px-1">&times;</button>
    </div>
-
    <div id="cats" class="flex flex-wrap items-center justify-center gap-2 mt-8" role="group" aria-label="Filter tools by category"></div>
-
   </div>
-
  </section>
-
 
  <!-- Trust -->
-
  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800">
-
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs font-semibold">
-
    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-shield-halved text-emerald-500 mr-2"></i>Privacy-conscious workflows</div>
-
    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-bolt text-brand-500 mr-2"></i>Fast processing</div>
-
    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-user-check text-violet-500 mr-2"></i>No sign-up needed</div>
-
    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><i class="fa-solid fa-check text-cyan-500 mr-2"></i>Free utilities</div>
-
   </div>
-
  </section>
-
 
  <!-- Recent -->
-
  <section id="recentSection" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" aria-label="Recently used tools">
-
   <div class="flex items-center justify-between mb-4">
-
    <h2 class="font-heading text-lg font-bold">Recently Used Tools</h2>
-
-   <button id="clearRecent" class="text-xs text-slate-500 hover:text-brand-600">Clear history</button>
-
+   <button id="clearRecent" type="button" class="text-xs text-slate-500 hover:text-brand-600">Clear history</button>
   </div>
-
   <div id="recentGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4"></div>
-
  </section>
-
 
  <!-- Tools -->
-
  <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
-
   <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
-
    <div>
-
     <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">All Utility Tools</h2>
-
     <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Select a tool below to get started.</p>
-
    </div>
-
    <span id="toolCount" class="text-xs font-semibold px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 shadow-sm" aria-live="polite"></span>
-
   </div>
-
   <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
   <noscript><ul class="grid sm:grid-cols-2 gap-2 text-brand-600 underline">
-
-   <li><a href="/tools/url-encoder.html">URL Encoder / Decoder</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/color-picker.html">Color Picker</a></li><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/image-editor.html">Image Editor</a></li><li><a href="/tools/cam-ocr.html">OCR Text Extractor</a></li><li><a href="/tools/cam-enhancer.html">Doc Enhancer</a></li><li><a href="/tools/esign-pdf.html">E-Sign PDF</a></li><li><a href="/tools/pdf-merger.html">PDF Merger</a></li><li><a href="/tools/pdf-watermark.html">PDF Watermark</a></li><li><a href="/tools/image-to-pdf.html">Image to PDF</a></li><li><a href="/tools/pdf-to-image.html">PDF to Image</a></li><li><a href="/tools/pdf-extractor.html">PDF Extractor</a></li>
-
-  <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/pdf-to-word.html">PDF to Word</a></li><li><a href="/tools/image-converter.html">JPG PNG WebP Converter</a></li><li><a href="/tools/passport-photo-maker.html">Passport Photo Maker</a></li><li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li></ul></noscript>
-
+   <li><a href="/tools/url-encoder.html">URL Encoder / Decoder</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/color-picker.html">Color Picker</a></li><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/image-editor.html">Image Editor</a></li><li><a href="/tools/cam-ocr.html">OCR Text Extractor</a></li><li><a href="/tools/cam-enhancer.html">Doc Enhancer</a></li><li><a href="/tools/esign-pdf.html">E-Sign PDF</a></li><li><a href="/tools/pdf-merger.html">PDF Merger</a></li><li><a href="/tools/pdf-watermark.html">PDF Watermark</a></li><li><a href="/tools/image-to-pdf.html">Image to PDF</a></li><li><a href="/tools/pdf-to-image.html">PDF to Image</a></li><li><a href="/tools/pdf-extractor.html">PDF Extractor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/pdf-to-word.html">PDF to Word</a></li><li><a href="/tools/image-converter.html">JPG PNG WebP Converter</a></li><li><a href="/tools/passport-photo-maker.html">Passport Photo Maker</a></li><li><a href="/tools/pdf-splitter.html">PDF Splitter</a></li>
+  </ul></noscript>
   <div id="noResults" class="hidden text-center py-16">
-
    <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto text-slate-400 text-2xl mb-4 border border-slate-200 dark:border-slate-700"><i class="fa-solid fa-magnifying-glass"></i></div>
-
    <h3 class="text-lg font-bold mb-1">No tools matched your search</h3>
-
    <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Try keywords like “PDF”, “image” or “compress”, or pick another category.</p>
-
-   <button id="resetAll" class="px-4 py-2 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold text-brand-600 dark:text-brand-400 shadow-sm">Reset search &amp; filters</button>
-
+   <button id="resetAll" type="button" class="px-4 py-2 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold text-brand-600 dark:text-brand-400 shadow-sm">Reset search &amp; filters</button>
   </div>
-
  </section>
-
 
  <!-- About -->
-
  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800">
-
   <div class="text-center max-w-3xl mx-auto mb-12">
-
    <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">About Filediter</span>
-
    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Built to make everyday digital work simpler.</h2>
-
    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">Filediter is a collection of browser-based utility tools for developers, creators, students, marketers and professionals — bringing common tasks into one clean, ad-light place instead of dozens of scattered sites.</p>
-
   </div>
-
   <div id="principles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"></div>
-
   <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-12 relative overflow-hidden shadow-xl">
-
    <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-
    <div class="max-w-3xl relative z-10">
-
     <span class="text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">Design philosophy</span>
-
     <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">“Good tools should get out of the way.”</h3>
-
     <p class="text-slate-300 text-sm sm:text-base leading-relaxed">Clear interfaces, focused workflows, useful defaults, responsive layouts and privacy-conscious design.</p>
-
    </div>
-
   </div>
-
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-
-   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span id="statTools" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">13 Tools</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Active utilities</span></div>
-
+   <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span id="statTools" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">18 Tools</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Active utilities</span></div>
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span id="statCategories" class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">5 Categories</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Organized workflows</span></div>
-
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">Browser-based</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Client-side processing</span></div>
-
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400 block mb-1">No sign-up</span><span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Instant access</span></div>
-
   </div>
-
  </section>
-
 
  <!-- How it works -->
-
  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
-
   <h2 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-10">How Filediter Works</h2>
-
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">01</span><h3 class="font-heading text-lg font-bold mb-2">Choose a tool</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Pick any developer utility, converter or PDF tool.</p></div>
-
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">02</span><h3 class="font-heading text-lg font-bold mb-2">Process your content</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Use the selected tool to process your file or content directly in your browser.</p></div>
-
    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"><span class="text-brand-600 dark:text-brand-400 font-extrabold text-2xl block mb-2">03</span><h3 class="font-heading text-lg font-bold mb-2">Get your result</h3><p class="text-slate-600 dark:text-slate-300 text-sm">Download the file or copy the output instantly.</p></div>
-
   </div>
-
  </section>
-
 
  <!-- FAQ -->
-
  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800">
-
   <div class="text-center max-w-3xl mx-auto mb-12">
-
    <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs uppercase tracking-widest block mb-3">Got questions?</span>
-
    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
-
   </div>
-
   <div id="faqList" class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start"></div>
-
  </section>
-
 
  <!-- CTA -->
-
  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-
   <div class="bg-gradient-to-r from-brand-600 to-indigo-600 rounded-3xl p-10 sm:p-14 text-white shadow-xl">
-
    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-4">Ready to get more done?</h2>
-
    <p class="text-brand-100 text-base sm:text-lg max-w-xl mx-auto mb-8">Explore the Filediter toolkit and speed up your daily workflows.</p>
-
    <a href="#tools" class="inline-flex px-8 py-4 rounded-2xl bg-white text-brand-600 font-bold hover:bg-brand-50 transition-colors shadow-lg">
-
-  Explore All Tools
-
-</a>
-
+    Explore All Tools
+   </a>
   </div>
-
  </section>
-
 </main>
 
-
 <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
-
  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
   <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-
    <div class="md:col-span-2">
-
     <a href="/" class="flex items-center gap-2 mb-4"><span class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white text-sm shadow-md"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="font-heading font-bold text-xl">Filediter</span></a>
-
     <p class="text-slate-600 dark:text-slate-400 text-sm max-w-sm mb-4 leading-relaxed">Fast, free, browser-based file converters, developer utilities and content tools.</p>
-
     <p class="text-xs text-slate-500">© <span id="year">2026</span> Filediter. All rights reserved.</p>
-
    </div>
-
    <div>
-
     <h3 class="font-heading text-sm font-semibold uppercase tracking-wider mb-4">Product</h3>
-
     <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400">
-
      <li><a href="#tools" data-cat="all" class="hover:text-brand-600">All Tools</a></li>
-
      <li><a href="#tools" data-cat="developer" class="hover:text-brand-600">Developer Tools</a></li>
-
      <li><a href="#tools" data-cat="pdf" class="hover:text-brand-600">PDF Tools</a></li>
-
      <li><a href="#tools" data-cat="image" class="hover:text-brand-600">Images &amp; Media</a></li>
-
      <li><a href="#tools" data-cat="seo" class="hover:text-brand-600">SEO &amp; Content</a></li>
-
     </ul>
-
    </div>
-
    <div>
-
     <h3 class="font-heading text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
-
-   <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400">
-
- <li><a href="#about" class="hover:text-brand-600">About</a></li>
-
- <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
-
- <li><a href="privacy.html" class="hover:text-brand-600">Privacy Policy</a></li>
-
- <li><a href="/terms.html" class="hover:text-brand-600">Terms of Service</a></li>
-
-</ul>
-
+    <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400">
+     <li><a href="#about" class="hover:text-brand-600">About</a></li>
+     <li><a href="/contact.html" class="hover:text-brand-600">Contact</a></li>
+     <li><a href="/privacy.html" class="hover:text-brand-600">Privacy Policy</a></li>
+     <li><a href="/terms.html" class="hover:text-brand-600">Terms of Service</a></li>
+    </ul>
    </div>
-
   </div>
-
   <div class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500">Designed for speed, accessibility and user privacy.</div>
-
  </div>
-
 </footer>
 
-
 <script>
-
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-
 const store={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
 
-
 // id, title, description, icon, color, categories, keywords
-
 const T=[
-
 ['url-encoder','URL Encoder / Decoder','Safely encode special characters or decode URL strings for web development.','link','amber','developer text','percent encode decode web'],
-
 ['word-counter','Word & Char Counter','Count words and characters and estimate reading time for SEO content.','keyboard','pink','seo text','reading time characters'],
-
 ['color-picker','Color Picker','Build color palettes and copy HEX, RGB and HSL codes for UI design.','palette','red','developer image','hex rgb hsl css design'],
-
 ['image-compressor','Image Compressor','Reduce JPG, PNG and WEBP file sizes while keeping visual quality.','file-image','blue','image','compress photo reduce size'],
-
 ['image-editor','Image Editor','Crop, rotate, adjust brightness and apply filters to photos.','sliders','indigo','image','photo crop resize filter'],
-
 ['cam-ocr','OCR Text Extractor','Extract text from scanned documents, photos and forms.','font','cyan','scanner pdf image','ocr scan read text'],
-
 ['cam-enhancer','Doc Enhancer & Filter','Clean up scans with Magic Color, B&W filters and contrast boost.','wand-magic-sparkles','teal','scanner image','document scan magic color'],
-
 ['esign-pdf','E-Sign PDF Pad','Draw your signature and place it on PDFs or documents.','signature','violet','scanner pdf security','signature sign draw'],
-
 ['pdf-merger','PDF Merger','Combine multiple PDF files into one organized PDF.','code-merge','sky','pdf converter','merge combine join'],
-
 ['pdf-watermark','PDF Watermark','Add text watermarks or status stamps like CONFIDENTIAL to PDFs.','stamp','orange','pdf','stamp confidential'],
-
 ['image-to-pdf','Image to PDF','Convert JPG, PNG and WEBP images into a single PDF.','file-pdf','emerald','converter pdf image','jpg png convert'],
-
 ['pdf-to-image','PDF to Image','Convert PDF pages into JPG or PNG images.','file-export','amber','converter pdf image','jpg png convert'],
-
 ['pdf-compressor','PDF Compressor','Reduce PDF file size with image-based or text-preserving compression.','file-zipper','blue','pdf converter','compress pdf reduce size shrink'],
 ['pdf-to-word','PDF to Word','Extract selectable PDF text into an editable Word DOCX file.','file-word','indigo','pdf converter text','pdf docx convert text'],
 ['image-converter','JPG PNG WebP Converter','Convert JPG, PNG, and WebP images in batches.','images','cyan','image converter','jpg jpeg png webp batch'],
 ['passport-photo-maker','Passport Photo Maker','Create 35x45 mm and 2x2 inch photo prints with precise crop controls.','id-card','violet','image','passport photo 2x2 35x45 id'],
 ['pdf-splitter','PDF Splitter','Extract PDF pages or split PDFs into separate files.','scissors','emerald','pdf converter','split pdf extract pages'],
 ['pdf-extractor','PDF Extractor','Extract pages, embedded images or raw text from a PDF.','boxes-packing','rose','pdf','split extract pages']
-
 ].map(([id,title,desc,icon,color,cat,kw])=>({id,title,desc,icon,color,cat,kw,url:`/tools/${id}.html`,hay:`${title} ${desc} ${cat} ${kw}`.toLowerCase()}));
 
-
 const CATS=[['all','All Tools'],['developer','Developer'],['seo','SEO & Content'],['pdf','PDF'],['image','Images & Media'],['text','Text']];
-
 const PRINCIPLES=[['Simplicity','Useful tools should be straightforward, focused and easy to understand.','brand'],['Privacy','Tools are designed with privacy-conscious, browser-based workflows where processing can happen locally on your device.','emerald'],['Practicality','Every tool should solve a clear, useful digital task.','purple'],['Continuous improvement','Filediter is an evolving toolkit with new utilities added over time.','amber']];
-
 const FAQ=[
-
 ['Are all tools on Filediter free?','Yes. Every tool on Filediter is free to use, with no subscription or paywall.'],
-
 ['Do I need an account to use the tools?','No. There is no registration or login — open a tool and start using it.'],
-
 ['Is my file content private?','Many Filediter tools are designed to process content directly in your browser. Check the individual tool for details about how your files are handled.'],
-
 ['Does Filediter work on mobile?','Yes. The site is responsive and works on phones, tablets and desktops in modern browsers.'],
-
 ['How do I find a tool quickly?','Use the search bar, press Ctrl K (⌘K on Mac) to open the command palette, or filter by category.'],
-
 ['Are there file size limits?','File size limits can vary by tool and depend on your browser, device memory and the way the tool processes your file. Check the individual tool for details.'],
-
 ['Can I save my favorite tools?','Yes. Click the star on any tool card, then open your saved list from the star button in the header.'],
-
 ['How do I request a new tool?','Use the Contact link in the footer to send suggestions or feature requests.']
-
 ];
-
 const COLORS={brand:'bg-blue-50 dark:bg-blue-950/50 text-brand-600 border-blue-100 dark:border-blue-900',emerald:'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 border-emerald-100 dark:border-emerald-900',purple:'bg-purple-50 dark:bg-purple-950/50 text-purple-600 border-purple-100 dark:border-purple-900',amber:'bg-amber-50 dark:bg-amber-950/50 text-amber-600 border-amber-100 dark:border-amber-900'};
 
-
 let cat='all', favs=store.get('Filediter_favorites',[]), lastFocus=null, palIdx=0;
-
 const byId=id=>T.find(t=>t.id===id);
 
-
 // ---- Render static pieces
-
 $('#navTools').innerHTML='<div class="space-y-1">'+T.slice(0,5).map(t=>`<a href="${t.url}" data-tool="${t.id}" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600">${t.title}</a>`).join('')+'</div><div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700"><a href="#tools" data-cat="all" class="block px-3 py-1.5 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline">View all tools →</a></div>';
-
-$('#cats').innerHTML=CATS.map(([k,l])=>`<button data-cat="${k}" aria-pressed="false" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold border transition-all shadow-sm">${l}</button>`).join('');
-
+$('#cats').innerHTML=CATS.map(([k,l])=>`<button type="button" data-cat="${k}" aria-pressed="false" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold border transition-all shadow-sm">${l}</button>`).join('');
 $('#toolsGrid').innerHTML=T.map(t=>`
-
 <article data-id="${t.id}" class="tool-card group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between shadow-sm">
-
  <div>
-
   <div class="flex items-start justify-between mb-4">
-
    <div class="tool-icon w-12 h-12 rounded-xl bg-${t.color}-50 dark:bg-${t.color}-950/50 border border-${t.color}-100 dark:border-${t.color}-900 text-${t.color}-600 flex items-center justify-center text-xl"><i class="fa-solid fa-${t.icon}"></i></div>
-
-   <button data-fav="${t.id}" aria-pressed="false" aria-label="Save ${t.title} to favorites" class="fav-btn text-slate-300 dark:text-slate-500 hover:text-amber-500 text-lg"><span aria-hidden="true" class="text-lg font-semibold">☆</span></button>
-
+   <button type="button" data-fav="${t.id}" aria-pressed="false" aria-label="Save ${t.title} to favorites" class="fav-btn text-slate-300 dark:text-slate-500 hover:text-amber-500 text-lg"><span aria-hidden="true" class="text-lg font-semibold">☆</span></button>
   </div>
-
   <h3 class="font-heading text-xl font-bold mb-2 group-hover:text-brand-600 transition-colors">${t.title}</h3>
-
   <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">${t.desc}</p>
-
  </div>
-
  <a href="${t.url}" data-tool="${t.id}" aria-label="Open ${t.title}" class="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:bg-brand-600 text-slate-700 dark:text-slate-200 group-hover:text-white font-semibold text-sm transition-all shadow-sm"><span>Open Tool</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
-
 </article>`).join('');
-
 $('#principles').innerHTML=PRINCIPLES.map(([h,p,c],i)=>`<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm"><div class="w-10 h-10 rounded-xl border ${COLORS[c]} flex items-center justify-center font-bold text-sm mb-4">0${i+1}</div><h3 class="font-heading text-lg font-bold mb-2">${h}</h3><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">${p}</p></div>`).join('');
-
 $('#faqList').innerHTML=FAQ.map(([q,a])=>`<details class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm"><summary class="cursor-pointer list-none flex items-start justify-between gap-3 font-heading font-bold text-base">${q}<i class="fa-solid fa-chevron-down text-xs mt-1.5 text-brand-600 transition-transform group-open:rotate-180"></i></summary><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mt-3">${a}</p></details>`).join('');
 
 const ld=document.createElement('script');ld.type='application/ld+json';
-
 ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
-
 document.head.appendChild(ld);
 
 $('#statTools').textContent=T.length+' Tools';
 $('#statCategories').textContent=(CATS.length-1)+' Categories';
-
 $('#year').textContent=new Date().getFullYear();
 
-if(!/Mac|iPhone|iPad/.test(navigator.platform))$$('.kbd-hint').forEach(k=>k.textContent='Ctrl K');else $$('.kbd-hint').forEach(k=>k.textContent='⌘K');
-
+if(!/Mac|iPhone|iPad/.test(navigator.userAgentData?.platform||navigator.platform||''))$$('.kbd-hint').forEach(k=>k.textContent='Ctrl K');else $$('.kbd-hint').forEach(k=>k.textContent='⌘K');
 
 // ---- Theme
-
 $$('.theme-btn').forEach(b=>b.addEventListener('click',()=>{const d=document.documentElement.classList.toggle('dark');try{localStorage.theme=d?'dark':'light'}catch{}}));
 
-
 // ---- Mobile menu
-
-function toggleMenu(open){const m=$('#mobileMenu');const o=open??m.classList.contains('hidden');m.classList.toggle('hidden',!o);$('#menuBtn').setAttribute('aria-expanded',o)}
-
+function toggleMenu(open){const m=$('#mobileMenu');const o=open??m.classList.contains('hidden');m.classList.toggle('hidden',!o);$('#menuBtn').setAttribute('aria-expanded',String(o))}
 $('#menuBtn').addEventListener('click',()=>toggleMenu());
-
 $$('.mnav').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-
 
 // ---- Desktop navigation dropdowns
 const dropdowns=[
@@ -744,209 +417,102 @@ document.addEventListener('click',e=>{
 });
 
 // ---- Search + category filter
-
 function setCat(c){
-   if(!CATS.some(([key])=>key===c)) c='all';
-   cat=c;
-
+  if(!CATS.some(([key])=>key===c))c='all';
+  cat=c;
   $$('.cat-btn').forEach(b=>{
-
     const on=b.dataset.cat===c;
-
-    b.setAttribute('aria-pressed', on);
+    b.setAttribute('aria-pressed',String(on));
     b.classList.toggle('bg-brand-600',on);b.classList.toggle('text-white',on);b.classList.toggle('border-brand-600',on);
-
     ['bg-white','dark:bg-slate-800','text-slate-600','dark:text-slate-300','border-slate-200','dark:border-slate-700'].forEach(k=>b.classList.toggle(k,!on));
-
   });
-
   applyFilter();
-
 }
-
 function applyFilter(){
-
   const q=$('#searchInput').value.toLowerCase().trim();
-
   let n=0;
-
   T.forEach(t=>{
-
     const show=(!q||t.hay.includes(q))&&(cat==='all'||t.cat.split(' ').includes(cat));
-
     $(`[data-id="${t.id}"]`).classList.toggle('hidden',!show);
-
     if(show)n++;
-
   });
-
   $('#toolCount').textContent=`Showing ${n} of ${T.length} tools`;
-
   $('#noResults').classList.toggle('hidden',n>0);
-
   $('#clearSearch').classList.toggle('hidden',!q);
-
 }
-
 $('#searchInput').addEventListener('input',applyFilter);
-
 $('#clearSearch').addEventListener('click',()=>{$('#searchInput').value='';applyFilter();$('#searchInput').focus()});
-
 $('#resetAll').addEventListener('click',()=>{$('#searchInput').value='';setCat('all')});
 
-
 // ---- Favorites
-
 function updateFavUI(){
-
   $$('.fav-btn').forEach(b=>{
-
     const on=favs.includes(b.dataset.fav),i=b.firstElementChild;
-
-    b.setAttribute('aria-pressed',on);
-     const tool=byId(b.dataset.fav);
-     if(tool)b.setAttribute('aria-label',on?`Remove ${tool.title} from favorites`:`Save ${tool.title} to favorites`);
-
+    b.setAttribute('aria-pressed',String(on));
+    const tool=byId(b.dataset.fav);
+    if(tool)b.setAttribute('aria-label',on?`Remove ${tool.title} from favorites`:`Save ${tool.title} to favorites`);
     i.textContent=on?'★':'☆';
-     i.className='text-lg font-semibold'+(on?' text-amber-500':'');
-
+    i.className='text-lg font-semibold'+(on?' text-amber-500':'');
   });
-
   const badge=$('#favBadge');badge.textContent=favs.length;
-
   badge.classList.toggle('hidden',!favs.length);badge.classList.toggle('flex',!!favs.length);
-
 }
-
 function renderFavs(){
-
   const items=favs.map(byId).filter(Boolean);
-
   $('#favList').innerHTML=items.length?items.map(t=>`<div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700"><div class="min-w-0"><div class="font-bold text-sm">${t.title}</div><div class="text-xs text-slate-500 truncate">${t.desc}</div></div><a href="${t.url}" data-tool="${t.id}" class="shrink-0 px-3 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700">Open</a></div>`).join(''):'<p class="text-center text-sm text-slate-500 py-6">No favorites yet. Click the star on any tool card to save it here.</p>';
-
 }
-
 
 // ---- Recently used
-
 function loadRecent(){
-
   const saved=store.get('Filediter_recent',[]);
-   const ids=[...new Set((Array.isArray(saved)?saved:[]).filter(x=>typeof x==='string'&&byId(x)))].slice(0,6);
-
+  const ids=[...new Set((Array.isArray(saved)?saved:[]).filter(x=>typeof x==='string'&&byId(x)))].slice(0,6);
   $('#recentSection').classList.toggle('hidden',!ids.length);
-
   $('#recentGrid').innerHTML=ids.map(id=>{const t=byId(id);return `<a href="${t.url}" data-tool="${id}" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-brand-500 transition-all shadow-sm block truncate text-xs font-bold">${t.title}</a>`}).join('');
-
 }
-
-function record(id) {
-
-  if (!byId(id)) return;
-
-
-  const saved = store.get('Filediter_recent', []);
-
-  const r = (Array.isArray(saved) ? saved : [])
-
-    .filter(x => x !== id && typeof x === 'string' && byId(x));
-
-
+function record(id){
+  if(!byId(id))return;
+  const saved=store.get('Filediter_recent',[]);
+  const r=(Array.isArray(saved)?saved:[]).filter(x=>x!==id&&typeof x==='string'&&byId(x));
   r.unshift(id);
-
-  store.set('Filediter_recent', r.slice(0, 6));
-
+  store.set('Filediter_recent',r.slice(0,6));
 }
-
 $('#clearRecent').addEventListener('click',()=>{try{localStorage.removeItem('Filediter_recent')}catch{}loadRecent()});
-
+window.addEventListener('pageshow',loadRecent);
 
 // ---- Modals (palette + favorites)
-
-
-function openModal(el, focusEl) {
-
-  const modalIds = ['#palette', '#favModal'];
-
-
-  const alreadyOpen = modalIds.some(
-
-    s => !$(s).classList.contains('hidden')
-
-  );
-
-
-  if (!alreadyOpen) {
-
-    lastFocus = document.activeElement;
-
+function openModal(el,focusEl){
+  const modalIds=['#palette','#favModal'];
+  const alreadyOpen=modalIds.some(s=>!$(s).classList.contains('hidden'));
+  if(!alreadyOpen){
+    lastFocus=document.activeElement;
   }
-
-
-  // Allow only one modal to be open
-
-  modalIds.forEach(s => {
-
+  modalIds.forEach(s=>{
     $(s).classList.add('hidden');
-
     $(s).classList.remove('flex');
-
   });
-
-
   el.classList.remove('hidden');
-
   el.classList.add('flex');
-
-
   document.body.classList.add('overflow-hidden');
-
-
-  // Prevent keyboard access to background content
-
-  document.querySelectorAll('header, main, footer')
-
-    .forEach(element => element.inert = true);
-
-
-  (focusEl || el.querySelector('button, input')).focus();
-
+  document.querySelectorAll('header, main, footer').forEach(element=>element.inert=true);
+  (focusEl||el.querySelector('button, input')).focus();
 }
 
-
-function closeModals() {
-  if (['#palette','#favModal'].every(s=>$(s).classList.contains('hidden'))) return;
-
-  ['#palette', '#favModal'].forEach(s => {
-
+function closeModals(){
+  if(['#palette','#favModal'].every(s=>$(s).classList.contains('hidden')))return;
+  ['#palette','#favModal'].forEach(s=>{
     $(s).classList.add('hidden');
-
     $(s).classList.remove('flex');
-
   });
-
-
   document.body.classList.remove('overflow-hidden');
-
-
-  document.querySelectorAll('header, main, footer')
-
-    .forEach(element => element.inert = false);
-
-
-  if (lastFocus) {
-
-    lastFocus.focus();
-
-    lastFocus = null;
-
+  document.querySelectorAll('header, main, footer').forEach(element=>element.inert=false);
+  if(lastFocus){
+    const target=lastFocus.getClientRects?.().length?lastFocus:$('#menuBtn');
+    target?.focus();
+    lastFocus=null;
   }
-
 }
-
 
 function openPalette(){closeDropdowns();toggleMenu(false);$('#palInput').value='';renderPalette('');openModal($('#palette'),$('#palInput'))}
-
 function openFavs(){closeDropdowns();toggleMenu(false);renderFavs();openModal($('#favModal'))}
 
 function renderPalette(q){
@@ -971,21 +537,14 @@ function movePal(d){
 }
 
 $('#palInput').addEventListener('input',e=>renderPalette(e.target.value.toLowerCase().trim()));
-
 $('#palInput').addEventListener('keydown',e=>{
-
   if(e.key==='ArrowDown'){e.preventDefault();movePal(1)}
-
   else if(e.key==='ArrowUp'){e.preventDefault();movePal(-1)}
-
-  else if(e.key==='Enter'){const a=$$('.pal-item')[palIdx];if(a){record(a.dataset.tool);location.href=a.getAttribute('href')}}
-
+  else if(e.key==='Enter'){const a=$$('.pal-item')[palIdx];if(a){e.preventDefault();record(a.dataset.tool);location.href=a.getAttribute('href')}}
 });
 
 ['#palOpen','#palOpenM'].forEach(s=>$(s).addEventListener('click',openPalette));
-
 ['#favOpen','#favOpenM'].forEach(s=>$(s).addEventListener('click',openFavs));
-
 ['#palette','#favModal'].forEach(s=>$(s).addEventListener('click',e=>{if(e.target===e.currentTarget||e.target.closest('[data-close]'))closeModals()}));
 
 document.addEventListener('keydown',e=>{
@@ -1011,48 +570,24 @@ document.addEventListener('keydown',e=>{
   }
 });
 
-
 // ---- Global click delegation
-
 document.addEventListener('click',e=>{
-
   const f=e.target.closest('[data-fav]');
-
   if(f){const id=f.dataset.fav,i=favs.indexOf(id);i>-1?favs.splice(i,1):favs.push(id);store.set('Filediter_favorites',favs);updateFavUI();return}
-
   const a=e.target.closest('a[data-tool]');
-
   if(a){record(a.dataset.tool);return}
-
   const c=e.target.closest('[data-cat]');
-
   if(c){
-
     e.preventDefault();toggleMenu(false);setCat(c.dataset.cat);
-
     if(!c.closest('#cats'))$('#tools').scrollIntoView({behavior:'smooth'});
-
   }
-
 });
 
-
 // ---- Init
-
-favs = Array.isArray(favs)
-
-  ? [...new Set(favs.filter(id =>
-
-      typeof id === 'string' && byId(id)
-
-    ))]
-
-  : [];
-
+favs=Array.isArray(favs)
+  ?[...new Set(favs.filter(id=>typeof id==='string'&&byId(id)))]
+  :[];
 setCat('all');updateFavUI();loadRecent();
-
 </script>
-
 </body>
-
 </html>
